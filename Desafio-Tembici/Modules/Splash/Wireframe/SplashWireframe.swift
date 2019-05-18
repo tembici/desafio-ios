@@ -18,7 +18,7 @@ final class SplashWireframe{
         window.makeKeyAndVisible()
     }
     
-    func presentMovies(){
+    func presentTab(){
         
     }
 }

@@ -7,7 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 struct MovieDisplay{
     
+    var thumb: UIImage?
+    var title: String?
+    var favorite: Bool?
+    
+    init(thumb: UIImage, title: String, favorite: Bool) {
+        self.thumb = thumb
+        self.title = title
+        self.favorite = favorite
+    }
 }

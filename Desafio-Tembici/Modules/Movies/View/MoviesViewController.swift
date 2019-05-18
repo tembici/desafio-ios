@@ -21,6 +21,8 @@ class MoviesViewController: UIViewController {
         
         moviesCollectionView.delegate = self
         moviesCollectionView.dataSource = self
+        
+        presenter?.viewDidLoad()
     }
 }
 

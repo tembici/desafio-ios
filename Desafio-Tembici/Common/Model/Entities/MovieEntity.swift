@@ -10,14 +10,16 @@ import Foundation
 
 final class MovieEntity: NSObject{
     
+    var id: Int?
     var title: String?
-    var year: String?
+    var releaseDate: String?
     var sinopse: String?
     var thumb: String?
     
-    init(title: String, year: String, sinopse: String, thumb: String){
+    init(id: Int, title: String, releaseDate: String, sinopse: String, thumb: String){
+        self.id = id
         self.title = title
-        self.year = year
+        self.releaseDate = releaseDate
         self.sinopse = sinopse
         self.thumb = thumb
     }

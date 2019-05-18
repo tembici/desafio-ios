@@ -11,13 +11,21 @@ import Foundation
 protocol MoviesInteractorInput{
     
     var output: MoviesInteractorOutput?{ get set}
+    
+    func fetchMovies()
 }
 
 protocol MoviesInteractorOutput: class{
     
+    func fetchedMovies()
 }
 
-final class MoviesInteractor: MoviesPresenterInput{
+final class MoviesInteractor: MoviesInteractorInput{
     
-    var output: MoviesPresenterOutput?
+    var output: MoviesInteractorOutput?
+    var manager: MoviesManager?
+    
+    func fetchMovies() {
+        
+    }
 }

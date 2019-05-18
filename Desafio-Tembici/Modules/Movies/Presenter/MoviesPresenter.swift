@@ -10,6 +10,8 @@ import Foundation
 
 protocol MoviesPresenterInput{
     
+    func viewDidLoad()
+    
     var output: MoviesPresenterOutput?{ get set}
 }
 
@@ -20,4 +22,8 @@ protocol MoviesPresenterOutput: class{
 final class MoviesPresenter: MoviesPresenterInput{
     
     var output: MoviesPresenterOutput?
+    
+    func  viewDidLoad() {
+        
+    }
 }

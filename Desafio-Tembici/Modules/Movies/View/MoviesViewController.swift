@@ -10,9 +10,30 @@ import UIKit
 
 class MoviesViewController: UIViewController {
 
+    @IBOutlet weak var moviesCollectionView: UICollectionView!
+    
+    var presenter: MoviesPresenter?
+    
+    var moviesDisplay: [MovieDisplay] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
+        moviesCollectionView.delegate = self
+        moviesCollectionView.dataSource = self
     }
 }
+
+extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return moviesDisplay.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        return UICollectionViewCell()
+    }
+}
+

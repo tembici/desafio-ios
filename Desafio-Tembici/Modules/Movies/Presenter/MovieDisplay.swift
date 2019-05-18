@@ -1,5 +1,5 @@
 //
-//  MoviesManager.swift
+//  MovieDisplay.swift
 //  Desafio-Tembici
 //
 //  Created by Pedro Alvarez on 18/05/19.
@@ -8,9 +8,6 @@
 
 import Foundation
 
-final class MoviesManager{
-    
-    var api = MoviesAPI()
-
+struct MovieDisplay{
     
 }

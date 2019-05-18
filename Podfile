@@ -6,6 +6,9 @@ target 'Desafio-Tembici' do
   use_frameworks!
 
   # Pods for Desafio-Tembici
+  pod 'SDWebImage'
+  pod 'Alamofire'
+  pod 'ObjectMapper'
 
   target 'Desafio-TembiciTests' do
     inherit! :search_paths

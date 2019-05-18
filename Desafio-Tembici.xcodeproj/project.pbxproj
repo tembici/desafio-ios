@@ -18,6 +18,7 @@
 		3FFF497C228F8C9600C7380E /* SplashPresenterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF497B228F8C9600C7380E /* SplashPresenterBuilder.swift */; };
 		3FFF497E228F8CBC00C7380E /* SplashWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF497D228F8CBC00C7380E /* SplashWireframe.swift */; };
 		3FFF498B2290648100C7380E /* TabWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF498A2290648100C7380E /* TabWireframe.swift */; };
+		3FFF499422906CDB00C7380E /* TabBarViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF499322906CDB00C7380E /* TabBarViewControllerBuilder.swift */; };
 		497D2F016DDF1CAC45B7DE8C /* Pods_Desafio_TembiciUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7BC36BB709503AFF92BF31 /* Pods_Desafio_TembiciUITests.framework */; };
 		CCAF53D53411C320564DD7EA /* Pods_Desafio_Tembici.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CEB7E3DFB30339DFF77E8FD /* Pods_Desafio_Tembici.framework */; };
 		EAF6DC72FACD139CB8008F21 /* Pods_Desafio_TembiciTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEAB1FB3C057EBAE20546A0 /* Pods_Desafio_TembiciTests.framework */; };
@@ -60,6 +61,7 @@
 		3FFF497B228F8C9600C7380E /* SplashPresenterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterBuilder.swift; sourceTree = "<group>"; };
 		3FFF497D228F8CBC00C7380E /* SplashWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireframe.swift; sourceTree = "<group>"; };
 		3FFF498A2290648100C7380E /* TabWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabWireframe.swift; sourceTree = "<group>"; };
+		3FFF499322906CDB00C7380E /* TabBarViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewControllerBuilder.swift; sourceTree = "<group>"; };
 		51C7AD04A1B837C192FA2850 /* Pods-Desafio-TembiciTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-TembiciTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-TembiciTests/Pods-Desafio-TembiciTests.release.xcconfig"; sourceTree = "<group>"; };
 		52014BE453F069D66B372B87 /* Pods-Desafio-TembiciTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-TembiciTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-TembiciTests/Pods-Desafio-TembiciTests.debug.xcconfig"; sourceTree = "<group>"; };
 		833567C76DB13A490EA39226 /* Pods-Desafio-TembiciUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-TembiciUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-TembiciUITests/Pods-Desafio-TembiciUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 		3FFF49872290643D00C7380E /* Tab */ = {
 			isa = PBXGroup;
 			children = (
+				3FFF499222906CCA00C7380E /* View */,
 				3FFF49892290645000C7380E /* Wireframe */,
 			);
 			path = Tab;
@@ -245,6 +248,14 @@
 				3FFF498A2290648100C7380E /* TabWireframe.swift */,
 			);
 			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		3FFF499222906CCA00C7380E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF499322906CDB00C7380E /* TabBarViewControllerBuilder.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A85B2E89753A335F6934C4A7 /* Frameworks */ = {
@@ -461,6 +472,7 @@
 			files = (
 				3FFF498B2290648100C7380E /* TabWireframe.swift in Sources */,
 				3FFF493D228F8B5E00C7380E /* AppDelegate.swift in Sources */,
+				3FFF499422906CDB00C7380E /* TabBarViewControllerBuilder.swift in Sources */,
 				3FFF497C228F8C9600C7380E /* SplashPresenterBuilder.swift in Sources */,
 				3FFF4978228F8C6B00C7380E /* SplashViewControllerBuilder.swift in Sources */,
 				3FFF4975228F8C5600C7380E /* SplashViewController.swift in Sources */,

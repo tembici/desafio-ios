@@ -18,7 +18,7 @@ final class TabWireframe{
         
         self.window = window
         
-        let viewController = UITabBarController()
+        let viewController = TabBarControllerBuilder.make()
         setUpRoot(viewController)
     }
     

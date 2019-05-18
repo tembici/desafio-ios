@@ -10,7 +10,8 @@ import Foundation
 
 final class SplashPresenterBuilder{
     
-    static func make(){
+    static func make(wireframe: SplashWireframe) -> SplashPresenter{
         
+        return SplashPresenter(wireframe: wireframe)
     }
 }

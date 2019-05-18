@@ -17,6 +17,9 @@
 		3FFF497A228F8C8B00C7380E /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF4979228F8C8B00C7380E /* SplashPresenter.swift */; };
 		3FFF497C228F8C9600C7380E /* SplashPresenterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF497B228F8C9600C7380E /* SplashPresenterBuilder.swift */; };
 		3FFF497E228F8CBC00C7380E /* SplashWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF497D228F8CBC00C7380E /* SplashWireframe.swift */; };
+		497D2F016DDF1CAC45B7DE8C /* Pods_Desafio_TembiciUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7BC36BB709503AFF92BF31 /* Pods_Desafio_TembiciUITests.framework */; };
+		CCAF53D53411C320564DD7EA /* Pods_Desafio_Tembici.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CEB7E3DFB30339DFF77E8FD /* Pods_Desafio_Tembici.framework */; };
+		EAF6DC72FACD139CB8008F21 /* Pods_Desafio_TembiciTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEAB1FB3C057EBAE20546A0 /* Pods_Desafio_TembiciTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CEB7E3DFB30339DFF77E8FD /* Pods_Desafio_Tembici.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_Tembici.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E5A1D9B8A7E73CF4BFFB03A /* Pods-Desafio-Tembici.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-Tembici.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-Tembici/Pods-Desafio-Tembici.debug.xcconfig"; sourceTree = "<group>"; };
 		3FFF4939228F8B5E00C7380E /* Desafio-Tembici.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desafio-Tembici.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FFF493C228F8B5E00C7380E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FFF4943228F8B5F00C7380E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +58,13 @@
 		3FFF4979228F8C8B00C7380E /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		3FFF497B228F8C9600C7380E /* SplashPresenterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterBuilder.swift; sourceTree = "<group>"; };
 		3FFF497D228F8CBC00C7380E /* SplashWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireframe.swift; sourceTree = "<group>"; };
+		51C7AD04A1B837C192FA2850 /* Pods-Desafio-TembiciTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-TembiciTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-TembiciTests/Pods-Desafio-TembiciTests.release.xcconfig"; sourceTree = "<group>"; };
+		52014BE453F069D66B372B87 /* Pods-Desafio-TembiciTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-TembiciTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-TembiciTests/Pods-Desafio-TembiciTests.debug.xcconfig"; sourceTree = "<group>"; };
+		833567C76DB13A490EA39226 /* Pods-Desafio-TembiciUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-TembiciUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-TembiciUITests/Pods-Desafio-TembiciUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		90B14BE5CF555E92B9657A6F /* Pods-Desafio-Tembici.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-Tembici.release.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-Tembici/Pods-Desafio-Tembici.release.xcconfig"; sourceTree = "<group>"; };
+		9C7BC36BB709503AFF92BF31 /* Pods_Desafio_TembiciUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_TembiciUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A55B043F54C55409A3FC913F /* Pods-Desafio-TembiciUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-TembiciUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-TembiciUITests/Pods-Desafio-TembiciUITests.release.xcconfig"; sourceTree = "<group>"; };
+		ABEAB1FB3C057EBAE20546A0 /* Pods_Desafio_TembiciTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_TembiciTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCAF53D53411C320564DD7EA /* Pods_Desafio_Tembici.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAF6DC72FACD139CB8008F21 /* Pods_Desafio_TembiciTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +88,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				497D2F016DDF1CAC45B7DE8C /* Pods_Desafio_TembiciUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18643AB7C7D925A4DE903FC3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A1D9B8A7E73CF4BFFB03A /* Pods-Desafio-Tembici.debug.xcconfig */,
+				90B14BE5CF555E92B9657A6F /* Pods-Desafio-Tembici.release.xcconfig */,
+				52014BE453F069D66B372B87 /* Pods-Desafio-TembiciTests.debug.xcconfig */,
+				51C7AD04A1B837C192FA2850 /* Pods-Desafio-TembiciTests.release.xcconfig */,
+				833567C76DB13A490EA39226 /* Pods-Desafio-TembiciUITests.debug.xcconfig */,
+				A55B043F54C55409A3FC913F /* Pods-Desafio-TembiciUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3FFF4930228F8B5D00C7380E = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +115,8 @@
 				3FFF4950228F8B5F00C7380E /* Desafio-TembiciTests */,
 				3FFF495B228F8B5F00C7380E /* Desafio-TembiciUITests */,
 				3FFF493A228F8B5E00C7380E /* Products */,
+				18643AB7C7D925A4DE903FC3 /* Pods */,
+				A85B2E89753A335F6934C4A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,6 +228,16 @@
 			path = Wireframe;
 			sourceTree = "<group>";
 		};
+		A85B2E89753A335F6934C4A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0CEB7E3DFB30339DFF77E8FD /* Pods_Desafio_Tembici.framework */,
+				ABEAB1FB3C057EBAE20546A0 /* Pods_Desafio_TembiciTests.framework */,
+				9C7BC36BB709503AFF92BF31 /* Pods_Desafio_TembiciUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,6 +245,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3FFF4961228F8B5F00C7380E /* Build configuration list for PBXNativeTarget "Desafio-Tembici" */;
 			buildPhases = (
+				8296AAE7F45D3E8C9EBB01D1 /* [CP] Check Pods Manifest.lock */,
 				3FFF4935228F8B5D00C7380E /* Sources */,
 				3FFF4936228F8B5D00C7380E /* Frameworks */,
 				3FFF4937228F8B5D00C7380E /* Resources */,
@@ -222,6 +263,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3FFF4964228F8B5F00C7380E /* Build configuration list for PBXNativeTarget "Desafio-TembiciTests" */;
 			buildPhases = (
+				51372FF76E017BD2C8FCB7AC /* [CP] Check Pods Manifest.lock */,
 				3FFF4949228F8B5F00C7380E /* Sources */,
 				3FFF494A228F8B5F00C7380E /* Frameworks */,
 				3FFF494B228F8B5F00C7380E /* Resources */,
@@ -240,6 +282,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3FFF4967228F8B5F00C7380E /* Build configuration list for PBXNativeTarget "Desafio-TembiciUITests" */;
 			buildPhases = (
+				5FAB23739A49B3EFCB14336A /* [CP] Check Pods Manifest.lock */,
 				3FFF4954228F8B5F00C7380E /* Sources */,
 				3FFF4955228F8B5F00C7380E /* Frameworks */,
 				3FFF4956228F8B5F00C7380E /* Resources */,
@@ -322,6 +365,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		51372FF76E017BD2C8FCB7AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Desafio-TembiciTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FAB23739A49B3EFCB14336A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Desafio-TembiciUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8296AAE7F45D3E8C9EBB01D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Desafio-Tembici-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3FFF4935228F8B5D00C7380E /* Sources */ = {
@@ -487,6 +599,7 @@
 		};
 		3FFF4962228F8B5F00C7380E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E5A1D9B8A7E73CF4BFFB03A /* Pods-Desafio-Tembici.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -505,6 +618,7 @@
 		};
 		3FFF4963228F8B5F00C7380E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90B14BE5CF555E92B9657A6F /* Pods-Desafio-Tembici.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +637,7 @@
 		};
 		3FFF4965228F8B5F00C7380E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52014BE453F069D66B372B87 /* Pods-Desafio-TembiciTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -544,6 +659,7 @@
 		};
 		3FFF4966228F8B5F00C7380E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51C7AD04A1B837C192FA2850 /* Pods-Desafio-TembiciTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -565,6 +681,7 @@
 		};
 		3FFF4968228F8B5F00C7380E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 833567C76DB13A490EA39226 /* Pods-Desafio-TembiciUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -585,6 +702,7 @@
 		};
 		3FFF4969228F8B5F00C7380E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A55B043F54C55409A3FC913F /* Pods-Desafio-TembiciUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

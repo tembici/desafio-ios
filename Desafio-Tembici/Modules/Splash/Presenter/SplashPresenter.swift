@@ -8,6 +8,24 @@
 
 import Foundation
 
-final class SplashPresenter{
+protocol SplashPresenterInput{
     
+    func viewDidLoad()
+}
+
+final class SplashPresenter: SplashPresenterInput{
+    
+    var wireframe: SplashWireframe
+    
+    init(wireframe: SplashWireframe){
+        
+        self.wireframe = wireframe
+    }
+    
+    func viewDidLoad(){
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.wireframe.presentMovies()
+        }
+    }
 }

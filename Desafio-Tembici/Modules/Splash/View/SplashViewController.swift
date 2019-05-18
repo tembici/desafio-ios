@@ -9,11 +9,15 @@
 import UIKit
 
 class SplashViewController: UIViewController {
-
-    @IBOutlet weak var splashImageView: UIImageView!
+    
+    override var prefersStatusBarHidden: Bool{ return true}
+    
+    var presenter: SplashPresenterInput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.presenter?.viewDidLoad()
     }
+    
 }

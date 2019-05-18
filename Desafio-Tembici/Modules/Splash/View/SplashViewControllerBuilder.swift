@@ -10,7 +10,14 @@ import Foundation
 
 final class SplashViewControllerBuilder{
     
-    static func make(){
+    static func make(wireframe: SplashWireframe) -> SplashViewController{
         
+        let viewController = SplashViewController(nibName: String(describing: SplashViewController.self), bundle: nil)
+        
+        let presenter = SplashPresenterBuilder.make(wireframe: wireframe)
+        
+        viewController.presenter = presenter
+        
+        return viewController
     }
 }

@@ -7,10 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
 final class SplashWireframe{
     
-    func placeInWindow(){
+    func placeInWindow(window: UIWindow){
+        
+        let viewController = SplashViewControllerBuilder.make(wireframe: self)
+        window.rootViewController = viewController
+        window.makeKeyAndVisible()
+    }
+    
+    func presentMovies(){
         
     }
 }

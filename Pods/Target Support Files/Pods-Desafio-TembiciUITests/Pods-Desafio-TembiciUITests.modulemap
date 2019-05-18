@@ -1,0 +1,6 @@
+framework module Pods_Desafio_TembiciUITests {
+  umbrella header "Pods-Desafio-TembiciUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

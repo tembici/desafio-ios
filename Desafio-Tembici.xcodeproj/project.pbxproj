@@ -35,6 +35,9 @@
 		3FFF49BF229095BB00C7380E /* MovieDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF49BE229095BB00C7380E /* MovieDisplay.swift */; };
 		3FFF49C12290BBB400C7380E /* MovieMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF49C02290BBB400C7380E /* MovieMapper.swift */; };
 		3FFF49C32290BF6700C7380E /* MovieItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF49C22290BF6700C7380E /* MovieItem.swift */; };
+		3FFF49C72290C31000C7380E /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF49C52290C31000C7380E /* MovieCollectionViewCell.swift */; };
+		3FFF49C82290C31000C7380E /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF49C62290C31000C7380E /* MovieCollectionViewCell.xib */; };
+		3FFF49CA2290C3F000C7380E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF49C92290C3F000C7380E /* UIColor.swift */; };
 		497D2F016DDF1CAC45B7DE8C /* Pods_Desafio_TembiciUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7BC36BB709503AFF92BF31 /* Pods_Desafio_TembiciUITests.framework */; };
 		CCAF53D53411C320564DD7EA /* Pods_Desafio_Tembici.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CEB7E3DFB30339DFF77E8FD /* Pods_Desafio_Tembici.framework */; };
 		EAF6DC72FACD139CB8008F21 /* Pods_Desafio_TembiciTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEAB1FB3C057EBAE20546A0 /* Pods_Desafio_TembiciTests.framework */; };
@@ -94,6 +97,9 @@
 		3FFF49BE229095BB00C7380E /* MovieDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDisplay.swift; sourceTree = "<group>"; };
 		3FFF49C02290BBB400C7380E /* MovieMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieMapper.swift; sourceTree = "<group>"; };
 		3FFF49C22290BF6700C7380E /* MovieItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItem.swift; sourceTree = "<group>"; };
+		3FFF49C52290C31000C7380E /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		3FFF49C62290C31000C7380E /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
+		3FFF49C92290C3F000C7380E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		51C7AD04A1B837C192FA2850 /* Pods-Desafio-TembiciTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-TembiciTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-TembiciTests/Pods-Desafio-TembiciTests.release.xcconfig"; sourceTree = "<group>"; };
 		52014BE453F069D66B372B87 /* Pods-Desafio-TembiciTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-TembiciTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-TembiciTests/Pods-Desafio-TembiciTests.debug.xcconfig"; sourceTree = "<group>"; };
 		833567C76DB13A490EA39226 /* Pods-Desafio-TembiciUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-TembiciUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-TembiciUITests/Pods-Desafio-TembiciUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -311,6 +317,7 @@
 		3FFF499622906DAA00C7380E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3FFF49C42290C2EB00C7380E /* Collection */,
 				3FFF499B22906DEB00C7380E /* MoviesViewController.swift */,
 				3FFF499C22906DEB00C7380E /* MoviesViewController.xib */,
 				3FFF499F22906E0300C7380E /* MoviesViewControllerBuilder.swift */,
@@ -366,6 +373,7 @@
 		3FFF49AE22906FD100C7380E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3FFF49C92290C3F000C7380E /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -424,6 +432,15 @@
 				3FFF49BA229082B500C7380E /* VPURL.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3FFF49C42290C2EB00C7380E /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF49C52290C31000C7380E /* MovieCollectionViewCell.swift */,
+				3FFF49C62290C31000C7380E /* MovieCollectionViewCell.xib */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 		A85B2E89753A335F6934C4A7 /* Frameworks */ = {
@@ -547,6 +564,7 @@
 				3FFF4944228F8B5F00C7380E /* Assets.xcassets in Resources */,
 				3FFF499E22906DEB00C7380E /* MoviesViewController.xib in Resources */,
 				3FFF4976228F8C5600C7380E /* SplashViewController.xib in Resources */,
+				3FFF49C82290C31000C7380E /* MovieCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,9 +699,11 @@
 				3FFF49A822906EED00C7380E /* MoviesInteractorBuilder.swift in Sources */,
 				3FFF49A022906E0300C7380E /* MoviesViewControllerBuilder.swift in Sources */,
 				3FFF497E228F8CBC00C7380E /* SplashWireframe.swift in Sources */,
+				3FFF49C72290C31000C7380E /* MovieCollectionViewCell.swift in Sources */,
 				3FFF49AA22906F0900C7380E /* MoviesManager.swift in Sources */,
 				3FFF49BF229095BB00C7380E /* MovieDisplay.swift in Sources */,
 				3FFF49C32290BF6700C7380E /* MovieItem.swift in Sources */,
+				3FFF49CA2290C3F000C7380E /* UIColor.swift in Sources */,
 				3FFF49A422906E8C00C7380E /* MoviesPresenterBuilder.swift in Sources */,
 				3FFF49A622906EAC00C7380E /* MoviesInteractor.swift in Sources */,
 				3FFF49BD2290836100C7380E /* MovieAPIModel.swift in Sources */,

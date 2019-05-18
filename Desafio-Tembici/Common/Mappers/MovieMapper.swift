@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class MovieMapper{
     
@@ -25,12 +26,31 @@ final class MovieMapper{
     
     static func make(from movie: MovieEntity) -> MovieItem?{
         
-        guard let title = movie.title,
+        guard let id = movie.id,
+              let title = movie.title,
               let thumb = movie.thumb else{
                 
                 return nil
         }
         
-        return MovieItem(title: title, thumb: thumb, favorite: movie.favorite)
+        return MovieItem(id: id, title: title, thumb: thumb, favorite: movie.favorite)
+    }
+    
+    static func make(from movie: MovieItem) -> MovieDisplay?{
+        
+        guard let id = movie.id,
+              let title = movie.title,
+              let thumb = movie.thumb,
+              let favorite = movie.favorite else{
+                
+                return nil
+        }
+        
+        guard let thumbIcon = UIImage(named: thumb) else{
+            
+            return nil
+        }
+        
+        return MovieDisplay(id: id, thumb: thumbIcon, title: title, favorite: favorite)
     }
 }

@@ -32,7 +32,7 @@ final class MoviesInteractor: MoviesInteractorInput{
         self.manager?.getMovies(completion: { (movies) in
             
             self.movies = movies
-            self.output?.fetchedMovies(movies: movies)
+            self.output?.fetchedMovies(movies: self.movies)
         })
     }
 }

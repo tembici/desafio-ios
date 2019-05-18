@@ -17,6 +17,7 @@ protocol MoviesPresenterInput{
 
 protocol MoviesPresenterOutput: class{
     
+    func loadUIMovies(display: [MovieItem])
 }
 
 final class MoviesPresenter: MoviesPresenterInput{
@@ -36,5 +37,13 @@ extension MoviesPresenter: MoviesInteractorOutput{
     
     func fetchedMovies(movies: [MovieEntity]) {
         
+        for movie in movies{
+            
+            guard let item = MovieMapper.make(from: movie) else{
+                return
+            }
+            self.movieItems.append(item)
+        }
+        self.output?.loadUIMovies(display: self.movieItems)
     }
 }

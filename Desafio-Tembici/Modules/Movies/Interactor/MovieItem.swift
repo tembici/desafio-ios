@@ -10,11 +10,13 @@ import Foundation
 
 struct MovieItem{
     
+    var id: Int?
     var title: String?
     var thumb: String?
     var favorite: Bool?
     
-    init(title: String, thumb: String, favorite: Bool){
+    init(id: Int, title: String, thumb: String, favorite: Bool){
+        self.id = id
         self.title = title
         self.thumb = thumb
         self.favorite = favorite

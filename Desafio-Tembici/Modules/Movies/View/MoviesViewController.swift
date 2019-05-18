@@ -39,3 +39,10 @@ extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
 }
 
+extension MoviesViewController: MoviesPresenterOutput{
+    
+    func loadUIMovies(display: [MovieItem]) {
+        
+    }
+}
+

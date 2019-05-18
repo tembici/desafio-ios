@@ -11,7 +11,11 @@ import UIKit
 
 final class SplashWireframe{
     
+    var window: UIWindow?
+    
     func placeInWindow(window: UIWindow){
+        
+        self.window = window
         
         let viewController = SplashViewControllerBuilder.make(wireframe: self)
         window.rootViewController = viewController
@@ -20,5 +24,9 @@ final class SplashWireframe{
     
     func presentTab(){
         
+        guard let window = self.window else{
+            return
+        }
+        TabWireframe().present(window: window)
     }
 }

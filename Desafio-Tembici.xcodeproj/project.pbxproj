@@ -19,6 +19,15 @@
 		3FFF497E228F8CBC00C7380E /* SplashWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF497D228F8CBC00C7380E /* SplashWireframe.swift */; };
 		3FFF498B2290648100C7380E /* TabWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF498A2290648100C7380E /* TabWireframe.swift */; };
 		3FFF499422906CDB00C7380E /* TabBarViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF499322906CDB00C7380E /* TabBarViewControllerBuilder.swift */; };
+		3FFF499D22906DEB00C7380E /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF499B22906DEB00C7380E /* MoviesViewController.swift */; };
+		3FFF499E22906DEB00C7380E /* MoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF499C22906DEB00C7380E /* MoviesViewController.xib */; };
+		3FFF49A022906E0300C7380E /* MoviesViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF499F22906E0300C7380E /* MoviesViewControllerBuilder.swift */; };
+		3FFF49A222906E4700C7380E /* MoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF49A122906E4700C7380E /* MoviesPresenter.swift */; };
+		3FFF49A422906E8C00C7380E /* MoviesPresenterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF49A322906E8C00C7380E /* MoviesPresenterBuilder.swift */; };
+		3FFF49A622906EAC00C7380E /* MoviesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF49A522906EAC00C7380E /* MoviesInteractor.swift */; };
+		3FFF49A822906EED00C7380E /* MoviesInteractorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF49A722906EED00C7380E /* MoviesInteractorBuilder.swift */; };
+		3FFF49AA22906F0900C7380E /* MoviesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF49A922906F0900C7380E /* MoviesManager.swift */; };
+		3FFF49AC22906F1B00C7380E /* MoviesWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF49AB22906F1B00C7380E /* MoviesWireframe.swift */; };
 		497D2F016DDF1CAC45B7DE8C /* Pods_Desafio_TembiciUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7BC36BB709503AFF92BF31 /* Pods_Desafio_TembiciUITests.framework */; };
 		CCAF53D53411C320564DD7EA /* Pods_Desafio_Tembici.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CEB7E3DFB30339DFF77E8FD /* Pods_Desafio_Tembici.framework */; };
 		EAF6DC72FACD139CB8008F21 /* Pods_Desafio_TembiciTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEAB1FB3C057EBAE20546A0 /* Pods_Desafio_TembiciTests.framework */; };
@@ -62,6 +71,15 @@
 		3FFF497D228F8CBC00C7380E /* SplashWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireframe.swift; sourceTree = "<group>"; };
 		3FFF498A2290648100C7380E /* TabWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabWireframe.swift; sourceTree = "<group>"; };
 		3FFF499322906CDB00C7380E /* TabBarViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewControllerBuilder.swift; sourceTree = "<group>"; };
+		3FFF499B22906DEB00C7380E /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		3FFF499C22906DEB00C7380E /* MoviesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesViewController.xib; sourceTree = "<group>"; };
+		3FFF499F22906E0300C7380E /* MoviesViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewControllerBuilder.swift; sourceTree = "<group>"; };
+		3FFF49A122906E4700C7380E /* MoviesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesPresenter.swift; sourceTree = "<group>"; };
+		3FFF49A322906E8C00C7380E /* MoviesPresenterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesPresenterBuilder.swift; sourceTree = "<group>"; };
+		3FFF49A522906EAC00C7380E /* MoviesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesInteractor.swift; sourceTree = "<group>"; };
+		3FFF49A722906EED00C7380E /* MoviesInteractorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesInteractorBuilder.swift; sourceTree = "<group>"; };
+		3FFF49A922906F0900C7380E /* MoviesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesManager.swift; sourceTree = "<group>"; };
+		3FFF49AB22906F1B00C7380E /* MoviesWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesWireframe.swift; sourceTree = "<group>"; };
 		51C7AD04A1B837C192FA2850 /* Pods-Desafio-TembiciTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-TembiciTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-TembiciTests/Pods-Desafio-TembiciTests.release.xcconfig"; sourceTree = "<group>"; };
 		52014BE453F069D66B372B87 /* Pods-Desafio-TembiciTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-TembiciTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-TembiciTests/Pods-Desafio-TembiciTests.debug.xcconfig"; sourceTree = "<group>"; };
 		833567C76DB13A490EA39226 /* Pods-Desafio-TembiciUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-TembiciUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-TembiciUITests/Pods-Desafio-TembiciUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +192,7 @@
 		3FFF496B228F8BEF00C7380E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3FFF499522906D9600C7380E /* Movies */,
 				3FFF496E228F8C2000C7380E /* Splash */,
 				3FFF49872290643D00C7380E /* Tab */,
 			);
@@ -256,6 +275,62 @@
 				3FFF499322906CDB00C7380E /* TabBarViewControllerBuilder.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3FFF499522906D9600C7380E /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF499822906DB300C7380E /* Interactor */,
+				3FFF499A22906DBE00C7380E /* Manager */,
+				3FFF499722906DAE00C7380E /* Presenter */,
+				3FFF499622906DAA00C7380E /* View */,
+				3FFF499922906DB800C7380E /* Wireframe */,
+			);
+			path = Movies;
+			sourceTree = "<group>";
+		};
+		3FFF499622906DAA00C7380E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF499B22906DEB00C7380E /* MoviesViewController.swift */,
+				3FFF499C22906DEB00C7380E /* MoviesViewController.xib */,
+				3FFF499F22906E0300C7380E /* MoviesViewControllerBuilder.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3FFF499722906DAE00C7380E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF49A122906E4700C7380E /* MoviesPresenter.swift */,
+				3FFF49A322906E8C00C7380E /* MoviesPresenterBuilder.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3FFF499822906DB300C7380E /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF49A522906EAC00C7380E /* MoviesInteractor.swift */,
+				3FFF49A722906EED00C7380E /* MoviesInteractorBuilder.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3FFF499922906DB800C7380E /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF49AB22906F1B00C7380E /* MoviesWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		3FFF499A22906DBE00C7380E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF49A922906F0900C7380E /* MoviesManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		A85B2E89753A335F6934C4A7 /* Frameworks */ = {
@@ -376,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FFF4944228F8B5F00C7380E /* Assets.xcassets in Resources */,
+				3FFF499E22906DEB00C7380E /* MoviesViewController.xib in Resources */,
 				3FFF4976228F8C5600C7380E /* SplashViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,9 +551,17 @@
 				3FFF499422906CDB00C7380E /* TabBarViewControllerBuilder.swift in Sources */,
 				3FFF497C228F8C9600C7380E /* SplashPresenterBuilder.swift in Sources */,
 				3FFF4978228F8C6B00C7380E /* SplashViewControllerBuilder.swift in Sources */,
+				3FFF49AC22906F1B00C7380E /* MoviesWireframe.swift in Sources */,
 				3FFF4975228F8C5600C7380E /* SplashViewController.swift in Sources */,
 				3FFF497A228F8C8B00C7380E /* SplashPresenter.swift in Sources */,
+				3FFF49A822906EED00C7380E /* MoviesInteractorBuilder.swift in Sources */,
+				3FFF49A022906E0300C7380E /* MoviesViewControllerBuilder.swift in Sources */,
 				3FFF497E228F8CBC00C7380E /* SplashWireframe.swift in Sources */,
+				3FFF49AA22906F0900C7380E /* MoviesManager.swift in Sources */,
+				3FFF49A422906E8C00C7380E /* MoviesPresenterBuilder.swift in Sources */,
+				3FFF49A622906EAC00C7380E /* MoviesInteractor.swift in Sources */,
+				3FFF499D22906DEB00C7380E /* MoviesViewController.swift in Sources */,
+				3FFF49A222906E4700C7380E /* MoviesPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

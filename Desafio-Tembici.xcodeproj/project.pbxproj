@@ -1,0 +1,648 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3FFF493D228F8B5E00C7380E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF493C228F8B5E00C7380E /* AppDelegate.swift */; };
+		3FFF4944228F8B5F00C7380E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF4943228F8B5F00C7380E /* Assets.xcassets */; };
+		3FFF4952228F8B5F00C7380E /* Desafio_TembiciTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF4951228F8B5F00C7380E /* Desafio_TembiciTests.swift */; };
+		3FFF495D228F8B5F00C7380E /* Desafio_TembiciUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF495C228F8B5F00C7380E /* Desafio_TembiciUITests.swift */; };
+		3FFF4975228F8C5600C7380E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF4973228F8C5600C7380E /* SplashViewController.swift */; };
+		3FFF4976228F8C5600C7380E /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF4974228F8C5600C7380E /* SplashViewController.xib */; };
+		3FFF4978228F8C6B00C7380E /* SplashViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF4977228F8C6B00C7380E /* SplashViewControllerBuilder.swift */; };
+		3FFF497A228F8C8B00C7380E /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF4979228F8C8B00C7380E /* SplashPresenter.swift */; };
+		3FFF497C228F8C9600C7380E /* SplashPresenterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF497B228F8C9600C7380E /* SplashPresenterBuilder.swift */; };
+		3FFF497E228F8CBC00C7380E /* SplashWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF497D228F8CBC00C7380E /* SplashWireframe.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3FFF494E228F8B5F00C7380E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FFF4931228F8B5D00C7380E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FFF4938228F8B5D00C7380E;
+			remoteInfo = "Desafio-Tembici";
+		};
+		3FFF4959228F8B5F00C7380E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FFF4931228F8B5D00C7380E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FFF4938228F8B5D00C7380E;
+			remoteInfo = "Desafio-Tembici";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3FFF4939228F8B5E00C7380E /* Desafio-Tembici.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desafio-Tembici.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FFF493C228F8B5E00C7380E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3FFF4943228F8B5F00C7380E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3FFF4948228F8B5F00C7380E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FFF494D228F8B5F00C7380E /* Desafio-TembiciTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Desafio-TembiciTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FFF4951228F8B5F00C7380E /* Desafio_TembiciTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desafio_TembiciTests.swift; sourceTree = "<group>"; };
+		3FFF4953228F8B5F00C7380E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FFF4958228F8B5F00C7380E /* Desafio-TembiciUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Desafio-TembiciUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FFF495C228F8B5F00C7380E /* Desafio_TembiciUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desafio_TembiciUITests.swift; sourceTree = "<group>"; };
+		3FFF495E228F8B5F00C7380E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FFF4973228F8C5600C7380E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		3FFF4974228F8C5600C7380E /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		3FFF4977228F8C6B00C7380E /* SplashViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerBuilder.swift; sourceTree = "<group>"; };
+		3FFF4979228F8C8B00C7380E /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		3FFF497B228F8C9600C7380E /* SplashPresenterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterBuilder.swift; sourceTree = "<group>"; };
+		3FFF497D228F8CBC00C7380E /* SplashWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireframe.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FFF4936228F8B5D00C7380E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FFF494A228F8B5F00C7380E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FFF4955228F8B5F00C7380E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3FFF4930228F8B5D00C7380E = {
+			isa = PBXGroup;
+			children = (
+				3FFF493B228F8B5E00C7380E /* Desafio-Tembici */,
+				3FFF4950228F8B5F00C7380E /* Desafio-TembiciTests */,
+				3FFF495B228F8B5F00C7380E /* Desafio-TembiciUITests */,
+				3FFF493A228F8B5E00C7380E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3FFF493A228F8B5E00C7380E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF4939228F8B5E00C7380E /* Desafio-Tembici.app */,
+				3FFF494D228F8B5F00C7380E /* Desafio-TembiciTests.xctest */,
+				3FFF4958228F8B5F00C7380E /* Desafio-TembiciUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FFF493B228F8B5E00C7380E /* Desafio-Tembici */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF4948228F8B5F00C7380E /* Info.plist */,
+				3FFF496C228F8C0000C7380E /* App */,
+				3FFF496A228F8BE500C7380E /* Common */,
+				3FFF496B228F8BEF00C7380E /* Modules */,
+				3FFF496D228F8C0C00C7380E /* Resources */,
+			);
+			path = "Desafio-Tembici";
+			sourceTree = "<group>";
+		};
+		3FFF4950228F8B5F00C7380E /* Desafio-TembiciTests */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF4951228F8B5F00C7380E /* Desafio_TembiciTests.swift */,
+				3FFF4953228F8B5F00C7380E /* Info.plist */,
+			);
+			path = "Desafio-TembiciTests";
+			sourceTree = "<group>";
+		};
+		3FFF495B228F8B5F00C7380E /* Desafio-TembiciUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF495C228F8B5F00C7380E /* Desafio_TembiciUITests.swift */,
+				3FFF495E228F8B5F00C7380E /* Info.plist */,
+			);
+			path = "Desafio-TembiciUITests";
+			sourceTree = "<group>";
+		};
+		3FFF496A228F8BE500C7380E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3FFF496B228F8BEF00C7380E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF496E228F8C2000C7380E /* Splash */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3FFF496C228F8C0000C7380E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF493C228F8B5E00C7380E /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3FFF496D228F8C0C00C7380E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF4943228F8B5F00C7380E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3FFF496E228F8C2000C7380E /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF4970228F8C2F00C7380E /* Presenter */,
+				3FFF496F228F8C2900C7380E /* View */,
+				3FFF4972228F8C3B00C7380E /* Wireframe */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		3FFF496F228F8C2900C7380E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF4973228F8C5600C7380E /* SplashViewController.swift */,
+				3FFF4974228F8C5600C7380E /* SplashViewController.xib */,
+				3FFF4977228F8C6B00C7380E /* SplashViewControllerBuilder.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3FFF4970228F8C2F00C7380E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF4979228F8C8B00C7380E /* SplashPresenter.swift */,
+				3FFF497B228F8C9600C7380E /* SplashPresenterBuilder.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3FFF4972228F8C3B00C7380E /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				3FFF497D228F8CBC00C7380E /* SplashWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FFF4938228F8B5D00C7380E /* Desafio-Tembici */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FFF4961228F8B5F00C7380E /* Build configuration list for PBXNativeTarget "Desafio-Tembici" */;
+			buildPhases = (
+				3FFF4935228F8B5D00C7380E /* Sources */,
+				3FFF4936228F8B5D00C7380E /* Frameworks */,
+				3FFF4937228F8B5D00C7380E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Desafio-Tembici";
+			productName = "Desafio-Tembici";
+			productReference = 3FFF4939228F8B5E00C7380E /* Desafio-Tembici.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3FFF494C228F8B5F00C7380E /* Desafio-TembiciTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FFF4964228F8B5F00C7380E /* Build configuration list for PBXNativeTarget "Desafio-TembiciTests" */;
+			buildPhases = (
+				3FFF4949228F8B5F00C7380E /* Sources */,
+				3FFF494A228F8B5F00C7380E /* Frameworks */,
+				3FFF494B228F8B5F00C7380E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FFF494F228F8B5F00C7380E /* PBXTargetDependency */,
+			);
+			name = "Desafio-TembiciTests";
+			productName = "Desafio-TembiciTests";
+			productReference = 3FFF494D228F8B5F00C7380E /* Desafio-TembiciTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3FFF4957228F8B5F00C7380E /* Desafio-TembiciUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FFF4967228F8B5F00C7380E /* Build configuration list for PBXNativeTarget "Desafio-TembiciUITests" */;
+			buildPhases = (
+				3FFF4954228F8B5F00C7380E /* Sources */,
+				3FFF4955228F8B5F00C7380E /* Frameworks */,
+				3FFF4956228F8B5F00C7380E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FFF495A228F8B5F00C7380E /* PBXTargetDependency */,
+			);
+			name = "Desafio-TembiciUITests";
+			productName = "Desafio-TembiciUITests";
+			productReference = 3FFF4958228F8B5F00C7380E /* Desafio-TembiciUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FFF4931228F8B5D00C7380E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Pedro Alvarez";
+				TargetAttributes = {
+					3FFF4938228F8B5D00C7380E = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					3FFF494C228F8B5F00C7380E = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 3FFF4938228F8B5D00C7380E;
+					};
+					3FFF4957228F8B5F00C7380E = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 3FFF4938228F8B5D00C7380E;
+					};
+				};
+			};
+			buildConfigurationList = 3FFF4934228F8B5D00C7380E /* Build configuration list for PBXProject "Desafio-Tembici" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3FFF4930228F8B5D00C7380E;
+			productRefGroup = 3FFF493A228F8B5E00C7380E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FFF4938228F8B5D00C7380E /* Desafio-Tembici */,
+				3FFF494C228F8B5F00C7380E /* Desafio-TembiciTests */,
+				3FFF4957228F8B5F00C7380E /* Desafio-TembiciUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3FFF4937228F8B5D00C7380E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FFF4944228F8B5F00C7380E /* Assets.xcassets in Resources */,
+				3FFF4976228F8C5600C7380E /* SplashViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FFF494B228F8B5F00C7380E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FFF4956228F8B5F00C7380E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FFF4935228F8B5D00C7380E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FFF493D228F8B5E00C7380E /* AppDelegate.swift in Sources */,
+				3FFF497C228F8C9600C7380E /* SplashPresenterBuilder.swift in Sources */,
+				3FFF4978228F8C6B00C7380E /* SplashViewControllerBuilder.swift in Sources */,
+				3FFF4975228F8C5600C7380E /* SplashViewController.swift in Sources */,
+				3FFF497A228F8C8B00C7380E /* SplashPresenter.swift in Sources */,
+				3FFF497E228F8CBC00C7380E /* SplashWireframe.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FFF4949228F8B5F00C7380E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FFF4952228F8B5F00C7380E /* Desafio_TembiciTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FFF4954228F8B5F00C7380E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FFF495D228F8B5F00C7380E /* Desafio_TembiciUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3FFF494F228F8B5F00C7380E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FFF4938228F8B5D00C7380E /* Desafio-Tembici */;
+			targetProxy = 3FFF494E228F8B5F00C7380E /* PBXContainerItemProxy */;
+		};
+		3FFF495A228F8B5F00C7380E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FFF4938228F8B5D00C7380E /* Desafio-Tembici */;
+			targetProxy = 3FFF4959228F8B5F00C7380E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3FFF495F228F8B5F00C7380E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3FFF4960228F8B5F00C7380E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3FFF4962228F8B5F00C7380E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L332B28T9P;
+				INFOPLIST_FILE = "Desafio-Tembici/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pedro.alvarez.Desafio-Tembici";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3FFF4963228F8B5F00C7380E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L332B28T9P;
+				INFOPLIST_FILE = "Desafio-Tembici/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pedro.alvarez.Desafio-Tembici";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3FFF4965228F8B5F00C7380E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L332B28T9P;
+				INFOPLIST_FILE = "Desafio-TembiciTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pedro.alvarez.Desafio-TembiciTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Desafio-Tembici.app/Desafio-Tembici";
+			};
+			name = Debug;
+		};
+		3FFF4966228F8B5F00C7380E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L332B28T9P;
+				INFOPLIST_FILE = "Desafio-TembiciTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pedro.alvarez.Desafio-TembiciTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Desafio-Tembici.app/Desafio-Tembici";
+			};
+			name = Release;
+		};
+		3FFF4968228F8B5F00C7380E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L332B28T9P;
+				INFOPLIST_FILE = "Desafio-TembiciUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pedro.alvarez.Desafio-TembiciUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Desafio-Tembici";
+			};
+			name = Debug;
+		};
+		3FFF4969228F8B5F00C7380E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L332B28T9P;
+				INFOPLIST_FILE = "Desafio-TembiciUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pedro.alvarez.Desafio-TembiciUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Desafio-Tembici";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FFF4934228F8B5D00C7380E /* Build configuration list for PBXProject "Desafio-Tembici" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FFF495F228F8B5F00C7380E /* Debug */,
+				3FFF4960228F8B5F00C7380E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FFF4961228F8B5F00C7380E /* Build configuration list for PBXNativeTarget "Desafio-Tembici" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FFF4962228F8B5F00C7380E /* Debug */,
+				3FFF4963228F8B5F00C7380E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FFF4964228F8B5F00C7380E /* Build configuration list for PBXNativeTarget "Desafio-TembiciTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FFF4965228F8B5F00C7380E /* Debug */,
+				3FFF4966228F8B5F00C7380E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FFF4967228F8B5F00C7380E /* Build configuration list for PBXNativeTarget "Desafio-TembiciUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FFF4968228F8B5F00C7380E /* Debug */,
+				3FFF4969228F8B5F00C7380E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FFF4931228F8B5D00C7380E /* Project object */;
+}

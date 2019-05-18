@@ -22,4 +22,15 @@ final class MovieMapper{
         }
         return MovieEntity(id: id, title: title, releaseDate: releaseDate, sinopse: sinopse, thumb: thumb)
     }
+    
+    static func make(from movie: MovieEntity) -> MovieItem?{
+        
+        guard let title = movie.title,
+              let thumb = movie.thumb else{
+                
+                return nil
+        }
+        
+        return MovieItem(title: title, thumb: thumb, favorite: movie.favorite)
+    }
 }

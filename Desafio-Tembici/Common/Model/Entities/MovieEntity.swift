@@ -15,6 +15,7 @@ final class MovieEntity: NSObject{
     var releaseDate: String?
     var sinopse: String?
     var thumb: String?
+    var favorite: Bool = false
     
     init(id: Int, title: String, releaseDate: String, sinopse: String, thumb: String){
         self.id = id

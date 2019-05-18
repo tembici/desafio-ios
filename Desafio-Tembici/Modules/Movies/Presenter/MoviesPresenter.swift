@@ -22,8 +22,19 @@ protocol MoviesPresenterOutput: class{
 final class MoviesPresenter: MoviesPresenterInput{
     
     var output: MoviesPresenterOutput?
+    var interactor: MoviesInteractorInput?
     
-    func  viewDidLoad() {
+    var movieItems: [MovieItem] = []
+    
+    func viewDidLoad() {
+        
+        self.interactor?.fetchMovies()
+    }
+}
+
+extension MoviesPresenter: MoviesInteractorOutput{
+    
+    func fetchedMovies(movies: [MovieEntity]) {
         
     }
 }

@@ -17,7 +17,7 @@ protocol MoviesInteractorInput{
 
 protocol MoviesInteractorOutput: class{
     
-    func fetchedMovies()
+    func fetchedMovies(movies: [MovieEntity])
 }
 
 final class MoviesInteractor: MoviesInteractorInput{
@@ -25,7 +25,14 @@ final class MoviesInteractor: MoviesInteractorInput{
     var output: MoviesInteractorOutput?
     var manager: MoviesManager?
     
+    var movies: [MovieEntity] = []
+    
     func fetchMovies() {
         
+        self.manager?.getMovies(completion: { (movies) in
+            
+            self.movies = movies
+            self.output?.fetchedMovies(movies: movies)
+        })
     }
 }

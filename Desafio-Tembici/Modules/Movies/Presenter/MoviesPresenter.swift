@@ -17,7 +17,7 @@ protocol MoviesPresenterInput{
 
 protocol MoviesPresenterOutput: class{
     
-    func loadUIMovies(display: [MovieItem])
+    func loadUIMovies(items: [MovieItem])
 }
 
 final class MoviesPresenter: MoviesPresenterInput{
@@ -44,6 +44,6 @@ extension MoviesPresenter: MoviesInteractorOutput{
             }
             self.movieItems.append(item)
         }
-        self.output?.loadUIMovies(display: self.movieItems)
+        self.output?.loadUIMovies(items: self.movieItems)
     }
 }

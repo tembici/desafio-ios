@@ -26,6 +26,13 @@ class MoviesViewController: UIViewController {
     }
 }
 
+extension MoviesViewController{
+    
+    private func registerCell(){
+        
+    }
+}
+
 extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,7 +48,25 @@ extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
 extension MoviesViewController: MoviesPresenterOutput{
     
-    func loadUIMovies(display: [MovieItem]) {
+    func loadUIMovies(items: [MovieItem]) {
+        
+        for item in items{
+            guard let displayItem = MovieMapper.make(from: item) else{
+                return
+            }
+            self.moviesDisplay.append(displayItem)
+        }
+        self.moviesCollectionView.reloadData()
+    }
+}
+
+extension MoviesViewController: MovieCollectionViewCellDelegate{
+    
+    func favoriteButtonClicked(id: Int) {
+        
+    }
+    
+    func didSelect(id: Int) {
         
     }
 }

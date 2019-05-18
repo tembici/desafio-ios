@@ -16,11 +16,17 @@ class MoviesViewController: UIViewController {
     
     var moviesDisplay: [MovieDisplay] = []
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.setUpNavigation()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        moviesCollectionView.delegate = self
-        moviesCollectionView.dataSource = self
+        self.registerCell()
+        self.setUpNavigation()
         
         presenter?.viewDidLoad()
     }
@@ -30,6 +36,19 @@ extension MoviesViewController{
     
     private func registerCell(){
         
+        let nib = UINib(nibName: MovieCollectionViewCell.defaultReuseIdentifier, bundle: nil)
+        moviesCollectionView.register(nib, forCellWithReuseIdentifier: MovieCollectionViewCell.defaultReuseIdentifier)
+    }
+    
+    private func setUpCollectionView(){
+        
+        self.moviesCollectionView.delegate = self
+        self.moviesCollectionView.dataSource = self
+    }
+    
+    private func setUpNavigation(){
+        
+        self.tabBarController?.title = "Movies"
     }
 }
 
@@ -42,7 +61,12 @@ extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        return UICollectionViewCell()
+        let cell = moviesCollectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.defaultReuseIdentifier, for: indexPath) as! MovieCollectionViewCell
+        let movie = moviesDisplay[indexPath.row]
+        cell.movieDisplay = movie
+        cell.configure()
+        
+        return cell
     }
 }
 

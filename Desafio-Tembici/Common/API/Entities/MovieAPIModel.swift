@@ -11,6 +11,7 @@ import ObjectMapper
 
 final class MovieAPIModel: Mappable{
     
+    var id: Int?
     var title: String?
     var poster_path: String?
     var release_date: String?
@@ -19,6 +20,7 @@ final class MovieAPIModel: Mappable{
     required init?(map: Map) {}
     
     func mapping(map: Map) {
+        self.id <- map["id"]
         self.title <- map["title"]
         self.poster_path <- map["poster_path"]
         self.release_date <- map["release_date"]

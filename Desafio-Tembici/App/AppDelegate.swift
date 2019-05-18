@@ -17,13 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-//        let api = MoviesAPI()
-//        api.getMovies(completion: { (movies) in
-//
-//            for movie in movies{
-//                print(movie.title!+" id: \(movie.id)")
-//            }
-//            })
+        let api = MoviesAPI()
+        api.getMovies(completion: { (movies) in
+
+            for movie in movies{
+                print(movie.title!+" id: \(movie.id)")
+            }
+            })
         
         guard let window = self.window else{
             return false

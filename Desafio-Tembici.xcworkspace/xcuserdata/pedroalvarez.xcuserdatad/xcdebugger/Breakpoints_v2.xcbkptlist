@@ -2,4 +2,86 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Desafio-Tembici/Common/API/Alamofire/MoviesAPI.swift"
+            timestampString = "579983549.23787"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getMovies(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Desafio_Tembici.MoviesAPI.getMovies(completion: (Swift.Array&lt;Desafio_Tembici.MovieAPIModel&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Desafio-Tembici"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroalvarez/Desktop/iOS/Desafio-Tembici/Desafio-Tembici/Common/API/Alamofire/MoviesAPI.swift"
+                  timestampString = "579916264.278077"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "406">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in Desafio_Tembici.MoviesAPI.getMovies(completion: (Swift.Array&lt;Desafio_Tembici.MovieAPIModel&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Desafio-Tembici"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pedroalvarez/Desktop/iOS/Desafio-Tembici/Desafio-Tembici/Common/API/Alamofire/MoviesAPI.swift"
+                  timestampString = "579916264.281618"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "58">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Desafio-Tembici/Common/API/Alamofire/MoviesAPI.swift"
+            timestampString = "579983549.237976"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "getMovies(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Desafio-Tembici/Common/API/Alamofire/MoviesAPI.swift"
+            timestampString = "579983549.238027"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getMovies(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

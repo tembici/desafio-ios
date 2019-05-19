@@ -13,59 +13,62 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MovieCollectionViewCell" customModule="Desafio_Tembici" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="245" height="280"/>
+            <rect key="frame" x="0.0" y="0.0" width="514" height="526"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="245" height="280"/>
+                <rect key="frame" x="0.0" y="0.0" width="514" height="526"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JDL-r3-hzN">
-                        <rect key="frame" x="2" y="0.0" width="243" height="280"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="XNB-xg-z2J">
+                        <rect key="frame" x="0.0" y="0.0" width="514" height="506"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y63-Zr-vXF">
-                                <rect key="frame" x="-4" y="229" width="251" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbq-CO-hwZ">
-                                        <rect key="frame" x="196" y="12" width="41" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="favorite_full_icon"/>
-                                        <connections>
-                                            <action selector="favoriteButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="RAD-Y3-zN5"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfc-oc-H9y">
-                                        <rect key="frame" x="0.0" y="10" width="180" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" red="0.54679568527918776" green="0.54329119303057638" blue="0.1646481391611711" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.10184026924686931" green="0.10517574168051057" blue="0.281269828680203" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mE1-zj-nVj">
-                                <rect key="frame" x="0.0" y="0.0" width="243" height="227"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thor o filme" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ChH-Dd-USB">
+                                <rect key="frame" x="0.0" y="483" width="454" height="18"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0r-h3-zHH">
+                                <rect key="frame" x="0.0" y="0.0" width="514" height="483"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="movieButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Ry7-Rf-EWv"/>
-                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4b-Bu-Aks">
+                                <rect key="frame" x="474" y="479" width="30" height="22"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Button" image="favorite_full_icon"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ChH-Dd-USB" secondAttribute="bottom" constant="5" id="I1h-rV-HZL"/>
+                            <constraint firstItem="e0r-h3-zHH" firstAttribute="width" secondItem="XNB-xg-z2J" secondAttribute="width" id="Mfo-zg-o5K"/>
+                            <constraint firstItem="e0r-h3-zHH" firstAttribute="top" secondItem="XNB-xg-z2J" secondAttribute="top" id="PSN-cs-puF"/>
+                            <constraint firstAttribute="trailing" secondItem="A4b-Bu-Aks" secondAttribute="trailing" constant="10" id="Vik-r2-GQr"/>
+                            <constraint firstItem="e0r-h3-zHH" firstAttribute="centerX" secondItem="XNB-xg-z2J" secondAttribute="centerX" id="WIs-OF-fTy"/>
+                            <constraint firstItem="A4b-Bu-Aks" firstAttribute="leading" secondItem="ChH-Dd-USB" secondAttribute="trailing" constant="20" id="Wgu-Cc-yw3"/>
+                            <constraint firstAttribute="trailing" secondItem="ChH-Dd-USB" secondAttribute="trailing" constant="60" id="g3a-Kp-U17"/>
+                            <constraint firstItem="ChH-Dd-USB" firstAttribute="top" secondItem="e0r-h3-zHH" secondAttribute="bottom" id="kXG-lo-wtG"/>
+                            <constraint firstItem="ChH-Dd-USB" firstAttribute="leading" secondItem="XNB-xg-z2J" secondAttribute="leading" id="mMQ-wu-S6i"/>
+                            <constraint firstAttribute="bottom" secondItem="A4b-Bu-Aks" secondAttribute="bottom" constant="5" id="t0e-n1-Tbt"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="XNB-xg-z2J" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GRg-hl-rCY"/>
+                <constraint firstItem="XNB-xg-z2J" firstAttribute="height" secondItem="ZTg-uK-7eu" secondAttribute="height" id="L5P-Nh-oR5"/>
+                <constraint firstItem="XNB-xg-z2J" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" id="TJg-Mx-AFQ"/>
+                <constraint firstItem="XNB-xg-z2J" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ii6-of-fsM"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="245" height="280"/>
+            <size key="customSize" width="514" height="526"/>
             <connections>
-                <outlet property="favoriteButton" destination="mbq-CO-hwZ" id="aTC-BA-Sre"/>
-                <outlet property="movieButton" destination="mE1-zj-nVj" id="KZ3-eN-q0P"/>
-                <outlet property="titleLabel" destination="xfc-oc-H9y" id="JZd-J7-AXY"/>
+                <outlet property="favoriteButton" destination="A4b-Bu-Aks" id="Y5e-2l-Han"/>
+                <outlet property="movieButton" destination="e0r-h3-zHH" id="Bfd-Mb-Y6g"/>
+                <outlet property="titleLabel" destination="ChH-Dd-USB" id="Rxf-Oh-gwY"/>
             </connections>
-            <point key="canvasLocation" x="-69.599999999999994" y="171.81409295352324"/>
+            <point key="canvasLocation" x="153.59999999999999" y="36.881559220389811"/>
         </collectionViewCell>
     </objects>
     <resources>

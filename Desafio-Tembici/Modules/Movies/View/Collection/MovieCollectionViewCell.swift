@@ -31,10 +31,16 @@ class MovieCollectionViewCell: UICollectionViewCell {
         guard let favorite = movieDisplay?.favorite else{
             return
         }
-        
-        self.movieButton.imageView?.image = movieDisplay?.thumb
+        self.movieId = movieDisplay?.id
+        print("thumb  = \(movieDisplay?.thumb)\ntitle = \(movieDisplay?.title) ")
+        self.movieButton.setImage(movieDisplay?.thumb, for: .normal)//movieDisplay?.thumb
         self.titleLabel.text = movieDisplay?.title
+        self.movieButton.imageView?.setNeedsDisplay()
+        self.movieButton.imageView?.setNeedsDisplay()
         self.favoriteButton.imageView?.image = favorite ? UIImage(named: "favorite_full_icon") : UIImage(named: "favorite_empty_icon")
+        print(self.titleLabel.text!)
+        self.setNeedsLayout()
+        self.setNeedsDisplay()
     }
     
     @IBAction func favoriteButtonClicked(_ sender: Any) {

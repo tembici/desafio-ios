@@ -10,7 +10,9 @@ import Foundation
 
 final class MoviesWireframe{
     
-    func getViewController(){
+    func getViewController() -> MoviesViewController{
         
+        return MoviesViewControllerBuilder.make(wireframe: self)
     }
 }
+          

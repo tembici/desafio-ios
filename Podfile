@@ -6,7 +6,7 @@ target 'Desafio-Tembici' do
   use_frameworks!
 
   # Pods for Desafio-Tembici
-  pod 'SDWebImage'
+  #pod 'SDWebImage'
   pod 'Alamofire'
   pod 'ObjectMapper'
 

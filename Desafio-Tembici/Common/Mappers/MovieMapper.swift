@@ -45,12 +45,21 @@ final class MovieMapper{
                 
                 return nil
         }
+
+        let vpurl = VPURL(urlString: "https://image.tmdb.org/t/p/w1280/"+thumb)
         
-        guard let thumbIcon = UIImage(named: thumb) else{
-            
-            return nil
+        var data: NSData?
+        
+        do{
+            let url = try vpurl.asURL()
+            data = NSData(contentsOf: url)
+        }catch{
+            print("deu ruim")
         }
         
-        return MovieDisplay(id: id, thumb: thumbIcon, title: title, favorite: favorite)
+        let thumbIcon = UIImage(data: data! as Data)
+
+        return MovieDisplay(id: id, thumb: thumbIcon!, title: title, favorite: favorite)
+        }
     }
-}
+

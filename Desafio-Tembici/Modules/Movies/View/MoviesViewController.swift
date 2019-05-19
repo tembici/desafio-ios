@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoviesViewController: UIViewController {
+final class MoviesViewController: UIViewController {
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     
@@ -27,6 +27,7 @@ class MoviesViewController: UIViewController {
         
         self.registerCell()
         self.setUpNavigation()
+        self.setUpCollectionView()
         
         presenter?.viewDidLoad()
     }
@@ -44,6 +45,15 @@ extension MoviesViewController{
         
         self.moviesCollectionView.delegate = self
         self.moviesCollectionView.dataSource = self
+        
+        guard let layout = self.moviesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
+            else{
+
+            return
+        }
+            layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+            layout.estimatedItemSize = CGSize(width: moviesCollectionView.bounds.width * 0.45, height: moviesCollectionView.bounds.width * 0.45)
+        
     }
     
     private func setUpNavigation(){
@@ -61,12 +71,18 @@ extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = moviesCollectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.defaultReuseIdentifier, for: indexPath) as! MovieCollectionViewCell
-        let movie = moviesDisplay[indexPath.row]
+        let cell = moviesCollectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.defaultReuseIdentifier, for: indexPath as IndexPath) as! MovieCollectionViewCell
+        let movie = moviesDisplay[indexPath.item]
+        
         cell.movieDisplay = movie
         cell.configure()
+        cell.delegate = self
         
         return cell
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
 }
 
@@ -87,11 +103,11 @@ extension MoviesViewController: MoviesPresenterOutput{
 extension MoviesViewController: MovieCollectionViewCellDelegate{
     
     func favoriteButtonClicked(id: Int) {
-        
+        print("favorite button clicked",id)
     }
     
     func didSelect(id: Int) {
-        
+        print("did select",id)
     }
 }
 

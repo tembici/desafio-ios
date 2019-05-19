@@ -24,6 +24,11 @@ final class MoviesPresenter: MoviesPresenterInput{
     
     var output: MoviesPresenterOutput?
     var interactor: MoviesInteractorInput?
+    var wireframe: MoviesWireframe
+    
+    init(wireframe: MoviesWireframe){
+        self.wireframe = wireframe
+    }
     
     var movieItems: [MovieItem] = []
     

@@ -32,7 +32,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
             return
         }
         self.movieId = movieDisplay?.id
-        print("thumb  = \(movieDisplay?.thumb)\ntitle = \(movieDisplay?.title) ")
         self.movieButton.setImage(movieDisplay?.thumb, for: .normal)//movieDisplay?.thumb
         self.titleLabel.text = movieDisplay?.title
         self.movieButton.imageView?.setNeedsDisplay()

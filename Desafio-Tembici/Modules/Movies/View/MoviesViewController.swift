@@ -103,11 +103,11 @@ extension MoviesViewController: MoviesPresenterOutput{
 extension MoviesViewController: MovieCollectionViewCellDelegate{
     
     func favoriteButtonClicked(id: Int) {
-        
+        print("favorite button clicked",id)
     }
     
     func didSelect(id: Int) {
-        
+        print("did select",id)
     }
 }
 

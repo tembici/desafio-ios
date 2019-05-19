@@ -32,11 +32,17 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0r-h3-zHH">
                                 <rect key="frame" x="0.0" y="0.0" width="514" height="483"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="movieButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="tzv-q9-SEe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4b-Bu-Aks">
                                 <rect key="frame" x="474" y="479" width="30" height="22"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <state key="normal" title="Button" image="favorite_full_icon"/>
+                                <connections>
+                                    <action selector="favoriteButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="WV4-iY-YJj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

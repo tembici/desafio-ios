@@ -13,6 +13,7 @@ protocol MoviesInteractorInput{
     var output: MoviesInteractorOutput?{ get set}
     
     func fetchMovies()
+    func setFavoriteMovie(id: Int)
 }
 
 protocol MoviesInteractorOutput: class{
@@ -34,5 +35,11 @@ final class MoviesInteractor: MoviesInteractorInput{
             self.movies = movies
             self.output?.fetchedMovies(movies: self.movies)
         })
+    }
+    
+    func setFavoriteMovie(id: Int) {
+        
+        FavoriteMoviesDAO.shared.save(id)
+        self.output?.fetchedMovies(movies: self.movies)
     }
 }

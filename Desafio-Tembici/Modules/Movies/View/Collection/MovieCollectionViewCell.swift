@@ -36,8 +36,10 @@ class MovieCollectionViewCell: UICollectionViewCell {
         self.titleLabel.text = movieDisplay?.title
         self.movieButton.imageView?.setNeedsDisplay()
         self.movieButton.imageView?.setNeedsDisplay()
-        self.favoriteButton.imageView?.image = favorite ? UIImage(named: "favorite_full_icon") : UIImage(named: "favorite_empty_icon")
-        print(self.titleLabel.text!)
+        
+        let favoriteButtonImage = favorite ? UIImage(named: "favorite_full_icon") : UIImage(named: "favorite_empty_icon")
+        self.favoriteButton.setImage(favoriteButtonImage, for: .normal)
+
         self.setNeedsLayout()
         self.setNeedsDisplay()
     }

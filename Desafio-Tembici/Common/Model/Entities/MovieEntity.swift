@@ -15,7 +15,18 @@ final class MovieEntity: NSObject{
     var releaseDate: String?
     var sinopse: String?
     var thumb: String?
-    var favorite: Bool = false
+    var favorite: Bool{
+        
+        guard let id = self.id else{
+            return false
+        }
+        if FavoriteMoviesDAO.shared.movieIsFavorite(id: id){
+            return true
+        }
+        else{
+            return false
+        }
+    }
     
     init(id: Int, title: String, releaseDate: String, sinopse: String, thumb: String){
         self.id = id

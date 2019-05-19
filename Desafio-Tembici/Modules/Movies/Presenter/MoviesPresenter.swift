@@ -11,6 +11,7 @@ import Foundation
 protocol MoviesPresenterInput{
     
     func viewDidLoad()
+    func favoriteButtonClicked(id: Int)
     
     var output: MoviesPresenterOutput?{ get set}
 }
@@ -35,6 +36,11 @@ final class MoviesPresenter: MoviesPresenterInput{
     func viewDidLoad() {
         
         self.interactor?.fetchMovies()
+    }
+    
+    func favoriteButtonClicked(id: Int) {
+        
+        self.interactor?.setFavoriteMovie(id: id)
     }
 }
 

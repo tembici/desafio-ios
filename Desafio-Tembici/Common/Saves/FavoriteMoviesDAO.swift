@@ -12,16 +12,16 @@ final class FavoriteMoviesDAO{
     
     public static var shared = FavoriteMoviesDAO()
     
-    var favoriteMoviesList: [Int] = []
+    private var favoriteMoviesList: [Int] = []
 
-    fileprivate static let dir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+    private static let dir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
     
     static var favoritesURL: URL {
         return URL(fileURLWithPath: dir.appendingPathComponent("favorites.json"))
     }
     
     private init(){
-        
+        self.favoriteMoviesList = self.getFavoriteMovieIds()
     }
     
     func save(_ movieIds: [Int]){
@@ -54,5 +54,10 @@ final class FavoriteMoviesDAO{
             print("It could not read from", String(describing: url))
         }
         return []
+    }
+    
+    func movieIsFavorite(id: Int) -> Bool{
+        
+        return self.favoriteMoviesList.contains(id)
     }
 }

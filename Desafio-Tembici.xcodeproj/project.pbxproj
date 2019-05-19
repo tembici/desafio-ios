@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FEECD47229215D7002A8C40 /* FavoriteMoviesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECD46229215D7002A8C40 /* FavoriteMoviesDAO.swift */; };
 		3FFF493D228F8B5E00C7380E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF493C228F8B5E00C7380E /* AppDelegate.swift */; };
 		3FFF4944228F8B5F00C7380E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF4943228F8B5F00C7380E /* Assets.xcassets */; };
 		3FFF4952228F8B5F00C7380E /* Desafio_TembiciTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF4951228F8B5F00C7380E /* Desafio_TembiciTests.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		0CEB7E3DFB30339DFF77E8FD /* Pods_Desafio_Tembici.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_Tembici.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E5A1D9B8A7E73CF4BFFB03A /* Pods-Desafio-Tembici.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-Tembici.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-Tembici/Pods-Desafio-Tembici.debug.xcconfig"; sourceTree = "<group>"; };
+		3FEECD46229215D7002A8C40 /* FavoriteMoviesDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMoviesDAO.swift; sourceTree = "<group>"; };
 		3FFF4939228F8B5E00C7380E /* Desafio-Tembici.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desafio-Tembici.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FFF493C228F8B5E00C7380E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FFF4943228F8B5F00C7380E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,6 +156,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3FEECD45229215C6002A8C40 /* Saves */ = {
+			isa = PBXGroup;
+			children = (
+				3FEECD46229215D7002A8C40 /* FavoriteMoviesDAO.swift */,
+			);
+			path = Saves;
+			sourceTree = "<group>";
+		};
 		3FFF4930228F8B5D00C7380E = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +219,7 @@
 		3FFF496A228F8BE500C7380E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3FEECD45229215C6002A8C40 /* Saves */,
 				3FFF49B9229082AA00C7380E /* Utilities */,
 				3FFF49B42290775300C7380E /* API */,
 				3FFF49AF22906FD700C7380E /* Mappers */,
@@ -689,6 +700,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FFF498B2290648100C7380E /* TabWireframe.swift in Sources */,
+				3FEECD47229215D7002A8C40 /* FavoriteMoviesDAO.swift in Sources */,
 				3FFF49C12290BBB400C7380E /* MovieMapper.swift in Sources */,
 				3FFF493D228F8B5E00C7380E /* AppDelegate.swift in Sources */,
 				3FFF499422906CDB00C7380E /* TabBarViewControllerBuilder.swift in Sources */,

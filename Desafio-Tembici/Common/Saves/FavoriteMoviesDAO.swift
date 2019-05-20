@@ -31,6 +31,7 @@ final class FavoriteMoviesDAO{
         do {
             try JSONEncoder().encode(movieIds).write(to: url)
             self.favoriteMoviesList = movieIds
+
             print("Save in", String(describing: url))
         } catch {
             print("It could not save", String(describing: url))
@@ -41,6 +42,15 @@ final class FavoriteMoviesDAO{
         
         self.favoriteMoviesList.append(movieId)
         self.save(self.favoriteMoviesList)
+    }
+    
+    func remove(_ movieId: Int){
+        
+        guard let index = self.favoriteMoviesList.index(of: movieId) else{
+            return
+        }
+        self.favoriteMoviesList.remove(at: index)
+        self.save(favoriteMoviesList)
     }
     
     func getFavoriteMovieIds() -> [Int]{

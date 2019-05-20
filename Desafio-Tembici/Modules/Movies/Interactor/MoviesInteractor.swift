@@ -39,7 +39,12 @@ final class MoviesInteractor: MoviesInteractorInput{
     
     func setFavoriteMovie(id: Int) {
         
-        FavoriteMoviesDAO.shared.save(id)
+        if FavoriteMoviesDAO.shared.movieIsFavorite(id: id){
+            FavoriteMoviesDAO.shared.remove(id)
+        }
+        else{
+            FavoriteMoviesDAO.shared.save(id)
+        }
         self.output?.fetchedMovies(movies: self.movies)
     }
 }

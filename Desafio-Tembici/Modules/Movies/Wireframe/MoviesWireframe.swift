@@ -14,5 +14,10 @@ final class MoviesWireframe{
         
         return MoviesViewControllerBuilder.make(wireframe: self)
     }
+    
+    func presentDetails(for movie: MovieEntity){
+        
+        MovieDetailsWireframe().present(movie: movie)
+    }
 }
           

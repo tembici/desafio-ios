@@ -30,4 +30,11 @@ final class MovieEntity: NSObject{
         self.sinopse = sinopse
         self.thumb = thumb
     }
+    
+    static func getMovie(in movies: [MovieEntity], byId id: Int) -> MovieEntity?{
+        
+        guard let index = movies.firstIndex(where: {$0.id == id}) else{ return nil}
+        
+        return movies[index]
+    }
 }

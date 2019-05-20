@@ -16,6 +16,8 @@
 		3FEECD5922922C18002A8C40 /* MovieDetailsInteractorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECD5822922C18002A8C40 /* MovieDetailsInteractorBuilder.swift */; };
 		3FEECD5B22922C7C002A8C40 /* MovieDetailsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECD5A22922C7C002A8C40 /* MovieDetailsWireframe.swift */; };
 		3FEECD5D229348DB002A8C40 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECD5C229348DB002A8C40 /* FavoritesManager.swift */; };
+		3FEECD5F2293655A002A8C40 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECD5E2293655A002A8C40 /* Array.swift */; };
+		3FEECD61229367D8002A8C40 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECD60229367D8002A8C40 /* Sequence.swift */; };
 		3FFF493D228F8B5E00C7380E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF493C228F8B5E00C7380E /* AppDelegate.swift */; };
 		3FFF4944228F8B5F00C7380E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF4943228F8B5F00C7380E /* Assets.xcassets */; };
 		3FFF4952228F8B5F00C7380E /* Desafio_TembiciTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF4951228F8B5F00C7380E /* Desafio_TembiciTests.swift */; };
@@ -83,6 +85,8 @@
 		3FEECD5822922C18002A8C40 /* MovieDetailsInteractorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsInteractorBuilder.swift; sourceTree = "<group>"; };
 		3FEECD5A22922C7C002A8C40 /* MovieDetailsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsWireframe.swift; sourceTree = "<group>"; };
 		3FEECD5C229348DB002A8C40 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		3FEECD5E2293655A002A8C40 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		3FEECD60229367D8002A8C40 /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
 		3FFF4939228F8B5E00C7380E /* Desafio-Tembici.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desafio-Tembici.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FFF493C228F8B5E00C7380E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FFF4943228F8B5F00C7380E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -454,6 +458,8 @@
 			children = (
 				3FFF49C92290C3F000C7380E /* UIColor.swift */,
 				3FFF49CD2290CCB600C7380E /* UICollectionViewCell.swift */,
+				3FEECD5E2293655A002A8C40 /* Array.swift */,
+				3FEECD60229367D8002A8C40 /* Sequence.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -773,6 +779,7 @@
 				3FFF497C228F8C9600C7380E /* SplashPresenterBuilder.swift in Sources */,
 				3FFF4978228F8C6B00C7380E /* SplashViewControllerBuilder.swift in Sources */,
 				3FFF49B82290791B00C7380E /* MoviesAPI.swift in Sources */,
+				3FEECD5F2293655A002A8C40 /* Array.swift in Sources */,
 				3FFF49CC2290CC4F00C7380E /* ReusableView.swift in Sources */,
 				3FFF49AC22906F1B00C7380E /* MoviesWireframe.swift in Sources */,
 				3FFF49BB229082B500C7380E /* VPURL.swift in Sources */,
@@ -785,6 +792,7 @@
 				3FFF497E228F8CBC00C7380E /* SplashWireframe.swift in Sources */,
 				3FFF49C72290C31000C7380E /* MovieCollectionViewCell.swift in Sources */,
 				3FEECD4F2292297C002A8C40 /* MovieDetailsViewController.swift in Sources */,
+				3FEECD61229367D8002A8C40 /* Sequence.swift in Sources */,
 				3FFF49AA22906F0900C7380E /* MoviesManager.swift in Sources */,
 				3FFF49BF229095BB00C7380E /* MovieDisplay.swift in Sources */,
 				3FEECD5522922BF4002A8C40 /* MovieDetailsPresenterBuilder.swift in Sources */,

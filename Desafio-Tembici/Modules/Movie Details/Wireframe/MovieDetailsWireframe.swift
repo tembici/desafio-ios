@@ -10,7 +10,7 @@ import Foundation
 
 final class MovieDetailsWireframe{
     
-    func present(){
+    func present(movie: MovieEntity){
         
     }
 }

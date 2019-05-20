@@ -12,6 +12,7 @@ protocol MoviesPresenterInput{
     
     func viewDidLoad()
     func favoriteButtonClicked(id: Int)
+    func didSelect(id: Int)
     
     var output: MoviesPresenterOutput?{ get set}
 }
@@ -42,6 +43,11 @@ final class MoviesPresenter: MoviesPresenterInput{
         
         self.interactor?.setFavoriteMovie(id: id)
     }
+    
+    func didSelect(id: Int) {
+        
+        self.interactor?.findMovie(id: id)
+    }
 }
 
 extension MoviesPresenter: MoviesInteractorOutput{
@@ -59,5 +65,10 @@ extension MoviesPresenter: MoviesInteractorOutput{
         }
         print("movie Items",self.movieItems.count)
         self.output?.loadUIMovies(items: self.movieItems)
+    }
+    
+    func foundMovie(_ movie: MovieEntity) {
+        
+        self.wireframe.presentDetails(for: movie)
     }
 }

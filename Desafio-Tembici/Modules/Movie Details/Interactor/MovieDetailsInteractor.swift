@@ -13,11 +13,11 @@ protocol MovieDetailsInteractorInput{
     var output: MovieDetailsInteractorOutput?{ get set}
 }
 
-protocol MovieDetailsInteractorOutput {
+protocol MovieDetailsInteractorOutput: class {
     
 }
 
 final class MovieDetailsInteractor: MovieDetailsPresenterInput{
     
-    var output: MovieDetailsPresenterOutput?
+    weak var output: MovieDetailsPresenterOutput?
 }

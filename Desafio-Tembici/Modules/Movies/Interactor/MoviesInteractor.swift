@@ -14,11 +14,13 @@ protocol MoviesInteractorInput{
     
     func fetchMovies()
     func setFavoriteMovie(id: Int)
+    func findMovie(id: Int)
 }
 
 protocol MoviesInteractorOutput: class{
     
     func fetchedMovies(movies: [MovieEntity])
+    func foundMovie(_ movie: MovieEntity)
 }
 
 final class MoviesInteractor: MoviesInteractorInput{
@@ -49,9 +51,13 @@ final class MoviesInteractor: MoviesInteractorInput{
                 FavoritesManager.setFavorite(id)
             }
         }
-        DispatchQueue.main.async {
-            
             self.output?.fetchedMovies(movies: self.movies)
-        }
+    }
+    
+    func findMovie(id: Int) {
+        
+        guard let movie = MovieEntity.getMovie(in: self.movies, byId: id) else{ return }
+        
+        self.output?.foundMovie(movie)
     }
 }

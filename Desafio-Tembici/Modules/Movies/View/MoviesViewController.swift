@@ -115,7 +115,8 @@ extension MoviesViewController: MovieCollectionViewCellDelegate{
     }
     
     func didSelect(id: Int) {
-        print("did select",id)
+        
+        self.presenter?.didSelect(id: id)
     }
 }
 

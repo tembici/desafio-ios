@@ -48,6 +48,8 @@ extension MoviesPresenter: MoviesInteractorOutput{
     
     func fetchedMovies(movies: [MovieEntity]) {
         
+        self.movieItems = []
+        
         for movie in movies{
             
             guard let item = MovieMapper.make(from: movie) else{
@@ -55,6 +57,7 @@ extension MoviesPresenter: MoviesInteractorOutput{
             }
             self.movieItems.append(item)
         }
+        print("movie Items",self.movieItems.count)
         self.output?.loadUIMovies(items: self.movieItems)
     }
 }

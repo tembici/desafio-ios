@@ -20,12 +20,7 @@ final class MovieEntity: NSObject{
         guard let id = self.id else{
             return false
         }
-        if FavoriteMoviesDAO.shared.movieIsFavorite(id: id){
-            return true
-        }
-        else{
-            return false
-        }
+        return FavoritesManager.isFavorite(id)
     }
     
     init(id: Int, title: String, releaseDate: String, sinopse: String, thumb: String){

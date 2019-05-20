@@ -46,13 +46,13 @@ extension MoviesViewController{
         self.moviesCollectionView.delegate = self
         self.moviesCollectionView.dataSource = self
         
+        
         guard let layout = self.moviesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
             else{
 
             return
         }
             layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-            layout.estimatedItemSize = CGSize(width: moviesCollectionView.bounds.width * 0.45, height: moviesCollectionView.bounds.width * 0.45)
         
     }
     
@@ -62,10 +62,11 @@ extension MoviesViewController{
     }
 }
 
-extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
+        print(moviesDisplay.count)
         return moviesDisplay.count
     }
     
@@ -84,11 +85,17 @@ extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: moviesCollectionView.bounds.width * 0.45, height: moviesCollectionView.bounds.width * 0.45)
+    }
 }
 
 extension MoviesViewController: MoviesPresenterOutput{
     
     func loadUIMovies(items: [MovieItem]) {
+        
+        self.moviesDisplay = []
         
         for item in items{
             guard let displayItem = MovieMapper.make(from: item) else{

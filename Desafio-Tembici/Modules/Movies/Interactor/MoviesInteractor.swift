@@ -39,12 +39,19 @@ final class MoviesInteractor: MoviesInteractorInput{
     
     func setFavoriteMovie(id: Int) {
         
-        if FavoriteMoviesDAO.shared.movieIsFavorite(id: id){
-            FavoriteMoviesDAO.shared.remove(id)
+        let queue = DispatchQueue(label: "favorite movie")
+        
+        queue.async {
+            if FavoritesManager.isFavorite(id){
+                FavoritesManager.unfavorite(id)
+            }
+            else{
+                FavoritesManager.setFavorite(id)
+            }
         }
-        else{
-            FavoriteMoviesDAO.shared.save(id)
+        DispatchQueue.main.async {
+            
+            self.output?.fetchedMovies(movies: self.movies)
         }
-        self.output?.fetchedMovies(movies: self.movies)
     }
 }

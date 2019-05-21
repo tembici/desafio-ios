@@ -7,10 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 final class MovieDetailsWireframe{
     
-    func present(movie: MovieEntity){
+    var navigationController: UINavigationController?
+    
+    func present(navigationController: UINavigationController, movie: MovieEntity){
         
+        self.navigationController = navigationController
+        self.navigationController?.pushViewController(MovieDetailsViewControllerBuilder.make(wireframe: self, movie: movie), animated: true
+        )
     }
 }

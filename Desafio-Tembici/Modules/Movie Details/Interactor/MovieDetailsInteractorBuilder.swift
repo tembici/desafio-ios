@@ -10,7 +10,8 @@ import Foundation
 
 final class MovieDetailsInteractorBuilder{
     
-    static func make(){
+    static func make(movie: MovieEntity) -> MovieDetailsInteractor{
         
+        return MovieDetailsInteractor(movie: movie)
     }
 }

@@ -11,13 +11,32 @@ import Foundation
 protocol MovieDetailsInteractorInput{
     
     var output: MovieDetailsInteractorOutput?{ get set}
+    
+    func fetchMovieDetails()
+    func setFavorite()
 }
 
 protocol MovieDetailsInteractorOutput: class {
     
+    func fetchedMovieDetails(movie: MovieEntity)
 }
 
-final class MovieDetailsInteractor: MovieDetailsPresenterInput{
+final class MovieDetailsInteractor: MovieDetailsInteractorInput{
     
-    weak var output: MovieDetailsPresenterOutput?
+    var output: MovieDetailsInteractorOutput?
+    
+    var movie: MovieEntity
+    
+    init(movie: MovieEntity) {
+        self.movie = movie
+    }
+    
+    func fetchMovieDetails() {
+        
+        self.output?.fetchedMovieDetails(movie: self.movie)
+    }
+    
+    func setFavorite() {
+        
+    }
 }

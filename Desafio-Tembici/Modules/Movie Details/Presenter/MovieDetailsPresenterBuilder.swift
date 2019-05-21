@@ -10,7 +10,14 @@ import Foundation
 
 final class MovieDetailsPresenterBuilder{
     
-    static func make(){
+    static func make(wireframe: MovieDetailsWireframe, movie: MovieEntity) -> MovieDetailsPresenter{
         
+        let interactor = MovieDetailsInteractorBuilder.make(movie: movie)
+        let presenter = MovieDetailsPresenter(wireframe: wireframe)
+        
+        presenter.interactor = interactor
+        interactor.output = presenter
+        
+        return presenter
     }
 }

@@ -66,7 +66,6 @@ extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        print(moviesDisplay.count)
         return moviesDisplay.count
     }
     
@@ -110,6 +109,15 @@ extension MoviesViewController: MoviesPresenterOutput{
 extension MoviesViewController: MovieCollectionViewCellDelegate{
     
     func favoriteButtonClicked(id: Int) {
+        
+//        guard let index = self.moviesDisplay.firstIndex(where: {$0.id == id}) else{
+//            return
+//        }
+//        guard let favorite = self.moviesDisplay[index].favorite else{
+//            return
+//        }
+//        
+//        moviesDisplay[index].favorite = !favorite
         
         self.presenter?.favoriteButtonClicked(id: id)
     }

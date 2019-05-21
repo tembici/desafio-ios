@@ -10,14 +10,23 @@ import Foundation
 
 final class MoviesWireframe{
     
+    var viewController: MoviesViewController?
+    
     func getViewController() -> MoviesViewController{
         
-        return MoviesViewControllerBuilder.make(wireframe: self)
+        let viewController = MoviesViewControllerBuilder.make(wireframe: self)
+        self.viewController = viewController
+        
+        return viewController
     }
     
     func presentDetails(for movie: MovieEntity){
         
-        MovieDetailsWireframe().present(movie: movie)
+        guard let navigationController = self.viewController?.tabBarController?.navigationController else{
+            return
+        }
+        
+        MovieDetailsWireframe().present(navigationController: navigationController, movie: movie)
     }
 }
           

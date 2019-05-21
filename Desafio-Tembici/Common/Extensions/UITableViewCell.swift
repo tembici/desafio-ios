@@ -1,5 +1,5 @@
 //
-//  Array.swift
+//  File.swift
 //  Desafio-Tembici
 //
 //  Created by Pedro Alvarez on 20/05/19.
@@ -7,8 +7,6 @@
 //
 
 import Foundation
+import UIKit
 
-extension Array{
-    
-
-}
+extension UITableViewCell: ReusableView{ }

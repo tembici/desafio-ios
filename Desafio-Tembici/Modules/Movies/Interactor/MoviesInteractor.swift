@@ -51,7 +51,7 @@ final class MoviesInteractor: MoviesInteractorInput{
                 FavoritesManager.setFavorite(id)
             }
         }
-            self.output?.fetchedMovies(movies: self.movies)
+//            self.output?.fetchedMovies(movies: self.movies)
     }
     
     func findMovie(id: Int) {

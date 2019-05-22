@@ -37,6 +37,7 @@ final class TitleTableViewCell: UITableViewCell {
             return
         }
         let icon = !favorite ? UIImage(named: "favorite_full_icon") : UIImage(named: "favorite_empty_icon")
+        self.favorite = !favorite
         favoriteButton.setImage(icon, for: .normal)
         self.delegate?.favoriteButtonClicked()
     }

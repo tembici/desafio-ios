@@ -34,7 +34,7 @@ final class MovieDetailsMapper{
     static func make(from details: MovieDetailsItem) -> MovieDetailsDisplay?{
         
         guard let title = details.title,
-            let posterImage = details.posterImage,
+            let posterImage = details.posterImage, 
             let sinopse = details.sinopse,
             let releaseYear = details.releaseYear,
             let favorite = details.favorite else{ return nil}

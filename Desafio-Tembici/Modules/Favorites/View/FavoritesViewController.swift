@@ -22,6 +22,8 @@ final class FavoritesViewController: UIViewController {
         registerCell()
         setUpTableView()
         setUpNavigation()
+        
+//        self.presenter?.viewDidLoad()
     }
 }
 
@@ -49,12 +51,16 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return favoritesDisplay.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return UITableViewCell()
+        let cell = favoritesTableView.dequeueReusableCell(withIdentifier: FavoritesTableViewCell.defaultReuseIdentifier, for: indexPath as IndexPath) as! FavoritesTableViewCell
+        cell.display = favoritesDisplay[indexPath.row]
+        cell.configure()
+        
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -64,4 +70,9 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource{
 
 extension FavoritesViewController: FavoritesPresenterOutput{
     
+    func loadUIFavoriteMovies(display: [FavoriteDisplay]) {
+        
+        self.favoritesDisplay = display
+        favoritesTableView.reloadData()
+    }
 }

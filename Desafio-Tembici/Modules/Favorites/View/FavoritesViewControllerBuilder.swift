@@ -21,7 +21,7 @@ final class FavoritesViewControllerBuilder{
         viewController.presenter = presenter
         presenter.output = viewController
         
-        viewController.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(named: "favorites_empty_icon"), selectedImage: UIImage(named: "favorites_empty_icon"))
+        viewController.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(named: "favorite_empty_icon"), selectedImage: UIImage(named: "favorite_empty_icon"))
         
         return viewController
     }

@@ -10,11 +10,14 @@ import Foundation
 
 protocol FavoritesPresenterInput{
     
-    weak var output: FavoritesPresenterOutput?{get set}
+    var output: FavoritesPresenterOutput?{get set}
+    
+    func viewDidLoad()
 }
 
 protocol FavoritesPresenterOutput: class{
     
+    func loadUIFavoriteMovies(display: [FavoriteDisplay])
 }
 
 final class FavoritesPresenter: FavoritesPresenterInput{
@@ -30,8 +33,21 @@ final class FavoritesPresenter: FavoritesPresenterInput{
         self.wireframe = wireframe
         self.interactor = interactor
     }
+    
+    func viewDidLoad() {
+        
+        self.interactor.fetchMovies()
+    }
 }
 
 extension FavoritesPresenter: FavoritesInteractorOutput{
     
+    func foundFavoriteMovies(items: [FavoriteItem]) {
+        
+        self.favoriteItems = items
+        
+        let favoritesDisplay = FavoriteMapper.make(from: items)
+        
+        output?.loadUIFavoriteMovies(display: favoritesDisplay)
+    }
 }

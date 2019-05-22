@@ -63,7 +63,7 @@ extension MoviesPresenter: MoviesInteractorOutput{
             }
             self.movieItems.append(item)
         }
-        print("movie Items",self.movieItems.count)
+
         self.output?.loadUIMovies(items: self.movieItems)
     }
     

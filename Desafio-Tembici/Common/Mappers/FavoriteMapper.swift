@@ -28,7 +28,7 @@ final class FavoriteMapper{
                         return []
                 }
                 
-                let vpurl = VPURL(urlString: thumb)
+               let vpurl = VPURL(urlString: "https://image.tmdb.org/t/p/w1280/"+thumb)
                 var data: Data?
                 
                 do{

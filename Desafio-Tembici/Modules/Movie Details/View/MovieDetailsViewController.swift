@@ -110,7 +110,7 @@ extension MovieDetailsViewController: MovieDetailsPresenterOutput{
         guard let display = MovieDetailsMapper.make(from: details) else{ return }
         
         self.display = display
-        print("info array ",self.infoArray.count)
+
         self.title = self.display?.title
         self.movieImageView.image = self.display?.posterImage
         self.detailsTableView.reloadData()

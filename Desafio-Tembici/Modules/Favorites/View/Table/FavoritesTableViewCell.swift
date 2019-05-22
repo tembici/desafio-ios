@@ -15,7 +15,13 @@ final class FavoritesTableViewCell: UITableViewCell {
     @IBOutlet weak var sinopseLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     
+    var display: FavoriteDisplay?
+    
     public func configure(){
         
+        thumb.image = display?.thumb
+        titleLabel.text = display?.title
+        sinopseLabel.text = display?.sinopse
+        yearLabel.text = display?.year
     }
 }

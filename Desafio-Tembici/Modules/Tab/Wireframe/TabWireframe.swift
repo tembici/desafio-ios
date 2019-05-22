@@ -25,6 +25,7 @@ final class TabWireframe{
     private func setUpRoot(_ viewController: UIViewController){
         
         self.navigationController = UINavigationController(rootViewController: viewController)
+        self.navigationController?.navigationBar.barTintColor = UIColor.primaryColor
         self.window?.rootViewController = navigationController
     }
 }

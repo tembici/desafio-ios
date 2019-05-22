@@ -10,15 +10,31 @@ import Foundation
 
 final class MovieEntity: NSObject{
     
+    var id: Int?
     var title: String?
-    var year: String?
+    var releaseDate: String?
     var sinopse: String?
     var thumb: String?
+    var favorite: Bool{
+        
+        guard let id = self.id else{
+            return false
+        }
+        return FavoritesManager.isFavorite(id)
+    }
     
-    init(title: String, year: String, sinopse: String, thumb: String){
+    init(id: Int, title: String, releaseDate: String, sinopse: String, thumb: String){
+        self.id = id
         self.title = title
-        self.year = year
+        self.releaseDate = releaseDate
         self.sinopse = sinopse
         self.thumb = thumb
+    }
+    
+    static func getMovie(in movies: [MovieEntity], byId id: Int) -> MovieEntity?{
+        
+        guard let index = movies.firstIndex(where: {$0.id == id}) else{ return nil}
+        
+        return movies[index]
     }
 }

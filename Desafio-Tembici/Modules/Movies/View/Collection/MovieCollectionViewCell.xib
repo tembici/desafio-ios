@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MovieCollectionViewCell" customModule="Desafio_Tembici" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="514" height="526"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="514" height="526"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="XNB-xg-z2J">
+                        <rect key="frame" x="0.0" y="0.0" width="514" height="506"/>
+                        <subviews>
+                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thor o filme" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ChH-Dd-USB">
+                                <rect key="frame" x="0.0" y="483" width="454" height="18"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0r-h3-zHH">
+                                <rect key="frame" x="0.0" y="0.0" width="514" height="483"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="movieButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="tzv-q9-SEe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4b-Bu-Aks">
+                                <rect key="frame" x="474" y="479" width="30" height="22"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Button" image="favorite_full_icon"/>
+                                <connections>
+                                    <action selector="favoriteButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="WV4-iY-YJj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ChH-Dd-USB" secondAttribute="bottom" constant="5" id="I1h-rV-HZL"/>
+                            <constraint firstItem="e0r-h3-zHH" firstAttribute="width" secondItem="XNB-xg-z2J" secondAttribute="width" id="Mfo-zg-o5K"/>
+                            <constraint firstItem="e0r-h3-zHH" firstAttribute="top" secondItem="XNB-xg-z2J" secondAttribute="top" id="PSN-cs-puF"/>
+                            <constraint firstAttribute="trailing" secondItem="A4b-Bu-Aks" secondAttribute="trailing" constant="10" id="Vik-r2-GQr"/>
+                            <constraint firstItem="e0r-h3-zHH" firstAttribute="centerX" secondItem="XNB-xg-z2J" secondAttribute="centerX" id="WIs-OF-fTy"/>
+                            <constraint firstItem="A4b-Bu-Aks" firstAttribute="leading" secondItem="ChH-Dd-USB" secondAttribute="trailing" constant="20" id="Wgu-Cc-yw3"/>
+                            <constraint firstAttribute="trailing" secondItem="ChH-Dd-USB" secondAttribute="trailing" constant="60" id="g3a-Kp-U17"/>
+                            <constraint firstItem="ChH-Dd-USB" firstAttribute="top" secondItem="e0r-h3-zHH" secondAttribute="bottom" id="kXG-lo-wtG"/>
+                            <constraint firstItem="ChH-Dd-USB" firstAttribute="leading" secondItem="XNB-xg-z2J" secondAttribute="leading" id="mMQ-wu-S6i"/>
+                            <constraint firstAttribute="bottom" secondItem="A4b-Bu-Aks" secondAttribute="bottom" constant="5" id="t0e-n1-Tbt"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="XNB-xg-z2J" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GRg-hl-rCY"/>
+                <constraint firstItem="XNB-xg-z2J" firstAttribute="height" secondItem="ZTg-uK-7eu" secondAttribute="height" id="L5P-Nh-oR5"/>
+                <constraint firstItem="XNB-xg-z2J" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" id="TJg-Mx-AFQ"/>
+                <constraint firstItem="XNB-xg-z2J" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ii6-of-fsM"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="514" height="526"/>
+            <connections>
+                <outlet property="favoriteButton" destination="A4b-Bu-Aks" id="Y5e-2l-Han"/>
+                <outlet property="movieButton" destination="e0r-h3-zHH" id="Bfd-Mb-Y6g"/>
+                <outlet property="titleLabel" destination="ChH-Dd-USB" id="Rxf-Oh-gwY"/>
+            </connections>
+            <point key="canvasLocation" x="153.59999999999999" y="36.881559220389811"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="favorite_full_icon" width="18" height="16"/>
+    </resources>
+</document>

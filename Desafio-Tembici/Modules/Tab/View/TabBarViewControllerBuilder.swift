@@ -14,7 +14,8 @@ final class TabBarControllerBuilder{
     static func make() -> UITabBarController{
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = []
+        tabBarController.viewControllers = [MoviesWireframe().getViewController()]
+        tabBarController.tabBar.barTintColor = UIColor.primaryColor
         
         return tabBarController
     }

@@ -10,7 +10,13 @@ import Foundation
 
 final class MoviesInteractorBuilder{
     
-    static func make(){
+    static func make() -> MoviesInteractor{
         
+        let manager = MoviesManager()
+        let interactor = MoviesInteractor()
+        
+        interactor.manager = manager
+        
+        return interactor
     }
 }

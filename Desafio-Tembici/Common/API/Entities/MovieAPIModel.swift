@@ -24,6 +24,6 @@ final class MovieAPIModel: Mappable{
         self.title <- map["title"]
         self.poster_path <- map["poster_path"]
         self.release_date <- map["release_date"]
-        self.overview <- map["release_date"]
+        self.overview <- map["overview"]
     }
 }

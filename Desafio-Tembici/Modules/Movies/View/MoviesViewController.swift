@@ -86,6 +86,7 @@ extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         return CGSize(width: moviesCollectionView.bounds.width * 0.45, height: moviesCollectionView.bounds.width * 0.45)
     }
 }

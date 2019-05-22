@@ -110,15 +110,6 @@ extension MoviesViewController: MovieCollectionViewCellDelegate{
     
     func favoriteButtonClicked(id: Int) {
         
-//        guard let index = self.moviesDisplay.firstIndex(where: {$0.id == id}) else{
-//            return
-//        }
-//        guard let favorite = self.moviesDisplay[index].favorite else{
-//            return
-//        }
-//        
-//        moviesDisplay[index].favorite = !favorite
-        
         self.presenter?.favoriteButtonClicked(id: id)
     }
     

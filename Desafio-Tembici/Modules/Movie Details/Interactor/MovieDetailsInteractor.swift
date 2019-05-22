@@ -38,5 +38,18 @@ final class MovieDetailsInteractor: MovieDetailsInteractorInput{
     
     func setFavorite() {
         
+        let queue = DispatchQueue(label: "favorite movie")
+        
+        guard let id = movie.id else{
+            return
+        }
+        queue.async {
+            if FavoritesManager.isFavorite(id){
+                FavoritesManager.unfavorite(id)
+            }
+            else{
+                FavoritesManager.setFavorite(id)
+            }
+        }
     }
 }

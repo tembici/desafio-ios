@@ -20,11 +20,12 @@
 		3FEECD6322936C6F002A8C40 /* MovieDetailsViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECD6222936C6F002A8C40 /* MovieDetailsViewControllerBuilder.swift */; };
 		3FEECD672293801F002A8C40 /* MovieDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECD652293801F002A8C40 /* MovieDetailTableViewCell.swift */; };
 		3FEECD682293801F002A8C40 /* MovieDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEECD662293801F002A8C40 /* MovieDetailTableViewCell.xib */; };
-		3FEECD6A229380C6002A8C40 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECD69229380C6002A8C40 /* TitleTableViewCell.swift */; };
 		3FEECD6C22938606002A8C40 /* MovieDetailsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECD6B22938606002A8C40 /* MovieDetailsItem.swift */; };
 		3FEECD6E229389A4002A8C40 /* MovieDetailsDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECD6D229389A4002A8C40 /* MovieDetailsDisplay.swift */; };
 		3FEECD7022938A53002A8C40 /* MovieDetailsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECD6F22938A53002A8C40 /* MovieDetailsMapper.swift */; };
 		3FEECD72229393FB002A8C40 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECD71229393FB002A8C40 /* UITableViewCell.swift */; };
+		3FEECD752294BCA4002A8C40 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEECD732294BCA4002A8C40 /* TitleTableViewCell.swift */; };
+		3FEECD762294BCA4002A8C40 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEECD742294BCA4002A8C40 /* TitleTableViewCell.xib */; };
 		3FFF493D228F8B5E00C7380E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF493C228F8B5E00C7380E /* AppDelegate.swift */; };
 		3FFF4944228F8B5F00C7380E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF4943228F8B5F00C7380E /* Assets.xcassets */; };
 		3FFF4952228F8B5F00C7380E /* Desafio_TembiciTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF4951228F8B5F00C7380E /* Desafio_TembiciTests.swift */; };
@@ -96,11 +97,12 @@
 		3FEECD6222936C6F002A8C40 /* MovieDetailsViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewControllerBuilder.swift; sourceTree = "<group>"; };
 		3FEECD652293801F002A8C40 /* MovieDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3FEECD662293801F002A8C40 /* MovieDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailTableViewCell.xib; sourceTree = "<group>"; };
-		3FEECD69229380C6002A8C40 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		3FEECD6B22938606002A8C40 /* MovieDetailsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsItem.swift; sourceTree = "<group>"; };
 		3FEECD6D229389A4002A8C40 /* MovieDetailsDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsDisplay.swift; sourceTree = "<group>"; };
 		3FEECD6F22938A53002A8C40 /* MovieDetailsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsMapper.swift; sourceTree = "<group>"; };
 		3FEECD71229393FB002A8C40 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		3FEECD732294BCA4002A8C40 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		3FEECD742294BCA4002A8C40 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
 		3FFF4939228F8B5E00C7380E /* Desafio-Tembici.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desafio-Tembici.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FFF493C228F8B5E00C7380E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FFF4943228F8B5F00C7380E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -254,7 +256,8 @@
 			children = (
 				3FEECD652293801F002A8C40 /* MovieDetailTableViewCell.swift */,
 				3FEECD662293801F002A8C40 /* MovieDetailTableViewCell.xib */,
-				3FEECD69229380C6002A8C40 /* TitleTableViewCell.swift */,
+				3FEECD732294BCA4002A8C40 /* TitleTableViewCell.swift */,
+				3FEECD742294BCA4002A8C40 /* TitleTableViewCell.xib */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				3FFF499E22906DEB00C7380E /* MoviesViewController.xib in Resources */,
 				3FFF4976228F8C5600C7380E /* SplashViewController.xib in Resources */,
 				3FEECD682293801F002A8C40 /* MovieDetailTableViewCell.xib in Resources */,
+				3FEECD762294BCA4002A8C40 /* TitleTableViewCell.xib in Resources */,
 				3FFF49C82290C31000C7380E /* MovieCollectionViewCell.xib in Resources */,
 				3FEECD502292297C002A8C40 /* MovieDetailsViewController.xib in Resources */,
 			);
@@ -817,6 +821,7 @@
 				3FEECD5922922C18002A8C40 /* MovieDetailsInteractorBuilder.swift in Sources */,
 				3FFF497A228F8C8B00C7380E /* SplashPresenter.swift in Sources */,
 				3FFF49B32290704400C7380E /* MovieEntity.swift in Sources */,
+				3FEECD752294BCA4002A8C40 /* TitleTableViewCell.swift in Sources */,
 				3FEECD6322936C6F002A8C40 /* MovieDetailsViewControllerBuilder.swift in Sources */,
 				3FFF49A822906EED00C7380E /* MoviesInteractorBuilder.swift in Sources */,
 				3FFF49A022906E0300C7380E /* MoviesViewControllerBuilder.swift in Sources */,
@@ -830,7 +835,6 @@
 				3FEECD5522922BF4002A8C40 /* MovieDetailsPresenterBuilder.swift in Sources */,
 				3FFF49C32290BF6700C7380E /* MovieItem.swift in Sources */,
 				3FFF49CA2290C3F000C7380E /* UIColor.swift in Sources */,
-				3FEECD6A229380C6002A8C40 /* TitleTableViewCell.swift in Sources */,
 				3FEECD5722922C0D002A8C40 /* MovieDetailsInteractor.swift in Sources */,
 				3FFF49A422906E8C00C7380E /* MoviesPresenterBuilder.swift in Sources */,
 				3FFF49A622906EAC00C7380E /* MoviesInteractor.swift in Sources */,

@@ -2,41 +2,43 @@
 //  TitleTableViewCell.swift
 //  Desafio-Tembici
 //
-//  Created by Pedro Alvarez on 20/05/19.
+//  Created by Pedro Alvarez on 21/05/19.
 //  Copyright © 2019 Pedro Alvarez. All rights reserved.
 //
 
 import UIKit
 
-protocol TitleTableViewCellDelegate{
+protocol TitleTableViewCellDelegate {
     
-    func favoriteIconClicked()
+    func favoriteButtonClicked()
 }
 
-final class TitleTableViewCell: MovieDetailTableViewCell {
+final class TitleTableViewCell: UITableViewCell {
 
-    var delegate: TitleTableViewCellDelegate?
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
     
-    var favoriteIcon: UIButton!
+    var delegate: TitleTableViewCellDelegate?
     
     var favorite: Bool?
     
-    public override func configure(detail: String) {
-        super.configure(detail: detail)
+    func configure(info: String, favorite: Bool){
         
-        self.favoriteIcon = UIButton(frame: CGRect(x: self.bounds.width * 0.4, y: self.bounds.height * 0.5, width: self.bounds.height, height: self.bounds.width))
+        infoLabel.text = info
+        self.favorite = favorite
         
-        guard let favorite = self.favorite else{ return }
-        
-        let imageIcon = favorite ? UIImage(named: "favorite_full_icon") : UIImage(named: "favorite_empty_icon")
-        
-        self.favoriteIcon.setImage(imageIcon, for: .normal)
-        self.favoriteIcon.addTarget(self, action: #selector(self.favoriteIconClicked), for: .touchUpInside)
-        self.addSubview(favoriteIcon)
+        let icon = favorite ? UIImage(named: "favorite_full_icon") : UIImage(named: "favorite_empty_icon")
+        favoriteButton.setImage(icon, for: .normal)
     }
     
-    @objc func favoriteIconClicked(){
-    
-        self.delegate?.favoriteIconClicked()
+    @IBAction func favoriteButtonClicked(_ sender: Any) {
+        
+        guard let favorite = self.favorite else{
+            return
+        }
+        let icon = !favorite ? UIImage(named: "favorite_full_icon") : UIImage(named: "favorite_empty_icon")
+        favoriteButton.setImage(icon, for: .normal)
+        self.delegate?.favoriteButtonClicked()
     }
+    
 }

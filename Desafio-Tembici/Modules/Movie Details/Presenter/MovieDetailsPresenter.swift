@@ -13,6 +13,7 @@ protocol MovieDetailsPresenterInput{
     var output: MovieDetailsPresenterOutput?{ get set}
     
     func viewDidLoad()
+    func favoriteButtonClicked()
 }
 
 protocol MovieDetailsPresenterOutput: class{
@@ -35,6 +36,11 @@ final class MovieDetailsPresenter: MovieDetailsPresenterInput{
     func viewDidLoad() {
         
         self.interactor?.fetchMovieDetails()
+    }
+    
+    func favoriteButtonClicked() {
+        
+        self.interactor?.setFavorite()
     }
 }
 

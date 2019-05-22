@@ -43,8 +43,10 @@ extension MovieDetailsViewController{
     private func registerCells(){
         
             let generalNib = UINib(nibName: MovieDetailTableViewCell.defaultReuseIdentifier, bundle: nil)
+            let titleNib = UINib(nibName: TitleTableViewCell.defaultReuseIdentifier, bundle: nil)
         
             detailsTableView.register(generalNib, forCellReuseIdentifier: MovieDetailTableViewCell.defaultReuseIdentifier)
+        detailsTableView.register(titleNib, forCellReuseIdentifier: TitleTableViewCell.defaultReuseIdentifier)
     }
 }
 
@@ -60,24 +62,41 @@ extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell: MovieDetailTableViewCell
+        var cell: UITableViewCell
         
         if indexPath.row == 0{
             
-            cell = TitleTableViewCell()
-            
-            if let newCell = cell as? TitleTableViewCell{
-                
-                newCell.delegate = self
-            }
+            cell = createTitleCell(indexPath: indexPath)
         }
         else{
-            
-            cell = self.detailsTableView.dequeueReusableCell(withIdentifier: MovieDetailTableViewCell.defaultReuseIdentifier, for: indexPath as IndexPath) as! MovieDetailTableViewCell
+            cell = createSimpleCell(indexPath: indexPath)
         }
         
-        guard let info = infoArray[indexPath.row] else{ return UITableViewCell()}
-       
+        return cell
+    }
+    
+    private func createTitleCell(indexPath: IndexPath) -> UITableViewCell{
+        
+        let cell = self.detailsTableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.defaultReuseIdentifier, for: indexPath as IndexPath) as! TitleTableViewCell
+        
+        guard let title = display?.title,
+              let favorite = display?.favorite else{
+            return UITableViewCell()
+        }
+        
+        cell.configure(info: title, favorite: favorite)
+        cell.delegate = self
+        
+        return cell
+    }
+    
+    private func createSimpleCell(indexPath: IndexPath) -> UITableViewCell{
+        
+        let cell = self.detailsTableView.dequeueReusableCell(withIdentifier: MovieDetailTableViewCell.defaultReuseIdentifier, for: indexPath as IndexPath) as! MovieDetailTableViewCell
+        
+        guard let info = infoArray[indexPath.row] else{
+            return UITableViewCell()
+        }
         cell.configure(detail: info)
         
         return cell
@@ -93,13 +112,15 @@ extension MovieDetailsViewController: MovieDetailsPresenterOutput{
         self.display = display
         print("info array ",self.infoArray.count)
         self.title = self.display?.title
+        self.movieImageView.image = self.display?.posterImage
         self.detailsTableView.reloadData()
     }
 }
 
 extension MovieDetailsViewController: TitleTableViewCellDelegate{
     
-    func favoriteIconClicked() {
+    func favoriteButtonClicked() {
         
+        self.presenter?.favoriteButtonClicked()
     }
 }

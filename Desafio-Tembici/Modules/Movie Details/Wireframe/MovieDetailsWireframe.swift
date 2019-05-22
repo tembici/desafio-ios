@@ -14,7 +14,7 @@ final class MovieDetailsWireframe{
     var navigationController: UINavigationController?
     
     func present(navigationController: UINavigationController, movie: MovieEntity){
-        
+        print(movie.sinopse)
         self.navigationController = navigationController
         self.navigationController?.pushViewController(MovieDetailsViewControllerBuilder.make(wireframe: self, movie: movie), animated: true
         )

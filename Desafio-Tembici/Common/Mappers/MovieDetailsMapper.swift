@@ -27,7 +27,7 @@ final class MovieDetailsMapper{
             data = NSData(contentsOf: url) as Data?
         }catch{}
         
-        
+        print(sinopse)
         return MovieDetailsItem(title: title, posterImage: data!, sinopse: sinopse, releaseYear: String(releaseYear), favorite: details.favorite)
     }
     

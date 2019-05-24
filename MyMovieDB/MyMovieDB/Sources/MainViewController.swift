@@ -15,6 +15,9 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    private func configureUI() {
+        self.title = NSLocalizedString("MOVIES_TITLE", comment: "")
+    }
 
 }
 

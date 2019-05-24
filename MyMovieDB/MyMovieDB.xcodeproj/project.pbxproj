@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		78B0DB9722988618009DAB6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0DB9622988618009DAB6A /* AppDelegate.swift */; };
-		78B0DB9922988618009DAB6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0DB9822988618009DAB6A /* ViewController.swift */; };
+		78B0DB9922988618009DAB6A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0DB9822988618009DAB6A /* MainViewController.swift */; };
 		78B0DB9C22988618009DAB6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B0DB9A22988618009DAB6A /* Main.storyboard */; };
 		78B0DB9F22988618009DAB6A /* MyMovieDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78B0DB9D22988618009DAB6A /* MyMovieDB.xcdatamodeld */; };
 		78B0DBA122988619009DAB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78B0DBA022988619009DAB6A /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		78B0DB9322988618009DAB6A /* MyMovieDB.dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovieDB.dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B0DB9622988618009DAB6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		78B0DB9822988618009DAB6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		78B0DB9822988618009DAB6A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		78B0DB9B22988618009DAB6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78B0DB9E22988618009DAB6A /* MyMovieDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyMovieDB.xcdatamodel; sourceTree = "<group>"; };
 		78B0DBA022988619009DAB6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		78B0DBAB2298888D009DAB6A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				78B0DB9822988618009DAB6A /* ViewController.swift */,
+				78B0DB9822988618009DAB6A /* MainViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78B0DB9922988618009DAB6A /* ViewController.swift in Sources */,
+				78B0DB9922988618009DAB6A /* MainViewController.swift in Sources */,
 				78B0DB9F22988618009DAB6A /* MyMovieDB.xcdatamodeld in Sources */,
 				78B0DB9722988618009DAB6A /* AppDelegate.swift in Sources */,
 			);

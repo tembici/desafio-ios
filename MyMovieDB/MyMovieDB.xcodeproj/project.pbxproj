@@ -56,15 +56,39 @@
 		78B0DB9522988618009DAB6A /* MyMovieDB */ = {
 			isa = PBXGroup;
 			children = (
-				78B0DB9622988618009DAB6A /* AppDelegate.swift */,
+				78B0DBAE229888A3009DAB6A /* Other Sources */,
+				78B0DBAC22988896009DAB6A /* Resources */,
+				78B0DBAB2298888D009DAB6A /* Sources */,
+			);
+			path = MyMovieDB;
+			sourceTree = "<group>";
+		};
+		78B0DBAB2298888D009DAB6A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
 				78B0DB9822988618009DAB6A /* ViewController.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		78B0DBAC22988896009DAB6A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				78B0DB9A22988618009DAB6A /* Main.storyboard */,
 				78B0DBA022988619009DAB6A /* Assets.xcassets */,
 				78B0DBA222988619009DAB6A /* LaunchScreen.storyboard */,
-				78B0DBA522988619009DAB6A /* Info.plist */,
 				78B0DB9D22988618009DAB6A /* MyMovieDB.xcdatamodeld */,
 			);
-			path = MyMovieDB;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		78B0DBAE229888A3009DAB6A /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				78B0DB9622988618009DAB6A /* AppDelegate.swift */,
+				78B0DBA522988619009DAB6A /* Info.plist */,
+			);
+			name = "Other Sources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

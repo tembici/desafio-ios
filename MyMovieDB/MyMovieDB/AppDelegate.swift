@@ -16,7 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        Manager().requestToken(param: BasicRequest(app_key: app_key),completionHandler: { response, error in
+            if let _response = response {
+                print(_response.requestToken)
+            } else {
+                Logger().log(error.debugDescription)
+            }
+        })
+        
         return true
     }
 

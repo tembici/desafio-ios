@@ -16,6 +16,11 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
         super.viewDidLoad()
         
         configureUI()
+        requestMovies()
+    }
+    
+    private func requestMovies() {
+        // ...
     }
 
     private func configureUI() {

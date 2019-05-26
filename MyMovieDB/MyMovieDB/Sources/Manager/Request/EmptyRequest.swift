@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  EmptyRequest.swift
 //  MyMovieDB
 //
 //  Created by Chrytian Salgado Pessoal on 26/05/19.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-var app_key: String = "e1694c199ec268346e637bc040fad518"
-var scheme: String = "https"
-var baseUrl: String = "api.themoviedb.org"
+struct EmptyRequest: Encodable {
+    // ...
+}

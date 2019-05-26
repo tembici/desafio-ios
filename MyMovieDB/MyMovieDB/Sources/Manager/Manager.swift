@@ -7,13 +7,23 @@
 //
 
 import Foundation
+import Alamofire
 
 class Manager {
-    // ...
+    func requestToken(param: BasicRequest, completionHandler: @escaping (_ response: TokenResponse?, _ error: Error?)-> Void) {
+        request(endpoint: Endpoint.authToken, httpMethod: .post, urlParams: param, headerParams: EmptyRequest(), bodyParams: EmptyRequest(), response: TokenResponse()) { (decodableObj, error) in
+            if let _error = error {
+                completionHandler(nil, _error)
+            }
+            else {
+                completionHandler(decodableObj, nil)
+            }
+        }
+    }
 }
 
 extension Manager {
-    func request<T: Encodable, U: Encodable, V: Encodable, X: Decodable>(endpoint: Endpoint, urlParams: T?, headerParams: U?, bodyParams: V?, response: X, completionHandler: @escaping (_ response: X?, _ error: Error?)-> Void) {
+    fileprivate func request<T: Encodable, U: Encodable, V: Encodable, X: Decodable>(endpoint: Endpoint, httpMethod: HTTPMethod, urlParams: T?, headerParams: U?, bodyParams: V?, response: X, completionHandler: @escaping (_ response: X?, _ error: Error?)-> Void) {
         
         var urlComponents = URLComponents()
         urlComponents.scheme = scheme
@@ -35,6 +45,15 @@ extension Manager {
                     completionHandler(nil, responseData.error)
                 }
             }
+        } catch {
+            completionHandler(nil, error)
+        }
+    }
+    
+    private func parseObj<U: Decodable>(responseObj: U, data: Data, completionHandler: @escaping (_ response: U?, _ error: Error?)-> Void) {
+        do {
+            let resonseObj = try JSONDecoder().decode(U.self, from: data)
+            completionHandler(resonseObj, nil)
         } catch {
             completionHandler(nil, error)
         }

@@ -9,5 +9,5 @@
 import Foundation
 
 enum Endpoint: String {
-    case authToken = "/authentication/token/new"
+    case authToken = "/3/authentication/token/new"
 }

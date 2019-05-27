@@ -148,10 +148,17 @@
                             <searchBar contentMode="redraw" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gc-J8-U8j">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="199-Hk-ztc" id="Vix-3i-ob5"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o51-dK-9AI">
                                 <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="199-Hk-ztc" id="ApC-4G-2SC"/>
+                                    <outlet property="delegate" destination="199-Hk-ztc" id="31V-dt-52y"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -167,6 +174,10 @@
                         <viewLayoutGuide key="safeArea" id="w4x-1Y-K6S"/>
                     </view>
                     <navigationItem key="navigationItem" id="Sde-2P-4Y6"/>
+                    <connections>
+                        <outlet property="movieSearchBar" destination="0gc-J8-U8j" id="xhJ-sg-m5g"/>
+                        <outlet property="tvFavorites" destination="o51-dK-9AI" id="zlQ-xj-m45"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bWN-ND-Qto" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

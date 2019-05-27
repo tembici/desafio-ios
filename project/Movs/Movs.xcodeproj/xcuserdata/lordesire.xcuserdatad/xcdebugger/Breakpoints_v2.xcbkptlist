@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Movs/ViewControllers/MovieSearchViewController.swift"
-            timestampString = "580507117.732231"
+            timestampString = "580654437.275124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "138"
@@ -73,13 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Movs/ViewControllers/MovieDetailViewController.swift"
-            timestampString = "580507117.732318"
+            filePath = "Movs/ViewControllers/FavoritesViewController.swift"
+            timestampString = "580654437.275257"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "updateFavorites()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

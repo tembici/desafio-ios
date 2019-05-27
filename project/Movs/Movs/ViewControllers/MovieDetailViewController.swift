@@ -201,10 +201,6 @@ extension MovieDetailViewController : UITableViewDelegate {
             if (!isFavorite){
                 FavoriteMovieManager.saveFavorite(movieID: movieID)
                 tvFilter.reloadData()
-                //
-                DispatchQueue.main.async {
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "FavoriteDidChange"), object: self.movieID)
-                }
             }
         }
         

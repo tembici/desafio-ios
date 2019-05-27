@@ -143,7 +143,13 @@ class ConnectionManager
                 
                 if let d = dData {
                     if let json = (try? JSONSerialization.jsonObject(with: d, options: JSONSerialization.ReadingOptions.mutableContainers)) as? Dictionary<String, Any> {
-                        handler(json, code, nil)
+                        
+                        if let _ = json["id"] as? Int {
+                            handler(json, code, nil)
+                        }else{
+                            handler(nil, code, nil)
+                        }
+                        
                     }
                 }else{
                     handler(nil, code, nil)
@@ -154,6 +160,7 @@ class ConnectionManager
         
         currentTask!.resume()
     }
+    
     func searchMovies(page:Int, filterText:String?, filterYear:Int?, handler:@escaping (_ responseDic:Dictionary<String, Any>?, _ statusCode:Int, _ error:Error?) -> ()){
         
         if (currentTask != nil){

@@ -360,7 +360,7 @@ extension MovieSearchViewController : UISearchBarDelegate {
             refreshDataTimer?.invalidate()
         }
         //
-        if (searchText.count >= 3){
+        if (searchText.count >= 1){
             self.currentQuery = searchText
             //
             refreshDataTimer = Timer.scheduledTimer(timeInterval: 0.5, target: searchBar, selector: #selector(resignFirstResponder), userInfo: nil, repeats: false)
@@ -422,7 +422,7 @@ extension MovieSearchViewController : UICollectionViewDataSource {
         //to favorite:
         cell.imvFavorite.isUserInteractionEnabled = true
         cell.imvFavorite.tag = indexPath.row
-        var gesture:UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(actionFavoriteMovie(gesture:)))
+        let gesture:UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(actionFavoriteMovie(gesture:)))
         gesture.numberOfTapsRequired = 1
         gesture.numberOfTouchesRequired = 1
         cell.imvFavorite.addGestureRecognizer(gesture)

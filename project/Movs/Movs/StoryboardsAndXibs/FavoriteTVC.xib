@@ -11,15 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteTVCIdentifier" rowHeight="127" id="oyP-jh-enK" customClass="FavoriteTVC" customModule="Movs" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteTVCIdentifier" rowHeight="114" id="oyP-jh-enK" customClass="FavoriteTVC" customModule="Movs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oyP-jh-enK" id="nMg-3p-49h">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="126.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qmd-Ip-7j5">
-                        <rect key="frame" x="0.0" y="0.0" width="90" height="126.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="90" height="119.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="90" id="gVf-MW-Dl9"/>
                         </constraints>
@@ -44,7 +44,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gle-e4-45Q">
-                        <rect key="frame" x="100" y="48" width="265" height="68.5"/>
+                        <rect key="frame" x="100" y="48" width="265" height="61.5"/>
                         <string key="text">Two 
 lines</string>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -52,7 +52,7 @@ lines</string>
                         <nil key="highlightedColor"/>
                     </label>
                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VUL-bA-jsP">
-                        <rect key="frame" x="26.5" y="45" width="37" height="37"/>
+                        <rect key="frame" x="26.5" y="41.5" width="37" height="37"/>
                     </activityIndicatorView>
                 </subviews>
                 <constraints>
@@ -79,7 +79,7 @@ lines</string>
                 <outlet property="lblMovieTitle" destination="Zd5-Wb-hv0" id="MIg-nf-ZEI"/>
                 <outlet property="lblMovieYear" destination="UoH-lr-L5l" id="0Wa-eQ-4UZ"/>
             </connections>
-            <point key="canvasLocation" x="10.4" y="-88.605697151424295"/>
+            <point key="canvasLocation" x="10.4" y="-94.452773613193415"/>
         </tableViewCell>
     </objects>
 </document>

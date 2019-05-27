@@ -17,6 +17,9 @@ class FavoriteTVC : UITableViewCell {
     @IBOutlet var lblMovieDescription : UILabel!
     @IBOutlet var actIndicator : UIActivityIndicatorView!
     
+    //private
+    private var connectionManager : ConnectionManager = ConnectionManager.init()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -54,6 +57,30 @@ class FavoriteTVC : UITableViewCell {
         
         actIndicator.color = App.Style.color2
         actIndicator.stopAnimating()
+        
+    }
+    
+    func updatePoster(fromURL : String){
+        
+        if (connectionManager.currentTask != nil){
+            connectionManager.currentTask?.cancel()
+        }
+        
+        if let img : UIImage = App.Delegate.imageCache.object(forKey: fromURL as AnyObject) as? UIImage {
+            self.imvPoster.image = img
+        }else{
+            self.actIndicator.startAnimating()
+            //
+            connectionManager.getPoster(posterPath: fromURL) { (image, code, error) in
+                DispatchQueue.main.async {
+                    if let img = image {
+                        App.Delegate.imageCache.setObject(img, forKey: self.connectionManager.currentTask?.currentRequest?.url?.absoluteString as AnyObject)
+                        self.imvPoster.image = img
+                        self.actIndicator.stopAnimating()
+                    }
+                }
+            }
+        }
         
     }
     

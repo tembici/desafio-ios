@@ -32,7 +32,7 @@ public class FavoritesViewController: UIViewController {
     private var searchConnection : ConnectionManager = ConnectionManager.init()
     //
     private var currentYear : Int? = nil
-    private var currentGenre : Int? = nil
+    private var currentGenre : Dictionary<String, Any>? = nil
     private var currentQuery : String? = nil
     //
     private var favoritesList : Array<Dictionary<String, Any>> = Array.init()
@@ -86,9 +86,16 @@ public class FavoritesViewController: UIViewController {
     
     override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        //
-        //NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        //NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+    
+    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                
+        if (segue.identifier == "SegueToMainFilter") {
+            let vc : MainFilterViewController = segue.destination as! MainFilterViewController
+            vc.yearFilter = self.currentYear ?? 0
+            vc.genreFilter = self.currentGenre ?? Dictionary.init()
+        }
     }
     
     //MARK: - • INTERFACE/PROTOCOL METHODS
@@ -129,12 +136,6 @@ public class FavoritesViewController: UIViewController {
             if v.isKind(of: UITextField.classForCoder()) {
                 (v as! UITextField).tintColor = UIColor.white
                 (v as! UITextField).backgroundColor = App.Style.color3
-                //                (v as! UITextField).attributedPlaceholder = NSAttributedString(string: "Procurar...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-                //                //
-                //                if let iconView = (v as! UITextField).leftView as? UIImageView {
-                //                    iconView.image = iconView.image?.withRenderingMode(.alwaysTemplate)
-                //                    iconView.tintColor = UIColor.white
-                //                }
             }
         }
         
@@ -142,6 +143,7 @@ public class FavoritesViewController: UIViewController {
         tvFavorites.backgroundColor = UIColor.white
         tvFavorites.tableFooterView = UIView.init()
         tvFavorites.tag = 1
+        tvFavorites.separatorColor = UIColor.white
     }
     
     //MARK: - • PUBLIC METHODS
@@ -161,6 +163,15 @@ public class FavoritesViewController: UIViewController {
         tvFavorites.reloadData()
     }
     
+    @objc private func actionRemoveFilters(sender : Any?) {
+        
+        self.currentYear = nil
+        self.currentGenre = nil
+        //
+        self.applyFilters()
+        
+    }
+    
     //MARK: - • PRIVATE METHODS (INTERNAL USE ONLY)
     
     @objc private func actionFilterYear(notification:Notification) {
@@ -171,7 +182,7 @@ public class FavoritesViewController: UIViewController {
     }
     
     @objc private func actionFilterGenre(notification:Notification) {
-        self.currentGenre = notification.object as? Int
+        self.currentGenre = (notification.object as! Dictionary<String, Any>)
         //
         self.applyFilters()
         needRefresh = false
@@ -190,7 +201,8 @@ public class FavoritesViewController: UIViewController {
         }
         
         if (self.currentGenre != nil){
-            filteredFavoritesList = filteredFavoritesList.filter{ ($0["genre_ids"] as! Array).contains(self.currentGenre!) }
+            let genreID:Int = self.currentGenre!["id"] as! Int
+            filteredFavoritesList = filteredFavoritesList.filter{ ($0["genre_ids"] as! Array).contains(genreID) }
         }
         
         if (self.currentQuery != nil && self.currentQuery != ""){
@@ -307,6 +319,14 @@ extension FavoritesViewController : UITableViewDelegate {
     public func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "Remover"
     }
+    
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if (self.currentYear != nil || self.currentGenre != nil){
+            return 40.0
+        }else{
+            return 0.0
+        }
+    }
 }
 
 extension FavoritesViewController : UITableViewDataSource {
@@ -350,6 +370,30 @@ extension FavoritesViewController : UITableViewDataSource {
         }
         
         return cell!
+    }
+    
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        if (self.currentYear != nil || self.currentGenre != nil){
+            
+            let container : UIView = UIView.init(frame: CGRect.init(x: 0.0, y: 0.0, width: tableView.frame.size.width, height: 40.0))
+            
+            let button : UIButton = UIButton.init(frame: container.frame)
+            button.backgroundColor = App.Style.color2
+            button.setTitleColor(App.Style.color1, for: .normal)
+            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17.0)
+            button.setTitle("Remover Filtros", for: .normal)
+            button.isExclusiveTouch = true
+            button.addTarget(self, action: #selector(actionRemoveFilters(sender:)), for: .touchUpInside)
+            
+            container.addSubview(button)
+            
+            return container
+            
+        }else{
+            return nil
+        }
+        
     }
     
     public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

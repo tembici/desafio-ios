@@ -31,8 +31,9 @@ public class MovieSearchViewController: UIViewController {
     private var searchConnection : ConnectionManager = ConnectionManager.init()
     //
     private var currentPage : Int = 1
+    private var totalPages : Int = 1
     private var currentYear : Int? = nil
-    private var currentGenre : Int? = nil
+    private var currentGenre : Dictionary<String, Any>? = nil
     private var currentQuery : String? = nil
     //
     private var moviesList : Array<Dictionary<String, Any>> = Array.init()
@@ -63,6 +64,9 @@ public class MovieSearchViewController: UIViewController {
         let nib : UINib = UINib.init(nibName: "MovieCVC", bundle: nil)
         movieCollection.register(nib, forCellWithReuseIdentifier: "MovieCVCIdentifier")
         
+        let headerNib : UINib = UINib.init(nibName: "FilterButtonCVH", bundle: nil)
+        movieCollection.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "FilterButtonCVHIdentifier")
+        
         NotificationCenter.default.addObserver(self, selector: #selector(actionFilterYear(notification:)), name: NSNotification.Name(rawValue: "FilterYearDidChange"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(actionFilterGenre(notification:)), name: NSNotification.Name(rawValue: "FilterGenreDidChange"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(actionFavoriteChange(notification:)), name: NSNotification.Name(rawValue: "FavoriteDidChange"), object: nil)
@@ -86,9 +90,7 @@ public class MovieSearchViewController: UIViewController {
     
     override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        //
-        //NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        //NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -96,6 +98,12 @@ public class MovieSearchViewController: UIViewController {
         if (segue.identifier == "SegueToMovieDetail") {
             let vc : MovieDetailViewController = segue.destination as! MovieDetailViewController
             vc.movieID = sender as! Int
+        }
+        
+        if (segue.identifier == "SegueToMainFilter") {
+            let vc : MainFilterViewController = segue.destination as! MainFilterViewController
+            vc.yearFilter = self.currentYear ?? 0
+            vc.genreFilter = self.currentGenre ?? Dictionary.init()
         }
     }
     
@@ -139,12 +147,6 @@ public class MovieSearchViewController: UIViewController {
             if v.isKind(of: UITextField.classForCoder()) {
                 (v as! UITextField).tintColor = UIColor.white
                 (v as! UITextField).backgroundColor = App.Style.color3
-//                (v as! UITextField).attributedPlaceholder = NSAttributedString(string: "Procurar...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-//                //
-//                if let iconView = (v as! UITextField).leftView as? UIImageView {
-//                    iconView.image = iconView.image?.withRenderingMode(.alwaysTemplate)
-//                    iconView.tintColor = UIColor.white
-//                }
             }
         }
         
@@ -171,6 +173,15 @@ public class MovieSearchViewController: UIViewController {
         movieCollection.reloadData()
     }
     
+    @objc private func actionRemoveFilters(sender : Any?) {
+        
+        self.currentYear = nil
+        self.currentGenre = nil
+        //
+        self.applyFilters()
+        
+    }
+    
     //MARK: - • PRIVATE METHODS (INTERNAL USE ONLY)
     
     @objc private func actionFilterYear(notification:Notification) {
@@ -181,7 +192,7 @@ public class MovieSearchViewController: UIViewController {
     }
     
     @objc private func actionFilterGenre(notification:Notification) {
-        self.currentGenre = notification.object as? Int
+        self.currentGenre = (notification.object as! Dictionary<String, Any>)
         //
         self.applyFilters()
         needRefresh = false
@@ -200,10 +211,15 @@ public class MovieSearchViewController: UIViewController {
         }
         
         if (self.currentGenre != nil){
-            filteredMoviesList = filteredMoviesList.filter{ ($0["genre_ids"] as! Array).contains(self.currentGenre!) }
+            let genreID:Int = self.currentGenre!["id"] as! Int
+            filteredMoviesList = filteredMoviesList.filter{ ($0["genre_ids"] as! Array).contains(genreID) }
         }
         
         movieCollection.reloadData()
+        
+        if (currentPage == 1){
+            movieCollection.scrollRectToVisible(CGRect.init(x: 0.0, y: 0.0, width: 1.0, height: 1.0), animated: true)
+        }
         
     }
     
@@ -215,7 +231,7 @@ public class MovieSearchViewController: UIViewController {
             self.searchFilteredMovies()
         }
         
-        movieCollection.reloadData()
+        //movieCollection.reloadData()
         needRefresh = false
     }
     
@@ -245,6 +261,7 @@ public class MovieSearchViewController: UIViewController {
                     }else{
                         
                         self.currentPage = completeResult["page"] as! Int
+                        self.totalPages = completeResult["total_pages"] as! Int
                         
                         if let movies:Array<Dictionary<String, Any>> = completeResult["results"] as? Array<Dictionary<String, Any>> {
                             if (movies.count == 0){
@@ -257,7 +274,9 @@ public class MovieSearchViewController: UIViewController {
                                 
                             }else{
                                 
-                                self.moviesList = Array.init()
+                                if (self.currentPage == 1){
+                                    self.moviesList = Array.init()
+                                }
                                 self.moviesList.append(contentsOf: movies)
                                 //
                                 DispatchQueue.main.async {
@@ -300,6 +319,7 @@ public class MovieSearchViewController: UIViewController {
                     }else{
                         
                         self.currentPage = completeResult["page"] as! Int
+                        self.totalPages = completeResult["total_pages"] as! Int
                         
                         if let movies:Array<Dictionary<String, Any>> = completeResult["results"] as? Array<Dictionary<String, Any>> {
                             if (movies.count == 0){
@@ -312,7 +332,9 @@ public class MovieSearchViewController: UIViewController {
                                 
                             }else{
                                 
-                                self.moviesList = Array.init()
+                                if (self.currentPage == 1){
+                                    self.moviesList = Array.init()
+                                }
                                 self.moviesList.append(contentsOf: movies)
                                 //
                                 DispatchQueue.main.async {
@@ -346,6 +368,8 @@ extension MovieSearchViewController : UISearchBarDelegate {
         //
         if (searchBar.text == ""){
             self.currentQuery = nil
+            self.currentPage = 1
+            self.totalPages = 1
         }else{
             self.currentQuery = searchBar.text
         }
@@ -361,6 +385,10 @@ extension MovieSearchViewController : UISearchBarDelegate {
         }
         //
         if (searchText.count >= 1){
+            
+            self.currentPage = 1
+            self.totalPages = 1
+            //
             self.currentQuery = searchText
             //
             refreshDataTimer = Timer.scheduledTimer(timeInterval: 0.5, target: searchBar, selector: #selector(resignFirstResponder), userInfo: nil, repeats: false)
@@ -390,6 +418,19 @@ extension MovieSearchViewController : UICollectionViewDelegate {
         let movie = filteredMoviesList[indexPath.row]
         let movieID : Int = movie["id"] as! Int
         self.performSegue(withIdentifier: "SegueToMovieDetail", sender: movieID)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+        if (indexPath.row == filteredMoviesList.count - 1 && currentPage < totalPages) {
+
+            if (searchConnection.currentTask?.state != .running){
+                currentPage += 1
+                self.searchMovies()
+            }
+
+        }
+
     }
     
 }
@@ -434,6 +475,23 @@ extension MovieSearchViewController : UICollectionViewDataSource {
         return 1
     }
     
+    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if kind == UICollectionView.elementKindSectionHeader {
+            
+            let header : FilterButtonCVH = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FilterButtonCVHIdentifier", for: indexPath) as! FilterButtonCVH
+            header.setupLayout(target: self, action: #selector(actionRemoveFilters(sender:)))
+            //
+            let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+            layout?.sectionHeadersPinToVisibleBounds = true
+            //
+            return header
+
+        }
+        
+        return UICollectionReusableView()
+    }
+    
 }
 
 extension MovieSearchViewController : UICollectionViewDelegateFlowLayout {
@@ -458,7 +516,12 @@ extension MovieSearchViewController : UICollectionViewDelegateFlowLayout {
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize.zero
+        
+        if (self.currentYear != nil || self.currentGenre != nil){
+            return CGSize.init(width: collectionView.frame.size.width, height: 40.0)
+        }else{
+            return CGSize.zero
+        }
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {

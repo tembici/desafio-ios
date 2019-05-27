@@ -231,7 +231,7 @@ extension ValueFilterViewController : UITableViewDataSource {
         if (self.filterType == .date) {
             currentFilterValue = String.init( item["value"] as! Int )
         }else{
-            currentFilterValue = String.init( item["id"] as! Int )
+            currentFilterValue = item["name"] as! String
         }
         cell?.lblFilterValue.text = currentFilterValue
         
@@ -241,7 +241,7 @@ extension ValueFilterViewController : UITableViewDataSource {
             if (self.filterType == .date) {
                 selectedFilterValue = String.init( currentFilter["value"] as! Int )
             }else{
-                selectedFilterValue = String.init( currentFilter["id"] as! Int )
+                selectedFilterValue = currentFilter["name"] as! String
             }
             //
             if (currentFilterValue == selectedFilterValue){

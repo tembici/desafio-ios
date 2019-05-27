@@ -15,6 +15,8 @@
 		E52154812298363F00940C1C /* FilterValueTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52154802298363F00940C1C /* FilterValueTVC.swift */; };
 		E52154832298393B00940C1C /* FavoriteTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E52154822298393B00940C1C /* FavoriteTVC.xib */; };
 		E5215485229845F200940C1C /* FavoriteTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5215484229845F200940C1C /* FavoriteTVC.swift */; };
+		E56B3F7D229C1EC100E281A2 /* FilterButtonCVH.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56B3F7C229C1EC100E281A2 /* FilterButtonCVH.xib */; };
+		E56B3F7F229C1F6800E281A2 /* FilterButtonCVH.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56B3F7E229C1F6800E281A2 /* FilterButtonCVH.swift */; };
 		E5875DD1229714D300A31603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5875DD0229714D300A31603 /* AppDelegate.swift */; };
 		E5875DD6229714D300A31603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5875DD4229714D300A31603 /* Main.storyboard */; };
 		E5875DDB229714D500A31603 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5875DD9229714D500A31603 /* LaunchScreen.storyboard */; };
@@ -64,6 +66,8 @@
 		E52154802298363F00940C1C /* FilterValueTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterValueTVC.swift; sourceTree = "<group>"; };
 		E52154822298393B00940C1C /* FavoriteTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteTVC.xib; sourceTree = "<group>"; };
 		E5215484229845F200940C1C /* FavoriteTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTVC.swift; sourceTree = "<group>"; };
+		E56B3F7C229C1EC100E281A2 /* FilterButtonCVH.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterButtonCVH.xib; sourceTree = "<group>"; };
+		E56B3F7E229C1F6800E281A2 /* FilterButtonCVH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonCVH.swift; sourceTree = "<group>"; };
 		E5875DCD229714D300A31603 /* Movs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5875DD0229714D300A31603 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5875DD5229714D300A31603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				E521547A22982A3700940C1C /* FilterItemTVC.xib */,
 				E521547E2298347100940C1C /* FilterValueTVC.xib */,
 				E52154822298393B00940C1C /* FavoriteTVC.xib */,
+				E56B3F7C229C1EC100E281A2 /* FilterButtonCVH.xib */,
 			);
 			path = StoryboardsAndXibs;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				E5215484229845F200940C1C /* FavoriteTVC.swift */,
 				E5C24BAF2299BDA0001C266C /* MovieItemTVC.swift */,
 				E5C24BB12299BED6001C266C /* MovieLargeItemTVC.swift */,
+				E56B3F7E229C1F6800E281A2 /* FilterButtonCVH.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -401,6 +407,7 @@
 			files = (
 				E521547B22982A3700940C1C /* FilterItemTVC.xib in Resources */,
 				E521547F2298347100940C1C /* FilterValueTVC.xib in Resources */,
+				E56B3F7D229C1EC100E281A2 /* FilterButtonCVH.xib in Resources */,
 				E5875DDB229714D500A31603 /* LaunchScreen.storyboard in Resources */,
 				E52154772298117D00940C1C /* MovieCVC.xib in Resources */,
 				E5875E022297155800A31603 /* app_splash.png in Resources */,
@@ -438,6 +445,7 @@
 				E5875E1722971EFE00A31603 /* LayoutStyleManager.swift in Sources */,
 				E5875E1F2297329F00A31603 /* ValueFilterViewController.swift in Sources */,
 				E52154812298363F00940C1C /* FilterValueTVC.swift in Sources */,
+				E56B3F7F229C1F6800E281A2 /* FilterButtonCVH.swift in Sources */,
 				E5875DD1229714D300A31603 /* AppDelegate.swift in Sources */,
 				E5875E1422971DEE00A31603 /* ConstantsManager.swift in Sources */,
 				E5C24BB52299C7C4001C266C /* FavoriteMovieManager.swift in Sources */,

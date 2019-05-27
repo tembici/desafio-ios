@@ -169,7 +169,7 @@ class ConnectionManager
         
         //let postData = NSData(data: "{}".data(using: String.Encoding.utf8, allowLossyConversion: false) ?? <#default value#>
         
-        var urlSTR : String = "https://api.themoviedb.org/3/search/movie?api_key=<APIKEY>&language=pt-BR&page=<PAGE>&include_adult=false&query=<QUERY>&year=<YEAR>"
+        var urlSTR : String = "https://api.themoviedb.org/3/search/movie?api_key=<APIKEY>&language=pt-BR&page=<PAGE>&include_adult=false&query=<QUERY>&year="
         //
         urlSTR = urlSTR.replacingOccurrences(of: "<APIKEY>", with: APIKEY)
         //
@@ -181,11 +181,11 @@ class ConnectionManager
             urlSTR = urlSTR.replacingOccurrences(of: "<QUERY>", with: "''")
         }
         //
-        if (filterYear != nil) {
-            urlSTR = urlSTR.replacingOccurrences(of: "<YEAR>", with: String.init(filterYear!))
-        }else{
-            urlSTR = urlSTR.replacingOccurrences(of: "<YEAR>", with: "")
-        }
+//        if (filterYear != nil) {
+//            urlSTR = urlSTR.replacingOccurrences(of: "<YEAR>", with: String.init(filterYear!))
+//        }else{
+//            urlSTR = urlSTR.replacingOccurrences(of: "<YEAR>", with: "")
+//        }
         
         let url : URL? = URL.init(string: urlSTR)
         

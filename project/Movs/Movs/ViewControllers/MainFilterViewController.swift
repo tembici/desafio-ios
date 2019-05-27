@@ -93,7 +93,7 @@ public class MainFilterViewController: UIViewController {
         
         if (segue.identifier == "SegueToGenreFilter") {
             vc.filterType = .genre
-            var dicParam:Dictionary<String, Any> = self.genreFilter.keys.count != 0 ? self.genreFilter : Dictionary.init()
+            let dicParam:Dictionary<String, Any> = self.genreFilter.keys.count != 0 ? self.genreFilter : Dictionary.init()
             vc.currentFilter = dicParam
             //
             return
@@ -154,7 +154,7 @@ public class MainFilterViewController: UIViewController {
         
         if (genreFilter.keys.count != 0){
             DispatchQueue.main.async {
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "FilterGenreDidChange"), object: (self.genreFilter["id"] as! Int))
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "FilterGenreDidChange"), object: self.genreFilter)
             }
         }
         
@@ -170,7 +170,7 @@ public class MainFilterViewController: UIViewController {
     }
     
     @objc private func actionFilterGenre(notification:Notification) {
-        self.genreFilter = notification.object as! Dictionary<String, Any?>
+        self.genreFilter = notification.object as! Dictionary<String, Any>
         tvFilter.reloadData()
     }
     

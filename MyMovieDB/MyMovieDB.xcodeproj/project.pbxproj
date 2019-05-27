@@ -17,6 +17,7 @@
 		3C20CC80229B22DD00F46842 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C20CC7F229B22DD00F46842 /* TokenResponse.swift */; };
 		3C20CC82229B25A800F46842 /* BasicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C20CC81229B25A800F46842 /* BasicRequest.swift */; };
 		78488B6422989105004A6B63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78488B6322989105004A6B63 /* Localizable.strings */; };
+		789A64CB229C5B8200B0CD22 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 789A64CA229C5B8200B0CD22 /* Favorites.storyboard */; };
 		78B0DB9722988618009DAB6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0DB9622988618009DAB6A /* AppDelegate.swift */; };
 		78B0DB9922988618009DAB6A /* MoviesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B0DB9822988618009DAB6A /* MoviesCollectionViewController.swift */; };
 		78B0DB9C22988618009DAB6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B0DB9A22988618009DAB6A /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		4F3DD39467E7C877F4B3CDD1 /* Pods_MyMovieDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMovieDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78488B5F2298908B004A6B63 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		78488B6322989105004A6B63 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		789A64CA229C5B8200B0CD22 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		78B0DB9322988618009DAB6A /* MyMovieDB.dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovieDB.dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B0DB9622988618009DAB6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78B0DB9822988618009DAB6A /* MoviesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				78B0DBA022988619009DAB6A /* Assets.xcassets */,
 				78B0DBA222988619009DAB6A /* LaunchScreen.storyboard */,
 				78B0DB9D22988618009DAB6A /* MyMovieDB.xcdatamodeld */,
+				789A64CA229C5B8200B0CD22 /* Favorites.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				78488B6422989105004A6B63 /* Localizable.strings in Resources */,
 				78B0DBA122988619009DAB6A /* Assets.xcassets in Resources */,
 				78B0DB9C22988618009DAB6A /* Main.storyboard in Resources */,
+				789A64CB229C5B8200B0CD22 /* Favorites.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

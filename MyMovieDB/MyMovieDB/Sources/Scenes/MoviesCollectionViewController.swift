@@ -39,10 +39,12 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
         print("pass")
     }
     
-    private func navigateToDetailController(using: MovieResult) {
+    private func navigateToDetailController(using movie: MovieResult) {
         let storyboard = UIStoryboard(name: "MovieDetail", bundle: Bundle.main)
-        guard let controller = storyboard.instantiateInitialViewController() as? MovieDetailController else { return }
-        show(controller, sender: nil)
+        guard let movieDetailController = storyboard.instantiateInitialViewController() as? MovieDetailController else { return }
+        movieDetailController.movie = movie
+        
+        show(movieDetailController, sender: nil)
     }
 }
 

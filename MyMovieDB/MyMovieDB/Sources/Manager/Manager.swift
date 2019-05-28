@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 
 class Manager {
-    func requestToken(param: BasicRequest, completionHandler: @escaping (_ response: TokenResponse?, _ error: Error?)-> Void) {
-        request(endpoint: Endpoint.authToken, httpMethod: .post, urlParams: param, headerParams: EmptyRequest(), bodyParams: EmptyRequest(), response: TokenResponse()) { (decodableObj, error) in
+    func requestMovies(completionHandler: @escaping (_ response: MoviesReponse?, _ error: Error?)-> Void) {
+        request(endpoint: Endpoint.movieWeek, httpMethod: .get, urlParams: BasicRequest(), headerParams: EmptyRequest(), bodyParams: EmptyRequest(), response: MoviesReponse()){ (decodableObj, error) in
             if let _error = error {
                 completionHandler(nil, _error)
             }

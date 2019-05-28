@@ -11,6 +11,7 @@ import UIKit
 class MoviesCollectionViewController: UICollectionViewController, MovieCollectionViewDelegate {
     
     private let cellIdentifier = "moveisCellIdentifier"
+    private var movies: [MovieResult] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,14 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
     }
     
     private func requestMovies() {
-        // ...
+        Manager().requestMovies { (response, error) in
+            if let results = response?.results {
+                self.movies = results
+            } else if let _error = error {
+                print(_error.localizedDescription)
+            }
+            self.collectionView.reloadData()
+        }
     }
 
     private func configureUI() {
@@ -38,13 +46,13 @@ extension MoviesCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return movies.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! MoviesCollectionViewCell
         collectionViewCell.cellDelegate = self
-        collectionViewCell.displayUI()
+        collectionViewCell.displayUI(self.movies[indexPath.row])
         
         return collectionViewCell
     }

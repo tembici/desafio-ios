@@ -9,5 +9,5 @@
 import Foundation
 
 struct BasicRequest: Encodable {
-    var app_key: String?
+    var api_key: String? = "e1694c199ec268346e637bc040fad518"
 }

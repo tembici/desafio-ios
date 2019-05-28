@@ -24,11 +24,18 @@ class MoviesCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func displayUI() {
+    func displayUI(_ movie: MovieResult) {
         self.backgroundColor = .black
 //        btnFavorite.isSelected = true
-//        lblMovieName.text = ""
-//        movieBannerIv.image =
+        lblMovieName.text = movie.title
+        movieBannerIv.image = UIImage(contentsOfFile: "\(getUrl())\(movie.poster_path)")
+    }
+    
+    private func getUrl() -> String {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = scheme
+        urlComponents.host = baseUrl
+        return urlComponents.string ?? ""
     }
     
     @IBAction func actionFavorite(_ sender: Any) {

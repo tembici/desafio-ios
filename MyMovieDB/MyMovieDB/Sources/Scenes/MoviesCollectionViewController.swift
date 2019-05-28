@@ -38,11 +38,17 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
     func handlerActionFavorite() {
         print("pass")
     }
+    
+    private func navigateToDetailController(using: MovieResult) {
+        let storyboard = UIStoryboard(name: "MovieDetail", bundle: Bundle.main)
+        guard let controller = storyboard.instantiateInitialViewController() as? MovieDetailController else { return }
+        show(controller, sender: nil)
+    }
 }
 
 extension MoviesCollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return movies.count > 0 ? 1 : 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,6 +61,10 @@ extension MoviesCollectionViewController {
         collectionViewCell.displayUI(self.movies[indexPath.row])
         
         return collectionViewCell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigateToDetailController(using: self.movies[indexPath.row])
     }
 }
 

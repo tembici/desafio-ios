@@ -26,6 +26,8 @@
 		78B0DB9F22988618009DAB6A /* MyMovieDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78B0DB9D22988618009DAB6A /* MyMovieDB.xcdatamodeld */; };
 		78B0DBA122988619009DAB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78B0DBA022988619009DAB6A /* Assets.xcassets */; };
 		78B0DBA422988619009DAB6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B0DBA222988619009DAB6A /* LaunchScreen.storyboard */; };
+		78F25C3C229D6CF5005513C1 /* MovieDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F25C3B229D6CF5005513C1 /* MovieDetail.storyboard */; };
+		78F25C3F229D6D39005513C1 /* MovieDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F25C3E229D6D39005513C1 /* MovieDetailController.swift */; };
 		91BF5C5B023918870CDB8D3C /* Pods_MyMovieDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3DD39467E7C877F4B3CDD1 /* Pods_MyMovieDB.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		78B0DBA022988619009DAB6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78B0DBA322988619009DAB6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78B0DBA522988619009DAB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78F25C3B229D6CF5005513C1 /* MovieDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetail.storyboard; sourceTree = "<group>"; };
+		78F25C3E229D6D39005513C1 /* MovieDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailController.swift; sourceTree = "<group>"; };
 		8318AD68112E566D0900669C /* Pods-MyMovieDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMovieDB.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMovieDB/Pods-MyMovieDB.release.xcconfig"; sourceTree = "<group>"; };
 		FBA8D8A575E3C547762EB282 /* Pods-MyMovieDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMovieDB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMovieDB/Pods-MyMovieDB.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +84,7 @@
 		3C20CC6B229B1D6100F46842 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				78F25C3D229D6D1D005513C1 /* MovieDetail */,
 				3C20CC6C229B1D7000F46842 /* Movies */,
 			);
 			path = Scenes;
@@ -196,6 +201,7 @@
 				78B0DBA222988619009DAB6A /* LaunchScreen.storyboard */,
 				78B0DB9D22988618009DAB6A /* MyMovieDB.xcdatamodeld */,
 				789A64CA229C5B8200B0CD22 /* Favorites.storyboard */,
+				78F25C3B229D6CF5005513C1 /* MovieDetail.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -208,6 +214,14 @@
 				78B0DBA522988619009DAB6A /* Info.plist */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		78F25C3D229D6D1D005513C1 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				78F25C3E229D6D39005513C1 /* MovieDetailController.swift */,
+			);
+			name = MovieDetail;
 			sourceTree = "<group>";
 		};
 		ECF80ACCC1C813B629EFAF0A /* Pods */ = {
@@ -280,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F25C3C229D6CF5005513C1 /* MovieDetail.storyboard in Resources */,
 				78B0DBA422988619009DAB6A /* LaunchScreen.storyboard in Resources */,
 				78488B6422989105004A6B63 /* Localizable.strings in Resources */,
 				78B0DBA122988619009DAB6A /* Assets.xcassets in Resources */,
@@ -348,6 +363,7 @@
 				3C96B168229CC57A001B3553 /* MoviesResponse.swift in Sources */,
 				78B0DB9F22988618009DAB6A /* MyMovieDB.xcdatamodeld in Sources */,
 				78B0DB9722988618009DAB6A /* AppDelegate.swift in Sources */,
+				78F25C3F229D6D39005513C1 /* MovieDetailController.swift in Sources */,
 				3C20CC7C229B21D500F46842 /* Logger.swift in Sources */,
 				3C20CC80229B22DD00F46842 /* TokenResponse.swift in Sources */,
 				3C20CC79229B1FBC00F46842 /* CodableExtensions.swift in Sources */,

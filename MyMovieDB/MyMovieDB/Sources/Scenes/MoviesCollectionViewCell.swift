@@ -30,11 +30,7 @@ class MoviesCollectionViewCell: UICollectionViewCell {
 //        btnFavorite.isSelected = true
         lblMovieName.text = movie.title
         
-//        if let _posterPath = movie.posterPath {
-//            movieBannerIv.image = UIImage(contentsOfFile: "\(getUrl())\(_posterPath)")
-//        } else {
-            movieBannerIv.image = UIImage(named: "banner_default")
-//        }
+        movieBannerIv.image = getPosterImage(posterPath: movie.posterPath)
     }
     
     private func getUrl() -> String {

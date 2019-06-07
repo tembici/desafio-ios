@@ -46,7 +46,7 @@ class MovieDetailContentView: UIView {
         lblMovieYear.text = stringDate
         lblMovieGender.text = "Some".uppercased()
         lblMovieDescription.text = movie?.overview
-        ivMovieBanner.image = /* UIImage(contentsOfFile: "") */ UIImage(named: "banner_default")
+        ivMovieBanner.image = getPosterImage(posterPath: movie?.posterPath)
     }
     
     @IBAction func actionFavorite(sender: Any) {

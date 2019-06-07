@@ -11,3 +11,5 @@ import Foundation
 var app_key: String = "e1694c199ec268346e637bc040fad518"
 var scheme: String = "https"
 var baseUrl: String = "api.themoviedb.org"
+
+let imageBaseUrl = "https://image.tmdb.org/t/p/w185"

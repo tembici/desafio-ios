@@ -8,3 +8,5 @@
 
 "MOVIES_TITLE" = "Movies";
 "MOVIE_DETAIL_TITLE" = "Movies";
+"TAB_BAR_MOVIES" = "Movies";
+"TAB_BAR_FAVORITES" = "Favorites";

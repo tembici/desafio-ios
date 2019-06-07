@@ -7,5 +7,6 @@ target 'MyMovieDB' do
 
   # Pods for MyMovieDB
   pod 'Alamofire', '~> 4.7'
+  pod 'IBLocalizable'
 
 end

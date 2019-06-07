@@ -75,11 +75,11 @@
                             <size key="itemSize" width="191" height="267"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                            <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="moveisCellIdentifier" id="RhD-1x-Yk1" customClass="MoviesCollectionViewCell" customModule="MyMovieDB" customModuleProvider="target">
-                                <rect key="frame" x="111.5" y="0.0" width="191" height="267"/>
+                                <rect key="frame" x="111.5" y="16" width="191" height="267"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="191" height="267"/>

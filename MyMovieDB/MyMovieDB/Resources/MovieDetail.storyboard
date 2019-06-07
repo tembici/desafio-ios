@@ -22,13 +22,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9w-Q7-XVL" customClass="MovieDetailContentView" customModule="MyMovieDB" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="519"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="628"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="al8-79-NKZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="358.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="382" placeholderIntrinsicHeight="326.5" translatesAutoresizingMaskIntoConstraints="NO" id="heC-5H-5EY">
-                                                        <rect key="frame" x="16" y="16" width="382" height="326.5"/>
+                                                        <rect key="frame" x="16" y="16" width="382" height="382"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="heC-5H-5EY" secondAttribute="height" multiplier="1:1" id="h6m-Ju-R5K"/>
+                                                        </constraints>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,7 +43,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ae3-9U-FOU" userLabel="Container Movie Name">
-                                                <rect key="frame" x="0.0" y="358.5" width="414" height="53.5"/>
+                                                <rect key="frame" x="0.0" y="414" width="414" height="53.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Movie Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgn-NY-eqI">
                                                         <rect key="frame" x="16" y="16" width="318" height="20.5"/>
@@ -83,7 +86,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peY-tr-Dcz" userLabel="Container Movie Year">
-                                                <rect key="frame" x="0.0" y="412" width="414" height="53.5"/>
+                                                <rect key="frame" x="0.0" y="467.5" width="414" height="53.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Movie Year" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rc5-zM-kmQ">
                                                         <rect key="frame" x="16" y="16" width="382" height="20.5"/>
@@ -111,7 +114,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwj-jb-NjI" userLabel="Container Movie Gender">
-                                                <rect key="frame" x="0.0" y="465.5" width="414" height="53.5"/>
+                                                <rect key="frame" x="0.0" y="521" width="414" height="53.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Movie Gender" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kym-jU-w4f">
                                                         <rect key="frame" x="16" y="16" width="382" height="20.5"/>
@@ -138,18 +141,49 @@
                                                     <constraint firstItem="qNk-AM-vOJ" firstAttribute="top" secondItem="kym-jU-w4f" secondAttribute="bottom" constant="16" id="jUk-8L-DXo"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0iI-7x-0Y6" userLabel="Container Movie Description">
+                                                <rect key="frame" x="0.0" y="574.5" width="414" height="53.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Movie Description" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyE-sW-qeQ">
+                                                        <rect key="frame" x="16" y="16" width="382" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1sO-ts-kAJ" userLabel="Separator View">
+                                                        <rect key="frame" x="16" y="52.5" width="398" height="1"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="M78-98-yNe"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="1sO-ts-kAJ" firstAttribute="leading" secondItem="0iI-7x-0Y6" secondAttribute="leading" constant="16" id="3H2-DX-9Qb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GyE-sW-qeQ" secondAttribute="trailing" constant="16" id="7gG-PQ-dF8"/>
+                                                    <constraint firstItem="GyE-sW-qeQ" firstAttribute="leading" secondItem="0iI-7x-0Y6" secondAttribute="leading" constant="16" id="KAX-bp-gxu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1sO-ts-kAJ" secondAttribute="trailing" id="Qmo-pQ-j4G"/>
+                                                    <constraint firstItem="1sO-ts-kAJ" firstAttribute="top" secondItem="GyE-sW-qeQ" secondAttribute="bottom" constant="16" id="RWw-9F-iVR"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1sO-ts-kAJ" secondAttribute="bottom" id="c5k-4A-k71"/>
+                                                    <constraint firstItem="GyE-sW-qeQ" firstAttribute="top" secondItem="0iI-7x-0Y6" secondAttribute="top" constant="16" id="hk4-jA-PWf"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="uwj-jb-NjI" secondAttribute="trailing" id="1Kc-jn-kKH"/>
                                             <constraint firstItem="uwj-jb-NjI" firstAttribute="top" secondItem="peY-tr-Dcz" secondAttribute="bottom" id="66d-l5-NYP"/>
-                                            <constraint firstAttribute="bottom" secondItem="uwj-jb-NjI" secondAttribute="bottom" id="9nO-Xp-2BX"/>
+                                            <constraint firstItem="0iI-7x-0Y6" firstAttribute="leading" secondItem="I9w-Q7-XVL" secondAttribute="leading" id="JzD-8d-Ckc"/>
                                             <constraint firstItem="peY-tr-Dcz" firstAttribute="top" secondItem="Ae3-9U-FOU" secondAttribute="bottom" id="Lah-KV-pZJ"/>
+                                            <constraint firstItem="uwj-jb-NjI" firstAttribute="bottom" secondItem="0iI-7x-0Y6" secondAttribute="top" id="U3X-Uk-hUZ"/>
                                             <constraint firstItem="peY-tr-Dcz" firstAttribute="leading" secondItem="I9w-Q7-XVL" secondAttribute="leading" id="aZq-W1-nVi"/>
                                             <constraint firstAttribute="trailing" secondItem="al8-79-NKZ" secondAttribute="trailing" id="e43-HI-e2l"/>
                                             <constraint firstAttribute="trailing" secondItem="Ae3-9U-FOU" secondAttribute="trailing" id="gk0-bK-w3Z"/>
+                                            <constraint firstAttribute="bottom" secondItem="0iI-7x-0Y6" secondAttribute="bottom" id="lRF-Cc-rd4"/>
                                             <constraint firstItem="al8-79-NKZ" firstAttribute="top" secondItem="I9w-Q7-XVL" secondAttribute="top" id="mcF-VR-hrZ"/>
                                             <constraint firstItem="al8-79-NKZ" firstAttribute="leading" secondItem="I9w-Q7-XVL" secondAttribute="leading" id="moY-Bg-sqR"/>
+                                            <constraint firstAttribute="trailing" secondItem="0iI-7x-0Y6" secondAttribute="trailing" id="naS-hF-c4z"/>
                                             <constraint firstItem="uwj-jb-NjI" firstAttribute="leading" secondItem="I9w-Q7-XVL" secondAttribute="leading" id="rfA-2m-FVa"/>
                                             <constraint firstItem="Ae3-9U-FOU" firstAttribute="top" secondItem="al8-79-NKZ" secondAttribute="bottom" id="rti-na-kc1"/>
                                             <constraint firstAttribute="trailing" secondItem="peY-tr-Dcz" secondAttribute="trailing" id="scM-km-G4Q"/>
@@ -157,6 +191,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="ivMovieBanner" destination="heC-5H-5EY" id="ITB-o2-9hC"/>
+                                            <outlet property="lblMovieDescription" destination="GyE-sW-qeQ" id="UoK-J0-Qgf"/>
                                             <outlet property="lblMovieGender" destination="kym-jU-w4f" id="Ab9-Hg-T6S"/>
                                             <outlet property="lblMovieName" destination="cgn-NY-eqI" id="OQM-Jf-kRi"/>
                                             <outlet property="lblMovieYear" destination="rc5-zM-kmQ" id="vil-Ps-9eS"/>

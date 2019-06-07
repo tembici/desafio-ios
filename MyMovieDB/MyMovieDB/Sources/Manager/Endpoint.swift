@@ -10,5 +10,5 @@ import Foundation
 
 enum Endpoint: String {
     case authToken = "/3/authentication/token/new"
-    case movieWeek = "/3/trending/movie/weeks"
+    case popularMovie = "/3/movie/popular"
 }

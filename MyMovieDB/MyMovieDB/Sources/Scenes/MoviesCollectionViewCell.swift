@@ -22,13 +22,19 @@ class MoviesCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.layer.cornerRadius = 5
     }
     
     func displayUI(_ movie: MovieResult) {
         self.backgroundColor = .black
 //        btnFavorite.isSelected = true
         lblMovieName.text = movie.title
-        movieBannerIv.image = UIImage(contentsOfFile: "\(getUrl())\(movie.poster_path)")
+        
+//        if let _posterPath = movie.posterPath {
+//            movieBannerIv.image = UIImage(contentsOfFile: "\(getUrl())\(_posterPath)")
+//        } else {
+            movieBannerIv.image = UIImage(named: "banner_default")
+//        }
     }
     
     private func getUrl() -> String {

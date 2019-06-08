@@ -44,9 +44,23 @@ class MovieDetailContentView: UIView {
         
         lblMovieName.text = movie?.title
         lblMovieYear.text = stringDate
-        lblMovieGender.text = "Some".uppercased()
+        lblMovieGender.text = formatGenres(genres: movie?.genres)
         lblMovieDescription.text = movie?.overview
         ivMovieBanner.image = getPosterImage(posterPath: movie?.posterPath)
+    }
+    
+    private func formatGenres(genres: [Genres]?) -> String {
+        var allGenres = ""
+        if let _genres = genres, !_genres.isEmpty {
+            for genre in _genres {
+                if _genres.count > 1 {
+                    allGenres = "\(allGenres) \(genre.name),"
+                } else {
+                    allGenres = "\(genre.name)"
+                }
+            }
+        }
+        return allGenres
     }
     
     @IBAction func actionFavorite(sender: Any) {

@@ -10,3 +10,6 @@
 "MOVIE_DETAIL_TITLE" = "Movies";
 "TAB_BAR_MOVIES" = "Movies";
 "TAB_BAR_FAVORITES" = "Favorites";
+"ERROR_DEFAULT_MESSAGE" = "Desculpe mas tivemos um erro.";
+"ALERT_MENSSAGE_ERROR" = "Oh no";
+"DISMISS" = "Dismiss";

@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdo-df-P71">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdo-df-P71">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9w-Q7-XVL" customClass="MovieDetailContentView" customModule="MyMovieDB" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="628"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="627"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="al8-79-NKZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
@@ -142,7 +142,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0iI-7x-0Y6" userLabel="Container Movie Description">
-                                                <rect key="frame" x="0.0" y="574.5" width="414" height="53.5"/>
+                                                <rect key="frame" x="0.0" y="574.5" width="414" height="52.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Movie Description" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyE-sW-qeQ">
                                                         <rect key="frame" x="16" y="16" width="382" height="20.5"/>
@@ -150,22 +150,12 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1sO-ts-kAJ" userLabel="Separator View">
-                                                        <rect key="frame" x="16" y="52.5" width="398" height="1"/>
-                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="M78-98-yNe"/>
-                                                        </constraints>
-                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="1sO-ts-kAJ" firstAttribute="leading" secondItem="0iI-7x-0Y6" secondAttribute="leading" constant="16" id="3H2-DX-9Qb"/>
                                                     <constraint firstAttribute="trailing" secondItem="GyE-sW-qeQ" secondAttribute="trailing" constant="16" id="7gG-PQ-dF8"/>
                                                     <constraint firstItem="GyE-sW-qeQ" firstAttribute="leading" secondItem="0iI-7x-0Y6" secondAttribute="leading" constant="16" id="KAX-bp-gxu"/>
-                                                    <constraint firstAttribute="trailing" secondItem="1sO-ts-kAJ" secondAttribute="trailing" id="Qmo-pQ-j4G"/>
-                                                    <constraint firstItem="1sO-ts-kAJ" firstAttribute="top" secondItem="GyE-sW-qeQ" secondAttribute="bottom" constant="16" id="RWw-9F-iVR"/>
-                                                    <constraint firstAttribute="bottom" secondItem="1sO-ts-kAJ" secondAttribute="bottom" id="c5k-4A-k71"/>
+                                                    <constraint firstAttribute="bottom" secondItem="GyE-sW-qeQ" secondAttribute="bottom" constant="16" id="Ylq-YO-6Ac"/>
                                                     <constraint firstItem="GyE-sW-qeQ" firstAttribute="top" secondItem="0iI-7x-0Y6" secondAttribute="top" constant="16" id="hk4-jA-PWf"/>
                                                 </constraints>
                                             </view>

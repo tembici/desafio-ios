@@ -23,6 +23,7 @@ struct MovieResult {
     var adult: Bool? = false
     var overview: String? = ""
     var releaseDate: String? = ""
+    var genres: [Genres]? = []
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -35,6 +36,7 @@ struct MovieResult {
         case adult
         case overview
         case releaseDate = "release_date"
+        case genres
     }
 }
 
@@ -51,5 +53,6 @@ extension MovieResult: Decodable {
         adult = try values.decodeIfPresent(Bool.self, forKey: .adult)
         overview = try values.decodeIfPresent(String.self, forKey: .overview)
         releaseDate = try values.decodeIfPresent(String.self, forKey: .releaseDate)
+        genres = try values.decodeIfPresent([Genres].self, forKey: .genres)
     }
 }

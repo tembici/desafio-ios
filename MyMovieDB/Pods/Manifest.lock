@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.8.2)
+  - IBLocalizable (1.3.0)
+  - JGProgressHUD (2.0.3)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - IBLocalizable
+  - JGProgressHUD
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - IBLocalizable
+    - JGProgressHUD
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  IBLocalizable: bebcf04d98f422a2544f2b000d19387dfe8c317b
+  JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
+
+PODFILE CHECKSUM: 2e4581d3593d0bf36c6de3ca135f85a4c86f3a6b
+
+COCOAPODS: 1.5.3

@@ -11,7 +11,18 @@ import Alamofire
 
 class Manager {
     func requestMovies(completionHandler: @escaping (_ response: MoviesReponse?, _ error: Error?)-> Void) {
-        request(endpoint: Endpoint.popularMovie, httpMethod: .get, urlParams: BasicRequest(), headerParams: EmptyRequest(), bodyParams: EmptyRequest(), response: MoviesReponse()){ (decodableObj, error) in
+        request(endpoint: Endpoint.popularMovie.rawValue, httpMethod: .get, urlParams: BasicRequest(), headerParams: EmptyRequest(), bodyParams: EmptyRequest(), response: MoviesReponse()){ (decodableObj, error) in
+            if let _error = error {
+                completionHandler(nil, _error)
+            }
+            else {
+                completionHandler(decodableObj, nil)
+            }
+        }
+    }
+    
+    func requestDetail(param: String, completionHandler: @escaping (_ response: MovieResult?, _ error: Error?)-> Void) {
+        request(endpoint: "\(Endpoint.movieDetail.rawValue)\(param)", httpMethod: .get, urlParams: MovieDetailRequest(), headerParams: EmptyRequest(), bodyParams: EmptyRequest(), response: MovieResult()){ (decodableObj, error) in
             if let _error = error {
                 completionHandler(nil, _error)
             }
@@ -23,12 +34,12 @@ class Manager {
 }
 
 extension Manager {
-    fileprivate func request<T: Encodable, U: Encodable, V: Encodable, X: Decodable>(endpoint: Endpoint, httpMethod: HTTPMethod, urlParams: T?, headerParams: U?, bodyParams: V?, response: X, completionHandler: @escaping (_ response: X?, _ error: Error?)-> Void) {
+    fileprivate func request<T: Encodable, U: Encodable, V: Encodable, X: Decodable>(endpoint: String, httpMethod: HTTPMethod, urlParams: T?, headerParams: U?, bodyParams: V?, response: X, completionHandler: @escaping (_ response: X?, _ error: Error?)-> Void) {
         
         var urlComponents = URLComponents()
         urlComponents.scheme = scheme
         urlComponents.host = baseUrl
-        urlComponents.path = endpoint.rawValue
+        urlComponents.path = endpoint
         
         do {
             urlComponents.queryItems = try urlParams.toURLQueryItem()

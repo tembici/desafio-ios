@@ -30,14 +30,7 @@ class MoviesCollectionViewCell: UICollectionViewCell {
 //        btnFavorite.isSelected = true
         lblMovieName.text = movie.title
         
-        movieBannerIv.image = getPosterImage(posterPath: movie.posterPath)
-    }
-    
-    private func getUrl() -> String {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = scheme
-        urlComponents.host = baseUrl
-        return urlComponents.string ?? ""
+        movieBannerIv.image = getPosterImage(posterPath: movie.posterPath, quality: .low)
     }
     
     @IBAction func actionFavorite(_ sender: Any) {

@@ -8,20 +8,17 @@
 
 import Foundation
 
-struct BasicRequest: Encodable {
-    var api_key: String? = Bundle.main.infoDictionary?["AppKey"] as? String ?? ""
-    var page: String
+struct BasicRequest {
+    var apiKey: String? = Bundle.main.infoDictionary?["AppKey"] as? String ?? ""
     
-    init(page: Int = 1) {
-        self.page = String(page)
+    enum CodingKeys: String, CodingKey {
+        case apiKey = "api_key"
     }
 }
 
-struct PopularMovieParam: Encodable {
-    var api_key: String? = Bundle.main.infoDictionary?["AppKey"] as? String ?? ""
-    var page: String
-    
-    init(page: Int = 1) {
-        self.page = String(page)
+extension BasicRequest: Encodable {
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(apiKey, forKey: .apiKey)
     }
 }

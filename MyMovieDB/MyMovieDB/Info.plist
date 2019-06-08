@@ -4,6 +4,8 @@
 <dict>
 	<key>AppKey</key>
 	<string>$(APP_KEY)</string>
+	<key>AppLanguage</key>
+	<string>$(LANGUAGE)</string>
 	<key>AppScheme</key>
 	<string>$(SCHEME)</string>
 	<key>BaseUrl</key>

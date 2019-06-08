@@ -27,9 +27,15 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
         loadingView.show(in: self.view)
         Manager().requestMovies(param: PopularMovieParam()) { (response, error) in
             if let results = response?.results {
-                self.movies = results
-                self.page = response?.page ?? 1
+                if results.isEmpty {
+                    self.showEmptyView()
+                } else {
+                    self.movies = results
+                    self.page = response?.page ?? 1
+                }
             } else if let _error = error {
+                self.showEmptyView()
+                self.display(errorAlert(error: _error))
                 Logger().log(_error.localizedDescription)
             }
             self.collectionView.reloadData()
@@ -59,6 +65,13 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
     
     private func display(_ alert: UIAlertController) {
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func showEmptyView() {
+        let emptyView = EmptyView()
+        emptyView.configure(menssage: Utils.getLocalizedString("NO_MOVIES"))
+        emptyView.center = collectionView.center
+        collectionView.addSubview(emptyView)
     }
     
     func handlerActionFavorite() {

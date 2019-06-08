@@ -86,18 +86,18 @@ extension MoviesCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! MoviesCollectionViewCell
         collectionViewCell.cellDelegate = self
-        collectionViewCell.displayUI(self.movies[indexPath.row])
+        collectionViewCell.displayUI(movies[indexPath.row])
         
         return collectionViewCell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigateToDetailController(using: self.movies[indexPath.row])
+        navigateToDetailController(using: movies[indexPath.row])
     }
     
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == movies.count - 1 {
-            requestMoreMovie(page: self.page + 1)
+            requestMoreMovie(page: page + 1)
         }
     }
 }

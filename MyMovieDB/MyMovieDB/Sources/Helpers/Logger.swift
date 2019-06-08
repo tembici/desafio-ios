@@ -13,7 +13,7 @@ class Logger {
     /// Print some string just in DEBUG mode.
     func log(_ printable: String?) {
         #if DEBUG
-        print(printable)
+        print(printable ?? "")
         #endif
     }
 }

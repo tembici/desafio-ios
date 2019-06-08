@@ -46,7 +46,7 @@ class MovieDetailContentView: UIView {
         lblMovieYear.text = stringDate
         lblMovieGender.text = formatGenres(genres: movie?.genres)
         lblMovieDescription.text = movie?.overview
-        ivMovieBanner.image = getPosterImage(posterPath: movie?.posterPath)
+        ivMovieBanner.image = imageHelper(posterPath: movie?.posterPath)
     }
     
     private func formatGenres(genres: [Genres]?) -> String {

@@ -9,6 +9,8 @@
 import Foundation
 import Alamofire
 
+var app_key: String = Bundle.main.infoDictionary?["AppKey"] as? String ?? ""
+
 class Manager {
     func requestMovies(completionHandler: @escaping (_ response: MoviesReponse?, _ error: Error?)-> Void) {
         request(endpoint: Endpoint.popularMovie.rawValue, httpMethod: .get, urlParams: BasicRequest(), headerParams: EmptyRequest(), bodyParams: EmptyRequest(), response: MoviesReponse()){ (decodableObj, error) in
@@ -34,11 +36,13 @@ class Manager {
 }
 
 extension Manager {
+    
     fileprivate func request<T: Encodable, U: Encodable, V: Encodable, X: Decodable>(endpoint: String, httpMethod: HTTPMethod, urlParams: T?, headerParams: U?, bodyParams: V?, response: X, completionHandler: @escaping (_ response: X?, _ error: Error?)-> Void) {
         
         var urlComponents = URLComponents()
-        urlComponents.scheme = scheme
-        urlComponents.host = baseUrl
+        
+        urlComponents.scheme = Bundle.main.infoDictionary?["AppScheme"] as? String ?? ""
+        urlComponents.host = Bundle.main.infoDictionary?["BaseUrl"] as? String ?? ""
         urlComponents.path = endpoint
         
         do {

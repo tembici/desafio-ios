@@ -8,7 +8,16 @@
 
 import UIKit
 
-func getPosterImage(posterPath: String?, quality: ImageQuality = .medium) -> UIImage {
+let imageBaseUrl = "https://image.tmdb.org/t/p/"
+
+enum ImageQuality: String {
+    case low = "w185"
+    case medium = "w342"
+    case high = "w500"
+}
+
+
+func imageHelper(posterPath: String?, quality: ImageQuality = .medium) -> UIImage {
     if let _posterPath = posterPath {
         return "\(imageBaseUrl)/\(quality.rawValue)\(_posterPath)".toImageFromURL() ?? UIImage(named: "banner_default")!
     } else {

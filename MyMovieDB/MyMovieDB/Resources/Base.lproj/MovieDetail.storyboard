@@ -51,13 +51,14 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qV6-Jg-WSv">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qV6-Jg-WSv">
                                                         <rect key="frame" x="350" y="12.5" width="28" height="28"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="qV6-Jg-WSv" secondAttribute="height" multiplier="1:1" id="0e4-V6-Zc3"/>
                                                             <constraint firstAttribute="width" constant="28" id="TMa-4z-7RL"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button"/>
+                                                        <state key="normal" title="Button" image="favorite_gray_icon"/>
+                                                        <state key="selected" image="favorite_full_icon"/>
                                                         <connections>
                                                             <action selector="actionFavoriteWithSender:" destination="I9w-Q7-XVL" eventType="touchUpInside" id="Vlk-O1-K26"/>
                                                         </connections>
@@ -242,4 +243,8 @@
             <point key="canvasLocation" x="11.594202898550726" y="159.375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="favorite_full_icon" width="18" height="16"/>
+        <image name="favorite_gray_icon" width="17" height="16"/>
+    </resources>
 </document>

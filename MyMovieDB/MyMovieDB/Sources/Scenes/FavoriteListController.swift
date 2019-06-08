@@ -25,7 +25,6 @@ class FavoriteListController: UITableViewController {
         do {
             self.favoriteMovies = try CoreDataHelper().getData(in: Entitys.Movie) ?? []
             self.tableView.reloadData()
-            print(favoriteMovies)
         } catch {
             print(error.localizedDescription)
         }
@@ -45,8 +44,10 @@ class FavoriteListController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-//        let movie = favoriteMovies[indexPath.row]
-//        let movieName = movie.value(forKey: "title") as? String
+        let movie = favoriteMovies[indexPath.row]
+        let movieName = movie.value(forKey: "title") as? String
+        Logger().log(movieName)
+        
         return cell
     }
 

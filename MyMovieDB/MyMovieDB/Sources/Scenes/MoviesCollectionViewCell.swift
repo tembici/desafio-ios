@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MovieCollectionViewDelegate {
-    func handlerActionFavorite()
+    func handlerActionFavorite(movie: MovieResult)
 }
 
 class MoviesCollectionViewCell: UICollectionViewCell {
@@ -19,6 +19,7 @@ class MoviesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var btnFavorite: UIButton!
     
     var cellDelegate: MovieCollectionViewDelegate?
+    private var movie: MovieResult?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,14 +27,16 @@ class MoviesCollectionViewCell: UICollectionViewCell {
     }
     
     func displayUI(_ movie: MovieResult) {
-        self.backgroundColor = .black
-//        btnFavorite.isSelected = true
+        self.movie = movie
+        btnFavorite.isSelected = movie.favorite
         lblMovieName.text = movie.title
         
         movieBannerIv.image = imageHelper(posterPath: movie.posterPath, quality: .low)
     }
     
     @IBAction func actionFavorite(_ sender: Any) {
-        cellDelegate?.handlerActionFavorite()
+        if movie != nil {
+            cellDelegate?.handlerActionFavorite(movie: movie!)
+        }
     }
 }

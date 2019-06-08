@@ -15,6 +15,7 @@ enum Entitys: String {
 
 class CoreDataHelper {
     
+    // Save single data
     func save(in entityName: Entitys, value: String, forKey: String) throws -> Bool{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return false }
         let context = appDelegate.persistentContainer.viewContext
@@ -33,6 +34,31 @@ class CoreDataHelper {
         }
     }
     
+    func saveSingleObject(object: NSManagedObject) throws -> Bool {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return false }
+        let context = appDelegate.persistentContainer.viewContext
+        
+        //Do persistence
+        do {
+            try context.save()
+            print(object)
+            return true
+        } catch let error as NSError {
+            Logger().log(error.localizedDescription)
+            return false
+        }
+    }
+    
+    ///Get A single NSManagedObject
+    func getObject(in entityName: Entitys) -> NSManagedObject? {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
+        let context = appDelegate.persistentContainer.viewContext
+        guard let entity = NSEntityDescription.entity(forEntityName: entityName.rawValue, in: context) else { return nil }
+        
+        return NSManagedObject(entity: entity, insertInto: context)
+    }
+    
+    ///Get an array of NSmanagedObject
     func getData(in entityName: Entitys) throws -> [NSManagedObject]? {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
         let context = appDelegate.persistentContainer.viewContext

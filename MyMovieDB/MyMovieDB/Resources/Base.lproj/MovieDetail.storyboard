@@ -181,6 +181,7 @@
                                             <constraint firstItem="Ae3-9U-FOU" firstAttribute="leading" secondItem="I9w-Q7-XVL" secondAttribute="leading" id="yym-cv-ih1"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="btnFavorite" destination="qV6-Jg-WSv" id="cYB-rR-NQQ"/>
                                             <outlet property="ivMovieBanner" destination="heC-5H-5EY" id="ITB-o2-9hC"/>
                                             <outlet property="lblMovieDescription" destination="GyE-sW-qeQ" id="UoK-J0-Qgf"/>
                                             <outlet property="lblMovieGender" destination="kym-jU-w4f" id="Ab9-Hg-T6S"/>

@@ -23,6 +23,11 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
         requestMovies()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.collectionView.reloadData()
+    }
+    
     private func requestMovies() {
         loadingView.show(in: self.view)
         Manager().requestMovies(param: PopularMovieParam()) { (response, error) in
@@ -73,8 +78,34 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
         collectionView.addSubview(emptyView)
     }
     
-    func handlerActionFavorite() {
-        print("pass")
+    private func updateFavorite() {
+        do {
+            for i in 0...self.movies.count - 1 {
+                if let favoriteMovies = try CoreDataHelper().getData(in: Entitys.Movie) {
+                    for favorited in favoriteMovies {
+                        if self.movies[i].id == favorited.value(forKey: "id") as! Int {
+                            self.movies[i].favorite = (favorited.value(forKey: "favorite") as! Bool)
+                        }
+                    }
+                }
+            }
+        } catch {
+            // ...
+        }
+    }
+    
+    func handlerActionFavorite(movie: MovieResult) {
+        var _movie = movie
+        _movie.favorite = !_movie.favorite
+        guard let movieManagedObject = _movie.toNSManagedObject() else { return }
+        
+        do {
+            if try CoreDataHelper().saveSingleObject(object: movieManagedObject) {
+                // ...
+            }
+        } catch {
+            // ...
+        }
     }
     
     private func navigateToDetailController(using movie: MovieResult) {
@@ -98,6 +129,18 @@ extension MoviesCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! MoviesCollectionViewCell
         collectionViewCell.cellDelegate = self
+        
+        do {
+            if let favoriteMovies = try CoreDataHelper().getData(in: Entitys.Movie) {
+                for favorited in favoriteMovies {
+                    if self.movies[indexPath.row].id == favorited.value(forKey: "id") as! Int {
+                        self.movies[indexPath.row].favorite = (favorited.value(forKey: "favorite") as! Bool)
+                    }
+                }
+            }
+        } catch {
+            // ...
+        }
         collectionViewCell.displayUI(movies[indexPath.row])
         
         return collectionViewCell

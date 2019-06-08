@@ -11,7 +11,7 @@ import UIKit
 
 protocol MovieDetailViewDelegate {
     
-    func handlerActionFavorite()
+    func handlerActionFavorite(favorite: Bool)
 }
 
 class MovieDetailContentView: UIView {
@@ -21,8 +21,10 @@ class MovieDetailContentView: UIView {
     @IBOutlet weak var lblMovieGender: UILabel!
     @IBOutlet weak var lblMovieDescription: UILabel!
     @IBOutlet weak var ivMovieBanner: UIImageView!
+    @IBOutlet weak var btnFavorite: UIButton!
     
     var delegate: MovieDetailViewDelegate?
+    private var movie: MovieResult?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,6 +39,7 @@ class MovieDetailContentView: UIView {
     }
     
     func displayUI(movie: MovieResult?) {
+        self.movie = movie
         var stringDate = ""
         if let releaseDateString = movie?.releaseDate {
             stringDate = releaseDateString.toDateString(format: "yyyy")
@@ -47,6 +50,7 @@ class MovieDetailContentView: UIView {
         lblMovieGender.text = formatGenres(genres: movie?.genres)
         lblMovieDescription.text = movie?.overview
         ivMovieBanner.image = imageHelper(posterPath: movie?.posterPath)
+        btnFavorite.isSelected = movie?.favorite ?? false
     }
     
     private func formatGenres(genres: [Genres]?) -> String {
@@ -64,7 +68,8 @@ class MovieDetailContentView: UIView {
     }
     
     @IBAction func actionFavorite(sender: Any) {
-        delegate?.handlerActionFavorite()
+        guard let favorited = movie?.favorite else { return }
+        delegate?.handlerActionFavorite(favorite: !favorited)
     }
 }
 

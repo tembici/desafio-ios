@@ -18,6 +18,8 @@ class MovieDetailController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        contentView.delegate = self
         requestMovieDetail()
     }
     
@@ -31,6 +33,7 @@ class MovieDetailController: UIViewController {
                 Logger().log(_error.localizedDescription)
             }
             self.loadingView.dismiss()
+            self.updateFavorite()
             self.configureUI()
         }
     }
@@ -42,5 +45,35 @@ class MovieDetailController: UIViewController {
     private func configureUI() {
         title = movie?.title ?? NSLocalizedString("MOVIE_DETAIL_TITLE", comment: "")
         contentView.displayUI(movie: movie)
+    }
+    
+    private func updateFavorite() {
+        do {
+            if let favoriteMovies = try CoreDataHelper().getData(in: Entitys.Movie), let _movie = self.movie {
+                for favorited in favoriteMovies {
+                    if _movie.id == favorited.value(forKey: "id") as! Int {
+                        self.movie?.favorite = (favorited.value(forKey: "favorite") as! Bool)
+                    }
+                }
+            }
+        } catch {
+            // ...
+        }
+    }
+}
+
+extension MovieDetailController: MovieDetailViewDelegate {
+    
+    func handlerActionFavorite(favorite: Bool) {
+        movie?.favorite = favorite
+        guard let movieManagedObject = self.movie?.toNSManagedObject() else { return }
+
+        do {
+            if try CoreDataHelper().saveSingleObject(object: movieManagedObject) {
+                self.configureUI()
+            }
+        } catch {
+            // ...
+        }
     }
 }

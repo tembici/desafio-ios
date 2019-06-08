@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 struct MoviesReponse: Decodable {
     var page: Int = 1
@@ -57,5 +58,22 @@ extension MovieResult: Decodable {
         overview = try values.decodeIfPresent(String.self, forKey: .overview)
         releaseDate = try values.decodeIfPresent(String.self, forKey: .releaseDate)
         genres = try values.decodeIfPresent([Genres].self, forKey: .genres)
+    }
+}
+
+extension MovieResult {
+    
+    func toNSManagedObject() -> NSManagedObject? {
+        let movieObject = CoreDataHelper().getObject(in: Entitys.Movie)
+        
+        movieObject?.setValue(self.id, forKey: "id")
+        movieObject?.setValue(self.title, forKey: "title")
+        movieObject?.setValue(self.adult, forKey: "adult")
+        movieObject?.setValue(self.favorite, forKey: "favorite")
+        movieObject?.setValue(self.originalTitle, forKey: "originalTitle")
+        movieObject?.setValue(self.posterPath, forKey: "posterPath")
+        movieObject?.setValue(self.releaseDate, forKey: "releaseDate")
+        
+        return movieObject
     }
 }

@@ -54,7 +54,6 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
                 self.display(errorAlert(error: _error))
                 Logger().log(_error.localizedDescription)
             }
-            self.collectionView.reloadData()
             self.loadingView.dismiss()
         }
     }

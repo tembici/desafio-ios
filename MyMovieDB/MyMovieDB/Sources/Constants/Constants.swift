@@ -16,6 +16,6 @@ let imageBaseUrl = "https://image.tmdb.org/t/p/"
 
 enum ImageQuality: String {
     case low = "w185"
-    case medium = "w500"
-    case high = "w720"
+    case medium = "w342"
+    case high = "w500"
 }

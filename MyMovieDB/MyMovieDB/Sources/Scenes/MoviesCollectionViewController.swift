@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class MoviesCollectionViewController: UICollectionViewController, MovieCollectionViewDelegate {
     
     private let cellIdentifier = "moveisCellIdentifier"
     private var movies: [MovieResult] = []
+    private let loadingView: JGProgressHUD = JGProgressHUD(style: .light)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,7 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
     }
     
     private func requestMovies() {
+        loadingView.show(in: self.view)
         Manager().requestMovies { (response, error) in
             if let results = response?.results {
                 self.movies = results
@@ -28,6 +31,7 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
                 print(_error.localizedDescription)
             }
             self.collectionView.reloadData()
+            self.loadingView.dismiss()
         }
     }
 

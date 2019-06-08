@@ -7,31 +7,46 @@
 //
 
 import UIKit
+import CoreData
 
 class FavoriteListController: UITableViewController {
 
     private let cellIdentifier = "favoriteCellIdentifier"
-    private var numberOfRows: Int = 10
+    private var favoriteMovies: [NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        do {
+            self.favoriteMovies = try CoreDataHelper().getData(in: Entitys.Movie) ?? []
+            self.tableView.reloadData()
+            print(favoriteMovies)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return favoriteMovies.count > 0 ? 1 : 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return numberOfRows
+        return favoriteMovies.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-
+//        let movie = favoriteMovies[indexPath.row]
+//        let movieName = movie.value(forKey: "title") as? String
         return cell
     }
 

@@ -22,7 +22,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="pW8-Kq-Ggf">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.16991800069999999" green="0.178681165" blue="0.26508274669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.96862745098039216" green="0.80784313725490198" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.16991800069999999" green="0.178681165" blue="0.26508274669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.16991800069999999" green="0.178681165" blue="0.26508274669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -33,7 +40,7 @@
             </objects>
             <point key="canvasLocation" x="-988" y="581"/>
         </scene>
-        <!--Favorite List Controller-->
+        <!--AAAAA-->
         <scene sceneID="jJw-hh-Eeq">
             <objects>
                 <tableViewController id="k2c-gw-Fue" customClass="FavoriteListController" customModule="MyMovieDB" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,7 +68,7 @@
                             <outlet property="delegate" destination="k2c-gw-Fue" id="gXK-Uq-8hb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="NzR-Sy-OZE">
+                    <navigationItem key="navigationItem" title="AAAAA" id="NzR-Sy-OZE">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="FAVORITES_NAVIGATION_TITLE"/>
                         </userDefinedRuntimeAttributes>

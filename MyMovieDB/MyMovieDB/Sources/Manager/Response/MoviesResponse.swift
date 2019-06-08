@@ -26,6 +26,7 @@ struct MovieResult {
     var overview: String? = ""
     var releaseDate: String? = ""
     var genres: [Genres]? = []
+    var favorite: Bool = false
     
     enum CodingKeys: String, CodingKey {
         case id

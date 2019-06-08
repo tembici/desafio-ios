@@ -28,13 +28,14 @@ class MovieDetailController: UIViewController {
                 self.movie = _movieResponse
             } else if let _error = error {
                 self.display(errorAlert(error: _error))
+                Logger().log(_error.localizedDescription)
             }
             self.loadingView.dismiss()
             self.configureUI()
         }
     }
     
-    func display(_ alert: UIAlertController) {
+    private func display(_ alert: UIAlertController) {
         self.present(alert, animated: true, completion: nil)
     }
     

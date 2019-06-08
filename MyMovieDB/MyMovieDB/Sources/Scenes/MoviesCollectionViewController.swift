@@ -45,6 +45,7 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
                 self.page = response?.page ?? 1
                 self.collectionView.reloadData()
             } else if let _error = error {
+                self.display(errorAlert(error: _error))
                 Logger().log(_error.localizedDescription)
             }
             self.collectionView.reloadData()
@@ -54,6 +55,10 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
 
     private func configureUI() {
         title = NSLocalizedString("MOVIES_TITLE", comment: "")
+    }
+    
+    private func display(_ alert: UIAlertController) {
+        self.present(alert, animated: true, completion: nil)
     }
     
     func handlerActionFavorite() {

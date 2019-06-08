@@ -13,6 +13,7 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
     
     private let cellIdentifier = "moveisCellIdentifier"
     private var movies: [MovieResult] = []
+    private var page: Int = 1
     private let loadingView: JGProgressHUD = JGProgressHUD(style: .light)
 
     override func viewDidLoad() {
@@ -24,11 +25,27 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
     
     private func requestMovies() {
         loadingView.show(in: self.view)
-        Manager().requestMovies { (response, error) in
+        Manager().requestMovies(param: PopularMovieParam()) { (response, error) in
             if let results = response?.results {
                 self.movies = results
+                self.page = response?.page ?? 1
             } else if let _error = error {
-                print(_error.localizedDescription)
+                Logger().log(_error.localizedDescription)
+            }
+            self.collectionView.reloadData()
+            self.loadingView.dismiss()
+        }
+    }
+    
+    private func requestMoreMovie(page: Int) {
+        loadingView.show(in: self.view)
+        Manager().requestMovies(param: PopularMovieParam(page: page)) { (response, error) in
+            if let results = response?.results {
+                self.movies += results
+                self.page = response?.page ?? 1
+                self.collectionView.reloadData()
+            } else if let _error = error {
+                Logger().log(_error.localizedDescription)
             }
             self.collectionView.reloadData()
             self.loadingView.dismiss()
@@ -36,7 +53,7 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
     }
 
     private func configureUI() {
-        self.title = NSLocalizedString("MOVIES_TITLE", comment: "")
+        title = NSLocalizedString("MOVIES_TITLE", comment: "")
     }
     
     func handlerActionFavorite() {
@@ -71,6 +88,12 @@ extension MoviesCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         navigateToDetailController(using: self.movies[indexPath.row])
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == movies.count - 1 {
+            requestMoreMovie(page: self.page + 1)
+        }
     }
 }
 

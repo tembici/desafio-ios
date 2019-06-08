@@ -9,6 +9,8 @@
 import Foundation
 
 struct MoviesReponse: Decodable {
+    var page: Int = 1
+    var total_pages: Int = 1
     var results: [MovieResult] = []
 }
 

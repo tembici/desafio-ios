@@ -9,5 +9,19 @@
 import Foundation
 
 struct BasicRequest: Encodable {
-    var api_key: String? = "e1694c199ec268346e637bc040fad518"
+    var api_key: String? = Bundle.main.infoDictionary?["AppKey"] as? String ?? ""
+    var page: String
+    
+    init(page: Int = 1) {
+        self.page = String(page)
+    }
+}
+
+struct PopularMovieParam: Encodable {
+    var api_key: String? = Bundle.main.infoDictionary?["AppKey"] as? String ?? ""
+    var page: String
+    
+    init(page: Int = 1) {
+        self.page = String(page)
+    }
 }

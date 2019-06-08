@@ -10,10 +10,5 @@ import Foundation
 
 struct MovieDetailRequest: Encodable {
     var api_key: String? = "e1694c199ec268346e637bc040fad518"
-//    var movie_id: String = ""
     var language: String = "en-US"
-    
-//    init(movieId: Int) {
-//        self.movie_id = "\(movieId)"
-//    }
 }

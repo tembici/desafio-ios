@@ -12,8 +12,8 @@ import Alamofire
 var app_key: String = Bundle.main.infoDictionary?["AppKey"] as? String ?? ""
 
 class Manager {
-    func requestMovies(completionHandler: @escaping (_ response: MoviesReponse?, _ error: Error?)-> Void) {
-        request(endpoint: Endpoint.popularMovie.rawValue, httpMethod: .get, urlParams: BasicRequest(), headerParams: EmptyRequest(), bodyParams: EmptyRequest(), response: MoviesReponse()){ (decodableObj, error) in
+    func requestMovies(param: PopularMovieParam, completionHandler: @escaping (_ response: MoviesReponse?, _ error: Error?)-> Void) {
+        request(endpoint: Endpoint.popularMovie.rawValue, httpMethod: .get, urlParams: param, headerParams: EmptyRequest(), bodyParams: EmptyRequest(), response: MoviesReponse()){ (decodableObj, error) in
             if let _error = error {
                 completionHandler(nil, _error)
             }
@@ -24,7 +24,7 @@ class Manager {
     }
     
     func requestDetail(param: String, completionHandler: @escaping (_ response: MovieResult?, _ error: Error?)-> Void) {
-        request(endpoint: "\(Endpoint.movieDetail.rawValue)\(param)", httpMethod: .get, urlParams: MovieDetailRequest(), headerParams: EmptyRequest(), bodyParams: EmptyRequest(), response: MovieResult()){ (decodableObj, error) in
+        request(endpoint: "\(Endpoint.movieDetail.rawValue)\(param)", httpMethod: .get, urlParams: BasicRequest(), headerParams: EmptyRequest(), bodyParams: EmptyRequest(), response: MovieResult()){ (decodableObj, error) in
             if let _error = error {
                 completionHandler(nil, _error)
             }
@@ -53,7 +53,7 @@ extension Manager {
             
             Alamofire.request(urlComponents, method: httpMethod, parameters: _bodyParams, headers: _headerParams).responseData { (responseData) in
                 if let data = responseData.data {
-                    Logger().log(String(data: data, encoding: .utf8))
+                    Logger().log(data.prettyPrintedJSONString as String?)
                     self.parseObj(responseObj: response, data: data, completionHandler: completionHandler)
                 }
                 else {
@@ -72,5 +72,16 @@ extension Manager {
         } catch {
             completionHandler(nil, error)
         }
+    }
+}
+
+extension Data {
+    ///Format Data and return pretty json in string
+    var prettyPrintedJSONString: NSString? { /// NSString gives us a nice sanitized debugDescription
+        guard let object = try? JSONSerialization.jsonObject(with: self, options: []),
+            let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),
+            let prettyPrintedString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else { return nil }
+        
+        return prettyPrintedString
     }
 }

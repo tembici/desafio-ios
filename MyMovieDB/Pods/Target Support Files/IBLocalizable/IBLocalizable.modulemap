@@ -1,0 +1,6 @@
+framework module IBLocalizable {
+  umbrella header "IBLocalizable-umbrella.h"
+
+  export *
+  module * { export * }
+}

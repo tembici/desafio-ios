@@ -9,11 +9,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Movies-->
+        <!--Navigation Controller-->
         <scene sceneID="uoG-Z4-XbX">
             <objects>
                 <navigationController id="4c9-sS-p08" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Movies" image="list_icon" id="luX-QH-WLN"/>
+                    <tabBarItem key="tabBarItem" title="" image="list_icon" id="luX-QH-WLN">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="TAB_BAR_MOVIES"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="4Hu-uj-dMU">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -64,7 +68,7 @@
             </objects>
             <point key="canvasLocation" x="-1226" y="318"/>
         </scene>
-        <!--Movies-->
+        <!--Movies Collection View Controller-->
         <scene sceneID="24c-dm-Plh">
             <objects>
                 <collectionViewController id="c0a-Eq-owo" customClass="MoviesCollectionViewController" customModule="MyMovieDB" customModuleProvider="target" sceneMemberID="viewController">
@@ -95,7 +99,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSP-hN-Zno">
                                                     <rect key="frame" x="0.0" y="144" width="191" height="40"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thor" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erk-0R-PDB">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erk-0R-PDB">
                                                             <rect key="frame" x="8" y="8" width="143" height="24"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <color key="textColor" red="0.97029334306716919" green="0.80608516931533813" blue="0.35881370306015015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -160,7 +164,7 @@
                             <outlet property="delegate" destination="c0a-Eq-owo" id="DZV-hP-Ohv"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Movies" image="list_icon" id="bXu-xt-YZh"/>
+                    <tabBarItem key="tabBarItem" title="" image="list_icon" id="bXu-xt-YZh"/>
                     <navigationItem key="navigationItem" id="o4N-fG-wjZ"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0B-im-fpI" userLabel="First Responder" sceneMemberID="firstResponder"/>

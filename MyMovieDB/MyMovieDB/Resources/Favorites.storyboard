@@ -26,11 +26,15 @@
             </objects>
             <point key="canvasLocation" x="-78" y="581"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="6Xr-ut-Tkw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E1C-h3-YYY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="XnG-jj-Zjf"/>
+                    <tabBarItem key="tabBarItem" title="" image="favorite_empty_icon" id="XnG-jj-Zjf">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="TAB_BAR_FAVORITES"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pW8-Kq-Ggf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -46,4 +50,7 @@
             <point key="canvasLocation" x="-988" y="581"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="favorite_empty_icon" width="22" height="21"/>
+    </resources>
 </document>

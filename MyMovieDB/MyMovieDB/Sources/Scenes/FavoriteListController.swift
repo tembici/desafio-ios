@@ -29,19 +29,29 @@ class FavoriteListController: UITableViewController {
             print(error.localizedDescription)
         }
     }
+    
+    private func navigateToDetailController(using movie: MovieResult) {
+        let storyboard = UIStoryboard(name: "MovieDetail", bundle: Bundle.main)
+        guard let movieDetailController = storyboard.instantiateInitialViewController() as? MovieDetailController else { return }
+        movieDetailController.movie = movie
+        
+        show(movieDetailController, sender: nil)
+    }
+}
 
+extension FavoriteListController {
+    
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return favoriteMovies.count > 0 ? 1 : 0
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return favoriteMovies.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! FavoriteTableViewCell
         let movie = favoriteMovies[indexPath.row]
@@ -50,13 +60,19 @@ class FavoriteListController: UITableViewController {
         
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let movie = favoriteMovies[indexPath.row]
+        let movieResult = MovieResult().toMovieObject(object: movie)
+        navigateToDetailController(using: movieResult)
+    }
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
- 
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {

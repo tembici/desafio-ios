@@ -73,7 +73,7 @@ class MovieDetailContentView: UIView {
     }
 }
 
-fileprivate extension String {
+extension String {
     func toDateString(format: String) -> String {
         var date: Date = Date()
         let dateFormatter = DateFormatter()

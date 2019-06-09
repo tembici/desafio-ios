@@ -16,7 +16,7 @@ class FavoriteListController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = Utils.getLocalizedString("FAVORITES_NAVIGATION_TITLE")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,10 +43,10 @@ class FavoriteListController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! FavoriteTableViewCell
         let movie = favoriteMovies[indexPath.row]
-        let movieName = movie.value(forKey: "title") as? String
-        Logger().log(movieName)
+        let movieResult = MovieResult().toMovieObject(object: movie)
+        cell.configure(movieResult)
         
         return cell
     }
@@ -63,5 +63,9 @@ class FavoriteListController: UITableViewController {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
     }
 }

@@ -73,7 +73,23 @@ extension MovieResult {
         movieObject?.setValue(self.originalTitle, forKey: "originalTitle")
         movieObject?.setValue(self.posterPath, forKey: "posterPath")
         movieObject?.setValue(self.releaseDate, forKey: "releaseDate")
+        movieObject?.setValue(self.overview, forKey: "overview")
         
         return movieObject
+    }
+    
+    func toMovieObject(object: NSManagedObject) -> MovieResult {
+        return MovieResult(id: object.value(forKey: "id") as! Int,
+                           title: object.value(forKey: "title") as? String,
+                           originalTitle: object.value(forKey: "originalTitle") as? String,
+                           posterPath: object.value(forKey: "posterPath") as? String,
+                           video: nil,
+                           originalLanguage: nil,
+                           backdropPath: nil,
+                           adult: object.value(forKey: "adult") as? Bool ?? false,
+                           overview: object.value(forKey: "overview") as? String,
+                           releaseDate: object.value(forKey: "releaseDate") as? String,
+                           genres: nil,
+                           favorite: object.value(forKey: "favorite") as? Bool ?? false)
     }
 }

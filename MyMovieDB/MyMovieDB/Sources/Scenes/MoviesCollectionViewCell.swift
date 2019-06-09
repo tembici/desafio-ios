@@ -31,11 +31,14 @@ class MoviesCollectionViewCell: UICollectionViewCell {
         btnFavorite.isSelected = movie.favorite
         lblMovieName.text = movie.title
         
-        movieBannerIv.image = imageHelper(posterPath: movie.posterPath, quality: .low)
+        DispatchQueue.main.async {
+            self.movieBannerIv.image = imageHelper(posterPath: movie.posterPath, quality: .low)
+        }
     }
     
     @IBAction func actionFavorite(_ sender: Any) {
         if movie != nil {
+            btnFavorite.isSelected = !movie!.favorite
             cellDelegate?.handlerActionFavorite(movie: movie!)
         }
     }

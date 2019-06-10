@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FavoriteTableViewCell: UITableViewCell {
     
@@ -33,9 +34,9 @@ class FavoriteTableViewCell: UITableViewCell {
             lblMovieYear.removeFromSuperview()
         }
         
-        DispatchQueue.main.async {
-            self.ivBannerImage = imageHelper(oldImageView: self.ivBannerImage, posterPath: movie.posterPath, quality: .low)
-        }
+        let stringUrl = "\(imageBaseUrl)/\(ImageQuality.low.rawValue)\(movie.posterPath ?? "")"
+        let url = URL(string: stringUrl)
+        self.ivBannerImage.kf.setImage(with: url)
     }
     
     override func prepareForReuse() {

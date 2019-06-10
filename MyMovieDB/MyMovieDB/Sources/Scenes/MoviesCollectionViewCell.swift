@@ -31,9 +31,7 @@ class MoviesCollectionViewCell: UICollectionViewCell {
         btnFavorite.isSelected = movie.favorite
         lblMovieName.text = movie.title
         
-        DispatchQueue.main.async {
-            self.movieBannerIv = imageHelper(oldImageView: self.movieBannerIv, posterPath: movie.posterPath, quality: .low)
-        }
+        self.movieBannerIv = imageHelper(oldImageView: self.movieBannerIv, posterPath: movie.posterPath, quality: .low)
     }
     
     @IBAction func actionFavorite(_ sender: Any) {

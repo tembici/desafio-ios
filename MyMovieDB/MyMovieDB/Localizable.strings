@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  MyMovieDB
+
+  Created by Chrystian Salgado on 24/05/19.
+  Copyright © 2019 Salgado's Production. All rights reserved.
+*/
+
+"MOVIES_TITLE" = "Movies";
+"MOVIE_DETAIL_TITLE" = "Movies";
+"TAB_BAR_MOVIES" = "Movies";
+"TAB_BAR_FAVORITES" = "Favorites";
+"ERROR_DEFAULT_MESSAGE" = "Sorry we have some error.";
+"ALERT_MENSSAGE_ERROR" = "Oh no";
+"DISMISS" = "Dismiss";
+"NO_MOVIES" = "No movies are available";
+"FAVORITES_NAVIGATION_TITLE" = "Favorites";

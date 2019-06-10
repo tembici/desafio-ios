@@ -78,7 +78,6 @@ class CoreDataHelper {
     func deleteData(object: NSManagedObject, in entityName: Entitys) throws -> Bool {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return false }
         let context = appDelegate.persistentContainer.viewContext
-//        guard let entity = NSEntityDescription.entity(forEntityName: entityName.rawValue, in: context) else { return false }
         context.delete(object)
         
         do {
@@ -88,6 +87,18 @@ class CoreDataHelper {
         } catch let error as NSError {
             Logger().log(error.localizedDescription)
             return false
+        }
+    }
+    
+    func deleteAllData(in entityName: Entitys) throws {
+        do {
+            if let objects = try CoreDataHelper().getData(in: entityName) {
+                for obj in objects {
+                    let _ = try CoreDataHelper().deleteData(object: obj, in: entityName)
+                }
+            }
+        } catch {
+            Logger().log(error.localizedDescription)
         }
     }
 }

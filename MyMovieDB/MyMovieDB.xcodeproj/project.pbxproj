@@ -410,6 +410,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IBLocalizable/IBLocalizable.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -418,6 +419,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBLocalizable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -626,7 +628,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FBA8D8A575E3C547762EB282 /* Pods-MyMovieDB.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon$APP_SUFIX;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon$APP_SUFIX";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HT3YCTX6YE;
 				INFOPLIST_FILE = MyMovieDB/Info.plist;
@@ -635,7 +637,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SalgadoProductions.MyMovieDB$APP_SUFIX;
+				PRODUCT_BUNDLE_IDENTIFIER = "SalgadoProductions.MyMovieDB$APP_SUFIX";
 				PRODUCT_NAME = "$(TARGET_NAME)$APP_SUFIX";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -646,7 +648,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8318AD68112E566D0900669C /* Pods-MyMovieDB.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon$APP_SUFIX;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon$APP_SUFIX";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HT3YCTX6YE;
 				INFOPLIST_FILE = MyMovieDB/Info.plist;
@@ -655,7 +657,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SalgadoProductions.MyMovieDB$APP_SUFIX;
+				PRODUCT_BUNDLE_IDENTIFIER = "SalgadoProductions.MyMovieDB$APP_SUFIX";
 				PRODUCT_NAME = "$(TARGET_NAME)$APP_SUFIX";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

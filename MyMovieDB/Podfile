@@ -9,5 +9,6 @@ target 'MyMovieDB' do
   pod 'Alamofire', '~> 4.7'
   pod 'IBLocalizable'
   pod 'JGProgressHUD'
+  pod 'Kingfisher', '~> 5.0'
 
 end

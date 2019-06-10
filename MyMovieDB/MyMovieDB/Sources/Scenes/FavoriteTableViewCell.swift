@@ -34,7 +34,7 @@ class FavoriteTableViewCell: UITableViewCell {
         }
         
         DispatchQueue.main.async {
-            self.ivBannerImage.image = imageHelper(posterPath: movie.posterPath, quality: .low)
+            self.ivBannerImage = imageHelper(oldImageView: self.ivBannerImage, posterPath: movie.posterPath, quality: .low)
         }
     }
     

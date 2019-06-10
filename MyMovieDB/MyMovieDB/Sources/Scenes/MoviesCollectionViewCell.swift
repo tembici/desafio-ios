@@ -32,7 +32,7 @@ class MoviesCollectionViewCell: UICollectionViewCell {
         lblMovieName.text = movie.title
         
         DispatchQueue.main.async {
-            self.movieBannerIv.image = imageHelper(posterPath: movie.posterPath, quality: .low)
+            self.movieBannerIv = imageHelper(oldImageView: self.movieBannerIv, posterPath: movie.posterPath, quality: .low)
         }
     }
     

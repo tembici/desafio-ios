@@ -18,14 +18,13 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureUI()
-        requestMovies()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.collectionView.reloadData()
+        requestMovies()
     }
     
     private func requestMovies() {
@@ -78,33 +77,13 @@ class MoviesCollectionViewController: UICollectionViewController, MovieCollectio
         collectionView.addSubview(emptyView)
     }
     
-    private func updateFavorite() {
-        do {
-            for i in 0...self.movies.count - 1 {
-                if let favoriteMovies = try CoreDataHelper().getData(in: Entitys.Movie) {
-                    for favorited in favoriteMovies {
-                        if self.movies[i].id == favorited.value(forKey: "id") as! Int {
-                            self.movies[i].favorite = (favorited.value(forKey: "favorite") as! Bool)
-                        }
-                    }
-                }
-            }
-        } catch {
-            // ...
-        }
-    }
-    
     func handlerActionFavorite(movie: MovieResult) {
         var _movie = movie
         _movie.favorite = !_movie.favorite
-        guard let movieManagedObject = _movie.toNSManagedObject() else { return }
-        
         do {
-            if try CoreDataHelper().saveSingleObject(object: movieManagedObject) {
-                // ...
-            }
+            try CoreDataController().saveOrUpdate(movie: _movie)
         } catch {
-            // ...
+            Logger().log(error.localizedDescription)
         }
     }
     

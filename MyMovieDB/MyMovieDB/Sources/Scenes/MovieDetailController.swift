@@ -20,6 +20,10 @@ class MovieDetailController: UIViewController {
         super.viewDidLoad()
         
         contentView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         requestMovieDetail()
     }
     
@@ -66,14 +70,13 @@ extension MovieDetailController: MovieDetailViewDelegate {
     
     func handlerActionFavorite(favorite: Bool) {
         movie?.favorite = favorite
-        guard let movieManagedObject = self.movie?.toNSManagedObject() else { return }
-
+        guard let _movie = movie else { return }
+        
         do {
-            if try CoreDataHelper().saveSingleObject(object: movieManagedObject) {
-                self.configureUI()
-            }
+            try CoreDataController().saveOrUpdate(movie: _movie)
+            self.configureUI()
         } catch {
-            // ...
+            Logger().log(error.localizedDescription)
         }
     }
 }

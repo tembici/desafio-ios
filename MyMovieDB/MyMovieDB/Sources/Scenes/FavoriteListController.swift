@@ -13,10 +13,12 @@ class FavoriteListController: UITableViewController {
 
     private let cellIdentifier = "favoriteCellIdentifier"
     private var favoriteMovies: [NSManagedObject] = []
+    var emptyView: EmptyView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Utils.getLocalizedString("FAVORITES_NAVIGATION_TITLE")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,11 +27,27 @@ class FavoriteListController: UITableViewController {
         do {
             self.favoriteMovies = try CoreDataHelper().getData(in: Entitys.Movie) ?? []
             self.tableView.reloadData()
+            if self.favoriteMovies.isEmpty {
+                showEmptyView()
+            } else {
+                emptyView?.removeFromSuperview()
+            }
         } catch {
             print(error.localizedDescription)
         }
     }
     
+    private func showEmptyView() {
+        if emptyView == nil {
+            emptyView = EmptyView()
+        }
+        
+        emptyView?.configure(menssage: Utils.getLocalizedString("NO_MOVIES"))
+        emptyView?.center = tableView.center
+        tableView.addSubview(emptyView!)
+    }
+    
+    //Mark: Navigation
     private func navigateToDetailController(using movie: MovieResult) {
         let storyboard = UIStoryboard(name: "MovieDetail", bundle: Bundle.main)
         guard let movieDetailController = storyboard.instantiateInitialViewController() as? MovieDetailController else { return }
@@ -43,8 +61,7 @@ extension FavoriteListController {
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return favoriteMovies.count > 0 ? 1 : 0
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,11 +98,19 @@ extension FavoriteListController {
                 if try CoreDataHelper().deleteData(object: movie, in: Entitys.Movie) {
                     favoriteMovies.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .fade)
+                    
+                    if self.favoriteMovies.isEmpty {
+                        self.showEmptyView()
+                    }
                 }
             } catch {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Unfavorite"
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -19,10 +19,15 @@ struct Colors {
     public static var green: UIColor = UIColor.green
     public static var blue: UIColor = UIColor.blue
     public static var cyan: UIColor = UIColor.cyan
-    public static var yellow: UIColor = UIColor.yellow
     public static var magenta: UIColor = UIColor.magenta
     public static var orange: UIColor = UIColor.orange
     public static var purple: UIColor = UIColor.purple
     public static var brown: UIColor = UIColor.brown
     public static var clear: UIColor = UIColor.clear
+    
+    
+    public static var yellow = UIColor.fromHex(0xF7CE5B)
+    public static var darkYellow = UIColor.fromHex(0xD9971E)
+    public static var marineBlue = UIColor.fromHex(0x2D3047)
+    public static var backgroundGray = UIColor(red: 250/255, green: 252/255, blue: 254/255, alpha: 1.0)
 }

@@ -19,5 +19,6 @@ class BaseTabBarViewController: UITabBarController {
     private func setupTabBar() {
         tabBar.tintColor = Colors.black
         tabBar.unselectedItemTintColor = Colors.black.withAlphaComponent(0.4)
+        tabBar.barTintColor = Colors.yellow
     }
 }

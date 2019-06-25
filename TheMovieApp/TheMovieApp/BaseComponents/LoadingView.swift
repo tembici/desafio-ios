@@ -58,3 +58,16 @@ class LoadingView:UIView {
     }
 }
 
+extension LoadingView: UpdateStateProtocol {
+    func shouldUpdateView(_ state: ViewStateEnum) {
+        switch state {
+        case let .loading(message):
+            setLoadingMessage(message)
+            isHidden = false
+            break
+        default:
+            stopLoading()
+            isHidden = true
+        }
+    }
+}

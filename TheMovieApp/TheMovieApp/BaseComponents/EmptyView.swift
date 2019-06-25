@@ -43,3 +43,16 @@ class EmptyView:UIView {
     }
 }
 
+extension EmptyView: UpdateStateProtocol {
+    func shouldUpdateView(_ state: ViewStateEnum) {
+        switch state {
+        case let .empty(message, image: image):
+            if let image = image { setImage(image) }
+            setEmptyMessage(message)
+            isHidden = false
+            break
+        default:
+            isHidden = true
+        }
+    }
+}

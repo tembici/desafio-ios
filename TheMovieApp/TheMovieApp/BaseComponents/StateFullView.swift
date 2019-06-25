@@ -14,8 +14,13 @@ public enum ViewStateEnum {
     case normalLayout
 }
 
+protocol UpdateStateProtocol {
+    func shouldUpdateView(_ state:ViewStateEnum)
+}
+
 public class StateFullView: UIView {
     
+    var viewsDict:[String:UpdateStateProtocol] = [:]
     var errorView = ErrorView()
     var loadingView = LoadingView()
     var emptyView = EmptyView()
@@ -41,9 +46,16 @@ public class StateFullView: UIView {
     }
     
     private func setup() {
+        setupDictionary()
         setupErrorView()
         setupLoadingView()
         setupEmptyView()
+    }
+    
+    private func setupDictionary() {
+        viewsDict[String(describing: ErrorView.self)] = errorView
+        viewsDict[String(describing: LoadingView.self)] = loadingView
+        viewsDict[String(describing: EmptyView.self)] = emptyView
     }
     
     private func setupErrorView() {
@@ -77,35 +89,8 @@ public class StateFullView: UIView {
     }
     
     private func updateViewState() {
-        switch state {
-        case let .error(message):
-            errorView.setErrorMessage(message)
-            loadingView.stopLoading()
-            errorView.isHidden = false
-            loadingView.isHidden = true
-            emptyView.isHidden = true
-            break
-        case let .loading(message):
-            loadingView.setLoadingMessage(message)
-            loadingView.startLoading()
-            loadingView.isHidden = false
-            errorView.isHidden = true
-            emptyView.isHidden = true
-            break
-        case let .empty(message, image):
-            emptyView.setImage(image)
-            emptyView.setEmptyMessage(message)
-            loadingView.stopLoading()
-            errorView.isHidden = true
-            loadingView.isHidden = true
-            emptyView.isHidden = false
-            break
-        case .normalLayout:
-            loadingView.stopLoading()
-            errorView.isHidden = true
-            loadingView.isHidden = true
-            emptyView.isHidden = true
-            break
+        for value in viewsDict.values {
+            value.shouldUpdateView(state)
         }
     }
     

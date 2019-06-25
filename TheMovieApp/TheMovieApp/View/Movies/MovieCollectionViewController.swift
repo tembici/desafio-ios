@@ -27,6 +27,11 @@ class MovieCollectionViewController: UIViewController {
         moviesCollectionView.dataSource = self
         moviesCollectionView.register(UINib(nibName: "MovieListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: Constant.MOVIE_CELL_REUSE)
     }
+    
+    private func getMovies() {
+//        let appProvider = AppProvider()
+//        appProvider.makeRequest(<#T##requestType: Connection##Connection#>, returnClass: <#T##(Decodable & Encodable).Protocol#>, successCompletion: <#T##(Decodable & Encodable) -> Void#>, failCompletion: <#T##(Error) -> Void#>)
+    }
 }
 
 extension MovieCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {

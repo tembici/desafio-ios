@@ -76,3 +76,16 @@ public class ErrorView: UIView {
         errorRetryBlock()
     }
 }
+
+extension ErrorView: UpdateStateProtocol {
+    func shouldUpdateView(_ state: ViewStateEnum) {
+        switch state {
+        case let .error(message):
+            setErrorMessage(message)
+            isHidden = false
+            break
+        default:
+            isHidden = true
+        }
+    }
+}

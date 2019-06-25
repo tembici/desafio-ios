@@ -31,6 +31,7 @@
 		06CE8F3322C1B0760046E5D5 /* MovieListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE8F3122C1B0760046E5D5 /* MovieListCollectionViewCell.swift */; };
 		06CE8F3422C1B0760046E5D5 /* MovieListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06CE8F3222C1B0760046E5D5 /* MovieListCollectionViewCell.xib */; };
 		06CE8F3622C1B1A10046E5D5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE8F3522C1B1A10046E5D5 /* Constants.swift */; };
+		06CE8F3822C1B5960046E5D5 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE8F3722C1B5960046E5D5 /* LikeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		06CE8F3122C1B0760046E5D5 /* MovieListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCollectionViewCell.swift; sourceTree = "<group>"; };
 		06CE8F3222C1B0760046E5D5 /* MovieListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListCollectionViewCell.xib; sourceTree = "<group>"; };
 		06CE8F3522C1B1A10046E5D5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		06CE8F3722C1B5960046E5D5 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				062D384E22C1784D000991C0 /* LoadingView.xib */,
 				062D385122C1784D000991C0 /* StateFullView.swift */,
 				062D385722C1787C000991C0 /* AppButton.swift */,
+				06CE8F3722C1B5960046E5D5 /* LikeButton.swift */,
 			);
 			path = BaseComponents;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				062D385622C1784D000991C0 /* StateFullView.swift in Sources */,
 				06CE8F3622C1B1A10046E5D5 /* Constants.swift in Sources */,
 				062D385522C1784D000991C0 /* LoadingView.swift in Sources */,
+				06CE8F3822C1B5960046E5D5 /* LikeButton.swift in Sources */,
 				062D384922C174FC000991C0 /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

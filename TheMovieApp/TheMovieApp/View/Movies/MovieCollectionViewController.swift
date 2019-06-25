@@ -34,7 +34,6 @@ extension MovieCollectionViewController: UICollectionViewDataSource, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:MovieListCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.MOVIE_CELL_REUSE, for: indexPath) as! MovieListCollectionViewCell
-        cell.backgroundColor = Colors.green
         return cell
     }
     

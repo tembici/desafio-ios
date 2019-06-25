@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol MovieListCellDelegate {
     func didFavoriteMovie(_ cell: MovieListCollectionViewCell)
@@ -17,6 +18,7 @@ class MovieListCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var mainImageView: UIImageView!
     @IBOutlet private weak var movieNameLabel: UILabel!
     @IBOutlet private weak var favoriteButton: FavoriteButton!
+    @IBOutlet private weak var labelContainer: UIView!
     
     var delegate:MovieListCellDelegate?
     
@@ -33,6 +35,7 @@ class MovieListCollectionViewCell: UICollectionViewCell {
     
     private func setupLabel() {
         movieNameLabel.textColor = Colors.yellow
+        labelContainer.backgroundColor = Colors.darkGray
     }
     
     private func setupBorder() {
@@ -40,7 +43,8 @@ class MovieListCollectionViewCell: UICollectionViewCell {
         layer.borderColor = Colors.darkGray.cgColor
     }
     
-    public func setMovieName(_ name:String) {
-        movieNameLabel.text = name
+    public func setMovieCell(_ movie:MovieViewModel) {
+        movieNameLabel.text = movie.title
+        
     }
 }

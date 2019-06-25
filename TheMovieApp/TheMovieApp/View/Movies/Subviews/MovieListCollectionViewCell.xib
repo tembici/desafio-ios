@@ -67,6 +67,7 @@
             <size key="customSize" width="220" height="245"/>
             <connections>
                 <outlet property="favoriteButton" destination="VZV-Oy-2AE" id="bdj-n9-71N"/>
+                <outlet property="labelContainer" destination="ECc-F1-06B" id="s9r-vG-HB9"/>
                 <outlet property="mainImageView" destination="Ghw-L0-Fpk" id="1na-yp-tLa"/>
                 <outlet property="movieNameLabel" destination="bgi-zc-r1B" id="e1O-V9-52U"/>
             </connections>

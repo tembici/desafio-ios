@@ -11,14 +11,16 @@
 		062D384622C1726E000991C0 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 062D384522C1726E000991C0 /* Favorites.storyboard */; };
 		062D384922C174FC000991C0 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D384822C174FC000991C0 /* UIColor+Extensions.swift */; };
 		062D384C22C177C3000991C0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D384B22C177C3000991C0 /* BaseViewController.swift */; };
-		062D385222C1784D000991C0 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D384D22C1784D000991C0 /* ErrorView.swift */; };
-		062D385322C1784D000991C0 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 062D384E22C1784D000991C0 /* LoadingView.xib */; };
-		062D385422C1784D000991C0 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 062D384F22C1784D000991C0 /* ErrorView.xib */; };
-		062D385522C1784D000991C0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D385022C1784D000991C0 /* LoadingView.swift */; };
-		062D385622C1784D000991C0 /* StateFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D385122C1784D000991C0 /* StateFullView.swift */; };
 		062D385822C1787C000991C0 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D385722C1787C000991C0 /* AppButton.swift */; };
 		062D385A22C17928000991C0 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D385922C17928000991C0 /* UIView+Extensions.swift */; };
 		062D385C22C17A6F000991C0 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D385B22C17A6F000991C0 /* BaseNavigationViewController.swift */; };
+		062D388022C26FBB000991C0 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D387922C26FBB000991C0 /* ErrorView.swift */; };
+		062D388122C26FBB000991C0 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 062D387A22C26FBB000991C0 /* EmptyView.xib */; };
+		062D388222C26FBB000991C0 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 062D387B22C26FBB000991C0 /* LoadingView.xib */; };
+		062D388322C26FBB000991C0 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 062D387C22C26FBB000991C0 /* ErrorView.xib */; };
+		062D388422C26FBB000991C0 /* StateFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D387D22C26FBB000991C0 /* StateFullView.swift */; };
+		062D388522C26FBB000991C0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D387E22C26FBB000991C0 /* LoadingView.swift */; };
+		062D388622C26FBB000991C0 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D387F22C26FBB000991C0 /* EmptyView.swift */; };
 		0657825322C148F600346E6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0657825222C148F600346E6C /* AppDelegate.swift */; };
 		0657825822C148F600346E6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0657825622C148F600346E6C /* Main.storyboard */; };
 		0657825A22C148F800346E6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0657825922C148F800346E6C /* Assets.xcassets */; };
@@ -61,14 +63,16 @@
 		062D384522C1726E000991C0 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		062D384822C174FC000991C0 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		062D384B22C177C3000991C0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		062D384D22C1784D000991C0 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
-		062D384E22C1784D000991C0 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
-		062D384F22C1784D000991C0 /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
-		062D385022C1784D000991C0 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		062D385122C1784D000991C0 /* StateFullView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateFullView.swift; sourceTree = "<group>"; };
 		062D385722C1787C000991C0 /* AppButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		062D385922C17928000991C0 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		062D385B22C17A6F000991C0 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		062D387922C26FBB000991C0 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		062D387A22C26FBB000991C0 /* EmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
+		062D387B22C26FBB000991C0 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		062D387C22C26FBB000991C0 /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		062D387D22C26FBB000991C0 /* StateFullView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateFullView.swift; sourceTree = "<group>"; };
+		062D387E22C26FBB000991C0 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		062D387F22C26FBB000991C0 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		0657824F22C148F600346E6C /* TheMovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0657825222C148F600346E6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0657825722C148F600346E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -159,13 +163,15 @@
 		062D384A22C176E9000991C0 /* BaseComponents */ = {
 			isa = PBXGroup;
 			children = (
+				062D387D22C26FBB000991C0 /* StateFullView.swift */,
+				062D387F22C26FBB000991C0 /* EmptyView.swift */,
+				062D387A22C26FBB000991C0 /* EmptyView.xib */,
+				062D387922C26FBB000991C0 /* ErrorView.swift */,
+				062D387C22C26FBB000991C0 /* ErrorView.xib */,
+				062D387E22C26FBB000991C0 /* LoadingView.swift */,
+				062D387B22C26FBB000991C0 /* LoadingView.xib */,
 				062D385B22C17A6F000991C0 /* BaseNavigationViewController.swift */,
 				062D384B22C177C3000991C0 /* BaseViewController.swift */,
-				062D384D22C1784D000991C0 /* ErrorView.swift */,
-				062D384F22C1784D000991C0 /* ErrorView.xib */,
-				062D385022C1784D000991C0 /* LoadingView.swift */,
-				062D384E22C1784D000991C0 /* LoadingView.xib */,
-				062D385122C1784D000991C0 /* StateFullView.swift */,
 				062D385722C1787C000991C0 /* AppButton.swift */,
 				06CE8F3722C1B5960046E5D5 /* LikeButton.swift */,
 			);
@@ -414,11 +420,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0657825D22C148F800346E6C /* LaunchScreen.storyboard in Resources */,
+				062D388222C26FBB000991C0 /* LoadingView.xib in Resources */,
 				0657825A22C148F800346E6C /* Assets.xcassets in Resources */,
 				0657825822C148F600346E6C /* Main.storyboard in Resources */,
+				062D388122C26FBB000991C0 /* EmptyView.xib in Resources */,
 				06CE8F3422C1B0760046E5D5 /* MovieListCollectionViewCell.xib in Resources */,
-				062D385322C1784D000991C0 /* LoadingView.xib in Resources */,
-				062D385422C1784D000991C0 /* ErrorView.xib in Resources */,
+				062D388322C26FBB000991C0 /* ErrorView.xib in Resources */,
 				062D384422C1725E000991C0 /* Movies.storyboard in Resources */,
 				062D384622C1726E000991C0 /* Favorites.storyboard in Resources */,
 			);
@@ -542,9 +549,9 @@
 			files = (
 				062D385C22C17A6F000991C0 /* BaseNavigationViewController.swift in Sources */,
 				062D384C22C177C3000991C0 /* BaseViewController.swift in Sources */,
-				062D385222C1784D000991C0 /* ErrorView.swift in Sources */,
 				062D385A22C17928000991C0 /* UIView+Extensions.swift in Sources */,
 				0657828222C149F800346E6C /* Colors.swift in Sources */,
+				062D388622C26FBB000991C0 /* EmptyView.swift in Sources */,
 				06CE8F2F22C1B0180046E5D5 /* MovieCollectionViewController.swift in Sources */,
 				062D385822C1787C000991C0 /* AppButton.swift in Sources */,
 				0657825322C148F600346E6C /* AppDelegate.swift in Sources */,
@@ -552,11 +559,12 @@
 				06CE8F3322C1B0760046E5D5 /* MovieListCollectionViewCell.swift in Sources */,
 				06A0DA0122C15DC3006CBE74 /* BaseTabBarViewController.swift in Sources */,
 				06CE8F3D22C1C5070046E5D5 /* Connection.swift in Sources */,
-				062D385622C1784D000991C0 /* StateFullView.swift in Sources */,
 				06CE8F3622C1B1A10046E5D5 /* Constants.swift in Sources */,
-				062D385522C1784D000991C0 /* LoadingView.swift in Sources */,
 				06CE8F3822C1B5960046E5D5 /* LikeButton.swift in Sources */,
 				062D384922C174FC000991C0 /* UIColor+Extensions.swift in Sources */,
+				062D388022C26FBB000991C0 /* ErrorView.swift in Sources */,
+				062D388422C26FBB000991C0 /* StateFullView.swift in Sources */,
+				062D388522C26FBB000991C0 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

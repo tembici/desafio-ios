@@ -12,6 +12,8 @@ class MovieCollectionViewController: UIViewController {
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     
+    @IBOutlet var stateView: StateFullView!
+    
     let collectionInsets:CGFloat = 16
     
     override func viewDidLoad() {

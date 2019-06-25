@@ -22,7 +22,9 @@ class MovieListCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         setupLabel()
+        setupBorder()
     }
 
     @IBAction func favoriteMovieButtonClicked(_ sender: Any) {
@@ -31,5 +33,10 @@ class MovieListCollectionViewCell: UICollectionViewCell {
     
     private func setupLabel() {
         movieNameLabel.textColor = Colors.yellow
+    }
+    
+    private func setupBorder() {
+        layer.borderWidth = 0.5
+        layer.borderColor = Colors.darkGray.cgColor
     }
 }

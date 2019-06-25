@@ -49,17 +49,23 @@ public class ErrorView: UIView {
     }
     
     public func setupMessageLabel() {
-//        message.font = UIFont.headlineFive()
         message.textColor = Colors.darkGray
     }
     
     public func setupTitleLabel() {
-//        title.font = UIFont.headlineFour()
         title.textColor = Colors.darkGray
     }
     
     private func setupContainerView() {
         containerView.layer.cornerRadius = 16
+    }
+    
+    public func setErrorMessage(_ text:String?) {
+        message.text = text
+    }
+    
+    public func setErrorTitle(_ text:String) {
+        title.text = text
     }
     
     public func setCompletion(_ errorBlock:@escaping () -> Void) {

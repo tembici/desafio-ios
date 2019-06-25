@@ -14,7 +14,7 @@
         <scene sceneID="jGU-ie-6T9">
             <objects>
                 <viewController title="Movies" id="jaj-mp-ANc" customClass="MovieCollectionViewController" customModule="TheMovieApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jv1-pI-hbz">
+                    <view key="view" contentMode="scaleToFill" id="jv1-pI-hbz" customClass="StateFullView" customModule="TheMovieApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -44,6 +44,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="moviesCollectionView" destination="UTB-yw-hlD" id="UMc-Go-Gov"/>
+                        <outlet property="stateView" destination="jv1-pI-hbz" id="r7Z-kc-R8Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKp-eD-Q06" userLabel="First Responder" sceneMemberID="firstResponder"/>

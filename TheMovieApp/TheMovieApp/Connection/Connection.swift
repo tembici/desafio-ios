@@ -2,36 +2,37 @@
 import Moya
 
 enum Connection {
-    case testCase(params:[String:Any]?)
+    case getPopularMovies
 }
 
 extension Connection: TargetType {
     
-    var baseURL: URL { return URL(string: "http://api.atacadapp.com:8080/storefront")! }
+    var baseURL: URL { return URL(string: "https://api.themoviedb.org/3")! }
     var path: String {
         switch self {
-        case .testCase:
-            return "/auth/login"
+        case .getPopularMovies:
+            return "/movie/popular"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .testCase:
-            return .post
+        case .getPopularMovies:
+            return .get
         }
     }
+    
     var task: Task {
-        
+        let params = ["api_key" : "de94a58f8f1c55104fa3b01661f5c0d5"]
         switch self {
-        case let .testCase(params):
-            return .requestParameters(parameters: params ?? [:], encoding: JSONEncoding.default);
+        case .getPopularMovies:
+            return .requestParameters(parameters: params, encoding: URLEncoding(destination: .queryString))
         }
     }
     
     var sampleData: Data {
         switch self {
-        case .testCase:
+        case .getPopularMovies:
             return "{\"userToken\":\"123123\"}".utf8Encoded;
         }
     }

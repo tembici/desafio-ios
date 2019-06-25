@@ -11,15 +11,26 @@ import UIKit
 class MovieCollectionViewController: UIViewController {
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
-    
     @IBOutlet var stateView: StateFullView!
     
     let collectionInsets:CGFloat = 16
+    var movies:[MovieViewModel] = [] {
+        didSet {
+            if (movies.count == 0) {
+                stateView.setState(.empty("Não há filmes em destaque no momento. Tente novamente mais tarde", image: nil))
+            } else {
+                moviesCollectionView.reloadData()
+                stateView.setState(.normalLayout)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCollectionView()
+        getMovies()
+        
     }
     
     private func setupCollectionView() {
@@ -29,18 +40,27 @@ class MovieCollectionViewController: UIViewController {
     }
     
     private func getMovies() {
-//        let appProvider = AppProvider()
-//        appProvider.makeRequest(<#T##requestType: Connection##Connection#>, returnClass: <#T##(Decodable & Encodable).Protocol#>, successCompletion: <#T##(Decodable & Encodable) -> Void#>, failCompletion: <#T##(Error) -> Void#>)
+        stateView.setErrorCompletion { self.getMovies() }
+        let appProvider = AppProvider()
+        stateView.setState(.loading("Carregando filmes populares..."))
+        appProvider.makeRequest(.getPopularMovies, returnClass: GeneralMovieResponseModel.self, successCompletion: { (response) in
+            self.movies = self.movies + response.getMoviesModel()
+            self.stateView.setState(.normalLayout)
+        }) { (error) in
+            self.stateView.setState(.error(error.localizedDescription))
+        }
     }
 }
 
 extension MovieCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 11
+        return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:MovieListCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.MOVIE_CELL_REUSE, for: indexPath) as! MovieListCollectionViewCell
+        let thisMovie = movies[indexPath.row]
+        cell.setMovieName(thisMovie.title)
         return cell
     }
     

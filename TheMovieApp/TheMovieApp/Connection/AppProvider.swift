@@ -28,7 +28,9 @@ class AppProvider {
                         successCompletion(decodedObj)
                         return
                     } else {
-                        
+                        let errorResponse = try decoder.decode(ErrorResponseModel.self, from: response.data)
+                        failCompletion(errorResponse.getError())
+                        return
                     }
                 } catch {
                     failCompletion(error)

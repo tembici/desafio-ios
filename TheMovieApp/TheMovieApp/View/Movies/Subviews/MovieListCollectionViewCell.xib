@@ -49,7 +49,7 @@
                             <constraint firstAttribute="bottom" secondItem="bgi-zc-r1B" secondAttribute="bottom" constant="16" id="sPf-N1-QUo"/>
                         </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ghw-L0-Fpk">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ghw-L0-Fpk">
                         <rect key="frame" x="0.0" y="0.0" width="220" height="185"/>
                     </imageView>
                 </subviews>

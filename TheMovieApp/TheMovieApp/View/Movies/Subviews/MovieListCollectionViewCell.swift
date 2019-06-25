@@ -45,6 +45,19 @@ class MovieListCollectionViewCell: UICollectionViewCell {
     
     public func setMovieCell(_ movie:MovieViewModel) {
         movieNameLabel.text = movie.title
-        
+//        https://image.tmdb.org/t/p/w300/j3w3lT3ABvJsVE3byNOMCYmnGMB.jpg
+        let size = 300
+        let imageId = movie.posterPath
+        let stringUrl = "https://image.tmdb.org/t/p/w\(size)\(imageId)"
+        let url = URL(string: stringUrl);
+        let processor = ResizingImageProcessor(referenceSize: CGSize(width: size, height: size), mode: .aspectFit);
+        mainImageView.kf.setImage(with: url,
+                                  placeholder: UIImage(named: "image_placeholder"),
+                                  options: [.processor(processor)])
+//        mainImageView.kf.setImage(with: url,
+//                                  placeholder: UIImage(named: "image_placeholder"),
+//                                  options: [.processor(processor)],
+//                                  progressBlock: nil,
+//                                  completionHandler:   nil);
     }
 }

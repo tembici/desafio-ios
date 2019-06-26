@@ -21,6 +21,7 @@ class MovieDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.largeTitleDisplayMode = .never
         getGenres()
         setupLabels()
     }
@@ -58,5 +59,9 @@ class MovieDetailViewController: BaseViewController {
             releaseDateLabel.text = "Premiere: \(movie.releaseDate.getYearValue())"
             movieOverviewLabel.text = movie.overview
         }
+    }
+    
+    @IBAction func favoriteMovieButtonClicked(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
     }
 }

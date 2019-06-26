@@ -28,8 +28,17 @@ class MovieCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationBar()
         setupCollectionView()
         getMovies()
+    }
+    
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.delegate = self
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     private func setupCollectionView() {
@@ -94,4 +103,8 @@ extension MovieCollectionViewController: UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return collectionInsets
     }
+}
+
+extension MovieCollectionViewController: UISearchControllerDelegate {
+    
 }

@@ -39,6 +39,8 @@
 		06CE8F3822C1B5960046E5D5 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE8F3722C1B5960046E5D5 /* LikeButton.swift */; };
 		06CE8F3C22C1C5070046E5D5 /* AppProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE8F3A22C1C5070046E5D5 /* AppProvider.swift */; };
 		06CE8F3D22C1C5070046E5D5 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE8F3B22C1C5070046E5D5 /* Connection.swift */; };
+		06CE8F4022C317BD0046E5D5 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE8F3F22C317BD0046E5D5 /* MovieDetailViewController.swift */; };
+		06CE8F4222C320910046E5D5 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE8F4122C320910046E5D5 /* UIImageView+Extensions.swift */; };
 		C1420D0CB0996C0D90D693BF /* Pods_TheMovieApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD1419430BAD43B6BC675BD /* Pods_TheMovieApp.framework */; };
 		D310C5CD5BE5BC823A31D807 /* Pods_TheMovieAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3F6A63707D164D1291747B /* Pods_TheMovieAppUITests.framework */; };
 		DA79747C417317450853C7A6 /* Pods_TheMovieAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AB5AF58DC283115A890F70 /* Pods_TheMovieAppTests.framework */; };
@@ -100,6 +102,8 @@
 		06CE8F3722C1B5960046E5D5 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		06CE8F3A22C1C5070046E5D5 /* AppProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppProvider.swift; sourceTree = "<group>"; };
 		06CE8F3B22C1C5070046E5D5 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		06CE8F3F22C317BD0046E5D5 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		06CE8F4122C320910046E5D5 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		0C45B08DB717ED20B4D5047E /* Pods-TheMovieAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-TheMovieAppUITests/Pods-TheMovieAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0D3F6A63707D164D1291747B /* Pods_TheMovieAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39389178A905AC50855B8E55 /* Pods-TheMovieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieApp.release.xcconfig"; path = "Target Support Files/Pods-TheMovieApp/Pods-TheMovieApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				06CE8F3022C1B05E0046E5D5 /* Subviews */,
 				062D384322C1725E000991C0 /* Movies.storyboard */,
 				06CE8F2E22C1B0180046E5D5 /* MovieCollectionViewController.swift */,
+				06CE8F3F22C317BD0046E5D5 /* MovieDetailViewController.swift */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 				062D384822C174FC000991C0 /* UIColor+Extensions.swift */,
 				062D385922C17928000991C0 /* UIView+Extensions.swift */,
 				06C6641022C2B32400637077 /* Date+Extensions.swift */,
+				06CE8F4122C320910046E5D5 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -566,6 +572,7 @@
 				0657828222C149F800346E6C /* Colors.swift in Sources */,
 				062D388622C26FBB000991C0 /* EmptyView.swift in Sources */,
 				06CE8F2F22C1B0180046E5D5 /* MovieCollectionViewController.swift in Sources */,
+				06CE8F4222C320910046E5D5 /* UIImageView+Extensions.swift in Sources */,
 				062D385822C1787C000991C0 /* AppButton.swift in Sources */,
 				0657825322C148F600346E6C /* AppDelegate.swift in Sources */,
 				06CE8F3C22C1C5070046E5D5 /* AppProvider.swift in Sources */,
@@ -578,6 +585,7 @@
 				062D384922C174FC000991C0 /* UIColor+Extensions.swift in Sources */,
 				062D388022C26FBB000991C0 /* ErrorView.swift in Sources */,
 				062D388422C26FBB000991C0 /* StateFullView.swift in Sources */,
+				06CE8F4022C317BD0046E5D5 /* MovieDetailViewController.swift in Sources */,
 				062D388522C26FBB000991C0 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

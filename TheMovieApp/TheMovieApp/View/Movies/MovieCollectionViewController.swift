@@ -36,7 +36,7 @@ class MovieCollectionViewController: UIViewController {
     private func setupCollectionView() {
         moviesCollectionView.delegate = self
         moviesCollectionView.dataSource = self
-        moviesCollectionView.register(UINib(nibName: "MovieListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: Constant.MOVIE_CELL_REUSE)
+        moviesCollectionView.register(UINib(nibName: "MovieListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CellReuse.MOVIE_CELL)
     }
     
     private func getMovies() {
@@ -50,15 +50,29 @@ class MovieCollectionViewController: UIViewController {
             self.stateView.setState(.error(error.localizedDescription))
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segue.SHOW_MOVIE_DETAIL {
+            guard let destination = segue.destination as? MovieDetailViewController, let movie = sender as? MovieViewModel else {
+                return
+            }
+            destination.movie = movie
+        }
+    }
 }
 
 extension MovieCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: Segue.SHOW_MOVIE_DETAIL, sender: movies[indexPath.row])
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell:MovieListCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.MOVIE_CELL_REUSE, for: indexPath) as! MovieListCollectionViewCell
+        let cell:MovieListCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: CellReuse.MOVIE_CELL, for: indexPath) as! MovieListCollectionViewCell
         let thisMovie = movies[indexPath.row]
         cell.setMovieCell(thisMovie)
         return cell

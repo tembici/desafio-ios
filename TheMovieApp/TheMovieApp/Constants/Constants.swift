@@ -8,6 +8,10 @@
 
 import Foundation
 
-struct Constant {
-    static var MOVIE_CELL_REUSE = "movieCell"
+struct CellReuse {
+    static var MOVIE_CELL = "movieCell"
+}
+
+struct Segue {
+    static var SHOW_MOVIE_DETAIL = "showMovieDetail"
 }

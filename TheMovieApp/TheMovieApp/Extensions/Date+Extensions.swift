@@ -16,4 +16,16 @@ extension Date {
         
         return date
     }
+    
+    func getDayValue() -> Int {
+        return Calendar.current.component(.day, from: self)
+    }
+    
+    func getMonthValue() -> Int {
+        return Calendar.current.component(.month, from: self)
+    }
+    
+    func getYearValue() -> Int {
+        return Calendar.current.component(.year, from: self)
+    }
 }

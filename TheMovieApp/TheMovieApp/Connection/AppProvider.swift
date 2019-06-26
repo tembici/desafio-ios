@@ -14,7 +14,7 @@ extension Data {
 
 class AppProvider {
     let provider = MoyaProvider<Connection>();
-    let bundle = Bundle.main.bundleIdentifier ?? "com.atacadapp.storeappios.notFound"
+    let bundle = Bundle.main.bundleIdentifier ?? "com.appCompany.AppName"
     
     public func makeRequest<T:Codable>(_ requestType:Connection, returnClass: T.Type, successCompletion: @escaping(_ result: T) -> Void, failCompletion: @escaping(_ error: Error) -> Void) {
         provider.request(requestType) { (result) in

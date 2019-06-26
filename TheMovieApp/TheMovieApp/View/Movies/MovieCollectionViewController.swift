@@ -30,7 +30,6 @@ class MovieCollectionViewController: UIViewController {
         
         setupCollectionView()
         getMovies()
-        
     }
     
     private func setupCollectionView() {

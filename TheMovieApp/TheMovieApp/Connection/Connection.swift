@@ -3,21 +3,25 @@ import Moya
 
 enum Connection {
     case getPopularMovies
+    case getGenreList
 }
 
 extension Connection: TargetType {
     
     var baseURL: URL { return URL(string: "https://api.themoviedb.org/3")! }
+    
     var path: String {
         switch self {
         case .getPopularMovies:
             return "/movie/popular"
+        case .getGenreList:
+            return "/genre/movie/list"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getPopularMovies:
+        case .getPopularMovies, .getGenreList:
             return .get
         }
     }
@@ -25,14 +29,14 @@ extension Connection: TargetType {
     var task: Task {
         let params = ["api_key" : "de94a58f8f1c55104fa3b01661f5c0d5"]
         switch self {
-        case .getPopularMovies:
+        case .getPopularMovies, .getGenreList:
             return .requestParameters(parameters: params, encoding: URLEncoding(destination: .queryString))
         }
     }
     
     var sampleData: Data {
         switch self {
-        case .getPopularMovies:
+        case .getPopularMovies, .getGenreList:
             return "{\"userToken\":\"123123\"}".utf8Encoded;
         }
     }

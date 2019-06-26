@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Movies" representedClassName="Movies" syncable="YES" codeGenerationType="class"/>
+    <entity name="GenreIds" representedClassName="GenreIds" syncable="YES" codeGenerationType="class">
+        <relationship name="movie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movies" inverseName="genreId" inverseEntity="Movies" syncable="YES"/>
+    </entity>
+    <entity name="Movies" representedClassName="Movies" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="genreId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GenreIds" inverseName="movie" inverseEntity="GenreIds" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Movies" positionX="-63" positionY="-18" width="128" height="45"/>
+        <element name="Movies" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="GenreIds" positionX="-54" positionY="-9" width="128" height="60"/>
     </elements>
 </model>

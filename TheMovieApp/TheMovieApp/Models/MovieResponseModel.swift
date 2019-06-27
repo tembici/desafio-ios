@@ -9,7 +9,7 @@
 import Foundation
 
 class MovieViewModel {
-    var id:Int
+    var id:Int64
     var averageRating:Double
     var genresIds:[Int]
     var originalTitle:String
@@ -24,7 +24,7 @@ class MovieViewModel {
     var releaseDate:Date
     var isVideo:Bool
     
-    init(_id:Int,
+    init(_id:Int64,
     _averageRating:Double,
     _genresIds:[Int],
     _originalTitle:String,
@@ -78,11 +78,11 @@ class GeneralMovieResponseModel: Codable {
 }
 
 class MovieResponseModel: Codable {
-    var id:Int
+    var id:Int64
     var averageRating:Double
     var genresIds:[Int]
     var originalTitle:String
-    var backdropPath:String
+    var backdropPath:String?
     var isAdult:Bool
     var popularity:Double
     var posterPath:String
@@ -115,7 +115,7 @@ class MovieResponseModel: Codable {
                               _averageRating: averageRating,
                               _genresIds: genresIds,
                               _originalTitle: originalTitle,
-                              _backdropPath: backdropPath,
+                              _backdropPath: backdropPath ?? "",
                               _isAdult: isAdult,
                               _popularity: popularity,
                               _posterPath: posterPath,
@@ -127,6 +127,27 @@ class MovieResponseModel: Codable {
                               _isVideo: isVideo)
     }
 }
+
+//{
+//    "id" : 329996,
+//    "vote_average" : 6.5,
+//    "genre_ids" : [
+//    12,
+//    10751,
+//    14
+//    ],
+//    "original_title" : "Dumbo",
+//    "backdrop_path" : "\/5tFt6iuGnKapHl5tw0X0cKcnuVo.jpg",
+//    "adult" : false,
+//    "popularity" : 108.077,
+//    "poster_path" : "\/279PwJAcelI4VuBtdzrZASqDPQr.jpg",
+//    "title" : "Dumbo",
+//    "overview" : "A young elephant, whose oversized ears enable him to fly, helps save a struggling circus, but when the circus plans a new venture, Dumbo and his friends discover dark secrets beneath its shiny veneer.",
+//    "original_language" : "en",
+//    "vote_count" : 1363,
+//    "release_date" : "2019-03-27",
+//    "video" : false
+//}
 
 //{
 //    "total_pages" : 992,

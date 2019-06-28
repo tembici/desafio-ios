@@ -10,6 +10,7 @@ import Foundation
 
 struct CellReuse {
     static var MOVIE_CELL = "movieCell"
+    static var MOVIE_FAVORITE_CELL = "movieFavoriteCell"
 }
 
 struct Segue {

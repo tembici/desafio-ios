@@ -20,7 +20,7 @@ class MovieViewModel {
     var title:String
     var overview:String
     var originalLanguage:String
-    var voteCount:Int
+    var voteCount:Int64
     var releaseDate:Date
     var isVideo:Bool
     
@@ -35,7 +35,7 @@ class MovieViewModel {
     _title:String,
     _overview:String,
     _originalLanguage:String,
-    _voteCount:Int,
+    _voteCount:Int64,
     _releaseDate:Date,
     _isVideo:Bool) {
         id = _id
@@ -89,7 +89,7 @@ class MovieResponseModel: Codable {
     var title:String
     var overview:String
     var originalLanguage:String
-    var voteCount:Int
+    var voteCount:Int64
     var releaseDate:String
     var isVideo:Bool
     

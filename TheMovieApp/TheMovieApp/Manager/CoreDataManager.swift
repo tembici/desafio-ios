@@ -26,7 +26,6 @@ class CoreDataManager {
             successCompletion()
         } catch {
             failCompletion(error)
-            print("error 123")
         }
     }
     
@@ -34,10 +33,7 @@ class CoreDataManager {
         let fetchRequest = NSFetchRequest<MovieData>(entityName: "MovieData")
         do {
             let list = try context.fetch(fetchRequest)
-            print(list)
-            print(list[0].genres)
-            return list as? [MovieData]
-            
+            return list
         } catch {
             print("error 321")
         }

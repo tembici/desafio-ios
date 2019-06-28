@@ -24,7 +24,9 @@ class CoreDataManager {
         do {
             try context.save()
             successCompletion()
+            return
         } catch {
+            context.delete(object)
             failCompletion(error)
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 public typealias ActionTuple = (title: String, style: UIAlertAction.Style?, action: ((UIAlertAction) -> Void)?)
 
@@ -139,5 +140,10 @@ class BaseViewController: UIViewController {
         }
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func getCoreDataContext() -> NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
     }
 }

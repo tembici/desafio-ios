@@ -214,6 +214,7 @@
                         <viewLayoutGuide key="safeArea" id="ZXW-cJ-yh1"/>
                     </view>
                     <connections>
+                        <outlet property="favoriteButton" destination="GmL-Ju-lm2" id="07l-vf-mei"/>
                         <outlet property="genresLabel" destination="pE9-He-yWc" id="qk0-WE-zfe"/>
                         <outlet property="mainImageView" destination="qwM-Mc-495" id="j4E-Pu-tf2"/>
                         <outlet property="movieOverviewLabel" destination="Izc-TG-Yx3" id="JDr-qQ-jY9"/>

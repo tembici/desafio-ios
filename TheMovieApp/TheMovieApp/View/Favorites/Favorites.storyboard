@@ -13,8 +13,8 @@
         <!--Favorites-->
         <scene sceneID="U0m-Kj-BDA">
             <objects>
-                <viewController title="Favorites" id="9Rt-oK-htV" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Y43-8K-02g">
+                <viewController title="Favorites" id="9Rt-oK-htV" customClass="FavoriteMoviesViewController" customModule="TheMovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y43-8K-02g" customClass="StateFullView" customModule="TheMovieApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

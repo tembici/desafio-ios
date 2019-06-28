@@ -15,6 +15,7 @@ class MovieDetailViewController: BaseViewController {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var genresLabel: UILabel!
     @IBOutlet weak var movieOverviewLabel: UILabel!
+    @IBOutlet weak var favoriteButton: FavoriteButton!
     
     var movie:MovieViewModel?
     
@@ -62,6 +63,50 @@ class MovieDetailViewController: BaseViewController {
     }
     
     @IBAction func favoriteMovieButtonClicked(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
+        if (sender.isSelected) {
+            removeFavoriteMovie()
+        } else {
+            saveFavoriteMovie()
+        }
+    }
+    
+    private func saveFavoriteMovie() {
+        guard let movie = movie else {
+            return
+        }
+        showLoadingInView(withMessage: "Adding to favorites...")
+        let coreDataManger = CoreDataManager()
+        coreDataManger.saveObject(bindToMovieData(movie), successCompletion: {
+            self.favoriteButton.isSelected = true
+            self.setNormalLayout()
+        }) { (error) in
+            self.setNormalLayout()
+            self.favoriteButton.isSelected = false
+            self.showAlert(_title: "Error", _message: "Movie was not added to favorites. Please try again later.")
+        }
+    }
+    
+    private func removeFavoriteMovie() {
+        
+    }
+    
+    private func bindToMovieData(_ movie: MovieViewModel) -> MovieData {
+        let newMovie = MovieData(context: getCoreDataContext())
+        newMovie.id = movie.id
+        newMovie.averageRating = movie.averageRating
+        newMovie.genres = movie.genresIds as NSObject
+        newMovie.originalTitle = movie.originalTitle
+        newMovie.backdropPath = movie.backdropPath
+        newMovie.isAdult = movie.isAdult
+        newMovie.popularity = movie.popularity
+        newMovie.posterPath = movie.posterPath
+        newMovie.title = movie.title
+        newMovie.overview = movie.overview
+        newMovie.originalLanguage = movie.originalLanguage
+        newMovie.voteCount = Int64(movie.voteCount)
+        newMovie.releaseDate = movie.releaseDate
+        newMovie.isVideo = movie.isVideo
+        
+        return newMovie
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0613E3D522C661F6007B1841 /* FavoriteMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0613E3D422C661F6007B1841 /* FavoriteMoviesViewController.swift */; };
 		061571EE22C568920016FB9A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061571ED22C568920016FB9A /* CoreDataManager.swift */; };
 		062D384422C1725E000991C0 /* Movies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 062D384322C1725E000991C0 /* Movies.storyboard */; };
 		062D384622C1726E000991C0 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 062D384522C1726E000991C0 /* Favorites.storyboard */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0613E3D422C661F6007B1841 /* FavoriteMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMoviesViewController.swift; sourceTree = "<group>"; };
 		061571ED22C568920016FB9A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		062D384322C1725E000991C0 /* Movies.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movies.storyboard; sourceTree = "<group>"; };
 		062D384522C1726E000991C0 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				062D384522C1726E000991C0 /* Favorites.storyboard */,
+				0613E3D422C661F6007B1841 /* FavoriteMoviesViewController.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				06A0DA0122C15DC3006CBE74 /* BaseTabBarViewController.swift in Sources */,
 				06CE8F3D22C1C5070046E5D5 /* Connection.swift in Sources */,
 				06C6640F22C2B25700637077 /* ErrorResponseModel.swift in Sources */,
+				0613E3D522C661F6007B1841 /* FavoriteMoviesViewController.swift in Sources */,
 				06CE8F3622C1B1A10046E5D5 /* Constants.swift in Sources */,
 				06CE8F3822C1B5960046E5D5 /* LikeButton.swift in Sources */,
 				061571EE22C568920016FB9A /* CoreDataManager.swift in Sources */,

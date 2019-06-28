@@ -7,39 +7,40 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
 
 class CoreDataManager {
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let context = appDelegate.persistentContainer.viewContext
+    let appDelegate:AppDelegate
+    let context:NSManagedObjectContext
     
-    let fetchRequest = NSFetchRequest<MovieData>(entityName: "MovieData")
-    
-    func saveMovie(_ movie:MovieViewModel) {
-        //        let mov = MovieData(context: context)
-        //        mov.genres = [1,2,3] as NSObject
-        //        do {
-        //            try context.save()
-        //        } catch {
-        //            print("error 123")
-        //        }
+    init() {
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.persistentContainer.viewContext
     }
     
-    func bindToMovieData(_ movie:MovieViewModel) -> MovieData {
-        
+    func saveObject(_ object:NSManagedObject, successCompletion: @escaping() -> Void, failCompletion: @escaping(_ error: Error) -> Void) {
+        do {
+            try context.save()
+            successCompletion()
+        } catch {
+            failCompletion(error)
+            print("error 123")
+        }
     }
     
-    func getFavoriteMovies() -> [MovieViewModel] {
-        //        let fetchRequest = NSFetchRequest<MovieData>(entityName: "MovieData")
-        //        do {
-        //            let list = try context.fetch(fetchRequest)
-        //            print(list[0].genres)
-        //        } catch {
-        //            print("error 321")
-        //        }
-    }
-    
-    func bindToMovieViewModel(_ movie:MovieData) -> MovieViewModel {
-        
+    func getFavoriteMovies() -> [MovieData]? {
+        let fetchRequest = NSFetchRequest<MovieData>(entityName: "MovieData")
+        do {
+            let list = try context.fetch(fetchRequest)
+            print(list)
+            print(list[0].genres)
+            return list as? [MovieData]
+            
+        } catch {
+            print("error 321")
+        }
+        return nil
     }
 }

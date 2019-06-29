@@ -44,7 +44,7 @@ class CoreDataManager {
     
     func fetch<T: NSManagedObject>(_ entity: T.Type,
                                      predicate: NSPredicate? = nil,
-                                     successCompletion: @escaping(_ fetchedArray:NSMutableArray) -> Void,
+                                     successCompletion: @escaping(_ fetchedArray:[T]) -> Void,
                                      failCompletion: @escaping(_ error: Error) -> Void) {
         let fetchRequest = NSFetchRequest<T>(entityName: NSStringFromClass(T.self))
         
@@ -55,7 +55,7 @@ class CoreDataManager {
         do {
             let searchResult = try context.fetch(fetchRequest)
             if searchResult.count > 0 {
-                successCompletion(NSMutableArray.init(array: searchResult))
+                successCompletion(searchResult)
                 return
             } else {
                 successCompletion([])

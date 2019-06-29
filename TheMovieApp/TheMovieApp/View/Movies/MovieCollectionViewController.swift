@@ -60,6 +60,10 @@ class MovieCollectionViewController: UIViewController {
         }
     }
     
+    private func getFavoriteMovies() {
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segue.SHOW_MOVIE_DETAIL {
             guard let destination = segue.destination as? MovieDetailViewController, let movie = sender as? MovieViewModel else {

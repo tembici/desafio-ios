@@ -14,27 +14,42 @@
         <scene sceneID="U0m-Kj-BDA">
             <objects>
                 <viewController title="Favorites" id="9Rt-oK-htV" customClass="FavoriteMoviesViewController" customModule="TheMovieApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Y43-8K-02g" customClass="StateFullView" customModule="TheMovieApp" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="Y43-8K-02g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kpd-jZ-UAy">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3y-k8-0pF" customClass="StateFullView" customModule="TheMovieApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
+                                <subviews>
+                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kpd-jZ-UAy">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Kpd-jZ-UAy" secondAttribute="bottom" id="FOo-0B-OKI"/>
+                                    <constraint firstItem="Kpd-jZ-UAy" firstAttribute="top" secondItem="i3y-k8-0pF" secondAttribute="top" id="IDZ-Bs-xs9"/>
+                                    <constraint firstItem="Kpd-jZ-UAy" firstAttribute="leading" secondItem="i3y-k8-0pF" secondAttribute="leading" id="S2n-ao-Lfb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kpd-jZ-UAy" secondAttribute="trailing" id="nBe-ZT-480"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Kpd-jZ-UAy" firstAttribute="top" secondItem="vqt-IK-bNY" secondAttribute="top" id="Bme-VV-3bZ"/>
-                            <constraint firstItem="vqt-IK-bNY" firstAttribute="trailing" secondItem="Kpd-jZ-UAy" secondAttribute="trailing" id="dpo-IP-xR4"/>
-                            <constraint firstItem="vqt-IK-bNY" firstAttribute="bottom" secondItem="Kpd-jZ-UAy" secondAttribute="bottom" id="hir-wl-gl0"/>
-                            <constraint firstItem="Kpd-jZ-UAy" firstAttribute="leading" secondItem="vqt-IK-bNY" secondAttribute="leading" id="tIG-r6-u1u"/>
+                            <constraint firstItem="vqt-IK-bNY" firstAttribute="trailing" secondItem="i3y-k8-0pF" secondAttribute="trailing" id="2Yv-h9-Dmp"/>
+                            <constraint firstItem="i3y-k8-0pF" firstAttribute="leading" secondItem="vqt-IK-bNY" secondAttribute="leading" id="SD5-OH-EYY"/>
+                            <constraint firstItem="vqt-IK-bNY" firstAttribute="bottom" secondItem="i3y-k8-0pF" secondAttribute="bottom" id="ity-kh-HMb"/>
+                            <constraint firstItem="i3y-k8-0pF" firstAttribute="top" secondItem="vqt-IK-bNY" secondAttribute="top" id="qyu-yF-UU2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vqt-IK-bNY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Favorites" id="5VY-YK-eA7" userLabel="Favorites">
+                        <barButtonItem key="rightBarButtonItem" image="icon_filter" id="vQV-7u-Ni7"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="moviesTableView" destination="Kpd-jZ-UAy" id="W6y-r6-dol"/>
-                        <outlet property="stateView" destination="Y43-8K-02g" id="Cbh-Kk-QJx"/>
+                        <outlet property="stateView" destination="i3y-k8-0pF" id="dBF-F4-1ZK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3jx-O2-nCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -42,4 +57,7 @@
             <point key="canvasLocation" x="101" y="125"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_filter" width="24" height="24"/>
+    </resources>
 </document>

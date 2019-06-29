@@ -26,16 +26,14 @@ class FavoriteMoviesViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showLoadingInView(withMessage: "aaaaaaaaaa")
-//        stateView.setState(.loading("loadibg......."))
         setupTableView()
         getMovies()
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        getMovies()
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getMovies()
+    }
     
     private func setupTableView() {
         moviesTableView.delegate = self
@@ -50,16 +48,9 @@ class FavoriteMoviesViewController: BaseViewController {
         stateView.setErrorCompletion { self.getMovies() }
         coreDataManager.fetch(MovieData.self, successCompletion: { (moviesData) in
             self.movies = self.getMoviesViewModel(moviesData)
-            self.stateView.setState(.normalLayout)
         }) { (error) in
             self.stateView.setState(.error("Could't load favorite movies."))
         }
-        
-        
-//        guard let moviesData = coreDataManager.getFavoriteMovies() else {
-//            return
-//        }
-//        movies = getMoviesViewModel(moviesData)
     }
     
     private func getMoviesViewModel(_ moviesData:[MovieData]) -> [MovieViewModel] {

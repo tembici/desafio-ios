@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MovieDetailDelegate {
+    func didUpdateFavoriteStatus()
+}
+
 class MovieDetailViewController: BaseViewController {
     
     @IBOutlet weak var mainImageView: UIImageView!
@@ -18,6 +22,7 @@ class MovieDetailViewController: BaseViewController {
     @IBOutlet weak var favoriteButton: FavoriteButton!
     
     var movie:MovieViewModel?
+    var delegate:MovieDetailDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +98,7 @@ class MovieDetailViewController: BaseViewController {
         coreDataManger.saveObject(bindToMovieData(movie), successCompletion: {
             self.favoriteButton.isSelected = true
             self.setNormalLayout()
+            self.delegate?.didUpdateFavoriteStatus()
         }) { (error) in
             self.setNormalLayout()
             self.favoriteButton.isSelected = false
@@ -110,16 +116,10 @@ class MovieDetailViewController: BaseViewController {
         manager.delete(MovieData.self, predicate: predicate, successCompletion: {
             self.favoriteButton.isSelected = false
             self.setNormalLayout()
+            self.delegate?.didUpdateFavoriteStatus()
         }) { (error) in
             self.showAlert(_title: "Error", _message: "Could not remove favorite status")
         }
-//        manager.fetch(MovieData.self, predicate: predicate, successCompletion: { (moviesData) in
-//
-////            self.favoriteButton.isSelected = moviesData.count > 0
-//            self.setNormalLayout()
-//        }) { (error) in
-//            self.showAlert(_title: "Error", _message: "Could not load favorite status")
-//        }
     }
     
     private func bindToMovieData(_ movie: MovieViewModel) -> MovieData {

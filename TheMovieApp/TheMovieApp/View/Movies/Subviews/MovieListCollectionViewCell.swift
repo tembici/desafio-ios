@@ -49,4 +49,8 @@ class MovieListCollectionViewCell: UICollectionViewCell {
         movieNameLabel.text = movie.title
         mainImageView.loadImageFrom(path: movie.posterPath)
     }
+    
+    public func setFavoriteButtonSelection(_ isSelected:Bool) {
+        favoriteButton.isSelected = isSelected
+    }
 }

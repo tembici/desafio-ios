@@ -15,6 +15,7 @@ class MovieCollectionViewController: UIViewController {
     @IBOutlet var stateView: StateFullView!
     
     let collectionInsets:CGFloat = 8
+    var favoriteMoviesDict:[Int64:Bool] = [:]
     var movies:[MovieViewModel] = [] {
         didSet {
             if (movies.count == 0) {
@@ -54,14 +55,54 @@ class MovieCollectionViewController: UIViewController {
         stateView.setState(.loading("Carregando filmes populares..."))
         appProvider.makeRequest(.getPopularMovies, returnClass: GeneralMovieResponseModel.self, successCompletion: { (response) in
             self.movies = self.movies + response.getMoviesModel()
-            self.stateView.setState(.normalLayout)
+            self.getFavoriteMovies()
         }) { (error) in
             self.stateView.setState(.error(error.localizedDescription))
         }
     }
     
     private func getFavoriteMovies() {
+        let coreDataManager = CoreDataManager()
+        coreDataManager.fetch(MovieData.self, successCompletion: { (moviesData) in
+            self.setFavoriteDict(self.getMoviesViewModel(moviesData))
+            self.stateView.setState(.normalLayout)
+        }) { (error) in
+            self.stateView.setState(.normalLayout)
+        }
+    }
+    
+    private func setFavoriteDict(_ movies:[MovieViewModel]) {
+        favoriteMoviesDict = [:]
+        for movie in movies {
+            favoriteMoviesDict[movie.id] = true
+        }
+        moviesCollectionView.reloadData()
+    }
+    
+    private func getMoviesViewModel(_ moviesData:[MovieData]) -> [MovieViewModel] {
+        var returnMovies:[MovieViewModel] = []
+        for movieData in moviesData {
+            returnMovies.append(bindToMovieViewModel(movieData))
+        }
+        return returnMovies
+    }
+    
+    private func bindToMovieViewModel(_ movieData:MovieData) -> MovieViewModel {
         
+        return MovieViewModel(_id: movieData.id,
+                              _averageRating: movieData.averageRating,
+                              _genresIds: movieData.genres as! [Int],
+                              _originalTitle: movieData.originalTitle ?? "",
+                              _backdropPath: movieData.backdropPath ?? "",
+                              _isAdult: movieData.isAdult,
+                              _popularity: movieData.popularity,
+                              _posterPath: movieData.posterPath ?? "",
+                              _title: movieData.title ?? "",
+                              _overview: movieData.overview ?? "",
+                              _originalLanguage: movieData.originalLanguage ?? "",
+                              _voteCount: movieData.voteCount,
+                              _releaseDate: movieData.releaseDate ?? Date(),
+                              _isVideo: movieData.isVideo)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -70,6 +111,7 @@ class MovieCollectionViewController: UIViewController {
                 return
             }
             destination.movie = movie
+            destination.delegate = self
         }
     }
 }
@@ -88,6 +130,7 @@ extension MovieCollectionViewController: UICollectionViewDataSource, UICollectio
         let cell:MovieListCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: CellReuse.MOVIE_CELL, for: indexPath) as! MovieListCollectionViewCell
         let thisMovie = movies[indexPath.row]
         cell.setMovieCell(thisMovie)
+        cell.setFavoriteButtonSelection(favoriteMoviesDict[thisMovie.id] != nil)
         return cell
     }
     
@@ -112,4 +155,10 @@ extension MovieCollectionViewController: UICollectionViewDataSource, UICollectio
 
 extension MovieCollectionViewController: UISearchControllerDelegate {
     
+}
+
+extension MovieCollectionViewController: MovieDetailDelegate {
+    func didUpdateFavoriteStatus() {
+        getFavoriteMovies()
+    }
 }

@@ -76,9 +76,15 @@ class CoreDataManager {
             let searchResult = try context.fetch(fetchRequest)
             if (searchResult.count > 0) {
                 context.delete(searchResult[0])
-                try context.save()
+                do {
+                    try context.save()
+                    successCompletion()
+                } catch {
+                    failCompletion(error)
+                }
+            } else {
+                failCompletion(NSError(domain: Bundle.main.bundleIdentifier ?? "com.appCompany.AppName" , code:-111, userInfo:[ NSLocalizedDescriptionKey: "No items to delete"]))
             }
-            successCompletion()
         } catch {
             failCompletion(error)
         }

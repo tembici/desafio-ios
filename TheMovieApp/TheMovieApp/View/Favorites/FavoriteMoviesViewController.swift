@@ -20,7 +20,6 @@ class FavoriteMoviesViewController: BaseViewController {
             } else {
                 stateView.setState(.normalLayout)
             }
-            moviesTableView.reloadData()
         }
     }
     
@@ -48,6 +47,7 @@ class FavoriteMoviesViewController: BaseViewController {
         stateView.setErrorCompletion { self.getMovies() }
         coreDataManager.fetch(MovieData.self, successCompletion: { (moviesData) in
             self.movies = self.getMoviesViewModel(moviesData)
+            self.moviesTableView.reloadData()
         }) { (error) in
             self.stateView.setState(.error("Could't load favorite movies."))
         }
@@ -94,4 +94,29 @@ extension FavoriteMoviesViewController: UITableViewDataSource, UITableViewDelega
         }
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action1 = UIContextualAction(style: .destructive, title: "Unfavorite") { (action:UIContextualAction, actionView:UIView, bool) in
+            if (self.movies.indices.contains(indexPath.row)) {
+                let thisMovie = self.movies[indexPath.row]
+                let manager = CoreDataManager()
+                let predicate = NSPredicate(format: "id = %@", argumentArray: [thisMovie.id])
+                manager.delete(MovieData.self, predicate: predicate, successCompletion: {
+                    self.movies.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
+                    tableView.reloadData()
+                    
+                }) { (error) in
+                    self.showAlert(_title: "Error", _message: "Could not remove favorite status")
+                }
+            }
+        }
+        action1.image = UIImage(named: "icon_favorites")
+        return UISwipeActionsConfiguration(actions: [action1])
+    }
+    
+//    func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+//        guard let indexPath = indexPath else { return }
+//        tableView.reloadRows(at: [indexPath], with: .none)
+//    }
 }

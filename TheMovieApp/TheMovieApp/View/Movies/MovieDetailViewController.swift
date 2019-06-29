@@ -32,9 +32,23 @@ class MovieDetailViewController: BaseViewController {
         showLoadingInView(withMessage: "Carregando informações do filme...")
         provider.makeRequest(.getGenreList, returnClass: GeneralGenreResponseModel.self, successCompletion: { (response) in
             self.setGenreText(response.getGenreModels())
-            self.setNormalLayout()
+            self.setFavoriteButton()
         }) { (error) in
             self.showError(error)
+        }
+    }
+    
+    private func setFavoriteButton() {
+        guard let movie = movie else {
+            return
+        }
+        let manager = CoreDataManager()
+        let predicate = NSPredicate(format: "id = %@", argumentArray: [movie.id])
+        manager.fetch(MovieData.self, predicate: predicate, successCompletion: { (moviesData) in
+            self.favoriteButton.isSelected = moviesData.count > 0
+            self.setNormalLayout()
+        }) { (error) in
+            self.showAlert(_title: "Error", _message: "Could not load favorite status")
         }
     }
     
@@ -43,7 +57,6 @@ class MovieDetailViewController: BaseViewController {
         for genre in genres {
             genreDict[genre.id] = genre.name
         }
-
         genresLabel.text = movie!.genresIds.compactMap { (id) -> String? in
             if let str = genreDict[id] {
                 return str
@@ -53,13 +66,14 @@ class MovieDetailViewController: BaseViewController {
     }
     
     private func setupLabels() {
-        if let movie = movie {
-            title = movie.title
-            mainImageView.loadImageFrom(path: movie.posterPath)
-            movieTitleLabel.text = movie.title
-            releaseDateLabel.text = "Premiere: \(movie.releaseDate.getYearValue())"
-            movieOverviewLabel.text = movie.overview
+        guard let movie = movie else {
+            return
         }
+        title = movie.title
+        mainImageView.loadImageFrom(path: movie.posterPath)
+        movieTitleLabel.text = movie.title
+        releaseDateLabel.text = "Premiere: \(movie.releaseDate.getYearValue())"
+        movieOverviewLabel.text = movie.overview
     }
     
     @IBAction func favoriteMovieButtonClicked(_ sender: UIButton) {

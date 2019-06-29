@@ -14,7 +14,7 @@ class MovieCollectionViewController: UIViewController {
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     @IBOutlet var stateView: StateFullView!
     
-    let collectionInsets:CGFloat = 16
+    let collectionInsets:CGFloat = 8
     var movies:[MovieViewModel] = [] {
         didSet {
             if (movies.count == 0) {
@@ -88,7 +88,7 @@ extension MovieCollectionViewController: UICollectionViewDataSource, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = (UIScreen.main.bounds.width - (3 * collectionInsets)) / 2
+        let cellWidth = (UIScreen.main.bounds.width - (2 * collectionInsets)) / 2
         let cellHeight = cellWidth * 1.75
         return CGSize(width: cellWidth, height: cellHeight);
     }
@@ -98,11 +98,11 @@ extension MovieCollectionViewController: UICollectionViewDataSource, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return collectionInsets
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return collectionInsets
+        return 0
     }
 }
 

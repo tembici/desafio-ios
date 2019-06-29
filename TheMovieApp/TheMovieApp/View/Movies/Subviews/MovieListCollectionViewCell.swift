@@ -15,6 +15,7 @@ protocol MovieListCellDelegate {
 
 class MovieListCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet private weak var mainImageView: UIImageView!
     @IBOutlet private weak var movieNameLabel: UILabel!
     @IBOutlet private weak var favoriteButton: FavoriteButton!
@@ -39,8 +40,9 @@ class MovieListCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupBorder() {
-        layer.borderWidth = 0.5
-        layer.borderColor = Colors.darkGray.cgColor
+        containerView.layer.borderWidth = 0.5
+        containerView.layer.borderColor = Colors.darkGray.cgColor
+        containerView.layer.cornerRadius = 4
     }
     
     public func setMovieCell(_ movie:MovieViewModel) {

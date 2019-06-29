@@ -64,4 +64,23 @@ class CoreDataManager {
             failCompletion(error)
         }
     }
+    
+    func delete<T: NSManagedObject>(_ entity: T.Type,
+                                    predicate: NSPredicate,
+                                    successCompletion: @escaping() -> Void,
+                                    failCompletion: @escaping(_ error: Error) -> Void) {
+        let fetchRequest = NSFetchRequest<T>(entityName: NSStringFromClass(T.self))
+        fetchRequest.predicate = predicate
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            let searchResult = try context.fetch(fetchRequest)
+            if (searchResult.count > 0) {
+                context.delete(searchResult[0])
+                try context.save()
+            }
+            successCompletion()
+        } catch {
+            failCompletion(error)
+        }
+    }
 }

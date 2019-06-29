@@ -101,7 +101,25 @@ class MovieDetailViewController: BaseViewController {
     }
     
     private func removeFavoriteMovie() {
-        
+        guard let movie = movie else {
+            return
+        }
+        let manager = CoreDataManager()
+        let predicate = NSPredicate(format: "id = %@", argumentArray: [movie.id])
+        showLoadingInView(withMessage: "Removing from favorites...")
+        manager.delete(MovieData.self, predicate: predicate, successCompletion: {
+            self.favoriteButton.isSelected = false
+            self.setNormalLayout()
+        }) { (error) in
+            self.showAlert(_title: "Error", _message: "Could not remove favorite status")
+        }
+//        manager.fetch(MovieData.self, predicate: predicate, successCompletion: { (moviesData) in
+//
+////            self.favoriteButton.isSelected = moviesData.count > 0
+//            self.setNormalLayout()
+//        }) { (error) in
+//            self.showAlert(_title: "Error", _message: "Could not load favorite status")
+//        }
     }
     
     private func bindToMovieData(_ movie: MovieViewModel) -> MovieData {

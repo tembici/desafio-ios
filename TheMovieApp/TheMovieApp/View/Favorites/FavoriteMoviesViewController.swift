@@ -34,6 +34,7 @@ class FavoriteMoviesViewController: BaseViewController {
     private func setupTableView() {
         moviesTableView.delegate = self
         moviesTableView.dataSource = self
+        moviesTableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
         moviesTableView.register(UINib(nibName: "FavoriteMovieTableViewCell", bundle: nil), forCellReuseIdentifier: CellReuse.MOVIE_FAVORITE_CELL)
     }
     

@@ -13,13 +13,24 @@ class MovieCollectionViewController: UIViewController {
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     @IBOutlet var stateView: StateFullView!
-    
+    let searchController = UISearchController(searchResultsController: nil)
     let collectionInsets:CGFloat = 8
     var favoriteMoviesDict:[Int64:Bool] = [:]
     var movies:[MovieViewModel] = [] {
         didSet {
             if (movies.count == 0) {
-                stateView.setState(.empty("Não há filmes em destaque no momento. Tente novamente mais tarde", image: nil))
+                stateView.setState(.empty("There no movies for this category. Try again later", image: nil))
+            } else {
+                moviesCollectionView.reloadData()
+                stateView.setState(.normalLayout)
+            }
+        }
+    }
+    
+    var filteredMovies:[MovieViewModel] = [] {
+        didSet {
+            if (filteredMovies.count == 0) {
+                stateView.setState(.empty("No movies for this title", image: UIImage(named: "icon_search")))
             } else {
                 moviesCollectionView.reloadData()
                 stateView.setState(.normalLayout)
@@ -37,8 +48,11 @@ class MovieCollectionViewController: UIViewController {
     
     private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        let searchController = UISearchController(searchResultsController: nil)
         searchController.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search movie title"
+        searchController.definesPresentationContext = true
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
@@ -119,18 +133,30 @@ class MovieCollectionViewController: UIViewController {
 extension MovieCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        searchController.isActive = false
         performSegue(withIdentifier: Segue.SHOW_MOVIE_DETAIL, sender: movies[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movies.count
+        return !searchBarIsEmpty() ? filteredMovies.count : movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        var thisMovie:MovieViewModel?
+        if (!searchBarIsEmpty() && filteredMovies.indices.contains(indexPath.row)) {
+            thisMovie = filteredMovies[indexPath.row]
+        }
+        if (searchBarIsEmpty() && movies.indices.contains(indexPath.row)) {
+            thisMovie = movies[indexPath.row]
+        }
+        
         let cell:MovieListCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: CellReuse.MOVIE_CELL, for: indexPath) as! MovieListCollectionViewCell
-        let thisMovie = movies[indexPath.row]
-        cell.setMovieCell(thisMovie)
-        cell.setFavoriteButtonSelection(favoriteMoviesDict[thisMovie.id] != nil)
+        guard let movie = thisMovie else {
+            return cell
+        }
+        cell.setMovieCell(movie)
+        cell.setFavoriteButtonSelection(favoriteMoviesDict[movie.id] != nil)
         return cell
     }
     
@@ -153,8 +179,25 @@ extension MovieCollectionViewController: UICollectionViewDataSource, UICollectio
     }
 }
 
-extension MovieCollectionViewController: UISearchControllerDelegate {
+extension MovieCollectionViewController: UISearchControllerDelegate, UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let text = searchController.searchBar.text {
+            if (!searchBarIsEmpty()) {
+                filterContentForSearchText(text)
+            }
+        }
+    }
     
+    private func searchBarIsEmpty() -> Bool {
+        return (searchController.searchBar.text?.isEmpty ?? true) || searchController.searchBar.text == ""
+    }
+    
+    private func filterContentForSearchText(_ searchText: String) {
+        filteredMovies = movies.filter({( movie : MovieViewModel) -> Bool in
+            return movie.title.lowercased().contains(searchText.lowercased())
+        })
+        moviesCollectionView.reloadData()
+    }
 }
 
 extension MovieCollectionViewController: MovieDetailDelegate {

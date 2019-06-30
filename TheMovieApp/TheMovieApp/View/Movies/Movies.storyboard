@@ -39,9 +39,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ork-HK-4hM"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Movies" id="oGI-bo-ZcR">
-                        <barButtonItem key="rightBarButtonItem" image="icon_filter" id="ENL-J5-PnB"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="moviesCollectionView" destination="UTB-yw-hlD" id="UMc-Go-Gov"/>
                         <outlet property="stateView" destination="jv1-pI-hbz" id="r7Z-kc-R8Z"/>
@@ -227,7 +224,4 @@
             <point key="canvasLocation" x="932" y="101.19940029985008"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="icon_filter" width="24" height="24"/>
-    </resources>
 </document>

@@ -34,6 +34,32 @@ class FavoriteMoviesViewController: BaseViewController {
         getMovies()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segue.SHOW_MOVIE_FILTER {
+            guard let destination = segue.destination as? MovieFilterViewController else {
+                return
+            }
+            destination.existingGenres = getAllGenresIds()
+            destination.years = getAllDates()
+        }
+    }
+    
+    private func getAllGenresIds() -> [Int] {
+        var returnGenres:[Int] = []
+        for movie in movies {
+            returnGenres = Array(Set(returnGenres + movie.genresIds))
+        }
+        return returnGenres
+    }
+    
+    private func getAllDates() -> [Date] {
+        var datesDict:[String:Date] = [:]
+        for movie in movies {
+            datesDict["\(movie.releaseDate.getYearValue())"] = movie.releaseDate
+        }
+        return Array(datesDict.values)
+    }
+    
     private func setupTableView() {
         moviesTableView.delegate = self
         moviesTableView.dataSource = self

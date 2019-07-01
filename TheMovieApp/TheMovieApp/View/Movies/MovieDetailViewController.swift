@@ -34,6 +34,7 @@ class MovieDetailViewController: BaseViewController {
     
     private func getGenres() {
         let provider = AppProvider()
+        setRetryErrorBlock { self.getGenres() }
         showLoadingInView(withMessage: "Carregando informações do filme...")
         provider.makeRequest(.getGenreList, returnClass: GeneralGenreResponseModel.self, successCompletion: { (response) in
             self.setGenreText(response.getGenreModels())

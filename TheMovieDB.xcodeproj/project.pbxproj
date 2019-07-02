@@ -26,6 +26,10 @@
 		F7611AA222CBD784004346AF /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7611A9F22CBD784004346AF /* URLSessionExtension.swift */; };
 		F7611AA322CBD784004346AF /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7611AA022CBD784004346AF /* DataExtension.swift */; };
 		F7611AA722CBD7AA004346AF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7611AA622CBD7AA004346AF /* CoreDataManager.swift */; };
+		F7611AAF22CBDC57004346AF /* MoviesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7611AAE22CBDC57004346AF /* MoviesModels.swift */; };
+		F7611AB122CBDC64004346AF /* MoviesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7611AB022CBDC64004346AF /* MoviesInteractor.swift */; };
+		F7611AB322CBDC72004346AF /* MoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7611AB222CBDC72004346AF /* MoviesPresenter.swift */; };
+		F7611AB522CBDC7E004346AF /* MoviesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7611AB422CBDC7E004346AF /* MoviesRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,10 @@
 		F7611A9F22CBD784004346AF /* URLSessionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
 		F7611AA022CBD784004346AF /* DataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		F7611AA622CBD7AA004346AF /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		F7611AAE22CBDC57004346AF /* MoviesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesModels.swift; sourceTree = "<group>"; };
+		F7611AB022CBDC64004346AF /* MoviesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesInteractor.swift; sourceTree = "<group>"; };
+		F7611AB222CBDC72004346AF /* MoviesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesPresenter.swift; sourceTree = "<group>"; };
+		F7611AB422CBDC7E004346AF /* MoviesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +261,10 @@
 			isa = PBXGroup;
 			children = (
 				F7611A5922CBD34C004346AF /* MoviesViewController.swift */,
+				F7611AAE22CBDC57004346AF /* MoviesModels.swift */,
+				F7611AB022CBDC64004346AF /* MoviesInteractor.swift */,
+				F7611AB222CBDC72004346AF /* MoviesPresenter.swift */,
+				F7611AB422CBDC7E004346AF /* MoviesRouter.swift */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -267,6 +279,7 @@
 				F7611A5022CBD34C004346AF /* Sources */,
 				F7611A5122CBD34C004346AF /* Frameworks */,
 				F7611A5222CBD34C004346AF /* Resources */,
+				F7611AAD22CBDAF8004346AF /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -383,12 +396,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F7611AAD22CBDAF8004346AF /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F7611A5022CBD34C004346AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F7611A9A22CBD741004346AF /* API.swift in Sources */,
+				F7611AB322CBDC72004346AF /* MoviesPresenter.swift in Sources */,
 				F7611A5A22CBD34C004346AF /* MoviesViewController.swift in Sources */,
 				F7611AA122CBD784004346AF /* CFAbsoluteTimeExtension.swift in Sources */,
 				F7611A9622CBD741004346AF /* RequestCache.swift in Sources */,
@@ -402,6 +437,9 @@
 				F7611A9822CBD741004346AF /* RequestMethod.swift in Sources */,
 				F7611AA722CBD7AA004346AF /* CoreDataManager.swift in Sources */,
 				F7611A9522CBD741004346AF /* APIError.swift in Sources */,
+				F7611AB522CBDC7E004346AF /* MoviesRouter.swift in Sources */,
+				F7611AAF22CBDC57004346AF /* MoviesModels.swift in Sources */,
+				F7611AB122CBDC64004346AF /* MoviesInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,10 +9,10 @@
 import Foundation
 
 #if DEBUG
-public extension Data {
+extension Data {
     
     /// Get the string of string data.
-    public var stringValue: String? {
+    var stringValue: String? {
         if let  object = try? JSONSerialization.jsonObject(with: self, options: .allowFragments),
             let string = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted, .sortedKeys]) {
             return String(data: string, encoding: .utf8)

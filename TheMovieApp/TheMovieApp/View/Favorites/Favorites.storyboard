@@ -85,9 +85,31 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CgR-bn-K46">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="527"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvd-6U-QWj">
+                                <rect key="frame" x="0.0" y="591" width="375" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohm-Gv-hZZ" customClass="AppButton" customModule="TheMovieApp" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="16" width="343" height="44"/>
+                                        <state key="normal" title="Select Filters"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="appButtonType">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ohm-Gv-hZZ" secondAttribute="trailing" constant="16" id="Aiv-br-gqf"/>
+                                    <constraint firstAttribute="bottom" secondItem="ohm-Gv-hZZ" secondAttribute="bottom" constant="16" id="M8r-Et-dVv"/>
+                                    <constraint firstItem="ohm-Gv-hZZ" firstAttribute="leading" secondItem="cvd-6U-QWj" secondAttribute="leading" constant="16" id="VEq-ny-imU"/>
+                                    <constraint firstItem="ohm-Gv-hZZ" firstAttribute="top" secondItem="cvd-6U-QWj" secondAttribute="top" constant="16" id="W71-oX-qmL"/>
+                                    <constraint firstAttribute="height" constant="76" id="fDX-UL-0L4"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -96,8 +118,12 @@
                             <constraint firstItem="A72-VB-KHd" firstAttribute="top" secondItem="RxK-WF-L0D" secondAttribute="bottom" id="LcM-a9-WbY"/>
                             <constraint firstItem="FYs-Nd-ARg" firstAttribute="trailing" secondItem="CgR-bn-K46" secondAttribute="trailing" id="MxQ-ne-6vk"/>
                             <constraint firstItem="A72-VB-KHd" firstAttribute="top" secondItem="FYs-Nd-ARg" secondAttribute="top" id="OWQ-Ez-Mc7"/>
+                            <constraint firstItem="cvd-6U-QWj" firstAttribute="top" secondItem="CgR-bn-K46" secondAttribute="bottom" id="PDx-S5-fUi"/>
+                            <constraint firstItem="FYs-Nd-ARg" firstAttribute="bottom" secondItem="cvd-6U-QWj" secondAttribute="bottom" id="PUd-Bl-oWK"/>
                             <constraint firstItem="RxK-WF-L0D" firstAttribute="top" secondItem="Sc1-0G-bg5" secondAttribute="top" id="Pbk-PS-z8E"/>
-                            <constraint firstItem="FYs-Nd-ARg" firstAttribute="bottom" secondItem="CgR-bn-K46" secondAttribute="bottom" id="daz-zG-ip6"/>
+                            <constraint firstItem="cvd-6U-QWj" firstAttribute="leading" secondItem="FYs-Nd-ARg" secondAttribute="leading" id="SdO-AP-RBY"/>
+                            <constraint firstItem="FYs-Nd-ARg" firstAttribute="trailing" secondItem="cvd-6U-QWj" secondAttribute="trailing" id="XVw-ek-cCH"/>
+                            <constraint firstItem="cvd-6U-QWj" firstAttribute="top" secondItem="CgR-bn-K46" secondAttribute="bottom" id="bjL-Ca-kT5"/>
                             <constraint firstItem="CgR-bn-K46" firstAttribute="leading" secondItem="FYs-Nd-ARg" secondAttribute="leading" id="fQC-wD-S3Q"/>
                             <constraint firstItem="RxK-WF-L0D" firstAttribute="leading" secondItem="Sc1-0G-bg5" secondAttribute="leading" id="gvz-Wc-4UK"/>
                             <constraint firstItem="CgR-bn-K46" firstAttribute="top" secondItem="A72-VB-KHd" secondAttribute="bottom" id="mZH-tv-PYW"/>

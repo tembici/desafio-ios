@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MovieFilterFlowDelegate {
+    func didSelectFilters(selectedDates:[Date], selectedGenres:[GenreModel])
+}
+
 class MovieFilterViewController: BaseViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!

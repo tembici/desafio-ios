@@ -52,13 +52,13 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic {
     }
     
     func display(viewModel: Movies.FetchMovies.ViewModel) {
-        self.displayedMovies = viewModel.displayedMovies
+        self.displayedMovies.append(contentsOf: viewModel.displayedMovies)
         self.collectionView.reloadData()
     }
     
 }
 
-extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSourcePrefetching {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.displayedMovies.count
@@ -84,6 +84,17 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
         let width = (collectionView.bounds.width - minimumInteritemSpacing - leftMargin - rightMargin) / 2
         let height = 1.5 * width
         return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        // check if we need to prefetch new items
+        let itemsCount = self.displayedMovies.count
+        guard let indexPath = indexPaths.last,
+            indexPath.row > itemsCount - 20 else {
+                return
+        }
+        
+        self.interactor?.fetchNextPage()
     }
     
 }

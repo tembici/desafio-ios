@@ -64,6 +64,7 @@
                                 <connections>
                                     <outlet property="dataSource" destination="YNq-jJ-cW7" id="8vi-6p-Ozf"/>
                                     <outlet property="delegate" destination="YNq-jJ-cW7" id="awQ-tH-LmF"/>
+                                    <outlet property="prefetchDataSource" destination="YNq-jJ-cW7" id="63K-Dc-SAj"/>
                                 </connections>
                             </collectionView>
                         </subviews>

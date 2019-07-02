@@ -14,4 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        UITabBar.appearance().barTintColor = Color.yellow
+    }
+    
 }

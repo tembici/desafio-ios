@@ -9,13 +9,17 @@
 import UIKit
 
 protocol MoviesDisplayLogic: class {
-    
+    func display(viewModel: Movies.FetchMovies.ViewModel)
 }
 
 class MoviesViewController: UIViewController, MoviesDisplayLogic {
     
     var interactor: MoviesInteractorProtocol?
     var router: MoviesRouterProtocol?
+    
+    @IBOutlet private var collectionView: UICollectionView!
+    
+    var displayedMovies: [Movies.FetchMovies.ViewModel.DisplayedMovie] = []
     
     private func setup() {
         let viewController = self
@@ -41,7 +45,45 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.navigationController!.navigationBar.isTranslucent = false
+        self.navigationController!.navigationBar.barTintColor = Color.yellow
+        self.collectionView.register(UINib(nibName: CoverCell.name, bundle: nil), forCellWithReuseIdentifier: CoverCell.name)
+        self.interactor?.didLoad()
+    }
+    
+    func display(viewModel: Movies.FetchMovies.ViewModel) {
+        self.displayedMovies = viewModel.displayedMovies
+        self.collectionView.reloadData()
+    }
+    
+}
+
+extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.displayedMovies.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CoverCell.name, for: indexPath)
+        (cell as? CoverCell)?.prepare(viewModel: self.displayedMovies[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let collectionViewLayout = collectionViewLayout as? UICollectionViewFlowLayout else {
+            return CGSize.zero
+        }
+        
+        // horizontal margins
+        let minimumInteritemSpacing = collectionViewLayout.minimumInteritemSpacing
+        let leftMargin = collectionViewLayout.sectionInset.left
+        let rightMargin = collectionViewLayout.sectionInset.right
+        
+        // width and height for cell
+        let width = (collectionView.bounds.width - minimumInteritemSpacing - leftMargin - rightMargin) / 2
+        let height = 1.5 * width
+        return CGSize(width: width, height: height)
     }
     
 }

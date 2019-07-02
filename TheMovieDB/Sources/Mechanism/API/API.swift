@@ -17,7 +17,8 @@ class API {
                 throw APIError.malformedURL
         }
         
-        var queryItems: [URLQueryItem] = []
+        // v4 eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NDZlNjQ2OGZlMTE2ZjRjMmY3ZTA4MjUxZGQyMzgxMCIsInN1YiI6IjVkMWJkMTVhNTMyYWNiNTg2MWNjYmIxNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.2s8ZdHLr5fX8p5I_m6qSYG-VtC800Q7CU6fywR0o34A
+        var queryItems: [URLQueryItem] = [URLQueryItem(name: "api_key", value: "946e6468fe116f4c2f7e08251dd23810")]
         for parameter in request.parameters {
             queryItems.append(URLQueryItem(name: parameter.key, value: parameter.value))
         }

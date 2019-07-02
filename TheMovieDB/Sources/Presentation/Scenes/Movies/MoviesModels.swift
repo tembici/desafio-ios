@@ -8,6 +8,22 @@
 
 import Foundation
 
-enum ServerList {
+enum Movies {
+    
+    enum FetchMovies {
+        struct Request {
+        }
+        struct Response {
+            let movies: [Movie]
+        }
+        struct ViewModel {
+            struct DisplayedMovie {
+                let poster: String
+                let title: String
+                let isFavorited: Bool
+            }
+            let displayedMovies: [DisplayedMovie]
+        }
+    }
 
 }

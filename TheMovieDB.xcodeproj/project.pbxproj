@@ -38,6 +38,11 @@
 		F7F3506222CC104A00856F37 /* MoviesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3506122CC104A00856F37 /* MoviesWorker.swift */; };
 		F7F3506422CC114400856F37 /* MoviesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3506322CC114400856F37 /* MoviesAPI.swift */; };
 		F7F3506622CC189F00856F37 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3506522CC189F00856F37 /* Media.swift */; };
+		F7F3506922CC283700856F37 /* MovieModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3506822CC283700856F37 /* MovieModels.swift */; };
+		F7F3506B22CC284200856F37 /* MovieInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3506A22CC284200856F37 /* MovieInteractor.swift */; };
+		F7F3506D22CC284D00856F37 /* MoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3506C22CC284D00856F37 /* MoviePresenter.swift */; };
+		F7F3506F22CC285700856F37 /* MovieRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3506E22CC285700856F37 /* MovieRouter.swift */; };
+		F7F3507122CC286400856F37 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3507022CC286400856F37 /* MovieViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +100,11 @@
 		F7F3506122CC104A00856F37 /* MoviesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesWorker.swift; sourceTree = "<group>"; };
 		F7F3506322CC114400856F37 /* MoviesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAPI.swift; sourceTree = "<group>"; };
 		F7F3506522CC189F00856F37 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		F7F3506822CC283700856F37 /* MovieModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModels.swift; sourceTree = "<group>"; };
+		F7F3506A22CC284200856F37 /* MovieInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInteractor.swift; sourceTree = "<group>"; };
+		F7F3506C22CC284D00856F37 /* MoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePresenter.swift; sourceTree = "<group>"; };
+		F7F3506E22CC285700856F37 /* MovieRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRouter.swift; sourceTree = "<group>"; };
+		F7F3507022CC286400856F37 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				F7611AAB22CBDAB9004346AF /* Movies */,
+				F7F3506722CC281E00856F37 /* Movie */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -307,6 +318,18 @@
 				F7F3505F22CC0C6200856F37 /* Color.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F7F3506722CC281E00856F37 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				F7F3507022CC286400856F37 /* MovieViewController.swift */,
+				F7F3506822CC283700856F37 /* MovieModels.swift */,
+				F7F3506A22CC284200856F37 /* MovieInteractor.swift */,
+				F7F3506C22CC284D00856F37 /* MoviePresenter.swift */,
+				F7F3506E22CC285700856F37 /* MovieRouter.swift */,
+			);
+			path = Movie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,6 +489,7 @@
 				F7611A9A22CBD741004346AF /* API.swift in Sources */,
 				F7F3505E22CC0C1900856F37 /* UIColorExtension.swift in Sources */,
 				F7611AB322CBDC72004346AF /* MoviesPresenter.swift in Sources */,
+				F7F3506D22CC284D00856F37 /* MoviePresenter.swift in Sources */,
 				F7611A5A22CBD34C004346AF /* MoviesViewController.swift in Sources */,
 				F7F3506622CC189F00856F37 /* Media.swift in Sources */,
 				F7611AA122CBD784004346AF /* CFAbsoluteTimeExtension.swift in Sources */,
@@ -473,6 +497,7 @@
 				F7611A9722CBD741004346AF /* SHA1.swift in Sources */,
 				F7611A9322CBD741004346AF /* QueueManager.swift in Sources */,
 				F7611AA322CBD784004346AF /* DataExtension.swift in Sources */,
+				F7F3507122CC286400856F37 /* MovieViewController.swift in Sources */,
 				F7611A6022CBD34C004346AF /* TheMovieDB.xcdatamodeld in Sources */,
 				F7611AB922CBE0CF004346AF /* CoverCell.swift in Sources */,
 				F7611A5822CBD34C004346AF /* AppDelegate.swift in Sources */,
@@ -483,7 +508,10 @@
 				F7F3506222CC104A00856F37 /* MoviesWorker.swift in Sources */,
 				F7F3505C22CC01BA00856F37 /* Movie.swift in Sources */,
 				F7611AA722CBD7AA004346AF /* CoreDataManager.swift in Sources */,
+				F7F3506922CC283700856F37 /* MovieModels.swift in Sources */,
 				F7611A9522CBD741004346AF /* APIError.swift in Sources */,
+				F7F3506F22CC285700856F37 /* MovieRouter.swift in Sources */,
+				F7F3506B22CC284200856F37 /* MovieInteractor.swift in Sources */,
 				F7611AB522CBDC7E004346AF /* MoviesRouter.swift in Sources */,
 				F7611AAF22CBDC57004346AF /* MoviesModels.swift in Sources */,
 				F7611AB122CBDC64004346AF /* MoviesInteractor.swift in Sources */,

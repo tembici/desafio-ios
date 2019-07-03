@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MoviesDisplayLogic: class {
-    func display(viewModel: Movies.FetchMovies.ViewModel)
+    func display(viewModel: MoviesModels.FetchMovies.ViewModel)
 }
 
 class MoviesViewController: UIViewController, MoviesDisplayLogic {
@@ -19,7 +19,7 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic {
     
     @IBOutlet private var collectionView: UICollectionView!
     
-    var displayedMovies: [Movies.FetchMovies.ViewModel.DisplayedMovie] = []
+    var displayedMovies: [MoviesModels.FetchMovies.ViewModel.DisplayedMovie] = []
     
     private func setup() {
         let viewController = self
@@ -42,18 +42,26 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic {
         super.init(coder: aDecoder)
         self.setup()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController!.navigationBar.isTranslucent = false
         self.navigationController!.navigationBar.barTintColor = Color.yellow
         self.collectionView.register(UINib(nibName: CoverCell.name, bundle: nil), forCellWithReuseIdentifier: CoverCell.name)
-        self.interactor?.didLoad()
+        self.interactor?.fetch(request: MoviesModels.FetchMovies.Request(index: 0))
     }
     
-    func display(viewModel: Movies.FetchMovies.ViewModel) {
+    func display(viewModel: MoviesModels.FetchMovies.ViewModel) {
         self.displayedMovies.append(contentsOf: viewModel.displayedMovies)
         self.collectionView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let router = self.router, let identifier = segue.identifier else { return }
+        let selector = NSSelectorFromString("routeTo\(identifier)WithSegue:sender:")
+        if router.responds(to: selector) {
+            router.perform(selector, with: segue, with: sender)
+        }
     }
     
 }
@@ -88,13 +96,12 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         // check if we need to prefetch new items
-        let itemsCount = self.displayedMovies.count
-        guard let indexPath = indexPaths.last,
-            indexPath.row > itemsCount - 20 else {
-                return
-        }
-        
-        self.interactor?.fetchNextPage()
+        guard let indexPath = indexPaths.last else { return }
+        self.interactor?.fetch(request: MoviesModels.FetchMovies.Request(index: indexPath.row))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "ShowDetail", sender: indexPath.row)
     }
     
 }

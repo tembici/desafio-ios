@@ -32,20 +32,26 @@
                         <color key="textColor" name="Yellow"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite_gray_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Q9I-i7-3fe">
+                        <rect key="frame" x="141" y="168" width="17" height="16"/>
+                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" name="Dark Blue"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Q9I-i7-3fe" secondAttribute="trailing" constant="6" id="4Kh-EH-OS7"/>
                 <constraint firstItem="kYs-o3-ijz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wim-yg-8zu"/>
                 <constraint firstAttribute="bottom" secondItem="J4d-Kz-bLb" secondAttribute="bottom" id="aB2-oJ-Lcf"/>
                 <constraint firstItem="J4d-Kz-bLb" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="coc-Yv-mEr"/>
                 <constraint firstItem="J4d-Kz-bLb" firstAttribute="top" secondItem="kYs-o3-ijz" secondAttribute="bottom" id="fwl-hH-Jxd"/>
                 <constraint firstAttribute="trailing" secondItem="kYs-o3-ijz" secondAttribute="trailing" id="jeU-mW-9JI"/>
                 <constraint firstItem="kYs-o3-ijz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ugg-Bh-jZn"/>
+                <constraint firstItem="Q9I-i7-3fe" firstAttribute="centerY" secondItem="J4d-Kz-bLb" secondAttribute="centerY" id="wHW-2a-K6q"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="164" height="196"/>
             <connections>
+                <outlet property="favoritedImageView" destination="Q9I-i7-3fe" id="Fl8-3j-60R"/>
                 <outlet property="imageView" destination="kYs-o3-ijz" id="UVg-r2-duX"/>
                 <outlet property="titleLabel" destination="J4d-Kz-bLb" id="TRM-L8-jRs"/>
             </connections>
@@ -53,6 +59,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="favorite_gray_icon" width="17" height="16"/>
         <namedColor name="Dark Blue">
             <color red="0.17647058823529413" green="0.18823529411764706" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

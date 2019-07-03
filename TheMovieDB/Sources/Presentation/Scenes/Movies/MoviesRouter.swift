@@ -15,7 +15,7 @@ protocol MoviesRouting: class {
 }
 
 protocol MoviesRouterProtocol: NSObjectProtocol {
-    
+    var dataStore: MoviesDataStore? { get }
 }
 
 class MoviesRouter: NSObject, MoviesRouterProtocol, MoviesRouting {
@@ -23,18 +23,20 @@ class MoviesRouter: NSObject, MoviesRouterProtocol, MoviesRouting {
     var dataStore: MoviesDataStore?
     
     func routeToShowDetail(segue: UIStoryboardSegue, sender: Any?) {
-        guard let dataStore = self.dataStore else {
-            return
+        guard let dataStore = self.dataStore,
+            let destinationVC = segue.destination as? MovieViewController,
+            var destinationDS = destinationVC.router?.dataStore else {
+                return
         }
         
-        // self.passDataTo*(source: dataStore, destination: &destinationDS, sender: sender)
+        self.passDataToShowDetail(source: dataStore, destination: &destinationDS, sender: sender)
     }
     
     // MARK: Passing data
     
-    // private func passDataToShowDetail(source: ServerListDataStore, destination: inout [Destination]DataStore, sender: Any?) {
-    //     guard let item: Int = sender as? Int else { return }
-    //     destination.photo = source.photos[item]
-    // }
-    
+    private func passDataToShowDetail(source: MoviesDataStore, destination: inout MovieDataStore, sender: Any?) {
+        guard let item: Int = sender as? Int else { return }
+        destination.movie = source.movies[item]
+    }
+
 }

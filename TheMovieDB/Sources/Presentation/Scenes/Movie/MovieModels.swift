@@ -1,5 +1,5 @@
 //
-//  MoviesModels.swift
+//  MovieModels.swift
 //  TheMovieDB
 //
 //  Created by Marcos Kobuchi on 02/07/19.
@@ -8,23 +8,23 @@
 
 import Foundation
 
-enum MoviesModels {
+enum MovieModels {
     
-    enum FetchMovies {
+    enum GetMovie {
         struct Request {
-            let index: Int
         }
         struct Response {
-            let movies: [Movie]
+            let movie: Movie
         }
         struct ViewModel {
             struct DisplayedMovie {
-                let poster: String
                 let title: String
-                let isFavorited: Bool
+                let year: String
+                let genre: String
+                let description: String
             }
-            let displayedMovies: [DisplayedMovie]
+            let displayedMovie: DisplayedMovie
         }
     }
-
+    
 }

@@ -16,7 +16,7 @@ class CoverCell: UICollectionViewCell {
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var favoritedImageView: UIImageView!
     
-    func prepare(viewModel: MoviesModels.FetchMovies.ViewModel.DisplayedMovie) {
+    func prepare(viewModel: MoviesModels.DisplayedMovie) {
         self.titleLabel.text = viewModel.title
         self.favoritedImageView.image = viewModel.isFavorited ? UIImage(named: "favorite_full_icon") : UIImage(named: "favorite_gray_icon")
         Media.download(path: viewModel.poster, imageView: self.imageView)

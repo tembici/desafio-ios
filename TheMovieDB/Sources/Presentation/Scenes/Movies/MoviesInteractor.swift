@@ -10,6 +10,7 @@ import Foundation
 
 protocol MoviesInteractorProtocol {
     func fetch(request: MoviesModels.FetchMovies.Request)
+    func fetch(request: MoviesModels.Update.Request)
 }
 
 protocol MoviesDataStore {
@@ -32,7 +33,7 @@ class MoviesInteractor: MoviesInteractorProtocol, MoviesDataStore {
     private var isFetchingNextPage: Bool = false
     
     init() {
-        self.favoritedMovies = try! self.movieWorkerProtocol.fetch()
+        self.favoritedMovies = try! self.movieWorkerProtocol.fetch(favorited: true)
     }
     
     // the next two functions guarantee we have only one fetching per time
@@ -77,4 +78,11 @@ class MoviesInteractor: MoviesInteractorProtocol, MoviesDataStore {
         QueueManager.shared.executeBlock(blockForExecutionInBackground, queueType: .concurrent)
     }
     
+    func fetch(request: MoviesModels.Update.Request) {
+        let blockForExecutionInBackground: BlockOperation = BlockOperation(block: {
+            self.presenter?.present(response: MoviesModels.Update.Response(movies: self.movies))
+        })
+        QueueManager.shared.executeBlock(blockForExecutionInBackground, queueType: .concurrent)
+    }
+        
 }

@@ -24,9 +24,19 @@ enum MovieModels {
                 let genre: String
                 let description: String
                 let poster: String
-                let favorited: UIImage?
             }
             let displayedMovie: DisplayedMovie
+        }
+    }
+    
+    enum GetFavorited {
+        struct Request {
+        }
+        struct Response {
+            let favorited: Bool
+        }
+        struct ViewModel {
+            let favorited: UIImage?
         }
     }
     

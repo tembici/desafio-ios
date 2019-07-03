@@ -1,42 +1,40 @@
 //
-//  MoviesModels.swift
+//  FavoritesModel.swift
 //  TheMovieDB
 //
-//  Created by Marcos Kobuchi on 02/07/19.
+//  Created by Marcos Kobuchi on 03/07/19.
 //  Copyright © 2019 Marcos Kobuchi. All rights reserved.
 //
 
 import Foundation
 
-enum MoviesModels {
-    
-    struct DisplayedMovie {
-        let poster: String
-        let title: String
-        let isFavorited: Bool
-    }
+enum FavoritesModels {
     
     enum FetchMovies {
+        struct Request {
+        }
+        struct Response {
+            let movies: [Movie]
+        }
+        struct ViewModel {
+            struct DisplayedMovie {
+                let poster: String
+                let title: String
+                let year: String
+                let overview: String
+            }
+            let displayedMovies: [DisplayedMovie]
+        }
+    }
+    
+    enum UnfavoriteMovie {
         struct Request {
             let index: Int
         }
         struct Response {
-            let movies: [Movie]
         }
         struct ViewModel {
-            let displayedMovies: [DisplayedMovie]
         }
     }
     
-    enum Update {
-        struct Request {
-        }
-        struct Response {
-            let movies: [Movie]
-        }
-        struct ViewModel {
-            let displayedMovies: [DisplayedMovie]
-        }
-    }
-
 }

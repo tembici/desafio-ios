@@ -10,6 +10,7 @@ import Foundation
 
 protocol MoviesPresenterProtocol {
     func present(response: MoviesModels.FetchMovies.Response)
+    func present(response: MoviesModels.Update.Response)
 }
 
 class MoviesPresenter: MoviesPresenterProtocol {
@@ -18,12 +19,24 @@ class MoviesPresenter: MoviesPresenterProtocol {
     
     func present(response: MoviesModels.FetchMovies.Response) {
         let blockForExecutionInMainThread: BlockOperation = BlockOperation(block: {
-            var displayedMovies: [MoviesModels.FetchMovies.ViewModel.DisplayedMovie] = []
+            var displayedMovies: [MoviesModels.DisplayedMovie] = []
             for movie in response.movies {
                 guard let poster = movie.poster, let title = movie.title else { continue }
-                displayedMovies.append(MoviesModels.FetchMovies.ViewModel.DisplayedMovie(poster: poster, title: title, isFavorited: movie.favorited))
+                displayedMovies.append(MoviesModels.DisplayedMovie(poster: poster, title: title, isFavorited: movie.favorited))
             }
             self.viewController?.display(viewModel: MoviesModels.FetchMovies.ViewModel(displayedMovies: displayedMovies))
+        })
+        QueueManager.shared.executeBlock(blockForExecutionInMainThread, queueType: .main)
+    }
+    
+    func present(response: MoviesModels.Update.Response) {
+        let blockForExecutionInMainThread: BlockOperation = BlockOperation(block: {
+            var displayedMovies: [MoviesModels.DisplayedMovie] = []
+            for movie in response.movies {
+                guard let poster = movie.poster, let title = movie.title else { continue }
+                displayedMovies.append(MoviesModels.DisplayedMovie(poster: poster, title: title, isFavorited: movie.favorited))
+            }
+            self.viewController?.display(viewModel: MoviesModels.Update.ViewModel(displayedMovies: displayedMovies))
         })
         QueueManager.shared.executeBlock(blockForExecutionInMainThread, queueType: .main)
     }

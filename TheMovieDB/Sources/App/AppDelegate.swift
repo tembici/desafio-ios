@@ -18,4 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().barTintColor = Color.yellow
     }
     
+    func applicationWillTerminate(_ application: UIApplication) {
+        let coredataWorker = MovieCoreDataWorker()
+        let movies = try! coredataWorker.fetch(favorited: false)
+        movies.filter({ !$0.favorited }).forEach { (movie) in
+            try! coredataWorker.delete(movie)
+        }
+    }
+    
 }

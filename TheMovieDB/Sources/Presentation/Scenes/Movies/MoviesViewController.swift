@@ -10,6 +10,7 @@ import UIKit
 
 protocol MoviesDisplayLogic: class {
     func display(viewModel: MoviesModels.FetchMovies.ViewModel)
+    func display(viewModel: MoviesModels.Update.ViewModel)
 }
 
 class MoviesViewController: UIViewController, MoviesDisplayLogic {
@@ -19,7 +20,7 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic {
     
     @IBOutlet private var collectionView: UICollectionView!
     
-    var displayedMovies: [MoviesModels.FetchMovies.ViewModel.DisplayedMovie] = []
+    var displayedMovies: [MoviesModels.DisplayedMovie] = []
     
     private func setup() {
         let viewController = self
@@ -51,8 +52,18 @@ class MoviesViewController: UIViewController, MoviesDisplayLogic {
         self.interactor?.fetch(request: MoviesModels.FetchMovies.Request(index: 0))
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.interactor?.fetch(request: MoviesModels.Update.Request())
+    }
+    
     func display(viewModel: MoviesModels.FetchMovies.ViewModel) {
         self.displayedMovies.append(contentsOf: viewModel.displayedMovies)
+        self.collectionView.reloadData()
+    }
+    
+    func display(viewModel: MoviesModels.Update.ViewModel) {
+        self.displayedMovies = viewModel.displayedMovies
         self.collectionView.reloadData()
     }
     

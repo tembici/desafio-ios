@@ -15,9 +15,10 @@ enum MovieError: LocalizedError {
 
 final class MovieCoreDataWorker: MovieWorkerProtocol {
     
-    func fetch() throws -> [Movie] {
+    func fetch(favorited: Bool) throws -> [Movie] {
         do {
             let request: NSFetchRequest<Movie> = Movie.fetchRequest()
+            request.predicate = NSPredicate(format: "favorited == %@", NSNumber(value: favorited))
             return try CoreDataManager.shared.fetch(request)
         } catch {
             throw MovieError.database(description: error.localizedDescription)
@@ -45,7 +46,7 @@ final class MovieCoreDataWorker: MovieWorkerProtocol {
 // MARK: - Server Worker API
 
 protocol MovieWorkerProtocol {
-    func fetch() throws -> [Movie]
+    func fetch(favorited: Bool) throws -> [Movie]
     func create(_ server: Movie) throws
     func delete(_ server: Movie) throws
 }

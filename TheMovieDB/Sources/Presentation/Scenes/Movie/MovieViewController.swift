@@ -10,6 +10,7 @@ import UIKit
 
 protocol MovieDisplayLogic: class {
     func display(viewModel: MovieModels.GetMovie.ViewModel)
+    func display(viewModel: MovieModels.GetFavorited.ViewModel)
     func display(viewModel: MovieModels.ToggleFavorite.ViewModel)
 }
 
@@ -52,13 +53,21 @@ class MovieViewController: UIViewController, MovieDisplayLogic {
         self.interactor?.get(request: MovieModels.GetMovie.Request())
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.interactor?.get(request: MovieModels.GetFavorited.Request())
+    }
+    
     func display(viewModel: MovieModels.GetMovie.ViewModel) {
         Media.download(path: viewModel.displayedMovie.poster, imageView: self.coverImageView)
         self.titleLabel.text = viewModel.displayedMovie.title
         self.yearLabel.text = viewModel.displayedMovie.year
         self.genresLabel.text = viewModel.displayedMovie.genre
         self.descriptionLabel.text = viewModel.displayedMovie.description
-        self.favoriteButton.setImage(viewModel.displayedMovie.favorited, for: .normal)
+    }
+    
+    func display(viewModel: MovieModels.GetFavorited.ViewModel) {
+        self.favoriteButton.setImage(viewModel.favorited, for: .normal)
     }
     
     func display(viewModel: MovieModels.ToggleFavorite.ViewModel) {

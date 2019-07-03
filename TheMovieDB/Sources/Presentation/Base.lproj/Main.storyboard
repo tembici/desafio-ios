@@ -10,21 +10,40 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favorites-->
+        <!--Movies-->
         <scene sceneID="lZA-eb-9RB">
             <objects>
-                <viewController id="CAb-9a-Rhy" sceneMemberID="viewController">
+                <viewController id="CAb-9a-Rhy" customClass="FavoritesViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dNg-D4-1mK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iFV-gX-BfD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CAb-9a-Rhy" id="Zun-4M-AhE"/>
+                                    <outlet property="delegate" destination="CAb-9a-Rhy" id="BI6-iw-tr4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iFV-gX-BfD" firstAttribute="top" secondItem="5qQ-h5-utE" secondAttribute="top" id="2f8-j6-O0B"/>
+                            <constraint firstItem="5qQ-h5-utE" firstAttribute="trailing" secondItem="iFV-gX-BfD" secondAttribute="trailing" id="Cb2-bi-jSJ"/>
+                            <constraint firstItem="5qQ-h5-utE" firstAttribute="bottom" secondItem="iFV-gX-BfD" secondAttribute="bottom" id="Fe5-4c-zFr"/>
+                            <constraint firstItem="iFV-gX-BfD" firstAttribute="leading" secondItem="5qQ-h5-utE" secondAttribute="leading" id="KBR-rI-oan"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5qQ-h5-utE"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" image="favorite_empty_icon" id="6xL-9f-UI4"/>
+                    <navigationItem key="navigationItem" title="Movies" id="jmQ-RO-M48"/>
+                    <connections>
+                        <outlet property="tableView" destination="iFV-gX-BfD" id="8lI-0a-EFp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfB-dD-rlr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1090" y="454"/>
+            <point key="canvasLocation" x="1951" y="453"/>
         </scene>
         <!--Movies-->
         <scene sceneID="sRv-9N-Xio">
@@ -77,7 +96,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DJY-wC-xo4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Movies" image="list_icon" id="Cwe-88-upV"/>
                     <navigationItem key="navigationItem" title="Movies" id="2Uv-W7-bFk"/>
                     <connections>
                         <outlet property="collectionView" destination="A3f-Ec-ttT" id="Oaf-y0-p6Q"/>
@@ -99,7 +117,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BQG-sl-i4h" kind="relationship" relationship="viewControllers" id="7RH-H8-6LK"/>
-                        <segue destination="CAb-9a-Rhy" kind="relationship" relationship="viewControllers" id="i9t-hp-blJ"/>
+                        <segue destination="Z9i-J1-VGp" kind="relationship" relationship="viewControllers" id="0B5-SZ-61M"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGr-gI-ldp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,7 +253,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MyA-si-M2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2805.7971014492755" y="-261.16071428571428"/>
+            <point key="canvasLocation" x="2867" y="-261"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="f5E-s9-wu7">
+            <objects>
+                <navigationController id="Z9i-J1-VGp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="favorite_empty_icon" id="ubb-is-q1W"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EVp-Bq-xQY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CAb-9a-Rhy" kind="relationship" relationship="rootViewController" id="Ppt-db-Sqm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UqD-nX-Md1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1090" y="453"/>
         </scene>
     </scenes>
     <resources>

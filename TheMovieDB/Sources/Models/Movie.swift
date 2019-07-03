@@ -18,6 +18,8 @@ final class Movie: NSManagedObject {
     @NSManaged var releaseDate: String?
     @NSManaged var genre: String?
     
+    @NSManaged var favorited: Bool
+    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Movie> {
         return NSFetchRequest<Movie>(entityName: String(describing: self))
     }

@@ -20,9 +20,8 @@ class MoviesPresenter: MoviesPresenterProtocol {
         let blockForExecutionInMainThread: BlockOperation = BlockOperation(block: {
             var displayedMovies: [MoviesModels.FetchMovies.ViewModel.DisplayedMovie] = []
             for movie in response.movies {
-                let isFavorited = false
                 guard let poster = movie.poster, let title = movie.title else { continue }
-                displayedMovies.append(MoviesModels.FetchMovies.ViewModel.DisplayedMovie(poster: poster, title: title, isFavorited: isFavorited))
+                displayedMovies.append(MoviesModels.FetchMovies.ViewModel.DisplayedMovie(poster: poster, title: title, isFavorited: movie.favorited))
             }
             self.viewController?.display(viewModel: MoviesModels.FetchMovies.ViewModel(displayedMovies: displayedMovies))
         })

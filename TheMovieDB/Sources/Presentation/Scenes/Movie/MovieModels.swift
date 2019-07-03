@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit.UIImage
 
 enum MovieModels {
     
@@ -22,8 +23,21 @@ enum MovieModels {
                 let year: String
                 let genre: String
                 let description: String
+                let poster: String
+                let favorited: UIImage?
             }
             let displayedMovie: DisplayedMovie
+        }
+    }
+    
+    enum ToggleFavorite {
+        struct Request {
+        }
+        struct Response {
+            let isFavorited: Bool
+        }
+        struct ViewModel {
+            let displayedFavorited: UIImage?
         }
     }
     

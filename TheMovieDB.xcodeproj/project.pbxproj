@@ -32,6 +32,7 @@
 		F7611AB522CBDC7E004346AF /* MoviesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7611AB422CBDC7E004346AF /* MoviesRouter.swift */; };
 		F7611AB922CBE0CF004346AF /* CoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7611AB722CBE0CF004346AF /* CoverCell.swift */; };
 		F7611ABA22CBE0CF004346AF /* CoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7611AB822CBE0CF004346AF /* CoverCell.xib */; };
+		F7DA03C622CCE95A00A4A524 /* MovieCoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DA03C522CCE95A00A4A524 /* MovieCoreDataWorker.swift */; };
 		F7F3505C22CC01BA00856F37 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3505B22CC01BA00856F37 /* Movie.swift */; };
 		F7F3505E22CC0C1900856F37 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3505D22CC0C1900856F37 /* UIColorExtension.swift */; };
 		F7F3506022CC0C6200856F37 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3505F22CC0C6200856F37 /* Color.swift */; };
@@ -94,6 +95,7 @@
 		F7611AB422CBDC7E004346AF /* MoviesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRouter.swift; sourceTree = "<group>"; };
 		F7611AB722CBE0CF004346AF /* CoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverCell.swift; sourceTree = "<group>"; };
 		F7611AB822CBE0CF004346AF /* CoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoverCell.xib; sourceTree = "<group>"; };
+		F7DA03C522CCE95A00A4A524 /* MovieCoreDataWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCoreDataWorker.swift; sourceTree = "<group>"; };
 		F7F3505B22CC01BA00856F37 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		F7F3505D22CC0C1900856F37 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F7F3505F22CC0C6200856F37 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 		F7611AA822CBD845004346AF /* Workers */ = {
 			isa = PBXGroup;
 			children = (
+				F7DA03C522CCE95A00A4A524 /* MovieCoreDataWorker.swift */,
 				F7F3506122CC104A00856F37 /* MoviesWorker.swift */,
 			);
 			path = Workers;
@@ -502,6 +505,7 @@
 				F7611AB922CBE0CF004346AF /* CoverCell.swift in Sources */,
 				F7611A5822CBD34C004346AF /* AppDelegate.swift in Sources */,
 				F7611AA222CBD784004346AF /* URLSessionExtension.swift in Sources */,
+				F7DA03C622CCE95A00A4A524 /* MovieCoreDataWorker.swift in Sources */,
 				F7F3506022CC0C6200856F37 /* Color.swift in Sources */,
 				F7611A9922CBD741004346AF /* Request.swift in Sources */,
 				F7611A9822CBD741004346AF /* RequestMethod.swift in Sources */,

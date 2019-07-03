@@ -20,12 +20,20 @@ class MoviesInteractor: MoviesInteractorProtocol, MoviesDataStore {
     
     var presenter: MoviesPresenterProtocol?
     private var moviesWorker: MoviesWorker = MoviesWorker(moviesStore: MoviesAPI())
+    private var movieWorkerProtocol: MovieWorkerProtocol = MovieCoreDataWorker()
     
     private var page: Int = 1
     var movies: [Movie] = []
     
+    private var favoritedMovies: [Movie] = []
+    private var favoritedMoviesIDs: [Int] { return self.favoritedMovies.map({ $0.id }) }
+    
     private let lock: NSLock = NSLock()
     private var isFetchingNextPage: Bool = false
+    
+    init() {
+        self.favoritedMovies = try! self.movieWorkerProtocol.fetch()
+    }
     
     // the next two functions guarantee we have only one fetching per time
     private func shouldStartFetching() -> Bool {
@@ -47,7 +55,16 @@ class MoviesInteractor: MoviesInteractorProtocol, MoviesDataStore {
             guard request.index > self.movies.count - 20 else { return }
             guard self.shouldStartFetching() else { return }
             do {
-                let movies = try self.moviesWorker.fetch(page: self.page)
+                // fetch from API
+                var movies = try self.moviesWorker.fetch(page: self.page)
+                
+                // for each movie, detect if we have favorited before
+                for (index, movie) in movies.enumerated() where self.favoritedMoviesIDs.contains(movie.id) {
+                    // if so, switch with what we have locally
+                    let favoritedMovie = self.favoritedMovies.first(where: { $0.id == movie.id })
+                    movies[index] = favoritedMovie!
+                }
+                
                 self.movies.append(contentsOf: movies)
                 self.page += 1
                 self.presenter?.present(response: MoviesModels.FetchMovies.Response(movies: movies))

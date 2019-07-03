@@ -10,14 +10,17 @@ import UIKit
 
 protocol MovieDisplayLogic: class {
     func display(viewModel: MovieModels.GetMovie.ViewModel)
+    func display(viewModel: MovieModels.ToggleFavorite.ViewModel)
 }
 
 class MovieViewController: UIViewController, MovieDisplayLogic {
     
+    @IBOutlet private var coverImageView: UIImageView!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var yearLabel: UILabel!
     @IBOutlet private var genresLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
+    @IBOutlet private var favoriteButton: UIButton!
     
     var interactor: MovieInteractorProtocol?
     var router: MovieRouterProtocol?
@@ -50,10 +53,20 @@ class MovieViewController: UIViewController, MovieDisplayLogic {
     }
     
     func display(viewModel: MovieModels.GetMovie.ViewModel) {
+        Media.download(path: viewModel.displayedMovie.poster, imageView: self.coverImageView)
         self.titleLabel.text = viewModel.displayedMovie.title
         self.yearLabel.text = viewModel.displayedMovie.year
         self.genresLabel.text = viewModel.displayedMovie.genre
         self.descriptionLabel.text = viewModel.displayedMovie.description
+        self.favoriteButton.setImage(viewModel.displayedMovie.favorited, for: .normal)
+    }
+    
+    func display(viewModel: MovieModels.ToggleFavorite.ViewModel) {
+        self.favoriteButton.setImage(viewModel.displayedFavorited, for: .normal)
+    }
+    
+    @IBAction private func favorite(_ sender: Any) {
+        self.interactor?.favorite(request: MovieModels.ToggleFavorite.Request())
     }
     
 }

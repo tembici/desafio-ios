@@ -15,6 +15,7 @@ protocol MovieCollectionViewCellDelegate {
 class MovieCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imvMovie: UIImageView!
+    @IBOutlet weak var viwLabel: UIView!
     @IBOutlet weak var btnFavoriteIcon: UIButton!
     @IBOutlet weak var lblTitle: UILabel!
     
@@ -24,8 +25,14 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     var movie : Movie?{
         didSet {
+            
+            viwLabel.backgroundColor = .mvBlue
+            lblTitle.textColor = .mvYellow
             lblTitle.text = "\(movie?.title ?? "")"
             imvMovie.imageFromUrl(movie?.poster_path ?? "", placeHolder: nil)
+            if let _ = FavoriteList.shared.list.firstIndex(where: { $0.id == movie?.id }) {
+                isFavorite = true
+            }
             loadFavoriteStatus()
         }
     }
@@ -44,6 +51,13 @@ class MovieCollectionViewCell: UICollectionViewCell {
         btnFavoriteIcon.setImage(UIImage(named: nameImage), for: UIControl.State.normal)
     }
     
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        lblTitle.text = ""
+        imvMovie.image = nil
+        isFavorite = false
+    }
     @IBAction func favoritePressed(sender:Any?)
     {
         isFavorite = !isFavorite

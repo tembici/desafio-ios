@@ -16,9 +16,9 @@ protocol MovieViewModelDelegate {
 
 class MovieViewModel: NSObject {
     var delegate:MovieViewModelDelegate?
-    func getMoviesList()
+    func getMoviesList(page:Int)
     {
-        HttpClient.shared.getMoviesList() { (data, err) in
+        HttpClient.shared.getMoviesList(page:page) { (data, err) in
             if err != nil
             {
                 self.delegate?.didGetMoviesList(movies:nil, error:true, errorType:"")

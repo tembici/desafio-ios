@@ -17,8 +17,8 @@ struct HttpClient {
     static var shared = HttpClient()
     private init() { }
     private var API_KEY = "cf49c46bacede05058a4fda7a5124dec"
-    func getMoviesList(completion: @escaping (MoviesData?,Error?) -> ()) {
-        let parameters = ["api_key": API_KEY]
+    func getMoviesList(page:Int, completion: @escaping (MoviesData?,Error?) -> ()) {
+        let parameters = ["api_key": API_KEY,"page":page] as [String : Any]
         let url = URLMovs.url + "/movie/popular"
         let headers: HTTPHeaders = [
             "Content-type": "application/json"

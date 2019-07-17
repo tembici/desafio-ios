@@ -13,7 +13,7 @@ struct MoviesData: Codable {
     var results: [Movie]
 }
 
-struct Movie: Codable{
+class Movie: NSObject, NSCoding, Codable{
     var vote_count: Int?
     var id: Int?
     var video: Bool?
@@ -28,15 +28,61 @@ struct Movie: Codable{
     var adult:Bool?
     var overview: String?
     var release_date: String?
+    
+    required init(coder decoder: NSCoder) {
+
+        vote_count = decoder.decodeObject(forKey: "vote_count") as? Int ?? 0
+        id = decoder.decodeObject(forKey: "id") as? Int ?? 0
+        video = decoder.decodeObject(forKey: "video") as? Bool ?? false
+        vote_average = decoder.decodeObject(forKey: "vote_average") as? Float ?? 0.0
+        title = decoder.decodeObject(forKey: "title") as? String ?? ""
+        popularity = decoder.decodeObject(forKey: "popularity") as? Double ?? 0.0
+        poster_path = decoder.decodeObject(forKey: "poster_path") as? String ?? ""
+        original_language = decoder.decodeObject(forKey: "original_language") as? String ?? ""
+        original_title = decoder.decodeObject(forKey: "original_title") as? String ?? ""
+        genre_ids = decoder.decodeObject(forKey: "genre_ids") as? [Int] ?? [Int]()
+        backdrop_path = decoder.decodeObject(forKey: "backdrop_path") as? String ?? ""
+        adult = decoder.decodeObject(forKey: "adult") as? Bool ?? false
+        overview = decoder.decodeObject(forKey: "overview") as? String ?? ""
+        release_date = decoder.decodeObject(forKey: "release_date") as? String ?? ""
+
+    }
+
+    func encode(with coder: NSCoder) {
+        coder.encode(vote_count, forKey: "vote_count")
+        coder.encode(id, forKey: "id")
+        coder.encode(video, forKey: "video")
+        coder.encode(vote_average, forKey: "vote_average")
+        coder.encode(title, forKey: "title")
+        coder.encode(popularity, forKey: "popularity")
+        coder.encode(poster_path, forKey: "poster_path")
+        coder.encode(original_language, forKey: "original_language")
+        coder.encode(original_title, forKey: "original_title")
+        coder.encode(genre_ids, forKey: "genre_ids")
+        coder.encode(backdrop_path, forKey: "backdrop_path")
+        coder.encode(adult, forKey: "adult")
+        coder.encode(overview, forKey: "overview")
+        coder.encode(release_date, forKey: "release_date")
+    }
 }
 
 struct GenresData: Codable {
     var genres: [Genre]
 }
 
-struct Genre: Codable {
+class Genre: NSObject, NSCoding, Codable {
     var id:Int?
     var name:String?
+    
+    required init(coder decoder: NSCoder) {
+        id = decoder.decodeObject(forKey: "id") as? Int ?? 0
+        name = decoder.decodeObject(forKey: "name") as? String ?? ""
+    }
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(id, forKey: "id")
+        coder.encode(name, forKey: "name")
+    }
 }
 
 extension DataRequest {

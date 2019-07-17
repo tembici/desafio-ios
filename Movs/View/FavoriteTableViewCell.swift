@@ -28,6 +28,7 @@ class FavoriteTableViewCell: UITableViewCell {
             lblTitle.text = "\(movie?.title ?? "")"
             lblDescription.text = "\(movie?.overview ?? "")"
             imvMovie.imageFromUrl(movie?.poster_path ?? "", placeHolder: nil)
+            lblYear.text = movie?.release_date?.year ?? ""
         }
     }
     

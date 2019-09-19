@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ShowMoviesPresentationLogic {
-    func presentSomething(response: ShowMovies.Something.Response)
+    func presentMovies(response: ShowMovies.fetchMovies.Response)
 }
 
 class ShowMoviesPresenter: ShowMoviesPresentationLogic {
@@ -17,8 +17,8 @@ class ShowMoviesPresenter: ShowMoviesPresentationLogic {
 
     // MARK: Do something
 
-    func presentSomething(response: ShowMovies.Something.Response) {
-        let viewModel = ShowMovies.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentMovies(response: ShowMovies.fetchMovies.Response) {
+        let viewModel = ShowMovies.fetchMovies.ViewModel()
+        viewController?.displayMovies(viewModel: viewModel)
     }
 }

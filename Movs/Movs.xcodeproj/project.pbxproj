@@ -25,6 +25,10 @@
 		AD0626C923326F5900109AA1 /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0626C823326F5900109AA1 /* URLRequest+Extension.swift */; };
 		AD0626CC23326FCA00109AA1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0626CB23326FCA00109AA1 /* NetworkError.swift */; };
 		AD0626CE2332701700109AA1 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0626CD2332701700109AA1 /* URLSessionProtocol.swift */; };
+		ADB0FD7A2333191B004A9578 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB0FD792333191B004A9578 /* Movie.swift */; };
+		ADB0FD7C23331925004A9578 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB0FD7B23331925004A9578 /* Genre.swift */; };
+		ADB0FD7E23331BF3004A9578 /* MovieEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB0FD7D23331BF3004A9578 /* MovieEndpoint.swift */; };
+		ADB0FD8023331C04004A9578 /* GenreEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB0FD7F23331C04004A9578 /* GenreEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		AD0626C823326F5900109AA1 /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
 		AD0626CB23326FCA00109AA1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		AD0626CD2332701700109AA1 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		ADB0FD792333191B004A9578 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		ADB0FD7B23331925004A9578 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		ADB0FD7D23331BF3004A9578 /* MovieEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEndpoint.swift; sourceTree = "<group>"; };
+		ADB0FD7F23331C04004A9578 /* GenreEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +180,8 @@
 		AD0626AB23325C4500109AA1 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				ADB0FD792333191B004A9578 /* Movie.swift */,
+				ADB0FD7B23331925004A9578 /* Genre.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -251,6 +261,7 @@
 		AD0626CF2332704700109AA1 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
+				ADB0FD7D23331BF3004A9578 /* MovieEndpoint.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -258,6 +269,7 @@
 		AD0626D02332705100109AA1 /* Genre */ = {
 			isa = PBXGroup;
 			children = (
+				ADB0FD7F23331C04004A9578 /* GenreEndpoint.swift */,
 			);
 			path = Genre;
 			sourceTree = "<group>";
@@ -393,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB0FD7A2333191B004A9578 /* Movie.swift in Sources */,
 				AD0626BA23325D0800109AA1 /* ShowMoviesViewController.swift in Sources */,
 				AD0626C523326E8500109AA1 /* Endpoint.swift in Sources */,
 				AD0626B623325D0800109AA1 /* ShowMoviesPresenter.swift in Sources */,
@@ -400,12 +413,15 @@
 				AD0626BB23325D0800109AA1 /* ShowMoviesInteractor.swift in Sources */,
 				AD0626C723326ED700109AA1 /* URLComponents+Extension.swift in Sources */,
 				AD0626C323326DC200109AA1 /* NetworkManager.swift in Sources */,
+				ADB0FD8023331C04004A9578 /* GenreEndpoint.swift in Sources */,
 				AD0626B823325D0800109AA1 /* ShowMoviesRouter.swift in Sources */,
+				ADB0FD7C23331925004A9578 /* Genre.swift in Sources */,
 				AD0626CE2332701700109AA1 /* URLSessionProtocol.swift in Sources */,
 				AD06267C2332542E00109AA1 /* AppDelegate.swift in Sources */,
 				AD0626CC23326FCA00109AA1 /* NetworkError.swift in Sources */,
 				AD0626C923326F5900109AA1 /* URLRequest+Extension.swift in Sources */,
 				AD0626B723325D0800109AA1 /* ShowMoviesWorker.swift in Sources */,
+				ADB0FD7E23331BF3004A9578 /* MovieEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

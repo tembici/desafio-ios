@@ -9,25 +9,21 @@
 import UIKit
 
 protocol ShowMoviesBusinessLogic {
-    func doSomething(request: ShowMovies.Something.Request)
+    func fetchData(request: ShowMovies.fetchMovies.Request)
 }
 
 protocol ShowMoviesDataStore {
-    //var name: String { get set }
+    
 }
 
 class ShowMoviesInteractor: ShowMoviesBusinessLogic, ShowMoviesDataStore {
     var presenter: ShowMoviesPresentationLogic?
     var worker: ShowMoviesWorker?
-    //var name: String = ""
 
-    // MARK: Do something
-
-    func doSomething(request: ShowMovies.Something.Request) {
+    func fetchData(request: ShowMovies.fetchMovies.Request) {
         worker = ShowMoviesWorker()
-        worker?.doSomeWork()
-
-        let response = ShowMovies.Something.Response()
-        presenter?.presentSomething(response: response)
+    
+        let response = ShowMovies.fetchMovies.Response()
+        presenter?.presentMovies(response: response)
     }
 }

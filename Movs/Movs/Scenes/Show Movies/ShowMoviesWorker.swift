@@ -9,6 +9,19 @@
 import UIKit
 
 class ShowMoviesWorker {
-    func doSomeWork() {
+
+    private let networkManager = NetworkManager()
+    
+    func getMovies(for page: Int, completion: @escaping ([Movie]?) -> Void) {
+        networkManager.request(type: [Movie].self,
+                               service: MovieEndpoint.getMovies(category: .popular, page: 0)) { result in
+
+            switch result {
+                case let .success(movie):
+                    completion(movie)
+                case .failure:
+                    completion(nil)
+            }
+        }
     }
 }

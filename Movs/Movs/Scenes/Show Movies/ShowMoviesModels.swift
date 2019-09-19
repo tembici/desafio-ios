@@ -9,9 +9,10 @@
 import UIKit
 
 enum ShowMovies {
+    
     // MARK: Use cases
 
-    enum Something {
+    enum fetchMovies {
         struct Request {
         }
         struct Response {

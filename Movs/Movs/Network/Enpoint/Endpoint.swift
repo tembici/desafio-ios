@@ -13,6 +13,8 @@ import Foundation
 typealias Headers = [String: String]
 typealias Parameters = [String: Any]
 
+let APIKey: String = "9e5d54f168ccf64e975676401c7becb8"
+
 // MARK: - Protocol
 
 protocol Endpoint {

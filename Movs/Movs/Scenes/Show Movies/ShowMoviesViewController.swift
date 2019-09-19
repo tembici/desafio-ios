@@ -9,10 +9,11 @@
 import UIKit
 
 protocol ShowMoviesDisplayLogic: class {
-  func displaySomething(viewModel: ShowMovies.Something.ViewModel)
+  func displayMovies(viewModel: ShowMovies.fetchMovies.ViewModel)
 }
 
-class ShowMoviesViewController: UIViewController, ShowMoviesDisplayLogic {
+class ShowMoviesViewController: UIViewController {
+    
     var interactor: ShowMoviesBusinessLogic?
     var router: (NSObjectProtocol & ShowMoviesRoutingLogic & ShowMoviesDataPassing)?
 
@@ -21,6 +22,7 @@ class ShowMoviesViewController: UIViewController, ShowMoviesDisplayLogic {
             
         }
     }
+    
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -31,6 +33,13 @@ class ShowMoviesViewController: UIViewController, ShowMoviesDisplayLogic {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        doSomething()
     }
 
     // MARK: Setup
@@ -47,35 +56,22 @@ class ShowMoviesViewController: UIViewController, ShowMoviesDisplayLogic {
         router.viewController = viewController
         router.dataStore = interactor
     }
-
-    // MARK: Routing
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
-
-    // MARK: View lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        doSomething()
-    }
-
-    // MARK: Do something
-
-    //@IBOutlet weak var nameTextField: UITextField!
+    
+    // MARK:
 
     func doSomething() {
-        let request = ShowMovies.Something.Request()
-        interactor?.doSomething(request: request)
-    }
-
-    func displaySomething(viewModel: ShowMovies.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
+        let request = ShowMovies.fetchMovies.Request()
+        interactor?.fetchData(request: request)
     }
 }
+
+// MARK: - Display Logic -
+
+extension ShowMoviesViewController: ShowMoviesDisplayLogic {
+
+    func displayMovies(viewModel: ShowMovies.fetchMovies.ViewModel) {
+
+    }
+}
+
+

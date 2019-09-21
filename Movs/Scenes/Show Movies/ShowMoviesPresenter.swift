@@ -13,12 +13,15 @@ protocol ShowMoviesPresentationLogic {
 }
 
 class ShowMoviesPresenter: ShowMoviesPresentationLogic {
+    
     weak var viewController: ShowMoviesDisplayLogic?
 
-    // MARK: Do something
+    // MARK: - Presentation Logic -
 
     func presentMovies(response: ShowMovies.fetchMovies.Response) {
-        let viewModel = ShowMovies.fetchMovies.ViewModel()
-        viewController?.displayMovies(viewModel: viewModel)
+        if let content = response.content {
+            let viewModel = ShowMovies.fetchMovies.ViewModel(content: content)
+            self.viewController?.displayMovies(viewModel: viewModel)
+        }
     }
 }

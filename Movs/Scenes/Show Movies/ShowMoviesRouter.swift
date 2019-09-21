@@ -8,8 +8,7 @@
 
 import UIKit
 
-@objc protocol ShowMoviesRoutingLogic {
-}
+@objc protocol ShowMoviesRoutingLogic { }
 
 protocol ShowMoviesDataPassing {
     var dataStore: ShowMoviesDataStore? { get }

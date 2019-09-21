@@ -14,12 +14,16 @@ protocol ShowMoviesDisplayLogic: class {
 
 class ShowMoviesViewController: UIViewController {
     
+    var content = [Any]()
+    
     var interactor: ShowMoviesBusinessLogic?
     var router: (NSObjectProtocol & ShowMoviesRoutingLogic & ShowMoviesDataPassing)?
 
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
-            
+            self.collectionView.register(MovieCollectionViewCell.self)
+            self.collectionView.delegate = self
+            self.collectionView.dataSource = self
         }
     }
     
@@ -70,8 +74,33 @@ class ShowMoviesViewController: UIViewController {
 extension ShowMoviesViewController: ShowMoviesDisplayLogic {
 
     func displayMovies(viewModel: ShowMovies.fetchMovies.ViewModel) {
-
+        DispatchQueue.main.async {
+            self.content += viewModel.content
+            self.collectionView.reloadData()
+        }
     }
 }
 
+extension ShowMoviesViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+        return CGSize(width: itemSize, height: itemSize)
+    }
+}
+
+extension ShowMoviesViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.content.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier,
+                                                      for: indexPath) as! MovieCollectionViewCell
+        cell.setup(with: content[indexPath.row])
+        
+        return cell
+    }
+}
 

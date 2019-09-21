@@ -17,13 +17,15 @@ protocol ShowMoviesDataStore {
 }
 
 class ShowMoviesInteractor: ShowMoviesBusinessLogic, ShowMoviesDataStore {
+    
     var presenter: ShowMoviesPresentationLogic?
     var worker: ShowMoviesWorker?
 
     func fetchData(request: ShowMovies.fetchMovies.Request) {
         worker = ShowMoviesWorker()
-    
-        let response = ShowMovies.fetchMovies.Response()
-        presenter?.presentMovies(response: response)
+        worker?.getMovies(for: 1) { movies in
+            let response = ShowMovies.fetchMovies.Response(content: movies)
+            self.presenter?.presentMovies(response: response)
+        }
     }
 }

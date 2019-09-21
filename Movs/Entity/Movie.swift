@@ -8,6 +8,15 @@
 
 import Foundation
 
+
+import Foundation
+
+struct MoviesResponse: Decodable {
+    
+    var results: [Movie]
+}
+
+
 struct Movie: Decodable {
     
     var id: Int

@@ -85,6 +85,7 @@ class MovieRealmAdapter: MovieAdapter {
         movieRealm.releaseYear = movie.release
         movieRealm.lenght = movie.movieLength ?? 0
         movieRealm.category =  movie.category.rawValue
+        movieRealm.isFavorite = movie.isFavorite ?? false
         
         return movieRealm
     }

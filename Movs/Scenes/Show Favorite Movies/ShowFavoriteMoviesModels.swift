@@ -1,0 +1,23 @@
+//
+//  ShowFavoriteMoviesModels.swift
+//  Movs
+//
+//  Created by Miguel Pimentel on 22/09/19.
+//  Copyright (c) 2019 Miguel Pimentel. All rights reserved.
+//
+
+import UIKit
+
+enum ShowFavoriteMovies {
+    
+    // MARK: Use cases
+
+    enum FetchFavoriteMovies {
+        struct Request {
+        }
+        struct Response {
+        }
+        struct ViewModel {
+        }
+    }
+}

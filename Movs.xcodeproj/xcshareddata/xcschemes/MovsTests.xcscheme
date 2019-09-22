@@ -39,16 +39,6 @@
                ReferencedContainer = "container:Movs.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AD0626962332543100109AA1"
-               BuildableName = "MovsUITests.xctest"
-               BlueprintName = "MovsUITests"
-               ReferencedContainer = "container:Movs.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

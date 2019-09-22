@@ -6,3 +6,7 @@ jobs:
   include:
     - stage: build
       script: xcodebuild -project Movs.xcodeproj -target Movs -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+    - stage: test
+      script: xcodebuild test -project Movs.xcodeproj -scheme MovsTests -destination 'platform=iOS Simulator,name=iPhone X' -enableCodeCoverage YES
+      after_success: bash <(curl -s https://codecov.io/bash)  
+

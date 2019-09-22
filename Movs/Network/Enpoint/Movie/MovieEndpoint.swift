@@ -21,14 +21,14 @@ extension MovieEndpoint: Endpoint {
     
     var path: String {
         switch self {
-        case .getMovieDetail(let id):
-            return "/3/movie/\(id)"
-        case .getByGenre:
-            return "/3/discover/movie"
-        case .getVideos(let id):
-            return "/3/movie/\(id)/videos"
-        case .getMovies(let category, _):
-            return "/3/movie/\(category.rawValue)"
+            case .getMovieDetail(let id):
+                return "/3/movie/\(id)"
+            case .getByGenre:
+                return "/3/discover/movie"
+            case .getVideos(let id):
+                return "/3/movie/\(id)/videos"
+            case .getMovies(let category, _):
+                return "/3/movie/\(category.rawValue)"
         }
     }
     
@@ -38,14 +38,14 @@ extension MovieEndpoint: Endpoint {
     
     var params: Params {
         switch self {
-        case .getByGenre(let genreId, let page):
-            return self.getMovieByGenre(genreId: genreId, page: page)
-        case .getMovieDetail:
-            return self.getParametersGetGenre()
-        case .getMovies(_ , let page):
-            return self.getParameters(for: page)
-        default:
-            return self.getParameters()
+            case .getByGenre(let genreId, let page):
+                return self.getMovieByGenre(genreId: genreId, page: page)
+            case .getMovieDetail:
+                return self.getParametersGetGenre()
+            case .getMovies(_ , let page):
+                return self.getParameters(for: page)
+            default:
+                return self.getParameters()
         }
     }
     

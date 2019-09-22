@@ -8,13 +8,36 @@
 
 import UIKit
 
-@objc protocol ShowMoviesRoutingLogic { }
+@objc protocol ShowMoviesRoutingLogic {
+    func routeToMovieDetail(movieId: Int)
+}
 
 protocol ShowMoviesDataPassing {
     var dataStore: ShowMoviesDataStore? { get }
 }
 
 class ShowMoviesRouter: NSObject, ShowMoviesRoutingLogic, ShowMoviesDataPassing {
+  
     weak var viewController: ShowMoviesViewController?
     var dataStore: ShowMoviesDataStore?
+    
+    func routeToMovieDetail(movieId: Int) {
+        let destinationVC = MovieDetailViewController()
+        guard var destinationDS = destinationVC.router?.dataStore else { return }
+        passDataToMovieDetail(movieId: movieId, destination: &destinationDS)
+        navigateToMovieDetail(source: viewController!, destination: destinationVC)
+    }
+
+    // MARK: Navigation
+    
+    private func navigateToMovieDetail(source: ShowMoviesViewController, destination: MovieDetailViewController) {
+        source.show(destination, sender: nil)
+    }
+
+    // MARK: Passing data
+    
+    private func passDataToMovieDetail(movieId: Int, destination: inout MovieDetailDataStore) {
+        destination.movieId = movieId
+    }
 }
+

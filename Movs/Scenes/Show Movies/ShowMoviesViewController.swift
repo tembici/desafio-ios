@@ -14,11 +14,10 @@ protocol ShowMoviesDisplayLogic: class {
 
 class ShowMoviesViewController: UIViewController {
     
-    var content = [Any]()
-    
     var interactor: ShowMoviesBusinessLogic?
     var router: (NSObjectProtocol & ShowMoviesRoutingLogic & ShowMoviesDataPassing)?
 
+    var content = [Any]()
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             self.collectionView.register(MovieCollectionViewCell.self)
@@ -26,6 +25,8 @@ class ShowMoviesViewController: UIViewController {
             self.collectionView.dataSource = self
         }
     }
+    
+    private lazy var searchController: UISearchController = UISearchController(searchResultsController: nil)
     
     // MARK: Object lifecycle
 
@@ -43,7 +44,8 @@ class ShowMoviesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+        self.setupLayout()
+        self.fetchMovies()
     }
 
     // MARK: Setup
@@ -61,9 +63,13 @@ class ShowMoviesViewController: UIViewController {
         router.dataStore = interactor
     }
     
+    private func setupLayout() {
+        self.navigationItem.searchController = searchController
+    }
+    
     // MARK:
 
-    func doSomething() {
+    func fetchMovies() {
         let request = ShowMovies.fetchMovies.Request()
         interactor?.fetchData(request: request)
     }
@@ -86,6 +92,12 @@ extension ShowMoviesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
         return CGSize(width: itemSize, height: itemSize)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let movie = self.content[indexPath.row] as? Movie {
+            self.router?.routeToMovieDetail(movieId: movie.id)
+        }
     }
 }
 

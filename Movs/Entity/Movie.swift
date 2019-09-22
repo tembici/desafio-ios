@@ -8,15 +8,6 @@
 
 import Foundation
 
-
-import Foundation
-
-struct MoviesResponse: Decodable {
-    
-    var results: [Movie]
-}
-
-
 struct Movie: Decodable {
     
     var id: Int
@@ -30,7 +21,7 @@ struct Movie: Decodable {
     var language: String?
     var movieLength: Int?
     var isFavorite: Bool? = false
-    var category: Category = .topRated
+    var category: Category = .popular
 }
 
 extension Movie {

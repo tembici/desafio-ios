@@ -23,6 +23,10 @@ class MovieManager {
         return movies?.filter { $0.category == category }
     }
     
+    func getFavorite() -> [Movie]? {
+        return movies?.filter { $0.isFavorite == true }
+    }
+    
     func getByGenre(genreId: Int) -> [Movie]? {
         return movies?.filter { $0.genres?.contains(genreId) ?? false }
     }
@@ -32,11 +36,11 @@ class MovieManager {
     }
     
     func insert(movie: Movie) -> Movie? {
-        return adapter.insert(movie: movie)
+        return adapter.insertAndUpdate(movie: movie)
     }
     
     func update(movie: Movie) -> Movie? {
-        return adapter.update(movie: movie)
+        return adapter.insertAndUpdate(movie: movie)
     }
     
     func delete(identifier: Int) -> Movie? {
@@ -46,7 +50,7 @@ class MovieManager {
     func insertMany(movies: [Movie]) -> [Movie] {
         var updatedMovies: [Movie] = []
         for movie in movies {
-            if let updatedMovie = adapter.insert(movie: movie) {
+            if let updatedMovie = adapter.insertAndUpdate(movie: movie) {
                 updatedMovies.append(updatedMovie)
             }
         }
@@ -57,7 +61,7 @@ class MovieManager {
     func updateMany(movies: [Movie]) -> [Movie] {
         var updatedMovies: [Movie] = []
         for movie in movies {
-            if let updatedMovie = adapter.update(movie: movie) {
+            if let updatedMovie = adapter.insertAndUpdate(movie: movie) {
                 updatedMovies.append(updatedMovie)
             }
         }

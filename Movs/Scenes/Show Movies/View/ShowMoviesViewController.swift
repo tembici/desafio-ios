@@ -14,10 +14,17 @@ protocol ShowMoviesDisplayLogic: class {
 
 class ShowMoviesViewController: UIViewController {
     
+    var content = [Any]()
+    
     var interactor: ShowMoviesBusinessLogic?
     var router: (NSObjectProtocol & ShowMoviesRoutingLogic & ShowMoviesDataPassing)?
 
-    var content = [Any]()
+    // MARK: - Outlets
+    
+    @IBAction func filterButtonPressed(_ sender: Any) {
+    }
+    
+
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             self.collectionView.register(MovieCollectionViewCell.self)
@@ -65,13 +72,27 @@ class ShowMoviesViewController: UIViewController {
     
     private func setupLayout() {
         self.navigationItem.searchController = searchController
+        let font = UIFont.getExoFont(type: .semiBold, with: 20)
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: font]
+
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
-    // MARK:
 
-    func fetchMovies() {
+    private func fetchMovies() {
         let request = ShowMovies.fetchMovies.Request()
         interactor?.fetchData(request: request)
+    }
+    
+    private func favoriteMovie(content: Any) {
+        if let movie = content as? Movie {
+            let request = ShowMovies.favoriteMovie.Request(movie: movie)
+            self.interactor?.setAsFavorite(request: request)
+        }
     }
 }
 
@@ -110,9 +131,18 @@ extension ShowMoviesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier,
                                                       for: indexPath) as! MovieCollectionViewCell
-        cell.setup(with: content[indexPath.row])
+        cell.setup(with: content[indexPath.row], delegate: self)
         
         return cell
+    }
+}
+
+extension ShowMoviesViewController: MovieCollectionViewCellDelegate {
+    
+    func didSelectFavorite(for movie: Movie?) {
+        if let movie = movie  {
+            self.favoriteMovie(content: movie)
+        }
     }
 }
 

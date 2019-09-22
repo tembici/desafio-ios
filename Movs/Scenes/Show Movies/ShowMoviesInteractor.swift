@@ -10,11 +10,10 @@ import UIKit
 
 protocol ShowMoviesBusinessLogic {
     func fetchData(request: ShowMovies.fetchMovies.Request)
+    func setAsFavorite(request: ShowMovies.favoriteMovie.Request)
 }
 
-protocol ShowMoviesDataStore {
-    
-}
+protocol ShowMoviesDataStore { }
 
 class ShowMoviesInteractor: ShowMoviesBusinessLogic, ShowMoviesDataStore {
     
@@ -27,5 +26,10 @@ class ShowMoviesInteractor: ShowMoviesBusinessLogic, ShowMoviesDataStore {
             let response = ShowMovies.fetchMovies.Response(content: movies)
             self.presenter?.presentMovies(response: response)
         }
+    }
+    
+    func setAsFavorite(request: ShowMovies.favoriteMovie.Request) {
+        worker = ShowMoviesWorker()
+        worker?.saveAsFavorite(movie: request.movie)
     }
 }

@@ -12,13 +12,22 @@ protocol ShowFavoriteMoviesDisplayLogic: class {
   func displayFavoriteMovies(viewModel: ShowFavoriteMovies.FetchFavoriteMovies.ViewModel)
 }
 
-class ShowFavoriteMoviesViewController: UIViewController, ShowFavoriteMoviesDisplayLogic {
+class ShowFavoriteMoviesViewController: UIViewController {
+   
+    var contentData = [Any]()
+    
     var interactor: ShowFavoriteMoviesBusinessLogic?
     var router: (NSObjectProtocol & ShowFavoriteMoviesRoutingLogic & ShowFavoriteMoviesDataPassing)?
-
+    
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            self.tableView.register(FavoriteMovieTableViewCell.self)
+            self.tableView.delegate = self
+            self.tableView.dataSource = self
+        }
+    }
+    
     // MARK: Object lifecycle
-
-    @IBOutlet weak var tableView: UITableView!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -28,6 +37,14 @@ class ShowFavoriteMoviesViewController: UIViewController, ShowFavoriteMoviesDisp
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+    }
+
+    // MARK: View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupLayout()
+        fetchFavoriteMovies()
     }
 
     // MARK: Setup
@@ -45,30 +62,45 @@ class ShowFavoriteMoviesViewController: UIViewController, ShowFavoriteMoviesDisp
         router.dataStore = interactor
     }
 
-    // MARK: Routing
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
+    private func setupLayout() {
+        let font = UIFont.getExoFont(type: .semiBold, with: 20)
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: font]
+        
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
-
-    // MARK: View lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        fetchFavoriteMovies()
-    }
-
-    func fetchFavoriteMovies() {
+  
+    private func fetchFavoriteMovies() {
         let request = ShowFavoriteMovies.FetchFavoriteMovies.Request()
         interactor?.fetchFavoriteMovies(request: request)
     }
+}
 
+extension ShowFavoriteMoviesViewController: ShowFavoriteMoviesDisplayLogic {
+    
     func displayFavoriteMovies(viewModel: ShowFavoriteMovies.FetchFavoriteMovies.ViewModel) {
-
+        
     }
+}
+
+extension ShowFavoriteMoviesViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteMovieTableViewCell.identifier,
+                                                       for: indexPath) as? FavoriteMovieTableViewCell
+        else { return UITableViewCell() }
+        
+        return cell
+    }
+}
+
+extension ShowFavoriteMoviesViewController: UITableViewDelegate {
+    
 }

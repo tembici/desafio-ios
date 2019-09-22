@@ -26,4 +26,11 @@ class ShowMoviesWorker {
             }
         }
     }
+    
+    func saveAsFavorite(movie: Movie) {
+//        var m = movie
+//        m.isFavorite = true
+//        _ = movieManager.update(movie: m)
+////        print(movieManager.getAll()?.filter { $0.isFavorite == true })
+    }
 }

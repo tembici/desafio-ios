@@ -21,4 +21,14 @@ enum ShowMovies {
              var content: [Any]
         }
     }
+    
+    enum favoriteMovie {
+        struct Request { var movie: Movie }
+        struct Response {
+            var isFavorite: Bool
+        }
+        struct ViewModel {
+            var borderColor: UIColor?
+        }
+    }
 }

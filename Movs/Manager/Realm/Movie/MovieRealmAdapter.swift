@@ -12,8 +12,7 @@ import RealmSwift
 protocol MovieAdapter {
     func getAll() -> [Movie]?
     func get(identifier: Int) -> Movie?
-    func insert(movie: Movie) -> Movie?
-    func update(movie: Movie) -> Movie?
+    func insertAndUpdate(movie: Movie) -> Movie?
     func delete(identifier: Int) -> Movie?
 }
 
@@ -28,7 +27,6 @@ class MovieRealmAdapter: MovieAdapter {
         return self.getMovies(by: moviesRealm)
     }
     
-    
     func get(identifier: Int) -> Movie? {
         var movie: Movie?
         let realm = try! Realm()
@@ -39,7 +37,7 @@ class MovieRealmAdapter: MovieAdapter {
         return movie
     }
     
-    func insert(movie: Movie) -> Movie? {
+    func insertAndUpdate(movie: Movie) -> Movie? {
         let realm = try! Realm()
         let movieRealm = self.getMovieRealm(by: movie)
         var insertedMovie: Movie? = nil
@@ -51,8 +49,6 @@ class MovieRealmAdapter: MovieAdapter {
         
         return insertedMovie
     }
-    
-    func update(movie: Movie) -> Movie? { return nil }
     
     func delete(identifier: Int) -> Movie? { return nil }
     

@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="217" height="378"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ick-5a-RCN" customClass="UIImageViewDesignable" customModule="Movs" customModuleProvider="target">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ick-5a-RCN" customClass="UIImageViewDesignable" customModule="Movs" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="217" height="378"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <userDefinedRuntimeAttributes>
@@ -28,11 +28,24 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7h-Nv-6Ed" customClass="UIButtonDesignable" customModule="Movs" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="336" width="217" height="42"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="42" id="Fpf-Yv-B4U"/>
+                        </constraints>
+                        <state key="normal" image="star"/>
+                        <connections>
+                            <action selector="favoriteButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="R3a-Y8-caz"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="f7h-Nv-6Ed" secondAttribute="trailing" id="DUy-39-aF6"/>
                 <constraint firstItem="ick-5a-RCN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ezk-w7-1qu"/>
+                <constraint firstAttribute="bottom" secondItem="f7h-Nv-6Ed" secondAttribute="bottom" id="Yi9-FF-h0m"/>
                 <constraint firstItem="ick-5a-RCN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="est-9c-ngA"/>
+                <constraint firstItem="f7h-Nv-6Ed" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iAO-yb-CNS"/>
                 <constraint firstAttribute="trailing" secondItem="ick-5a-RCN" secondAttribute="trailing" id="tQY-i3-9F3"/>
                 <constraint firstAttribute="bottom" secondItem="ick-5a-RCN" secondAttribute="bottom" id="vm7-px-Qlr"/>
             </constraints>
@@ -44,4 +57,7 @@
             <point key="canvasLocation" x="168.84057971014494" y="-29.464285714285712"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="star" width="32" height="31"/>
+    </resources>
 </document>

@@ -1,8 +1,10 @@
 
 ## Project
-![SWIFT Version](https://img.shields.io/badge/swift-5.0-orange)
-![](https://img.shields.io/badge/License-MIT-blue)
+
 [![Build Status](https://travis-ci.org/miguelpimentel/desafio-ios.svg?branch=master)](https://travis-ci.org/miguelpimentel/desafio-ios)
+[![codecov](https://codecov.io/gh/miguelpimentel/desafio-ios/branch/master/graph/badge.svg)](https://codecov.io/gh/miguelpimentel/desafio-ios)
+![SWIFT Version](https://img.shields.io/badge/swift-5.0-orange)
+![LICENSE](https://img.shields.io/badge/License-MIT-blue)
 
 ## Architecture
 

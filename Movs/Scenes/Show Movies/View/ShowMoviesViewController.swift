@@ -174,3 +174,10 @@ extension ShowMoviesViewController: FilterAlertDelegate{
     }
 }
 
+extension ShowMoviesViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+    }
+}
+

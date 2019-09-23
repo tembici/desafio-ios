@@ -18,10 +18,13 @@ class ShowMoviesViewController: UIViewController {
     
     var interactor: ShowMoviesBusinessLogic?
     var router: (NSObjectProtocol & ShowMoviesRoutingLogic & ShowMoviesDataPassing)?
-
+    var alert: FilterAlertViewController!
+    
     // MARK: - Outlets
     
-    @IBAction func filterButtonPressed(_ sender: Any) { }
+    @IBAction func filterButtonPressed(_ sender: Any) {
+        self.present(self.alert, animated: true, completion: nil)
+    }
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -49,6 +52,7 @@ class ShowMoviesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.alert = FilterAlertViewController(delegate: self)
         self.setupLayout()
         self.fetchMovies()
     }
@@ -151,6 +155,21 @@ extension ShowMoviesViewController: MovieCollectionViewCellDelegate {
     func didSelectFavorite(for movie: Movie?) {
         if let movie = movie  {
             self.favoriteMovie(content: movie)
+        }
+    }
+}
+
+// MARK: -
+
+extension ShowMoviesViewController: FilterAlertDelegate{
+   
+    func dismissAlert() {
+        self.alert.dismiss(animated: true, completion: nil)
+    }
+    
+    func filterRequested(for value: Any) {
+        if let s = value as? String {
+            print(s)
         }
     }
 }

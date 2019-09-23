@@ -30,8 +30,8 @@
 		ADB0FD7C23331925004A9578 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB0FD7B23331925004A9578 /* Genre.swift */; };
 		ADB0FD7E23331BF3004A9578 /* MovieEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB0FD7D23331BF3004A9578 /* MovieEndpoint.swift */; };
 		ADB0FD8023331C04004A9578 /* GenreEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB0FD7F23331C04004A9578 /* GenreEndpoint.swift */; };
-		ADE961B42338F69200DC9BEF /* FIlterAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE961B22338F69200DC9BEF /* FIlterAlertViewController.swift */; };
-		ADE961B52338F69200DC9BEF /* FIlterAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE961B32338F69200DC9BEF /* FIlterAlertViewController.xib */; };
+		ADE961B82338FD8200DC9BEF /* FilterAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE961B62338FD8200DC9BEF /* FilterAlertViewController.swift */; };
+		ADE961B92338FD8200DC9BEF /* FilterAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE961B72338FD8200DC9BEF /* FilterAlertViewController.xib */; };
 		ADEA18762336930800ACBCCC /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEA18752336930800ACBCCC /* UICollectionView+Extension.swift */; };
 		ADEA18782336931E00ACBCCC /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEA18772336931E00ACBCCC /* UIImageView+Extension.swift */; };
 		ADEA187C2336A00500ACBCCC /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEA187A2336A00500ACBCCC /* MovieCollectionViewCell.swift */; };
@@ -152,8 +152,8 @@
 		ADB0FD7B23331925004A9578 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		ADB0FD7D23331BF3004A9578 /* MovieEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEndpoint.swift; sourceTree = "<group>"; };
 		ADB0FD7F23331C04004A9578 /* GenreEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreEndpoint.swift; sourceTree = "<group>"; };
-		ADE961B22338F69200DC9BEF /* FIlterAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIlterAlertViewController.swift; sourceTree = "<group>"; };
-		ADE961B32338F69200DC9BEF /* FIlterAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIlterAlertViewController.xib; sourceTree = "<group>"; };
+		ADE961B62338FD8200DC9BEF /* FilterAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterAlertViewController.swift; sourceTree = "<group>"; };
+		ADE961B72338FD8200DC9BEF /* FilterAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterAlertViewController.xib; sourceTree = "<group>"; };
 		ADEA18752336930800ACBCCC /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		ADEA18772336931E00ACBCCC /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		ADEA187A2336A00500ACBCCC /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -430,8 +430,8 @@
 		ADE961B12338F61F00DC9BEF /* AlertController */ = {
 			isa = PBXGroup;
 			children = (
-				ADE961B22338F69200DC9BEF /* FIlterAlertViewController.swift */,
-				ADE961B32338F69200DC9BEF /* FIlterAlertViewController.xib */,
+				ADE961B62338FD8200DC9BEF /* FilterAlertViewController.swift */,
+				ADE961B72338FD8200DC9BEF /* FilterAlertViewController.xib */,
 			);
 			path = AlertController;
 			sourceTree = "<group>";
@@ -686,7 +686,6 @@
 				ADEA18C62337911A00ACBCCC /* Exo2-Thin.otf in Resources */,
 				ADEA18AA2336E5C100ACBCCC /* MovieDetailViewController.xib in Resources */,
 				ADEAAB0D2337E2E6008079FD /* FavoriteMovieTableViewCell.xib in Resources */,
-				ADE961B52338F69200DC9BEF /* FIlterAlertViewController.xib in Resources */,
 				AD0626BF2332675C00109AA1 /* ShowMovies.storyboard in Resources */,
 				AD0626862332543100109AA1 /* LaunchScreen.storyboard in Resources */,
 				ADEA18CB2337911A00ACBCCC /* Exo2-SemiBold.otf in Resources */,
@@ -695,6 +694,7 @@
 				ADEA187F2336DE1900ACBCCC /* TabBarController.storyboard in Resources */,
 				ADEA19152337D99B00ACBCCC /* ShowFavoriteMovies.storyboard in Resources */,
 				AD0626832332543100109AA1 /* Assets.xcassets in Resources */,
+				ADE961B92338FD8200DC9BEF /* FilterAlertViewController.xib in Resources */,
 				ADEA18BE2337004600ACBCCC /* Colors.xcassets in Resources */,
 				ADEA18AF2336E7C200ACBCCC /* MovieVideosCollectionViewCell.xib in Resources */,
 				ADEA18C82337911A00ACBCCC /* Exo2-ExtraLight.otf in Resources */,
@@ -729,6 +729,7 @@
 				ADEA19082337D82600ACBCCC /* ShowFavoriteMoviesInteractor.swift in Sources */,
 				ADB0FD7A2333191B004A9578 /* Movie.swift in Sources */,
 				AD0626BA23325D0800109AA1 /* ShowMoviesViewController.swift in Sources */,
+				ADE961B82338FD8200DC9BEF /* FilterAlertViewController.swift in Sources */,
 				ADEA18FC2337D82600ACBCCC /* ShowFavoriteMoviesWorker.swift in Sources */,
 				AD0626C523326E8500109AA1 /* Endpoint.swift in Sources */,
 				ADEA18A92336E5C100ACBCCC /* MovieDetailViewController.swift in Sources */,
@@ -751,7 +752,6 @@
 				ADEA18D52337D11900ACBCCC /* MovieRealmAdapter.swift in Sources */,
 				ADB0FD7C23331925004A9578 /* Genre.swift in Sources */,
 				AD0626CE2332701700109AA1 /* URLSessionProtocol.swift in Sources */,
-				ADE961B42338F69200DC9BEF /* FIlterAlertViewController.swift in Sources */,
 				ADEA18B92336EC2E00ACBCCC /* DateFormatter+Extension.swift in Sources */,
 				ADEA18B52336E92E00ACBCCC /* VideosResponse.swift in Sources */,
 				AD06267C2332542E00109AA1 /* AppDelegate.swift in Sources */,

@@ -42,17 +42,9 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
     
     // MARK: Actions
     
-    @IBAction func shareMoviePressed(_ sender: Any) {
-        guard let image = self.moviePosterImageView.image else { return }
-        let imageShare = [image]
-        
-        let activityViewController = UIActivityViewController(activityItems: imageShare,
-                                                              applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view
-        self.present(activityViewController, animated: true, completion: nil)
-    }
-    
+
     // MARK: Object Lifecycle
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
@@ -87,8 +79,14 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
     
     private func setupLayout() {
         self.navigationItem.title = "Details"
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "primaryGray") ?? .black
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share",
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(shareImage))
     }
     
+
     // MARK: Display Logic
     
     func displayMovieDetails(viewModel: MovieDetail.FetchMovieDetails.ViewModel) {
@@ -126,6 +124,16 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
             let request = MovieDetail.FetchMovieVideos.Request(movieId: movieId)
             self.interactor?.fetchMovieVideos(request: request)
         }
+    }
+    
+    @objc private func shareImage(){
+        guard let image = self.moviePosterImageView.image else { return }
+        let imageShare = [image]
+        
+        let activityViewController = UIActivityViewController(activityItems: imageShare,
+                                                              applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
     }
 }
 

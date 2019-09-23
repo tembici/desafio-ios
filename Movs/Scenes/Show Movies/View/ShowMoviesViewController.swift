@@ -21,10 +21,8 @@ class ShowMoviesViewController: UIViewController {
 
     // MARK: - Outlets
     
-    @IBAction func filterButtonPressed(_ sender: Any) {
-    }
+    @IBAction func filterButtonPressed(_ sender: Any) { }
     
-
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             self.collectionView.register(MovieCollectionViewCell.self)
@@ -82,6 +80,7 @@ class ShowMoviesViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
+    // MARK: Private Methods
 
     private func fetchMovies() {
         let request = ShowMovies.fetchMovies.Request()
@@ -92,6 +91,12 @@ class ShowMoviesViewController: UIViewController {
         if let movie = content as? Movie {
             let request = ShowMovies.favoriteMovie.Request(movie: movie)
             self.interactor?.setAsFavorite(request: request)
+        }
+    }
+    
+    private func routeToMovieDetails(data: Any) {
+        if let movie = data as? Movie {
+            self.router?.routeToMovieDetail(movieId: movie.id)
         }
     }
 }
@@ -108,6 +113,8 @@ extension ShowMoviesViewController: ShowMoviesDisplayLogic {
     }
 }
 
+// MARK: - Collection View Delegate -
+
 extension ShowMoviesViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -116,11 +123,11 @@ extension ShowMoviesViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let movie = self.content[indexPath.row] as? Movie {
-            self.router?.routeToMovieDetail(movieId: movie.id)
-        }
+        self.routeToMovieDetails(data: self.content[indexPath.row])
     }
 }
+
+// MARK: - Collection View DataSource -
 
 extension ShowMoviesViewController: UICollectionViewDataSource {
     
@@ -136,6 +143,8 @@ extension ShowMoviesViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
+// MARK: - MovieCollectionViewCellDelegate -
 
 extension ShowMoviesViewController: MovieCollectionViewCellDelegate {
     

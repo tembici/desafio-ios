@@ -256,6 +256,7 @@
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="tintColor" name="primaryGray"/>
             <constraints>
                 <constraint firstItem="dDk-Pm-xtf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4Yp-Em-Ggw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dDk-Pm-xtf" secondAttribute="bottom" id="Woh-eA-V9P"/>

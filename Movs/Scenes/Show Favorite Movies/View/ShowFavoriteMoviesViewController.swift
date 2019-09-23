@@ -23,6 +23,7 @@ class ShowFavoriteMoviesViewController: UIViewController {
         didSet {
             self.tableView.register(FavoriteMovieTableViewCell.self)
             self.tableView.dataSource = self
+            self.tableView.delegate = self
         }
     }
     
@@ -80,6 +81,12 @@ class ShowFavoriteMoviesViewController: UIViewController {
         let request = ShowFavoriteMovies.FetchFavoriteMovies.Request()
         interactor?.fetchFavoriteMovies(request: request)
     }
+    
+    private func routeToMovieDetails(data: Any) {
+        if let movie = data as? Movie {
+            self.router?.routeToMovieDetail(movieId: movie.id)
+        }
+    }
 }
 
 extension ShowFavoriteMoviesViewController: ShowFavoriteMoviesDisplayLogic {
@@ -105,6 +112,13 @@ extension ShowFavoriteMoviesViewController: UITableViewDataSource {
         cell.setup(with: content[indexPath.row], delegate: self)
         
         return cell
+    }
+}
+
+extension ShowFavoriteMoviesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.routeToMovieDetails(data: self.content[indexPath.row])
     }
 }
 

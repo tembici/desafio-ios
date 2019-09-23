@@ -10,8 +10,9 @@ import UIKit
 
 class ShowFavoriteMoviesWorker {
     
+    private let movieManager = MovieManager()
     
-    func getFavoriteMovies() {
-        
+    func getFavoriteMovies() ->  [Movie]? {
+        return movieManager.getFavorite()
     }
 }

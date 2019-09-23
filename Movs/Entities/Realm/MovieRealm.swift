@@ -21,9 +21,8 @@ class MovieRealm: Object {
     @objc dynamic var language: String? = nil
     @objc dynamic var releaseYear: String? = nil
     @objc dynamic var category: String? = nil
+    @objc dynamic var isFavorite: String?
     @objc dynamic var lenght: Int = 0
-    
-    dynamic var isFavorite: Bool = false
     
     override static func primaryKey() -> String? { return "id" }
 }

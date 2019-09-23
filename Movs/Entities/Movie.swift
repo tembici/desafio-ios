@@ -20,7 +20,7 @@ struct Movie: Decodable {
     var genres: [Int]?
     var language: String?
     var movieLength: Int?
-    var isFavorite: Bool? = false
+    var isFavorite: IsFavorite?
     var category: Category = .popular
 }
 
@@ -43,5 +43,10 @@ extension Movie {
         case topRated = "top_rated"
         case popular = "popular"
         case upcoming = "upcoming"
+    }
+    
+    enum IsFavorite: String {
+        case favorite = "favorite"
+        case notFavorite = "not_favorite"
     }
 }

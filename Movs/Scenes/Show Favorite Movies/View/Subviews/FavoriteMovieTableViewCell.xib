@@ -10,6 +10,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Exo2-Medium.otf">
+            <string>Exo2-Medium</string>
+        </array>
+        <array key="Exo2-SemiBold.otf">
+            <string>Exo2-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,7 +36,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hQY-2c-HSq">
                                         <rect key="frame" x="10" y="0.0" width="194" height="201.5"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" name="primaryYellow"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="primaryYellow"/>
@@ -44,13 +52,61 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="86f-a7-pUc">
+                                <rect key="frame" x="204" y="0.0" width="306" height="181.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFL-i4-eY1">
+                                        <rect key="frame" x="0.0" y="0.0" width="306" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="70" id="77D-re-JmW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="5.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHw-qc-8vr">
+                                        <rect key="frame" x="0.0" y="78" width="306" height="45.5"/>
+                                        <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="19"/>
+                                        <color key="textColor" name="primaryYellow"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgK-ul-rpj" customClass="UIButtonDesignable" customModule="Movs" customModuleProvider="target">
+                                        <rect key="frame" x="46" y="131.5" width="214" height="50"/>
+                                        <color key="backgroundColor" name="primaryGray"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Ljg-9Q-g37"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Exo2-Medium" family="Exo 2" pointSize="17"/>
+                                        <state key="normal" title="UNFAVORITE">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="elevate">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pHw-qc-8vr" firstAttribute="width" secondItem="86f-a7-pUc" secondAttribute="width" id="sz9-s7-RNc"/>
+                                    <constraint firstItem="UFL-i4-eY1" firstAttribute="width" secondItem="86f-a7-pUc" secondAttribute="width" id="z7g-L6-4hJ"/>
+                                    <constraint firstItem="RgK-ul-rpj" firstAttribute="width" secondItem="86f-a7-pUc" secondAttribute="width" multiplier="0.7" id="zof-Qg-B6w"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="QVB-Nw-j7K" firstAttribute="width" secondItem="Z0j-wa-Ai0" secondAttribute="width" multiplier="0.4" id="2GT-nW-e7B"/>
+                            <constraint firstAttribute="bottom" secondItem="86f-a7-pUc" secondAttribute="bottom" constant="20" id="B3R-Ov-og9"/>
                             <constraint firstAttribute="bottom" secondItem="QVB-Nw-j7K" secondAttribute="bottom" id="PAq-bq-bJA"/>
+                            <constraint firstItem="86f-a7-pUc" firstAttribute="top" secondItem="Z0j-wa-Ai0" secondAttribute="top" id="cGJ-Pj-zcy"/>
                             <constraint firstItem="QVB-Nw-j7K" firstAttribute="top" secondItem="Z0j-wa-Ai0" secondAttribute="top" id="drK-bw-L3f"/>
+                            <constraint firstItem="86f-a7-pUc" firstAttribute="leading" secondItem="QVB-Nw-j7K" secondAttribute="trailing" id="kFI-uh-VSP"/>
                             <constraint firstItem="QVB-Nw-j7K" firstAttribute="leading" secondItem="Z0j-wa-Ai0" secondAttribute="leading" id="nMV-G2-cHJ"/>
+                            <constraint firstAttribute="trailing" secondItem="86f-a7-pUc" secondAttribute="trailing" id="uaj-fg-88v"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -62,10 +118,18 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="243" y="70"/>
+            <connections>
+                <outlet property="movieImageView" destination="hQY-2c-HSq" id="KZE-ZI-jjr"/>
+                <outlet property="titleLabel" destination="UFL-i4-eY1" id="Hnt-cx-GO2"/>
+                <outlet property="yearLabel" destination="pHw-qc-8vr" id="lOY-KM-k3Z"/>
+            </connections>
+            <point key="canvasLocation" x="242.0289855072464" y="69.642857142857139"/>
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="primaryGray">
+            <color red="0.17647058823529413" green="0.18823529411764706" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="primaryYellow">
             <color red="0.85098039215686272" green="0.59215686274509804" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

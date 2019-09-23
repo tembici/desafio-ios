@@ -13,11 +13,12 @@ enum ShowFavoriteMovies {
     // MARK: Use cases
 
     enum FetchFavoriteMovies {
-        struct Request {
-        }
+        struct Request { }
         struct Response {
+            var content: [Any]?
         }
         struct ViewModel {
+            var content: [Any]
         }
     }
 }

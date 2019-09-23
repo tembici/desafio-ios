@@ -17,7 +17,9 @@ class ShowFavoriteMoviesPresenter: ShowFavoriteMoviesPresentationLogic {
 
 
     func presentFavoriteMovies(response: ShowFavoriteMovies.FetchFavoriteMovies.Response) {
-        let viewModel = ShowFavoriteMovies.FetchFavoriteMovies.ViewModel()
-        viewController?.displayFavoriteMovies(viewModel: viewModel)
+        if let content = response.content {
+            let viewModel = ShowFavoriteMovies.FetchFavoriteMovies.ViewModel(content: content)
+            viewController?.displayFavoriteMovies(viewModel: viewModel)
+        }
     }
 }

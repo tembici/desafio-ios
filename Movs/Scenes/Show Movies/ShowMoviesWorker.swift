@@ -18,7 +18,7 @@ class ShowMoviesWorker {
                                service: MovieEndpoint.getMovies(category: .popular, page: 1)) { response in
             switch response {
                 case .success(let result):
-                    _ = self.movieManager.insertMany(movies: result.results)
+//                    _ = self.movieManager.insertMany(movies: result.results)
                     completion(result.results)
                 case .failure:
                     let movies = self.movieManager.getAll()
@@ -27,10 +27,8 @@ class ShowMoviesWorker {
         }
     }
     
-    func saveAsFavorite(movie: Movie) {
-//        var m = movie
-//        m.isFavorite = true
-//        _ = movieManager.update(movie: m)
-////        print(movieManager.getAll()?.filter { $0.isFavorite == true })
+    func saveAsFavorite(movie: Movie, completion: @escaping(Movie?) -> Void ) {
+        let movie = self.movieManager.update(movie: movie)
+        completion(movie)
     }
 }

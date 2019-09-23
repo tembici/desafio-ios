@@ -13,7 +13,7 @@ import UIKit
 class MovieDetailWorker {
     
     private let networkManager = NetworkManager()
-
+    
     func getMovieDetails(movieId: Int, completion: @escaping (Movie?)-> Void) {
         networkManager.request(type: Movie.self,
                                service: MovieEndpoint.getMovieDetail(id: movieId)) { response in

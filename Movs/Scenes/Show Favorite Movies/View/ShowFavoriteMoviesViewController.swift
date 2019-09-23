@@ -14,7 +14,7 @@ protocol ShowFavoriteMoviesDisplayLogic: class {
 
 class ShowFavoriteMoviesViewController: UIViewController {
    
-    var contentData = [Any]()
+    var content = [Any]()
     
     var interactor: ShowFavoriteMoviesBusinessLogic?
     var router: (NSObjectProtocol & ShowFavoriteMoviesRoutingLogic & ShowFavoriteMoviesDataPassing)?
@@ -22,7 +22,6 @@ class ShowFavoriteMoviesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             self.tableView.register(FavoriteMovieTableViewCell.self)
-            self.tableView.delegate = self
             self.tableView.dataSource = self
         }
     }
@@ -44,7 +43,11 @@ class ShowFavoriteMoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
-        fetchFavoriteMovies()
+        self.fetchFavoriteMovies()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.fetchFavoriteMovies()
     }
 
     // MARK: Setup
@@ -82,25 +85,32 @@ class ShowFavoriteMoviesViewController: UIViewController {
 extension ShowFavoriteMoviesViewController: ShowFavoriteMoviesDisplayLogic {
     
     func displayFavoriteMovies(viewModel: ShowFavoriteMovies.FetchFavoriteMovies.ViewModel) {
-        
+        DispatchQueue.main.async {
+            self.content = viewModel.content
+            self.tableView.reloadData()
+        }
     }
 }
 
 extension ShowFavoriteMoviesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.content.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteMovieTableViewCell.identifier,
                                                        for: indexPath) as? FavoriteMovieTableViewCell
         else { return UITableViewCell() }
+        cell.setup(with: content[indexPath.row], delegate: self)
         
         return cell
     }
 }
 
-extension ShowFavoriteMoviesViewController: UITableViewDelegate {
+extension ShowFavoriteMoviesViewController: FavoriteMovieTableViewCellDelegate {
     
+    func didSelectFavorite(for movie: Movie?) {
+        
+    }
 }

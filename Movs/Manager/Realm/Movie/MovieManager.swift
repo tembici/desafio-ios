@@ -24,7 +24,7 @@ class MovieManager {
     }
     
     func getFavorite() -> [Movie]? {
-        return movies?.filter { $0.isFavorite == true }
+        return movies?.filter { $0.isFavorite == .favorite }
     }
     
     func getByGenre(genreId: Int) -> [Movie]? {
@@ -40,7 +40,7 @@ class MovieManager {
     }
     
     func update(movie: Movie) -> Movie? {
-        return adapter.insertAndUpdate(movie: movie)
+        return adapter.update(movie: movie)
     }
     
     func delete(identifier: Int) -> Movie? {

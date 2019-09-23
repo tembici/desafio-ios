@@ -22,6 +22,7 @@ class MovieCollectionViewCell: UICollectionViewCell, MovieCollectionViewCellData
     var movie: Movie? = nil
     
     @IBOutlet weak var coverImageView: UIImageView!
+    
     @IBAction func favoriteButtonPressed(_ sender: Any) {
         delegate?.didSelectFavorite(for: self.movie)
     }
@@ -48,7 +49,6 @@ class MovieCollectionViewCell: UICollectionViewCell, MovieCollectionViewCellData
             self.movie = movie
             guard let imageUrl = movie.imageUrl else { return }
             self.imageUrl = imageUrl
-            self.isFavorite = movie.isFavorite ?? false
         }
     }
 }

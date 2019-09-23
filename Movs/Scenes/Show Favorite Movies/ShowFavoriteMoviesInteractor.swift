@@ -15,14 +15,14 @@ protocol ShowFavoriteMoviesBusinessLogic {
 protocol ShowFavoriteMoviesDataStore { }
 
 class ShowFavoriteMoviesInteractor: ShowFavoriteMoviesBusinessLogic, ShowFavoriteMoviesDataStore {
+   
     var presenter: ShowFavoriteMoviesPresentationLogic?
     var worker: ShowFavoriteMoviesWorker?
 
     func fetchFavoriteMovies(request: ShowFavoriteMovies.FetchFavoriteMovies.Request) {
         worker = ShowFavoriteMoviesWorker()
-        worker?.getFavoriteMovies()
-
-        let response = ShowFavoriteMovies.FetchFavoriteMovies.Response()
+        let content = worker?.getFavoriteMovies()
+        let response = ShowFavoriteMovies.FetchFavoriteMovies.Response(content: content)
         presenter?.presentFavoriteMovies(response: response)
     }
 }

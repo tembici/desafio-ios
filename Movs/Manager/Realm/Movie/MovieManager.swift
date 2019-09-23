@@ -40,7 +40,7 @@ class MovieManager {
     }
     
     func update(movie: Movie) -> Movie? {
-        return adapter.update(movie: movie)
+        return adapter.insertAndUpdate(movie: movie)
     }
     
     func delete(identifier: Int) -> Movie? {

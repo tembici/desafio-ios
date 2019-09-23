@@ -24,6 +24,7 @@ class MovieCollectionViewCell: UICollectionViewCell, MovieCollectionViewCellData
     @IBOutlet weak var coverImageView: UIImageView!
     
     @IBAction func favoriteButtonPressed(_ sender: Any) {
+        self.movie?.isFavorite = .favorite
         delegate?.didSelectFavorite(for: self.movie)
     }
     

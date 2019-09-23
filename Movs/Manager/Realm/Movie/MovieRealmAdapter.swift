@@ -50,17 +50,19 @@ class MovieRealmAdapter: MovieAdapter {
         return insertedMovie
     }
     
-    func update(movie: Movie) -> Movie? {
-        let realm = try! Realm()
-        let realmMovie = realm.object(ofType: MovieRealm.self, forPrimaryKey: movie.id)
-        
-        try! realm.write {
-            realmMovie?.isFavorite = Movie.IsFavorite.favorite.rawValue
-        }
-
-        return nil
-    }
-    
+//    func update(movie: Movie) -> Movie? {
+//        let realm = try! Realm()
+//        let realmMovie = realm.object(ofType: MovieRealm.self, forPrimaryKey: movie.id)
+//
+//        try! realm.write {
+//            realmMovie?.isFavorite = Movie.IsFavorite.favorite.rawValue
+//        }
+//
+//        print(self.getAll()?.filter{ $0.isFavorite == .favorite })
+//
+//        return nil
+//    }
+//
     func delete(identifier: Int) -> Movie? { return nil }
     
     // MARK: Private Methods
@@ -91,6 +93,7 @@ class MovieRealmAdapter: MovieAdapter {
         movieRealm.language = movie.language
         movieRealm.releaseYear = movie.release
         movieRealm.lenght = movie.movieLength ?? 0
+        movieRealm.isFavorite = movie.isFavorite?.rawValue
         movieRealm.category =  movie.category.rawValue
         
         return movieRealm

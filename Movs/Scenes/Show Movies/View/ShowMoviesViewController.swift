@@ -172,21 +172,6 @@ extension ShowMoviesViewController: MovieCollectionViewCellDelegate {
     }
 }
 
-// MARK: - FilterAlertDelegate -
-
-extension ShowMoviesViewController: FilterAlertDelegate {
-   
-    func dismissAlert() {
-//        self.alert.dismiss(animated: true, completion: nil)
-    }
-    
-    func filterRequested(for value: Any) {
-        if let keyword = value as? String {
-            self.queryMovies(with: keyword)
-        }
-    }
-}
-
 
 // MARK: - UISearchBarDelegate -
 

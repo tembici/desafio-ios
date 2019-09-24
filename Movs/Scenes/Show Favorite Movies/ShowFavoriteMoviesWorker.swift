@@ -15,4 +15,10 @@ class ShowFavoriteMoviesWorker {
     func getFavoriteMovies() ->  [Movie]? {
         return movieManager.getFavorite()
     }
+    
+    /// Retrieves the favorite movie list updated
+    func unfavoriteMovies(movie: Movie) -> [Movie]? {
+        _ =  self.movieManager.update(movie: movie)
+        return self.movieManager.getFavorite()
+    }
 }

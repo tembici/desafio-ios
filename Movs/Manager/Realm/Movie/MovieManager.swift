@@ -11,24 +11,25 @@ import Foundation
 class MovieManager {
     
     private var adapter = MovieRealmAdapter()
-    private var movies: [Movie]?
-    
-    init() { self.movies = adapter.getAll() }
-    
+
     func getAll() -> [Movie]? {
-        return movies
+        return adapter.getAll()
     }
     
     func getByCategorie(category: Movie.Category) -> [Movie]? {
-        return movies?.filter { $0.category == category }
+        return self.getAll()?.filter { $0.category == category }
     }
     
     func getFavorite() -> [Movie]? {
-        return movies?.filter { $0.isFavorite == .favorite }
+        return self.getAll()?.filter { $0.isFavorite == .favorite }
     }
     
     func getByGenre(genreId: Int) -> [Movie]? {
-        return movies?.filter { $0.genres?.contains(genreId) ?? false }
+        return self.getAll()?.filter { $0.genres?.contains(genreId) ?? false }
+    }
+    
+    func getByKeyword(with keyword: String) -> [Movie]? {
+        return self.getAll()?.filter { $0.title?.contains(keyword) ?? false }
     }
     
     func get(identifier: Int) -> Movie? {

@@ -10,6 +10,7 @@ import UIKit
 
 protocol ShowFavoriteMoviesBusinessLogic {
     func fetchFavoriteMovies(request: ShowFavoriteMovies.FetchFavoriteMovies.Request)
+    func unfavoriteMovie(request: ShowFavoriteMovies.UnfavoriteMovie.Request)
 }
 
 protocol ShowFavoriteMoviesDataStore { }
@@ -23,6 +24,13 @@ class ShowFavoriteMoviesInteractor: ShowFavoriteMoviesBusinessLogic, ShowFavorit
         worker = ShowFavoriteMoviesWorker()
         let content = worker?.getFavoriteMovies()
         let response = ShowFavoriteMovies.FetchFavoriteMovies.Response(content: content)
-        presenter?.presentFavoriteMovies(response: response)
+        self.presenter?.presentFavoriteMovies(response: response)
+    }
+    
+    func unfavoriteMovie(request: ShowFavoriteMovies.UnfavoriteMovie.Request) {
+        worker = ShowFavoriteMoviesWorker()
+        let content = worker?.unfavoriteMovies(movie: request.movie)
+        let response = ShowFavoriteMovies.UnfavoriteMovie.Response(content: content)
+        self.presenter?.presentUpdatedFavoriteMovies(response: response)
     }
 }

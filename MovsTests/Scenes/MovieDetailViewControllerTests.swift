@@ -11,12 +11,14 @@ import XCTest
 
 class MovieDetailViewControllerTests: XCTestCase {
     
-    // MARK: Subject under test
+    // MARK: - Subject under test
+    
     var sut: MovieDetailViewController!
     let spy = MovieDetailBusinessLogicSpy()
     var window: UIWindow!
     
-    // MARK: Test lifecycle
+    // MARK: - Test lifecycle
+    
     override func setUp() {
         super.setUp()
         window = UIWindow()
@@ -28,7 +30,8 @@ class MovieDetailViewControllerTests: XCTestCase {
         super.tearDown()
     }
     
-    // MARK: Test setup
+    // MARK: - Test setup
+    
     func setupMovieDetailViewController() {
         sut =  MovieDetailViewController()
         sut.interactor = spy
@@ -54,7 +57,8 @@ class MovieDetailViewControllerTests: XCTestCase {
         }
     }
     
-    // MARK: Tests
+    // MARK: - Tests
+    
     func testShouldDoSomethingWhenViewIsLoaded() {
         loadView()
         

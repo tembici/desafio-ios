@@ -10,6 +10,7 @@ import UIKit
 
 protocol ShowMoviesPresentationLogic {
     func presentMovies(response: ShowMovies.fetchMovies.Response)
+    func presentQueriedMovies(response: ShowMovies.queryMovies.Response)
 }
 
 class ShowMoviesPresenter: ShowMoviesPresentationLogic {
@@ -22,6 +23,13 @@ class ShowMoviesPresenter: ShowMoviesPresentationLogic {
         if let content = response.content {
             let viewModel = ShowMovies.fetchMovies.ViewModel(content: content)
             self.viewController?.displayMovies(viewModel: viewModel)
+        }
+    }
+    
+    func presentQueriedMovies(response: ShowMovies.queryMovies.Response) {
+        if let content = response.content {
+            let viewModel = ShowMovies.queryMovies.ViewModel(content: content)
+            self.viewController?.displayQueriedMovies(viewModel: viewModel)
         }
     }
 }

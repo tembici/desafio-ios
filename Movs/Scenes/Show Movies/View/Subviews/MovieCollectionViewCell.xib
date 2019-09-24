@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,10 +31,11 @@
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7h-Nv-6Ed" customClass="UIButtonDesignable" customModule="Movs" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="336" width="217" height="42"/>
+                        <color key="backgroundColor" name="primaryGray"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="42" id="Fpf-Yv-B4U"/>
                         </constraints>
-                        <state key="normal" image="star"/>
+                        <state key="normal" image="star_unselected"/>
                         <connections>
                             <action selector="favoriteButtonPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="R3a-Y8-caz"/>
                         </connections>
@@ -41,9 +43,10 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="f7h-Nv-6Ed" secondAttribute="bottom" id="1Cs-R0-cFj"/>
                 <constraint firstAttribute="trailing" secondItem="f7h-Nv-6Ed" secondAttribute="trailing" id="DUy-39-aF6"/>
                 <constraint firstItem="ick-5a-RCN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ezk-w7-1qu"/>
-                <constraint firstAttribute="bottom" secondItem="f7h-Nv-6Ed" secondAttribute="bottom" id="Yi9-FF-h0m"/>
+                <constraint firstAttribute="bottom" secondItem="ick-5a-RCN" secondAttribute="bottom" id="W5R-Pq-P2e"/>
                 <constraint firstItem="ick-5a-RCN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="est-9c-ngA"/>
                 <constraint firstItem="f7h-Nv-6Ed" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iAO-yb-CNS"/>
                 <constraint firstAttribute="trailing" secondItem="ick-5a-RCN" secondAttribute="trailing" id="tQY-i3-9F3"/>
@@ -58,6 +61,9 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="star" width="32" height="31"/>
+        <image name="star_unselected" width="33" height="31"/>
+        <namedColor name="primaryGray">
+            <color red="0.17647058823529413" green="0.18823529411764706" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

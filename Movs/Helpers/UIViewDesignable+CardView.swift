@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+// MARK: - UIViewDesignable -
+
 @IBDesignable
 class UIViewDesignable: UIView {
     
@@ -19,6 +22,8 @@ class UIViewDesignable: UIView {
         }
     }
 }
+
+// MARK: - CardView -
 
 @IBDesignable
 class CardView: UIView {

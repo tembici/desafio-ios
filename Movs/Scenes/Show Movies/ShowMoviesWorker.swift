@@ -31,4 +31,8 @@ class ShowMoviesWorker {
         let movie = self.movieManager.update(movie: movie)
         completion(movie)
     }
+    
+    func queryMovies(keyword: String) -> [Movie]? {
+        return movieManager.getByKeyword(with: keyword)
+    }
 }

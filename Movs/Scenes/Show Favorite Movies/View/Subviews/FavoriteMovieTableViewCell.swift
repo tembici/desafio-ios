@@ -11,14 +11,14 @@ import UIKit
 protocol FavoriteMovieTableViewCellDelegate: class {
     func didSelectFavorite(for movie: Movie?)
 }
+protocol FavoriteMovieTableViewCellDataStore {
+    var movie: Movie? { get set }
+}
 
-class FavoriteMovieTableViewCell: UITableViewCell {
+class FavoriteMovieTableViewCell: UITableViewCell, FavoriteMovieTableViewCellDataStore {
     
     var delegate: FavoriteMovieTableViewCellDelegate?
-
-    @IBOutlet weak var movieImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var yearLabel: UILabel!
+    var movie: Movie?
     
     private var imageUrl: String = "" {
         willSet {
@@ -26,30 +26,29 @@ class FavoriteMovieTableViewCell: UITableViewCell {
             self.movieImageView.cacheImage(urlString: baseUrl )
         }
     }
+
+    @IBOutlet weak var movieImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
     
+    @IBAction func favoriteButtonPressed(_ sender: Any) {
+        self.unfavoriteMovie()
+        self.delegate?.didSelectFavorite(for: movie)
+    }
     
+   
     func setup(with data: Any, delegate: FavoriteMovieTableViewCellDelegate) {
         self.delegate = delegate
         if let movie = data as? Movie {
+            self.movie = movie
             self.titleLabel.text = movie.title
-            self.yearLabel.text = self.formattedDateFromString(dateString: movie.release,
-                                                               withFormat: "yyyy")
+            self.yearLabel.text = DateHelper.formattedDateFromString(dateString: movie.release,
+                                                                     withFormat: "yyyy")
             self.imageUrl = movie.imageUrl!
         }
     }
     
-    private func formattedDateFromString(dateString: String?, withFormat format: String) -> String? {
-        guard let dateStringfied = dateString else { return nil }
-        let inputFormatter = DateFormatter()
-        inputFormatter.dateFormat = DateFormatter.Pattern.year.rawValue
-        
-        if let date = inputFormatter.date(from: dateStringfied) {
-            let outputFormatter = DateFormatter()
-            outputFormatter.dateFormat = format
-            
-            return outputFormatter.string(from: date)
-        }
-        
-        return nil
+    private func unfavoriteMovie() {
+        self.movie?.isFavorite = Movie.IsFavorite.notFavorite
     }
 }

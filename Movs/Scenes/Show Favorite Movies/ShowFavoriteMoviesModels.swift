@@ -21,4 +21,16 @@ enum ShowFavoriteMovies {
             var content: [Any]
         }
     }
+    
+    enum UnfavoriteMovie {
+        struct Request {
+            var movie: Movie
+        }
+        struct Response {
+            var content: [Any]?
+        }
+        struct ViewModel {
+            var content: [Any]
+        }
+    }
 }

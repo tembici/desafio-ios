@@ -11,13 +11,15 @@ import XCTest
 
 class MovieDetailInteractorTests: XCTestCase {
     
-    // MARK: Subject under test
+    // MARK: - Subject under test
+    
     var sut: MovieDetailInteractor!
     var spy: MovieDetailPresentationLogicSpy?
     
     let expectation = XCTestExpectation(description: "Movie Info Fetched")
     
-    // MARK: Test lifecycle
+    // MARK: - Test lifecycle
+    
     override func setUp() {
         super.setUp()
         setupMovieDetailInteractor()
@@ -27,14 +29,16 @@ class MovieDetailInteractorTests: XCTestCase {
         super.tearDown()
     }
     
-    // MARK: Test setup
+    // MARK: - Test setup
+    
     func setupMovieDetailInteractor() {
         sut = MovieDetailInteractor()
         spy = MovieDetailPresentationLogicSpy(tester: self)
         sut.presenter = spy
     }
     
-    // MARK: Test doubles
+    // MARK:  - Test doubles
+    
     class MovieDetailPresentationLogicSpy: MovieDetailPresentationLogic {
         
         var presentMovieDetailsCalled: Bool? {
@@ -64,7 +68,8 @@ class MovieDetailInteractorTests: XCTestCase {
         }
     }
     
-    // MARK: Tests
+    // MARK: - Tests
+    
     func testFetchMovieDetails() {
         let movieVideoRequest = MovieDetail.FetchMovieVideos.Request(movieId: 20)
         let movieDetailRequest = MovieDetail.FetchMovieDetails.Request(movieId: 20)

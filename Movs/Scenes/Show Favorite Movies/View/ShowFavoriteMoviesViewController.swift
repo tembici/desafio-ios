@@ -9,7 +9,8 @@
 import UIKit
 
 protocol ShowFavoriteMoviesDisplayLogic: class {
-  func displayFavoriteMovies(viewModel: ShowFavoriteMovies.FetchFavoriteMovies.ViewModel)
+    func displayFavoriteMovies(viewModel: ShowFavoriteMovies.FetchFavoriteMovies.ViewModel)
+    func displayUpdatedFavoriteMovies(viewModel: ShowFavoriteMovies.UnfavoriteMovie.ViewModel)
 }
 
 class ShowFavoriteMoviesViewController: UIViewController {
@@ -87,15 +88,23 @@ class ShowFavoriteMoviesViewController: UIViewController {
             self.router?.routeToMovieDetail(movieId: movie.id)
         }
     }
+    
+    private func updateTableView(with data: [Any]) {
+        DispatchQueue.main.async {
+            self.content = data
+            self.tableView.reloadData()
+        }
+    }
 }
 
 extension ShowFavoriteMoviesViewController: ShowFavoriteMoviesDisplayLogic {
     
     func displayFavoriteMovies(viewModel: ShowFavoriteMovies.FetchFavoriteMovies.ViewModel) {
-        DispatchQueue.main.async {
-            self.content = viewModel.content
-            self.tableView.reloadData()
-        }
+        self.updateTableView(with: viewModel.content)
+    }
+    
+    func displayUpdatedFavoriteMovies(viewModel: ShowFavoriteMovies.UnfavoriteMovie.ViewModel) {
+        self.updateTableView(with: viewModel.content)
     }
 }
 
@@ -125,6 +134,9 @@ extension ShowFavoriteMoviesViewController: UITableViewDelegate {
 extension ShowFavoriteMoviesViewController: FavoriteMovieTableViewCellDelegate {
     
     func didSelectFavorite(for movie: Movie?) {
-        
+        if let movie = movie {
+            let request = ShowFavoriteMovies.UnfavoriteMovie.Request(movie: movie)
+            self.interactor?.unfavoriteMovie(request: request)
+        }
     }
 }

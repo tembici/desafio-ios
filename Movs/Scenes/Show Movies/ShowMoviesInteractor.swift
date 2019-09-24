@@ -11,6 +11,7 @@ import UIKit
 protocol ShowMoviesBusinessLogic {
     func fetchData(request: ShowMovies.fetchMovies.Request)
     func setAsFavorite(request: ShowMovies.favoriteMovie.Request)
+    func queryMovies(request: ShowMovies.queryMovies.Request)
 }
 
 protocol ShowMoviesDataStore { }
@@ -33,5 +34,12 @@ class ShowMoviesInteractor: ShowMoviesBusinessLogic, ShowMoviesDataStore {
         worker?.saveAsFavorite(movie: request.movie) { movie in
           
         }
+    }
+    
+    func queryMovies(request: ShowMovies.queryMovies.Request) {
+        worker = ShowMoviesWorker()
+        let content = worker?.queryMovies(keyword: request.keyword)
+        let response = ShowMovies.queryMovies.Response(content: content)
+        self.presenter?.presentQueriedMovies(response: response)
     }
 }

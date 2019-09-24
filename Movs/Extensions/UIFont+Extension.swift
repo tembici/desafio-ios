@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - Extension UIFont -
+
 extension UIFont {
     
     /// Get custom Exo font according to style and size

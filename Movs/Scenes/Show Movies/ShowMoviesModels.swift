@@ -31,4 +31,14 @@ enum ShowMovies {
             var borderColor: UIColor?
         }
     }
+    
+    enum queryMovies {
+        struct Request { var keyword: String }
+        struct Response {
+            var content: [Any]?
+        }
+        struct ViewModel {
+            var content: [Any]
+        }
+    }
 }

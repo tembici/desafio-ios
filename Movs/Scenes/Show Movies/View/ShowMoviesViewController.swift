@@ -9,21 +9,23 @@
 import UIKit
 
 protocol ShowMoviesDisplayLogic: class {
-  func displayMovies(viewModel: ShowMovies.fetchMovies.ViewModel)
+    func displayMovies(viewModel: ShowMovies.fetchMovies.ViewModel)
+    func displayQueriedMovies(viewModel: ShowMovies.queryMovies.ViewModel)
 }
 
 class ShowMoviesViewController: UIViewController {
+    
+    // MARK: - Variables
     
     var content = [Any]()
     
     var interactor: ShowMoviesBusinessLogic?
     var router: (NSObjectProtocol & ShowMoviesRoutingLogic & ShowMoviesDataPassing)?
-    var alert: FilterAlertViewController!
-    
+ 
     // MARK: - Outlets
     
     @IBAction func filterButtonPressed(_ sender: Any) {
-        self.present(self.alert, animated: true, completion: nil)
+        self.router?.routeToFilterMovies()
     }
     
     @IBOutlet weak var collectionView: UICollectionView! {
@@ -34,9 +36,9 @@ class ShowMoviesViewController: UIViewController {
         }
     }
     
-    private lazy var searchController: UISearchController = UISearchController(searchResultsController: nil)
+    private lazy var searchController = UISearchController(searchResultsController: nil)
     
-    // MARK: Object lifecycle
+    // MARK: - Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -48,16 +50,15 @@ class ShowMoviesViewController: UIViewController {
         setup()
     }
     
-    // MARK: View lifecycle
+    // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.alert = FilterAlertViewController(delegate: self)
         self.setupLayout()
         self.fetchMovies()
     }
 
-    // MARK: Setup
+    // MARK: - Setup
 
     private func setup() {
         let viewController = self
@@ -73,7 +74,12 @@ class ShowMoviesViewController: UIViewController {
     }
     
     private func setupLayout() {
+        
         self.navigationItem.searchController = searchController
+        self.searchController.searchBar.delegate = self
+        self.searchController.searchBar.tintColor = UIColor(named: "primaryGray")
+        self.definesPresentationContext = true
+       
         let font = UIFont.getExoFont(type: .semiBold, with: 20)
         
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
@@ -98,6 +104,11 @@ class ShowMoviesViewController: UIViewController {
         }
     }
     
+    private func queryMovies(with keyword: String) {
+        let request = ShowMovies.queryMovies.Request(keyword: keyword)
+        self.interactor?.queryMovies(request: request)
+    }
+    
     private func routeToMovieDetails(data: Any) {
         if let movie = data as? Movie {
             self.router?.routeToMovieDetail(movieId: movie.id)
@@ -115,17 +126,19 @@ extension ShowMoviesViewController: ShowMoviesDisplayLogic {
             self.collectionView.reloadData()
         }
     }
+    
+    func displayQueriedMovies(viewModel: ShowMovies.queryMovies.ViewModel) {
+        DispatchQueue.main.async {
+            self.content = viewModel.content
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 // MARK: - Collection View Delegate -
 
 extension ShowMoviesViewController: UICollectionViewDelegate {
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
-//        return CGSize(width: itemSize, height: itemSize)
-//    }
-//    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.routeToMovieDetails(data: self.content[indexPath.row])
     }
@@ -159,25 +172,32 @@ extension ShowMoviesViewController: MovieCollectionViewCellDelegate {
     }
 }
 
-// MARK: -
+// MARK: - FilterAlertDelegate -
 
-extension ShowMoviesViewController: FilterAlertDelegate{
+extension ShowMoviesViewController: FilterAlertDelegate {
    
     func dismissAlert() {
-        self.alert.dismiss(animated: true, completion: nil)
+//        self.alert.dismiss(animated: true, completion: nil)
     }
     
     func filterRequested(for value: Any) {
-        if let s = value as? String {
-            print(s)
+        if let keyword = value as? String {
+            self.queryMovies(with: keyword)
         }
     }
 }
 
+
+// MARK: - UISearchBarDelegate -
+
 extension ShowMoviesViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        self.queryMovies(with: searchText)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+
     }
 }
 

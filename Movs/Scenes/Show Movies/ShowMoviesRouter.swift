@@ -38,7 +38,7 @@ class ShowMoviesRouter: NSObject, ShowMoviesRoutingLogic, ShowMoviesDataPassing 
     
     private func navigateToMovieDetail(source: ShowMoviesViewController?,
                                        destination: MovieDetailViewController) {
-        if let sourceVC = source  {
+        if let sourceVC = source {
             sourceVC.show(destination, sender: nil)
         }
     }

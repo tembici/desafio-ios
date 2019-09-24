@@ -25,7 +25,9 @@ class ShowMoviesViewController: UIViewController {
     // MARK: - Outlets
     
     @IBAction func filterButtonPressed(_ sender: Any) {
-        self.router?.routeToFilterMovies()
+//        self.router?.routeToFilterMovies()
+        let alertController = CustomAlertViewController()
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBOutlet weak var collectionView: UICollectionView! {
@@ -171,7 +173,6 @@ extension ShowMoviesViewController: MovieCollectionViewCellDelegate {
         }
     }
 }
-
 
 // MARK: - UISearchBarDelegate -
 

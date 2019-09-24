@@ -31,9 +31,7 @@ class ShowMoviesInteractor: ShowMoviesBusinessLogic, ShowMoviesDataStore {
     
     func setAsFavorite(request: ShowMovies.favoriteMovie.Request) {
         worker = ShowMoviesWorker()
-        worker?.saveAsFavorite(movie: request.movie) { movie in
-          
-        }
+        worker?.saveAsFavorite(movie: request.movie)
     }
     
     func queryMovies(request: ShowMovies.queryMovies.Request) {

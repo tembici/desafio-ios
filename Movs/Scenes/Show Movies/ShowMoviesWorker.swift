@@ -15,10 +15,10 @@ class ShowMoviesWorker {
     
     func getMovies(for page: Int, completion: @escaping ([Movie]?) -> Void) {
         networkManager.request(type: MoviesResponse.self,
-                               service: MovieEndpoint.getMovies(category: .popular, page: 1)) { response in
+                               service: MovieEndpoint.getMovies(category: .popular, page: 1)) { [unowned self] response in
             switch response {
                 case .success(let result):
-//                    _ = self.movieManager.insertMany(movies: result.results)
+                    _ = self.movieManager.insertMany(movies: result.results)
                     completion(result.results)
                 case .failure:
                     let movies = self.movieManager.getAll()
@@ -27,9 +27,8 @@ class ShowMoviesWorker {
         }
     }
     
-    func saveAsFavorite(movie: Movie, completion: @escaping(Movie?) -> Void ) {
-        let movie = self.movieManager.update(movie: movie)
-        completion(movie)
+    func saveAsFavorite(movie: Movie) {
+        _ = self.movieManager.update(movie: movie)
     }
     
     func queryMovies(keyword: String) -> [Movie]? {

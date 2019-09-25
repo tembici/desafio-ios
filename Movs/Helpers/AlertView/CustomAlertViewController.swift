@@ -8,17 +8,42 @@
 
 import UIKit
 
+protocol CustomAlertViewDelegate: class {
+    func didSelectCancel()
+    func didSelectConfirm()
+}
+
 class CustomAlertViewController: UIViewController {
     
+    // MARK: - Delegate
+    
+    var delegate: CustomAlertViewDelegate?
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var alertMessageLabel: UILabel!
+    
+    // MARK: - Actions
+    
+    @IBAction func confirmButtonPressed(_ sender: Any) {
+        self.delegate?.didSelectConfirm()
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        self.delegate?.didSelectCancel()
+    }
+   
     // MARK: - Constructor
+    
+    convenience init(delegate: CustomAlertViewDelegate) {
+        self.init()
+        self.delegate = delegate
+        self.setupLayout()
+    }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-
-    convenience init() {
-        self.init()
-        self.setupLayout()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,7 +54,7 @@ class CustomAlertViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    // MARK: - Private Methods
+    // MARK: - Setup
     
     private func setupLayout() {
         self.providesPresentationContextTransitionStyle = true

@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="Qd0-ui-mnE" customClass="ShowMoviesViewController" customModule="Movs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iVd-Ic-RKX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pCp-9y-B9w">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aLv-hx-I0D">
                                     <size key="itemSize" width="150" height="225"/>
@@ -40,6 +40,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="csd-yp-kgI"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="video_player" id="ufM-aN-fxU">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-15"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Movs" id="Pdt-mr-vRi">
                         <barButtonItem key="backBarButtonItem" title=" " id="Gbb-Bk-6fk"/>
                         <barButtonItem key="rightBarButtonItem" image="filter_icon" id="uo9-SI-EzZ">
@@ -49,6 +52,8 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="pCp-9y-B9w" id="L0t-S9-svD"/>
                     </connections>
@@ -61,9 +66,6 @@
         <scene sceneID="5vW-pe-qTQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rsn-qB-R04" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="video-player" id="EA0-0e-z8f">
-                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-15"/>
-                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="omT-U2-6e0">
@@ -82,7 +84,7 @@
     </scenes>
     <resources>
         <image name="filter_icon" width="17" height="19"/>
-        <image name="video-player" width="40" height="31"/>
+        <image name="video_player" width="40" height="31"/>
         <namedColor name="primaryGray">
             <color red="0.17647058823529413" green="0.18823529411764706" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

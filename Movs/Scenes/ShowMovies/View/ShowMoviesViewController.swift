@@ -21,13 +21,16 @@ class ShowMoviesViewController: UIViewController {
     
     var interactor: ShowMoviesBusinessLogic?
     var router: (NSObjectProtocol & ShowMoviesRoutingLogic & ShowMoviesDataPassing)?
+    
+    var alert: CustomAlertViewController?
  
     // MARK: - Outlets
     
     @IBAction func filterButtonPressed(_ sender: Any) {
-//        self.router?.routeToFilterMovies()
-        let alertController = CustomAlertViewController()
-        self.present(alertController, animated: true, completion: nil)
+//        if let alertView = self.alert {
+//             self.present(alertView, animated: true, completion: nil)
+//        }
+        self.router?.routeToFilterMovies()
     }
     
     @IBOutlet weak var collectionView: UICollectionView! {
@@ -76,6 +79,7 @@ class ShowMoviesViewController: UIViewController {
     }
     
     private func setupLayout() {
+        self.alert = CustomAlertViewController(delegate: self)
         
         self.navigationItem.searchController = searchController
         self.searchController.searchBar.delegate = self
@@ -187,3 +191,15 @@ extension ShowMoviesViewController: UISearchBarDelegate {
     }
 }
 
+// MARK: - CustomAlertViewDelegate -
+
+extension ShowMoviesViewController: CustomAlertViewDelegate {
+    
+    func didSelectCancel() {
+        self.alert?.dismiss(animated: true, completion: nil)
+    }
+    
+    func didSelectConfirm() {
+
+    }
+}

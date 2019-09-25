@@ -41,4 +41,8 @@ enum ShowMovies {
             var content: [Any]
         }
     }
+
+    struct ViewParams {
+        var dataPagination = 1
+    }
 }

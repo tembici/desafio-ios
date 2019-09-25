@@ -15,10 +15,10 @@ class ShowMoviesWorker {
     
     func getMovies(for page: Int, completion: @escaping ([Movie]?) -> Void) {
         networkManager.request(type: MoviesResponse.self,
-                               service: MovieEndpoint.getMovies(category: .popular, page: 1)) { [unowned self] response in
+                               service: MovieEndpoint.getMovies(category: .popular, page: page)) { [unowned self] response in
             switch response {
                 case .success(let result):
-                    _ = self.movieManager.insertMany(movies: result.results)
+//                    _ = self.movieManager.insertMany(movies: result.results)
                     completion(result.results)
                 case .failure:
                     let movies = self.movieManager.getAll()

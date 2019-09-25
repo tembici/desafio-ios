@@ -22,9 +22,9 @@ class ShowFavoriteMoviesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            self.tableView.register(FavoriteMovieTableViewCell.self)
             self.tableView.dataSource = self
             self.tableView.delegate = self
+            self.tableView.register(FavoriteMovieTableViewCell.self)
         }
     }
     

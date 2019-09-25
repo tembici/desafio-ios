@@ -55,8 +55,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="86f-a7-pUc">
                                 <rect key="frame" x="204" y="0.0" width="306" height="181.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFL-i4-eY1">
-                                        <rect key="frame" x="0.0" y="0.0" width="306" height="70"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFL-i4-eY1">
+                                        <rect key="frame" x="0.0" y="0.0" width="306" height="65.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="70" id="77D-re-JmW"/>
                                         </constraints>
@@ -64,8 +64,8 @@
                                         <color key="textColor" name="primaryGray"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="5.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHw-qc-8vr">
-                                        <rect key="frame" x="0.0" y="78" width="306" height="45.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHw-qc-8vr">
+                                        <rect key="frame" x="0.0" y="73.5" width="306" height="50"/>
                                         <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="19"/>
                                         <color key="textColor" name="primaryYellow"/>
                                         <nil key="highlightedColor"/>

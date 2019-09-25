@@ -14,6 +14,7 @@ protocol FilterMoviesPresentationLogic {
 }
 
 class FilterMoviesPresenter: FilterMoviesPresentationLogic {
+    
     weak var viewController: FilterMoviesDisplayLogic?
 
     // MARK: Presentation Logic

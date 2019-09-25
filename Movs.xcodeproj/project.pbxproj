@@ -366,10 +366,10 @@
 			isa = PBXGroup;
 			children = (
 				ADEA187E2336DE1900ACBCCC /* TabBarController.storyboard */,
-				AD0626AF23325CE400109AA1 /* Show Movies */,
-				ADEA18CE2337963100ACBCCC /* Show Favorite Movies */,
-				ADBA0007233A4377009DCB27 /* Filter Movies */,
-				ADEA18842336E47F00ACBCCC /* Movie Detail */,
+				AD0626AF23325CE400109AA1 /* ShowMovies */,
+				ADEA18CE2337963100ACBCCC /* ShowFavoriteMovies */,
+				ADBA0007233A4377009DCB27 /* FilterMovies */,
+				ADEA18842336E47F00ACBCCC /* MovieDetail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -400,7 +400,7 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		AD0626AF23325CE400109AA1 /* Show Movies */ = {
+		AD0626AF23325CE400109AA1 /* ShowMovies */ = {
 			isa = PBXGroup;
 			children = (
 				AD0626BD2332674A00109AA1 /* View */,
@@ -410,7 +410,7 @@
 				AD0626B323325D0800109AA1 /* ShowMoviesModels.swift */,
 				AD0626B523325D0800109AA1 /* ShowMoviesInteractor.swift */,
 			);
-			path = "Show Movies";
+			path = ShowMovies;
 			sourceTree = "<group>";
 		};
 		AD0626BC23325F8500109AA1 /* Manager */ = {
@@ -496,14 +496,18 @@
 			path = AlertView;
 			sourceTree = "<group>";
 		};
-		AD836430233A92EC00E55987 /* New Group */ = {
+		AD836430233A92EC00E55987 /* MovieDetails */ = {
 			isa = PBXGroup;
 			children = (
+				ADE961BB23392CAF00DC9BEF /* MovieDetailViewControllerTests.swift */,
+				ADE961BC23392CAF00DC9BEF /* MovieDetailInteractorTests.swift */,
+				ADE961BD23392CAF00DC9BEF /* MovieDetailWorkerTests.swift */,
+				ADE961BE23392CAF00DC9BEF /* MovieDetailPresenterTests.swift */,
 			);
-			path = "New Group";
+			path = MovieDetails;
 			sourceTree = "<group>";
 		};
-		AD836431233A934800E55987 /* New Group1 */ = {
+		AD836431233A934800E55987 /* ShareFavoriteMovies */ = {
 			isa = PBXGroup;
 			children = (
 				AD836446233A93E100E55987 /* ShowFavoriteMoviesViewControllerTests.swift */,
@@ -511,10 +515,10 @@
 				AD836448233A93E100E55987 /* ShowFavoriteMoviesWorkerTests.swift */,
 				AD836449233A93E100E55987 /* ShowFavoriteMoviesPresenterTests.swift */,
 			);
-			path = "New Group1";
+			path = ShareFavoriteMovies;
 			sourceTree = "<group>";
 		};
-		ADBA0007233A4377009DCB27 /* Filter Movies */ = {
+		ADBA0007233A4377009DCB27 /* FilterMovies */ = {
 			isa = PBXGroup;
 			children = (
 				AD836410233A58B900E55987 /* View */,
@@ -524,18 +528,14 @@
 				AD83641A233A59F300E55987 /* FilterMoviesRouter.swift */,
 				AD836415233A59F300E55987 /* FilterMoviesWorker.swift */,
 			);
-			path = "Filter Movies";
+			path = FilterMovies;
 			sourceTree = "<group>";
 		};
 		ADE961BA23392C8B00DC9BEF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				AD836431233A934800E55987 /* New Group1 */,
-				AD836430233A92EC00E55987 /* New Group */,
-				ADE961BB23392CAF00DC9BEF /* MovieDetailViewControllerTests.swift */,
-				ADE961BC23392CAF00DC9BEF /* MovieDetailInteractorTests.swift */,
-				ADE961BD23392CAF00DC9BEF /* MovieDetailWorkerTests.swift */,
-				ADE961BE23392CAF00DC9BEF /* MovieDetailPresenterTests.swift */,
+				AD836431233A934800E55987 /* ShareFavoriteMovies */,
+				AD836430233A92EC00E55987 /* MovieDetails */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -549,7 +549,7 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
-		ADEA18842336E47F00ACBCCC /* Movie Detail */ = {
+		ADEA18842336E47F00ACBCCC /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
 				ADEA18912336E4AC00ACBCCC /* View */,
@@ -559,7 +559,7 @@
 				ADEA189C2336E59600ACBCCC /* MovieDetailModels.swift */,
 				ADEA189E2336E59600ACBCCC /* MovieDetailInteractor.swift */,
 			);
-			path = "Movie Detail";
+			path = MovieDetail;
 			sourceTree = "<group>";
 		};
 		ADEA18912336E4AC00ACBCCC /* View */ = {
@@ -614,7 +614,7 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		ADEA18CE2337963100ACBCCC /* Show Favorite Movies */ = {
+		ADEA18CE2337963100ACBCCC /* ShowFavoriteMovies */ = {
 			isa = PBXGroup;
 			children = (
 				ADEA190B2337D82E00ACBCCC /* View */,
@@ -624,7 +624,7 @@
 				ADEA18F62337D82600ACBCCC /* ShowFavoriteMoviesModels.swift */,
 				ADEA18F82337D82600ACBCCC /* ShowFavoriteMoviesInteractor.swift */,
 			);
-			path = "Show Favorite Movies";
+			path = ShowFavoriteMovies;
 			sourceTree = "<group>";
 		};
 		ADEA18CF2337D07600ACBCCC /* Realm */ = {

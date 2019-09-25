@@ -20,7 +20,7 @@ class SearchMoviesWorker {
                                service: GenreEndpoint.getGenres) { response in
             switch response {
                 case let .success(result):
-                    self.genreManager.insertMany(genres: result.genres)
+//                    self.genreManager.insertMany(genres: result.genres)
                     completion(result.genres)
                 case .failure(_):
                     let genres = self.genreManager.getAll()
@@ -34,7 +34,7 @@ class SearchMoviesWorker {
                                service: MovieEndpoint.getByGenre(genreId: genreId, page: page)) { response in
             switch response {
                 case let .success(result):
-                    _ = self.moviesManager.insertMany(movies: result.results)
+//                    _ = self.moviesManager.insertMany(movies: result.results)
                     completion(result.results)
                 case .failure(_):
                     let movies = self.moviesManager.getByGenre(genreId: genreId)

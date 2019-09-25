@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterMoviesViewController" customModule="Movs" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="MZB-1P-Xe7" id="IVb-hG-UjZ"/>
+                <outlet property="tableView" destination="v17-aM-Tqx" id="0dG-9q-ZtS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,11 +35,19 @@
                         <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="210" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v17-aM-Tqx">
+                    <rect key="frame" x="0.0" y="184" width="414" height="678"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MZB-1P-Xe7" secondAttribute="trailing" id="9gQ-cp-4Jn"/>
+                <constraint firstItem="v17-aM-Tqx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="T9g-3S-HSk"/>
                 <constraint firstItem="MZB-1P-Xe7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZhN-cU-7mh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="v17-aM-Tqx" secondAttribute="bottom" id="ady-oQ-7if"/>
+                <constraint firstItem="v17-aM-Tqx" firstAttribute="top" secondItem="MZB-1P-Xe7" secondAttribute="bottom" id="s1a-mD-52V"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="v17-aM-Tqx" secondAttribute="trailing" id="vJd-GE-hGa"/>
                 <constraint firstItem="MZB-1P-Xe7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ylE-c2-jWc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

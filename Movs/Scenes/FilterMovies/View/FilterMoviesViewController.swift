@@ -24,7 +24,7 @@ class FilterMoviesViewController: UIViewController {
                                                                     genderId: 248,
                                                                     title: "Categories")
     fileprivate var collectionViewContent = [Any]()
-    fileprivate var tableViewContent = [[]]
+    fileprivate var tableViewContent = [Any]()
     
     // MARK: Outlet
     
@@ -36,6 +36,13 @@ class FilterMoviesViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            self.tableView.delegate = self
+            self.tableView.dataSource  = self
+            self.tableView.register(FavoriteMovieTableViewCell.self)
+        }
+    }
     // MARK: Object Lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -94,6 +101,7 @@ class FilterMoviesViewController: UIViewController {
 }
 
 extension FilterMoviesViewController: FilterMoviesDisplayLogic {
+    
     func displayGenres(viewModel: FilterMovies.FetchGenders.ViewModel) {
         DispatchQueue.main.async {
             self.collectionViewContent = viewModel.content
@@ -108,7 +116,8 @@ extension FilterMoviesViewController: FilterMoviesDisplayLogic {
     
     func displayMovies(viewModel: FilterMovies.FilterByGenre.ViewModel) {
         DispatchQueue.main.async {
-            self.tableViewContent[self.viewParams.section] = viewModel.content
+            self.tableViewContent = viewModel.content
+            self.tableView.reloadData()
         }
     }
 }
@@ -137,4 +146,31 @@ extension FilterMoviesViewController:  UICollectionViewDelegate {
         
         self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
+}
+
+extension FilterMoviesViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.tableViewContent.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteMovieTableViewCell.identifier,
+                                                       for: indexPath) as? FavoriteMovieTableViewCell
+            else { return UITableViewCell() }
+        cell.setup(with: self.tableViewContent[indexPath.row], delegate: self)
+        
+        return cell
+    }
+}
+
+extension FilterMoviesViewController: FavoriteMovieTableViewCellDelegate {
+    
+    func didSelectFavorite(for movie: Movie?) {
+        
+    }
+}
+
+extension FilterMoviesViewController: UITableViewDelegate {
+    
 }

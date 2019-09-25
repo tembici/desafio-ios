@@ -6,12 +6,22 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Exo2-Medium.otf">
+            <string>Exo2-Medium</string>
+        </array>
+        <array key="Exo2-SemiBold.otf">
+            <string>Exo2-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomAlertViewController" customModule="Movs" customModuleProvider="target">
             <connections>
+                <outlet property="alertMessageLabel" destination="QTL-Bl-b5S" id="4GL-PZ-Kek"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,15 +38,98 @@
                     </view>
                     <blurEffect style="light"/>
                 </visualEffectView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKc-Kp-yr2" customClass="UIViewDesignable" customModule="Movs" customModuleProvider="target">
+                    <rect key="frame" x="41.5" y="358" width="331" height="190"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QCy-p7-wfZ">
+                            <rect key="frame" x="20" y="20" width="291" height="150"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você realmente gostaria de desfavoritar?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTL-Bl-b5S">
+                                    <rect key="frame" x="0.0" y="0.0" width="291" height="90"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="axO-sW-HEX"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="19"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVZ-sH-eT6">
+                                    <rect key="frame" x="0.0" y="100" width="291" height="50"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTh-xH-oTf">
+                                            <rect key="frame" x="0.0" y="0.0" width="145.5" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="HTU-Df-nA3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="19"/>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleColor" name="primaryGray"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="-1" eventType="touchUpInside" id="ZFw-7P-Pe6"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agh-K1-rZB">
+                                            <rect key="frame" x="145.5" y="0.0" width="145.5" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="irX-HS-jJ2"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Exo2-Medium" family="Exo 2" pointSize="19"/>
+                                            <state key="normal" title="Confirm">
+                                                <color key="titleColor" name="primaryYellow"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="confirmButtonPressed:" destination="-1" eventType="touchUpInside" id="ggv-YJ-MX3"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="agh-K1-rZB" firstAttribute="width" secondItem="dVZ-sH-eT6" secondAttribute="width" multiplier="0.5" id="K5Z-8w-1Cx"/>
+                                        <constraint firstItem="fTh-xH-oTf" firstAttribute="width" secondItem="dVZ-sH-eT6" secondAttribute="width" multiplier="0.5" id="jTo-1Q-rop"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="QTL-Bl-b5S" firstAttribute="width" secondItem="QCy-p7-wfZ" secondAttribute="width" id="6Bg-w2-dfM"/>
+                                <constraint firstItem="QTL-Bl-b5S" firstAttribute="centerX" secondItem="QCy-p7-wfZ" secondAttribute="centerX" id="FfL-gd-IRI"/>
+                                <constraint firstItem="dVZ-sH-eT6" firstAttribute="width" secondItem="QCy-p7-wfZ" secondAttribute="width" id="bVf-w3-sfe"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="QCy-p7-wfZ" secondAttribute="trailing" constant="20" symbolic="YES" id="8jT-ah-MpV"/>
+                        <constraint firstItem="QCy-p7-wfZ" firstAttribute="top" secondItem="fKc-Kp-yr2" secondAttribute="top" constant="20" symbolic="YES" id="FNH-eg-W8J"/>
+                        <constraint firstAttribute="height" constant="190" id="TuQ-S4-YAg"/>
+                        <constraint firstItem="QCy-p7-wfZ" firstAttribute="leading" secondItem="fKc-Kp-yr2" secondAttribute="leading" constant="20" symbolic="YES" id="rGm-Se-zaA"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fR0-NQ-17O" secondAttribute="trailing" id="173-LX-mte"/>
                 <constraint firstItem="fR0-NQ-17O" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3rf-4c-gPQ"/>
+                <constraint firstItem="fKc-Kp-yr2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="GmM-mA-OZJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="fR0-NQ-17O" secondAttribute="bottom" id="NeJ-51-a1f"/>
+                <constraint firstItem="fKc-Kp-yr2" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="ZAa-BC-Dok"/>
+                <constraint firstItem="fKc-Kp-yr2" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="db1-Nd-wCJ"/>
                 <constraint firstItem="fR0-NQ-17O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qvB-Ix-i99"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="primaryGray">
+            <color red="0.17647058823529413" green="0.18823529411764706" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryYellow">
+            <color red="0.85098039215686272" green="0.59215686274509804" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

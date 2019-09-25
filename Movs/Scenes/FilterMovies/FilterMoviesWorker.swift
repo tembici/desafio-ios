@@ -17,10 +17,9 @@ class SearchMoviesWorker {
    
     func getGenres(completion: @escaping ([Genre]?) -> Void) {
         networkManager.request(type: GenreResponse.self,
-                               service: GenreEndpoint.getGenres) { response in
+                               service: GenreEndpoint.getGenres) { [unowned self] response in
             switch response {
                 case let .success(result):
-//                    self.genreManager.insertMany(genres: result.genres)
                     completion(result.genres)
                 case .failure(_):
                     let genres = self.genreManager.getAll()
@@ -31,10 +30,9 @@ class SearchMoviesWorker {
     
     func getMovies(by genreId: Int, page: Int, completion: @escaping ([Movie]?) -> Void) {
         networkManager.request(type: MoviesResponse.self,
-                               service: MovieEndpoint.getByGenre(genreId: genreId, page: page)) { response in
+                               service: MovieEndpoint.getByGenre(genreId: genreId, page: page)) { [unowned self] response in
             switch response {
                 case let .success(result):
-//                    _ = self.moviesManager.insertMany(movies: result.results)
                     completion(result.results)
                 case .failure(_):
                     let movies = self.moviesManager.getByGenre(genreId: genreId)

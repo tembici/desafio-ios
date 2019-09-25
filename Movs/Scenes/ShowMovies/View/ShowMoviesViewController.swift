@@ -17,19 +17,15 @@ class ShowMoviesViewController: UIViewController {
     
     // MARK: - Variables
     
-    var content = [Any]()
-    
     var interactor: ShowMoviesBusinessLogic?
     var router: (NSObjectProtocol & ShowMoviesRoutingLogic & ShowMoviesDataPassing)?
     
-    var alert: CustomAlertViewController?
+    var content = [Any]()
+    var viewParam = ShowMovies.ViewParams(dataPagination: 1)
  
     // MARK: - Outlets
     
     @IBAction func filterButtonPressed(_ sender: Any) {
-//        if let alertView = self.alert {
-//             self.present(alertView, animated: true, completion: nil)
-//        }
         self.router?.routeToFilterMovies()
     }
     
@@ -79,8 +75,6 @@ class ShowMoviesViewController: UIViewController {
     }
     
     private func setupLayout() {
-        self.alert = CustomAlertViewController(delegate: self)
-        
         self.navigationItem.searchController = searchController
         self.searchController.searchBar.delegate = self
         self.searchController.searchBar.tintColor = UIColor(named: "primaryGray")
@@ -99,7 +93,7 @@ class ShowMoviesViewController: UIViewController {
     // MARK: Private Methods
 
     private func fetchMovies() {
-        let request = ShowMovies.fetchMovies.Request()
+        let request = ShowMovies.fetchMovies.Request(page: self.viewParam.dataPagination)
         interactor?.fetchData(request: request)
     }
     
@@ -128,6 +122,7 @@ extension ShowMoviesViewController: ShowMoviesDisplayLogic {
 
     func displayMovies(viewModel: ShowMovies.fetchMovies.ViewModel) {
         DispatchQueue.main.async {
+            self.viewParam.dataPagination += 1
             self.content += viewModel.content
             self.collectionView.reloadData()
         }
@@ -147,6 +142,12 @@ extension ShowMoviesViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.routeToMovieDetails(data: self.content[indexPath.row])
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == content.count - 1 {
+            self.fetchMovies()
+        }
     }
 }
 
@@ -191,15 +192,3 @@ extension ShowMoviesViewController: UISearchBarDelegate {
     }
 }
 
-// MARK: - CustomAlertViewDelegate -
-
-extension ShowMoviesViewController: CustomAlertViewDelegate {
-    
-    func didSelectCancel() {
-        self.alert?.dismiss(animated: true, completion: nil)
-    }
-    
-    func didSelectConfirm() {
-
-    }
-}

@@ -13,7 +13,9 @@ enum ShowMovies {
     // MARK: Use cases
 
     enum fetchMovies {
-        struct Request { }
+        struct Request {
+            var page: Int
+        }
         struct Response {
             var content: [Any]?
         }

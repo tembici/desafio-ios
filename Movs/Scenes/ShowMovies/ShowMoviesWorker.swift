@@ -18,7 +18,6 @@ class ShowMoviesWorker {
                                service: MovieEndpoint.getMovies(category: .popular, page: page)) { [unowned self] response in
             switch response {
                 case .success(let result):
-//                    _ = self.movieManager.insertMany(movies: result.results)
                     completion(result.results)
                 case .failure:
                     let movies = self.movieManager.getAll()

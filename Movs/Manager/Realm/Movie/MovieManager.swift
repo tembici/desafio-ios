@@ -29,7 +29,7 @@ class MovieManager {
     }
     
     func getByKeyword(with keyword: String) -> [Movie]? {
-        return self.getAll()?.filter { $0.title?.contains(keyword) ?? false }
+        return self.getAll()?.filter { $0.title?.contains(keyword) ?? false  }
     }
     
     func get(identifier: Int) -> Movie? {

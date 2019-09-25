@@ -80,6 +80,13 @@ class FilterMoviesViewController: UIViewController {
         let backBarButtton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backBarButtton
         self.navigationItem.title = self.viewParams.title
+        
+        let font = UIFont.getExoFont(type: .semiBold, with: 20)
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: font]
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     private func fetchGenres() {
@@ -158,19 +165,18 @@ extension FilterMoviesViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteMovieTableViewCell.identifier,
                                                        for: indexPath) as? FavoriteMovieTableViewCell
             else { return UITableViewCell() }
-        cell.setup(with: self.tableViewContent[indexPath.row], delegate: self)
+        cell.setup(with: self.tableViewContent[indexPath.row])
         
         return cell
     }
 }
 
-extension FilterMoviesViewController: FavoriteMovieTableViewCellDelegate {
-    
-    func didSelectFavorite(for movie: Movie?) {
-        
-    }
-}
 
 extension FilterMoviesViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let movie = tableViewContent[indexPath.row]  as? Movie {
+            self.router?.routeToMovieDetail(movieId: movie.id)
+        }
+    }
 }

@@ -11,6 +11,9 @@ import UIKit
 protocol FavoriteMovieTableViewCellDelegate: class {
     func didSelectFavorite(for movie: Movie?)
 }
+extension FavoriteMovieTableViewCellDelegate {
+    func didSelectFavorite(for movie: Movie?) { }
+}
 protocol FavoriteMovieTableViewCellDataStore {
     var movie: Movie? { get set }
 }
@@ -37,7 +40,7 @@ class FavoriteMovieTableViewCell: UITableViewCell, FavoriteMovieTableViewCellDat
     }
     
    
-    func setup(with data: Any, delegate: FavoriteMovieTableViewCellDelegate) {
+    func setup(with data: Any, delegate: FavoriteMovieTableViewCellDelegate? = nil) {
         self.delegate = delegate
         if let movie = data as? Movie {
             self.movie = movie

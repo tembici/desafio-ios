@@ -23,7 +23,7 @@ class ShowMoviesInteractor: ShowMoviesBusinessLogic, ShowMoviesDataStore {
 
     func fetchData(request: ShowMovies.fetchMovies.Request) {
         worker = ShowMoviesWorker()
-        worker?.getMovies(for: 1) { movies in
+        worker?.getMovies(for: request.page) { movies in
             let response = ShowMovies.fetchMovies.Response(content: movies)
             self.presenter?.presentMovies(response: response)
         }

@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC87FC142373B29500EA6C4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FC132373B29500EA6C4F /* AppDelegate.swift */; };
+		AC87FC162373B29500EA6C4F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FC152373B29500EA6C4F /* SceneDelegate.swift */; };
+		AC87FC182373B29500EA6C4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FC172373B29500EA6C4F /* ViewController.swift */; };
+		AC87FC1B2373B29500EA6C4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC87FC192373B29500EA6C4F /* Main.storyboard */; };
+		AC87FC1E2373B29500EA6C4F /* Desafio_TemBici.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC87FC1C2373B29500EA6C4F /* Desafio_TemBici.xcdatamodeld */; };
+		AC87FC202373B29800EA6C4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC87FC1F2373B29800EA6C4F /* Assets.xcassets */; };
+		AC87FC232373B29800EA6C4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC87FC212373B29800EA6C4F /* LaunchScreen.storyboard */; };
+		AC87FC2E2373B29800EA6C4F /* Desafio_TemBiciTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FC2D2373B29800EA6C4F /* Desafio_TemBiciTests.swift */; };
+		AC87FC392373B29800EA6C4F /* Desafio_TemBiciUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FC382373B29800EA6C4F /* Desafio_TemBiciUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC87FC2A2373B29800EA6C4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC87FC082373B29500EA6C4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC87FC0F2373B29500EA6C4F;
+			remoteInfo = Desafio_TemBici;
+		};
+		AC87FC352373B29800EA6C4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC87FC082373B29500EA6C4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC87FC0F2373B29500EA6C4F;
+			remoteInfo = Desafio_TemBici;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AC87FC102373B29500EA6C4F /* Desafio_TemBici.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Desafio_TemBici.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC87FC132373B29500EA6C4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AC87FC152373B29500EA6C4F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AC87FC172373B29500EA6C4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AC87FC1A2373B29500EA6C4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC87FC1D2373B29500EA6C4F /* Desafio_TemBici.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Desafio_TemBici.xcdatamodel; sourceTree = "<group>"; };
+		AC87FC1F2373B29800EA6C4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC87FC222373B29800EA6C4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC87FC242373B29800EA6C4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC87FC292373B29800EA6C4F /* Desafio_TemBiciTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Desafio_TemBiciTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC87FC2D2373B29800EA6C4F /* Desafio_TemBiciTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desafio_TemBiciTests.swift; sourceTree = "<group>"; };
+		AC87FC2F2373B29800EA6C4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC87FC342373B29800EA6C4F /* Desafio_TemBiciUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Desafio_TemBiciUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC87FC382373B29800EA6C4F /* Desafio_TemBiciUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desafio_TemBiciUITests.swift; sourceTree = "<group>"; };
+		AC87FC3A2373B29800EA6C4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC87FC0D2373B29500EA6C4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC87FC262373B29800EA6C4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC87FC312373B29800EA6C4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC87FC072373B29500EA6C4F = {
+			isa = PBXGroup;
+			children = (
+				AC87FC122373B29500EA6C4F /* Desafio_TemBici */,
+				AC87FC2C2373B29800EA6C4F /* Desafio_TemBiciTests */,
+				AC87FC372373B29800EA6C4F /* Desafio_TemBiciUITests */,
+				AC87FC112373B29500EA6C4F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC87FC112373B29500EA6C4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC87FC102373B29500EA6C4F /* Desafio_TemBici.app */,
+				AC87FC292373B29800EA6C4F /* Desafio_TemBiciTests.xctest */,
+				AC87FC342373B29800EA6C4F /* Desafio_TemBiciUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC87FC122373B29500EA6C4F /* Desafio_TemBici */ = {
+			isa = PBXGroup;
+			children = (
+				AC87FC132373B29500EA6C4F /* AppDelegate.swift */,
+				AC87FC152373B29500EA6C4F /* SceneDelegate.swift */,
+				AC87FC172373B29500EA6C4F /* ViewController.swift */,
+				AC87FC192373B29500EA6C4F /* Main.storyboard */,
+				AC87FC1F2373B29800EA6C4F /* Assets.xcassets */,
+				AC87FC212373B29800EA6C4F /* LaunchScreen.storyboard */,
+				AC87FC242373B29800EA6C4F /* Info.plist */,
+				AC87FC1C2373B29500EA6C4F /* Desafio_TemBici.xcdatamodeld */,
+			);
+			path = Desafio_TemBici;
+			sourceTree = "<group>";
+		};
+		AC87FC2C2373B29800EA6C4F /* Desafio_TemBiciTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC87FC2D2373B29800EA6C4F /* Desafio_TemBiciTests.swift */,
+				AC87FC2F2373B29800EA6C4F /* Info.plist */,
+			);
+			path = Desafio_TemBiciTests;
+			sourceTree = "<group>";
+		};
+		AC87FC372373B29800EA6C4F /* Desafio_TemBiciUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AC87FC382373B29800EA6C4F /* Desafio_TemBiciUITests.swift */,
+				AC87FC3A2373B29800EA6C4F /* Info.plist */,
+			);
+			path = Desafio_TemBiciUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC87FC0F2373B29500EA6C4F /* Desafio_TemBici */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC87FC3D2373B29800EA6C4F /* Build configuration list for PBXNativeTarget "Desafio_TemBici" */;
+			buildPhases = (
+				AC87FC0C2373B29500EA6C4F /* Sources */,
+				AC87FC0D2373B29500EA6C4F /* Frameworks */,
+				AC87FC0E2373B29500EA6C4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Desafio_TemBici;
+			productName = Desafio_TemBici;
+			productReference = AC87FC102373B29500EA6C4F /* Desafio_TemBici.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AC87FC282373B29800EA6C4F /* Desafio_TemBiciTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC87FC402373B29800EA6C4F /* Build configuration list for PBXNativeTarget "Desafio_TemBiciTests" */;
+			buildPhases = (
+				AC87FC252373B29800EA6C4F /* Sources */,
+				AC87FC262373B29800EA6C4F /* Frameworks */,
+				AC87FC272373B29800EA6C4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC87FC2B2373B29800EA6C4F /* PBXTargetDependency */,
+			);
+			name = Desafio_TemBiciTests;
+			productName = Desafio_TemBiciTests;
+			productReference = AC87FC292373B29800EA6C4F /* Desafio_TemBiciTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AC87FC332373B29800EA6C4F /* Desafio_TemBiciUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC87FC432373B29800EA6C4F /* Build configuration list for PBXNativeTarget "Desafio_TemBiciUITests" */;
+			buildPhases = (
+				AC87FC302373B29800EA6C4F /* Sources */,
+				AC87FC312373B29800EA6C4F /* Frameworks */,
+				AC87FC322373B29800EA6C4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC87FC362373B29800EA6C4F /* PBXTargetDependency */,
+			);
+			name = Desafio_TemBiciUITests;
+			productName = Desafio_TemBiciUITests;
+			productReference = AC87FC342373B29800EA6C4F /* Desafio_TemBiciUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC87FC082373B29500EA6C4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Victor Rodrigues";
+				TargetAttributes = {
+					AC87FC0F2373B29500EA6C4F = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					AC87FC282373B29800EA6C4F = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = AC87FC0F2373B29500EA6C4F;
+					};
+					AC87FC332373B29800EA6C4F = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = AC87FC0F2373B29500EA6C4F;
+					};
+				};
+			};
+			buildConfigurationList = AC87FC0B2373B29500EA6C4F /* Build configuration list for PBXProject "Desafio_TemBici" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC87FC072373B29500EA6C4F;
+			productRefGroup = AC87FC112373B29500EA6C4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC87FC0F2373B29500EA6C4F /* Desafio_TemBici */,
+				AC87FC282373B29800EA6C4F /* Desafio_TemBiciTests */,
+				AC87FC332373B29800EA6C4F /* Desafio_TemBiciUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC87FC0E2373B29500EA6C4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC87FC232373B29800EA6C4F /* LaunchScreen.storyboard in Resources */,
+				AC87FC202373B29800EA6C4F /* Assets.xcassets in Resources */,
+				AC87FC1B2373B29500EA6C4F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC87FC272373B29800EA6C4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC87FC322373B29800EA6C4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC87FC0C2373B29500EA6C4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC87FC182373B29500EA6C4F /* ViewController.swift in Sources */,
+				AC87FC142373B29500EA6C4F /* AppDelegate.swift in Sources */,
+				AC87FC162373B29500EA6C4F /* SceneDelegate.swift in Sources */,
+				AC87FC1E2373B29500EA6C4F /* Desafio_TemBici.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC87FC252373B29800EA6C4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC87FC2E2373B29800EA6C4F /* Desafio_TemBiciTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC87FC302373B29800EA6C4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC87FC392373B29800EA6C4F /* Desafio_TemBiciUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC87FC2B2373B29800EA6C4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC87FC0F2373B29500EA6C4F /* Desafio_TemBici */;
+			targetProxy = AC87FC2A2373B29800EA6C4F /* PBXContainerItemProxy */;
+		};
+		AC87FC362373B29800EA6C4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC87FC0F2373B29500EA6C4F /* Desafio_TemBici */;
+			targetProxy = AC87FC352373B29800EA6C4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AC87FC192373B29500EA6C4F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC87FC1A2373B29500EA6C4F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AC87FC212373B29800EA6C4F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC87FC222373B29800EA6C4F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC87FC3B2373B29800EA6C4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC87FC3C2373B29800EA6C4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC87FC3E2373B29800EA6C4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NJT4Q3F7S9;
+				INFOPLIST_FILE = Desafio_TemBici/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "victor.Desafio-TemBici";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AC87FC3F2373B29800EA6C4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NJT4Q3F7S9;
+				INFOPLIST_FILE = Desafio_TemBici/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "victor.Desafio-TemBici";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		AC87FC412373B29800EA6C4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NJT4Q3F7S9;
+				INFOPLIST_FILE = Desafio_TemBiciTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "victor.Desafio-TemBiciTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Desafio_TemBici.app/Desafio_TemBici";
+			};
+			name = Debug;
+		};
+		AC87FC422373B29800EA6C4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NJT4Q3F7S9;
+				INFOPLIST_FILE = Desafio_TemBiciTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "victor.Desafio-TemBiciTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Desafio_TemBici.app/Desafio_TemBici";
+			};
+			name = Release;
+		};
+		AC87FC442373B29800EA6C4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NJT4Q3F7S9;
+				INFOPLIST_FILE = Desafio_TemBiciUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "victor.Desafio-TemBiciUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Desafio_TemBici;
+			};
+			name = Debug;
+		};
+		AC87FC452373B29800EA6C4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NJT4Q3F7S9;
+				INFOPLIST_FILE = Desafio_TemBiciUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "victor.Desafio-TemBiciUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Desafio_TemBici;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC87FC0B2373B29500EA6C4F /* Build configuration list for PBXProject "Desafio_TemBici" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC87FC3B2373B29800EA6C4F /* Debug */,
+				AC87FC3C2373B29800EA6C4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC87FC3D2373B29800EA6C4F /* Build configuration list for PBXNativeTarget "Desafio_TemBici" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC87FC3E2373B29800EA6C4F /* Debug */,
+				AC87FC3F2373B29800EA6C4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC87FC402373B29800EA6C4F /* Build configuration list for PBXNativeTarget "Desafio_TemBiciTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC87FC412373B29800EA6C4F /* Debug */,
+				AC87FC422373B29800EA6C4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC87FC432373B29800EA6C4F /* Build configuration list for PBXNativeTarget "Desafio_TemBiciUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC87FC442373B29800EA6C4F /* Debug */,
+				AC87FC452373B29800EA6C4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AC87FC1C2373B29500EA6C4F /* Desafio_TemBici.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AC87FC1D2373B29500EA6C4F /* Desafio_TemBici.xcdatamodel */,
+			);
+			currentVersion = AC87FC1D2373B29500EA6C4F /* Desafio_TemBici.xcdatamodel */;
+			path = Desafio_TemBici.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AC87FC082373B29500EA6C4F /* Project object */;
+}

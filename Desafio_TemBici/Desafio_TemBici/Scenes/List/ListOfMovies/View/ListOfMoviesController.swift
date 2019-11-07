@@ -55,6 +55,11 @@ extension ListOfMoviesController: UICollectionViewDelegate, UICollectionViewData
         presenter.getMoreMovies(for: indexPath.row)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        presenter.didSelect(index: indexPath.row)
+    }
+    
 }
 
 extension ListOfMoviesController: UICollectionViewDelegateFlowLayout {
@@ -66,8 +71,45 @@ extension ListOfMoviesController: UICollectionViewDelegateFlowLayout {
     
 }
 
+// MARK: UISearchResultsUpdating
+extension ListOfMoviesController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let text = searchController.searchBar.text {
+            presenter.filtered(text)
+        }
+    }
+    
+}
+
 //MARK: ListOfMoviesView
 extension ListOfMoviesController: ListOfMoviesView {
+    
+    func error(message: String) {
+        
+    }
+    
+    func collectionIsHidden() {
+        collectionView.isHidden = true
+    }
+    
+    func collectionNotHidden() {
+        collectionView.isHidden = false
+    }
+    
+    func removeBlackSpace() {
+        guard let navigationController = navigationController else { return }
+        navigationController.view.backgroundColor = .white
+    }
+    
+    func configureUI() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search..."
+        searchController.searchBar.tintColor = .white
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.searchController = searchController
+    }
     
     func startLoading() {
         DispatchQueue.main.async { [weak self] in

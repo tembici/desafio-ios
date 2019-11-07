@@ -19,12 +19,20 @@ class ListOfMoviesRouter {
     }
     
     //MARK: SEGUE
+    private let detail = "detail"
     
     //MARK: PRESENT
+    func presentDetail(id: Int) {
+        controller?.performSegue(withIdentifier: detail, sender: id)
+    }
     
     //MARK: NAVIGATION
     func prepare(segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == detail {
+            if let vc = segue.destination as? DetailOfMovieController {
+                vc.presenter.id = sender as? Int
+            }
+        }
     }
     
 }

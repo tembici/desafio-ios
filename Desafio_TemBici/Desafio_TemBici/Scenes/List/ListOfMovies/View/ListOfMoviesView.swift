@@ -9,6 +9,11 @@
 import UIKit
 
 protocol ListOfMoviesView: class {
+    func removeBlackSpace()
+    func configureUI()
+    func error(message: String)
+    func collectionIsHidden()
+    func collectionNotHidden()
     func startLoading()
     func stopLoading()
     func reloadData()

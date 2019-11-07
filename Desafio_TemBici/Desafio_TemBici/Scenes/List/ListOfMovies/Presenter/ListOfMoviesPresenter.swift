@@ -24,6 +24,9 @@ class ListOfMoviesPresenter {
         let m = ListOfMoviesManager(delegate: self)
         return m
     }()
+    
+    //MARK: COREDATA
+    let coreData = CoreDataManager.sharedManager
   
     //MARK: INIT
     init(view: ListOfMoviesView, router: ListOfMoviesRouter) {
@@ -37,9 +40,13 @@ class ListOfMoviesPresenter {
         view.removeBlackSpace()
         view.startLoading()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+        DispatchQueue.main.async { [weak self] in
             self?.manager.getPopularMovies(page: 1)
         }
+    }
+    
+    func viewDidAppear() {
+        view.reloadData()
     }
     
     //MARK: NETWORK
@@ -94,19 +101,38 @@ class ListOfMoviesPresenter {
         }
         
         guard let movie = m else { return }
+        let movieIsFavorited = getMovie(id: movie.id)
+        
         ManagerImage.shared.downloadImageFrom(movie.posterPath) { (movieImage) in
             cell.movieModel = MovieModel(movieName: movie.title,
                                          movieImage: movieImage,
-                                         movieIsFavorited: false)
+                                         movieIsFavorited: movieIsFavorited)
+        }
+    }
+    
+    //MARK: FAVORITE MOVIE
+    func getMovie(id: Int) -> Bool {
+        guard let movieIsFavorited = coreData.getMovie(id: id) else {
+            return false
+        }
+        return movieIsFavorited
+    }
+    
+    //MARK: NUMBER OF ROWS IN SECTION
+    func numberOfRowsInSection() -> Int {
+        if isFiltered {
+            return filtered.count
+        } else {
+            return movies.count
         }
     }
     
     //MARK: DID SELECT
     func didSelect(index: Int) {
         if isFiltered {
-            router.presentDetail(id: filtered[index].id)
+            router.presentDetail(movie: filtered[index])
         } else {
-            router.presentDetail(id: movies[index].id)
+            router.presentDetail(movie: movies[index])
         }
     }
         

@@ -1,5 +1,5 @@
 // 
-//  ListOfMoviesController.swift
+//  ListOfFavoritesController.swift
 //  Desafio_TemBici
 //
 //  Created by Victor Rodrigues on 07/11/19.
@@ -8,16 +8,18 @@
 
 import UIKit
 
-class ListOfMoviesController: UIViewController {
+class ListOfFavoritesController: UIViewController {
     
     //MARK: OUTLETS
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var errorLbl: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     //MARK: PROPERTIES
     lazy var activityIndicatorView = UIActivityIndicatorView(style: .large)
     lazy var searchController = UISearchController(searchResultsController: nil)
-    lazy var presenter: ListOfMoviesPresenter = {
-        let p = ListOfMoviesPresenter(view: self, router: ListOfMoviesRouter(self))
+    lazy var presenter: ListOfFavoritesPresenter = {
+        let p = ListOfFavoritesPresenter(view: self, router: ListOfFavoritesRouter(self))
         return p
     }()
     
@@ -41,44 +43,32 @@ class ListOfMoviesController: UIViewController {
     
 }
 
-//MARK: UICollectionViewDelegate, UICollectionViewDataSource
-extension ListOfMoviesController: UICollectionViewDelegate, UICollectionViewDataSource {
+//MARK: ListOfFavoritesView
+extension ListOfFavoritesController: UITableViewDelegate, UITableViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.numberOfRowsInSection()
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! ListCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as! FavoriteCell
         
         presenter.configure(cell, index: indexPath.row)
         
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
-        presenter.getMoreMovies(for: indexPath.row)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        presenter.didSelect(index: indexPath.row)
-    }
-    
-}
-
-extension ListOfMoviesController: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: view.bounds.width / 2, height: 270)
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.delete(row: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
 }
 
 // MARK: UISearchResultsUpdating
-extension ListOfMoviesController: UISearchResultsUpdating {
+extension ListOfFavoritesController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         if let text = searchController.searchBar.text {
@@ -88,25 +78,8 @@ extension ListOfMoviesController: UISearchResultsUpdating {
     
 }
 
-//MARK: ListOfMoviesView
-extension ListOfMoviesController: ListOfMoviesView {
-    
-    func error(message: String) {
-        
-    }
-    
-    func collectionIsHidden() {
-        collectionView.isHidden = true
-    }
-    
-    func collectionNotHidden() {
-        collectionView.isHidden = false
-    }
-    
-    func removeBlackSpace() {
-        guard let navigationController = navigationController else { return }
-        navigationController.view.backgroundColor = .white
-    }
+//MARK: ListOfFavoritesView
+extension ListOfFavoritesController: ListOfFavoritesView {
     
     func configureUI() {
         searchController.searchResultsUpdater = self
@@ -122,7 +95,7 @@ extension ListOfMoviesController: ListOfMoviesView {
             self?.activityIndicatorView.color = #colorLiteral(red: 0.9690945745, green: 0.8084867597, blue: 0.3556014299, alpha: 1)
             self?.activityIndicatorView.startAnimating()
             self?.activityIndicatorView.isHidden = false
-            self?.collectionView.backgroundView = self?.activityIndicatorView
+            self?.tableView.backgroundView = self?.activityIndicatorView
         }
     }
 
@@ -130,14 +103,28 @@ extension ListOfMoviesController: ListOfMoviesView {
         DispatchQueue.main.async { [weak self] in
             self?.activityIndicatorView.stopAnimating()
             self?.activityIndicatorView.isHidden = true
-            self?.collectionView.backgroundView = nil
+            self?.tableView.backgroundView = nil
         }
     }
     
     func reloadData() {
         DispatchQueue.main.async { [weak self] in
-            self?.collectionView.reloadData()
+            self?.tableView.reloadData()
         }
+    }
+    
+    func tableViewIsHidden() {
+        tableView.isHidden = true
+        errorView.isHidden = false
+    }
+    
+    func tableViewNotHidden() {
+        tableView.isHidden = false
+        errorView.isHidden = true
+    }
+    
+    func display(message: String) {
+        errorLbl.text = message
     }
     
 }

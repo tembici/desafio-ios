@@ -43,6 +43,16 @@
 		AC87FC992373DA4900EA6C4F /* DetailOfMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FC952373DA4900EA6C4F /* DetailOfMovieView.swift */; };
 		AC87FC9B2373DA5D00EA6C4F /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC87FC9A2373DA5D00EA6C4F /* Detail.storyboard */; };
 		AC87FC9E2373E0B200EA6C4F /* ManagerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FC9D2373E0B200EA6C4F /* ManagerImage.swift */; };
+		AC87FCA2237456CE00EA6C4F /* Favorite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FCA0237456CE00EA6C4F /* Favorite+CoreDataClass.swift */; };
+		AC87FCA3237456CE00EA6C4F /* Favorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FCA1237456CE00EA6C4F /* Favorite+CoreDataProperties.swift */; };
+		AC87FCA5237456DE00EA6C4F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FCA4237456DE00EA6C4F /* CoreDataManager.swift */; };
+		AC87FCAB2374664300EA6C4F /* ListOfFavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FCA72374664300EA6C4F /* ListOfFavoritesPresenter.swift */; };
+		AC87FCAC2374664300EA6C4F /* ListOfFavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FCA82374664300EA6C4F /* ListOfFavoritesRouter.swift */; };
+		AC87FCAD2374664300EA6C4F /* ListOfFavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FCA92374664300EA6C4F /* ListOfFavoritesController.swift */; };
+		AC87FCAE2374664300EA6C4F /* ListOfFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FCAA2374664300EA6C4F /* ListOfFavoritesView.swift */; };
+		AC87FCB22374667E00EA6C4F /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC87FCB12374667E00EA6C4F /* Favorites.storyboard */; };
+		AC87FCB523746C9200EA6C4F /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FCB423746C9200EA6C4F /* FavoriteCell.swift */; };
+		AC87FCB823746CB800EA6C4F /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FCB723746CB800EA6C4F /* FavoriteModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +115,16 @@
 		AC87FC952373DA4900EA6C4F /* DetailOfMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfMovieView.swift; sourceTree = "<group>"; };
 		AC87FC9A2373DA5D00EA6C4F /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		AC87FC9D2373E0B200EA6C4F /* ManagerImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerImage.swift; sourceTree = "<group>"; };
+		AC87FCA0237456CE00EA6C4F /* Favorite+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AC87FCA1237456CE00EA6C4F /* Favorite+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AC87FCA4237456DE00EA6C4F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		AC87FCA72374664300EA6C4F /* ListOfFavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfFavoritesPresenter.swift; sourceTree = "<group>"; };
+		AC87FCA82374664300EA6C4F /* ListOfFavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfFavoritesRouter.swift; sourceTree = "<group>"; };
+		AC87FCA92374664300EA6C4F /* ListOfFavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfFavoritesController.swift; sourceTree = "<group>"; };
+		AC87FCAA2374664300EA6C4F /* ListOfFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfFavoritesView.swift; sourceTree = "<group>"; };
+		AC87FCB12374667E00EA6C4F /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
+		AC87FCB423746C9200EA6C4F /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		AC87FCB723746CB800EA6C4F /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,9 +179,9 @@
 				AC87FC152373B29500EA6C4F /* SceneDelegate.swift */,
 				AC87FC1F2373B29800EA6C4F /* Assets.xcassets */,
 				AC87FC242373B29800EA6C4F /* Info.plist */,
+				AC87FC9F237455DE00EA6C4F /* CoreData */,
 				AC87FC462373B5FF00EA6C4F /* Network */,
 				AC87FC742373C19F00EA6C4F /* Scenes */,
-				AC87FC1C2373B29500EA6C4F /* Desafio_TemBici.xcdatamodeld */,
 			);
 			path = Desafio_TemBici;
 			sourceTree = "<group>";
@@ -313,10 +333,10 @@
 		AC87FC742373C19F00EA6C4F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				AC87FC792373C1E000EA6C4F /* Favorites */,
 				AC87FC752373C1B600EA6C4F /* Launch */,
 				AC87FC762373C1BF00EA6C4F /* Main */,
 				AC87FC772373C1CA00EA6C4F /* List */,
+				AC87FC792373C1E000EA6C4F /* Favorites */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -359,6 +379,7 @@
 		AC87FC792373C1E000EA6C4F /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				AC87FCA62374662E00EA6C4F /* ListOfFavorites */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -442,6 +463,63 @@
 				AC87FC9D2373E0B200EA6C4F /* ManagerImage.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		AC87FC9F237455DE00EA6C4F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AC87FCA0237456CE00EA6C4F /* Favorite+CoreDataClass.swift */,
+				AC87FCA1237456CE00EA6C4F /* Favorite+CoreDataProperties.swift */,
+				AC87FC1C2373B29500EA6C4F /* Desafio_TemBici.xcdatamodeld */,
+				AC87FCA4237456DE00EA6C4F /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		AC87FCA62374662E00EA6C4F /* ListOfFavorites */ = {
+			isa = PBXGroup;
+			children = (
+				AC87FCB623746CA900EA6C4F /* Model */,
+				AC87FCAF2374664800EA6C4F /* View */,
+				AC87FCB02374664E00EA6C4F /* Presenter */,
+			);
+			path = ListOfFavorites;
+			sourceTree = "<group>";
+		};
+		AC87FCAF2374664800EA6C4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC87FCB12374667E00EA6C4F /* Favorites.storyboard */,
+				AC87FCA92374664300EA6C4F /* ListOfFavoritesController.swift */,
+				AC87FCAA2374664300EA6C4F /* ListOfFavoritesView.swift */,
+				AC87FCB323746C6F00EA6C4F /* FavoriteCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AC87FCB02374664E00EA6C4F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AC87FCA72374664300EA6C4F /* ListOfFavoritesPresenter.swift */,
+				AC87FCA82374664300EA6C4F /* ListOfFavoritesRouter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AC87FCB323746C6F00EA6C4F /* FavoriteCell */ = {
+			isa = PBXGroup;
+			children = (
+				AC87FCB423746C9200EA6C4F /* FavoriteCell.swift */,
+			);
+			path = FavoriteCell;
+			sourceTree = "<group>";
+		};
+		AC87FCB623746CA900EA6C4F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC87FCB723746CB800EA6C4F /* FavoriteModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -550,6 +628,7 @@
 			files = (
 				AC87FC232373B29800EA6C4F /* LaunchScreen.storyboard in Resources */,
 				AC87FC202373B29800EA6C4F /* Assets.xcassets in Resources */,
+				AC87FCB22374667E00EA6C4F /* Favorites.storyboard in Resources */,
 				AC87FC862373C44300EA6C4F /* List.storyboard in Resources */,
 				AC87FC9B2373DA5D00EA6C4F /* Detail.storyboard in Resources */,
 				AC87FC1B2373B29500EA6C4F /* Main.storyboard in Resources */,
@@ -584,11 +663,18 @@
 				AC87FC5B2373B6CE00EA6C4F /* HTTPTask.swift in Sources */,
 				AC87FC6E2373B8E000EA6C4F /* ListOfMoviesManager.swift in Sources */,
 				AC87FC732373BE8100EA6C4F /* DetailMovieManager.swift in Sources */,
+				AC87FCA2237456CE00EA6C4F /* Favorite+CoreDataClass.swift in Sources */,
 				AC87FC972373DA4900EA6C4F /* DetailOfMovieRouter.swift in Sources */,
+				AC87FCAC2374664300EA6C4F /* ListOfFavoritesRouter.swift in Sources */,
 				AC87FC982373DA4900EA6C4F /* DetailOfMovieController.swift in Sources */,
+				AC87FCAE2374664300EA6C4F /* ListOfFavoritesView.swift in Sources */,
 				AC87FC652373B70C00EA6C4F /* Endpoint.swift in Sources */,
+				AC87FCAB2374664300EA6C4F /* ListOfFavoritesPresenter.swift in Sources */,
+				AC87FCA3237456CE00EA6C4F /* Favorite+CoreDataProperties.swift in Sources */,
 				AC87FC5D2373B6CE00EA6C4F /* EndPointType.swift in Sources */,
 				AC87FC822373C29100EA6C4F /* ListOfMoviesRouter.swift in Sources */,
+				AC87FCB823746CB800EA6C4F /* FavoriteModel.swift in Sources */,
+				AC87FCA5237456DE00EA6C4F /* CoreDataManager.swift in Sources */,
 				AC87FC682373B7AC00EA6C4F /* Key.swift in Sources */,
 				AC87FC9E2373E0B200EA6C4F /* ManagerImage.swift in Sources */,
 				AC87FC712373BC1D00EA6C4F /* Error.swift in Sources */,
@@ -599,8 +685,10 @@
 				AC87FC5A2373B6CE00EA6C4F /* HTTPMethod.swift in Sources */,
 				AC87FC612373B6D800EA6C4F /* URLEncoding.swift in Sources */,
 				AC87FC6A2373B83400EA6C4F /* DetailOfMovie.swift in Sources */,
+				AC87FCAD2374664300EA6C4F /* ListOfFavoritesController.swift in Sources */,
 				AC87FC142373B29500EA6C4F /* AppDelegate.swift in Sources */,
 				AC87FC962373DA4900EA6C4F /* DetailOfMoviePresenter.swift in Sources */,
+				AC87FCB523746C9200EA6C4F /* FavoriteCell.swift in Sources */,
 				AC87FC892373CCFD00EA6C4F /* ListCell.swift in Sources */,
 				AC87FC842373C29100EA6C4F /* ListOfMoviesView.swift in Sources */,
 				AC87FC162373B29500EA6C4F /* SceneDelegate.swift in Sources */,

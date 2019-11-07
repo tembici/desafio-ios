@@ -9,6 +9,8 @@
 import UIKit
 
 protocol DetailOfMovieView: class {
+    func configure()
     func display(detailModel: DetailModel)
     func error(message: String)
+    func setImage(image: UIImage)
 }

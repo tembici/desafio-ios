@@ -42,6 +42,9 @@
                                                             <constraint firstAttribute="width" constant="25" id="Wst-7N-kVP"/>
                                                         </constraints>
                                                         <state key="normal" image="favorite_gray_icon"/>
+                                                        <connections>
+                                                            <action selector="favorite:" destination="99j-Gd-lgZ" eventType="touchUpInside" id="0o4-nR-itw"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -149,6 +152,7 @@
                         <outlet property="labelError" destination="yf3-mO-yXm" id="C9T-Q9-3Ll"/>
                         <outlet property="movieGenre" destination="d1v-Zy-KUT" id="VLf-J3-ZkB"/>
                         <outlet property="movieImage" destination="XyE-M0-PyQ" id="qfP-RK-qv1"/>
+                        <outlet property="movieIsFavorited" destination="LJY-HE-Rs5" id="n2w-F4-Deg"/>
                         <outlet property="movieName" destination="qfB-3h-X8K" id="HXP-PJ-myy"/>
                         <outlet property="movieOverview" destination="hyY-F6-f3P" id="9Kj-q5-2mc"/>
                         <outlet property="movieYear" destination="AIq-Ye-DTV" id="Cj9-Ip-6nD"/>

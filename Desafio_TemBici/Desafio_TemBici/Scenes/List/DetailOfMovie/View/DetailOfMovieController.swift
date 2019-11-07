@@ -18,6 +18,7 @@ class DetailOfMovieController: UIViewController {
     @IBOutlet weak var movieYear: UILabel!
     @IBOutlet weak var movieGenre: UILabel!
     @IBOutlet weak var movieOverview: UILabel!
+    @IBOutlet weak var movieIsFavorited: UIButton!
     
     //MARK: PROPERTIES
     lazy var presenter: DetailOfMoviePresenter = {
@@ -37,14 +38,26 @@ class DetailOfMovieController: UIViewController {
         presenter.prepare(segue: segue, sender: sender)
     }
     
+    //MARK: ACTIONS
+    @IBAction func favorite(_ sender: UIButton) {
+        presenter.favorite()
+    }
+    
 }
 
 //MARK: DetailOfMovieView
 extension DetailOfMovieController: DetailOfMovieView {
     
+    func configure() {
+        self.viewError.isHidden = true
+    }
+    
+    func setImage(image: UIImage) {
+        movieIsFavorited.setImage(image, for: .normal)
+    }
+    
     func display(detailModel: DetailModel) {
         DispatchQueue.main.async { [weak self] in
-            self?.viewError.isHidden = true
             self?.movieImage.image = detailModel.movieImage
             self?.movieName.text = detailModel.movieName
             self?.movieYear.text = detailModel.getDate()

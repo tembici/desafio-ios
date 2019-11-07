@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailOfMoviePresenter {
     
@@ -15,11 +16,14 @@ class DetailOfMoviePresenter {
     private var router: DetailOfMovieRouter
     
     //MARK: MANAGER
-    var id: Int?
+    var movie: Movie?
     lazy var manager: DetailMovieManager = {
         let m = DetailMovieManager(delegate: self)
         return m
     }()
+    
+    //MARK: COREDATA
+    let coreData = CoreDataManager.sharedManager
   
     //MARK: INIT
     init(view: DetailOfMovieView, router: DetailOfMovieRouter) {
@@ -29,8 +33,32 @@ class DetailOfMoviePresenter {
     
     //MARK: VIEW LIFE CYCLE
     func viewDidLoad() {
-        guard let id = id else { return }
-        manager.getDetailOfMovie(id: id)
+        view.configure()
+        guard let movie = movie else { return }
+        manager.getDetailOfMovie(id: movie.id)
+        getMovie(id: movie.id)
+    }
+    
+    //MARK: FAVORITE MOVIE
+    func getMovie(id: Int) {
+        guard let movieIsFavorited = coreData.getMovie(id: id) else { return }
+        
+        if movieIsFavorited {
+            view.setImage(image: #imageLiteral(resourceName: "favorite_full_icon"))
+        } else {
+            view.setImage(image: #imageLiteral(resourceName: "favorite_gray_icon"))
+        }
+    }
+    
+    func favorite() {
+        guard let movie = movie else { return }
+        let favorite = coreData.insertMovie(movie: movie)
+        
+        if favorite != nil {
+            view.setImage(image: #imageLiteral(resourceName: "favorite_full_icon"))
+        } else {
+            view.setImage(image: #imageLiteral(resourceName: "favorite_gray_icon"))
+        }
     }
     
     //MARK: NAVIGATION
@@ -50,8 +78,7 @@ extension DetailOfMoviePresenter: DetailMovieManagerDelegate {
                 movieImage: movieImage,
                 movieDate: detailOfMovie.releaseDate,
                 movieGenre: detailOfMovie.genres,
-                movieOverview: detailOfMovie.overview,
-                movieIsFavorited: false))
+                movieOverview: detailOfMovie.overview))
         }
     }
     

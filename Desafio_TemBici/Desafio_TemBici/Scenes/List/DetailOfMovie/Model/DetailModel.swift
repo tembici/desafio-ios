@@ -15,15 +15,13 @@ class DetailModel {
     var movieDate: String
     var movieGenre: [Genre]
     var movieOverview: String
-    var movieIsFavorited: Bool
     
-    init(movieName: String, movieImage: UIImage, movieDate: String, movieGenre: [Genre], movieOverview: String, movieIsFavorited: Bool = false) {
+    init(movieName: String, movieImage: UIImage, movieDate: String, movieGenre: [Genre], movieOverview: String) {
         self.movieName = movieName
         self.movieImage = movieImage
         self.movieDate = movieDate
         self.movieGenre = movieGenre
         self.movieOverview = movieOverview
-        self.movieIsFavorited = movieIsFavorited
     }
     
     func getGenres() -> String {

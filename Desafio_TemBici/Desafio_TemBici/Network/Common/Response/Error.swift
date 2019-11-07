@@ -9,5 +9,5 @@
 import Foundation
 
 class ErrorResp {
-    static let generic = "Um erro ocorreu.\nPor favor, tente novamente mais tarde."
+    static let generic = "An error has occurred. \nPlease try again later."
 }

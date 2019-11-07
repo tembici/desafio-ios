@@ -16,6 +16,8 @@ class ListOfMoviesPresenter {
     
     //MARK: MANAGER
     var movies: [Movie] = []
+    var filtered: [Movie] = []
+    var isFiltered: Bool = false
     private var page: Int = 0
     private var totalPages: Int = 0
     lazy var manager: ListOfMoviesManager = {
@@ -31,6 +33,8 @@ class ListOfMoviesPresenter {
     
     //MARK: VIEW LIFE CYCLE
     func viewDidLoad() {
+        view.configureUI()
+        view.removeBlackSpace()
         view.startLoading()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
@@ -55,14 +59,54 @@ class ListOfMoviesPresenter {
         }
     }
     
+    //MARK: FILTERED
+    func filtered(_ searchText: String, scope: String = "All") {
+        if searchText != "" {
+            isFiltered = true
+            filtered = movies.filter { item in
+                return (item.title.lowercased().contains(searchText.lowercased()))
+            }
+        } else {
+            isFiltered = false
+            filtered = movies
+        }
+        
+        if filtered.count == 0 {
+            view.error(message: "We didn't find any \nmovies with this name")
+            view.collectionIsHidden()
+        } else {
+            view.error(message: "")
+            view.collectionNotHidden()
+        }
+        
+        view.reloadData()
+    }
+
+    
     //MARK: CELL
     func configure(_ cell: ListCell, index: Int) {
-        let movie = movies[index]
+        var m: Movie?
         
-        manager.downloadImageFrom(movie.posterPath) { (movieImage) in
+        if isFiltered {
+            m = filtered[index]
+        } else {
+            m = movies[index]
+        }
+        
+        guard let movie = m else { return }
+        ManagerImage.shared.downloadImageFrom(movie.posterPath) { (movieImage) in
             cell.movieModel = MovieModel(movieName: movie.title,
                                          movieImage: movieImage,
                                          movieIsFavorited: false)
+        }
+    }
+    
+    //MARK: DID SELECT
+    func didSelect(index: Int) {
+        if isFiltered {
+            router.presentDetail(id: filtered[index].id)
+        } else {
+            router.presentDetail(id: movies[index].id)
         }
     }
         
@@ -85,7 +129,7 @@ extension ListOfMoviesPresenter: ListOfMoviesManagerDelegate {
     }
     
     func error(message: String) {
-        print(message)
+        self.view.error(message: message)
     }
     
 }

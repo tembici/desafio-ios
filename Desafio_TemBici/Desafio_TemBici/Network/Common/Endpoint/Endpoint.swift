@@ -49,11 +49,10 @@ extension MoviesEndpoint: EndPointType {
                                       bodyEncoding: .urlEncoding,
                                       urlParameters: ["page": page,
                                                       "api_key": Key.MovieAPIKey])
-        case .detail(let id):
+        case .detail:
             return .requestParameters(bodyParameters: nil,
                                       bodyEncoding: .urlEncoding,
-                                      urlParameters: ["movie_id": id,
-                                                      "api_key": Key.MovieAPIKey])
+                                      urlParameters: ["api_key": Key.MovieAPIKey])
         }
     }
     

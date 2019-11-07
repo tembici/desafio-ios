@@ -15,6 +15,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="8iR-wl-HAM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.96909457450000003" green="0.80848675969999995" blue="0.35560142989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -139,15 +140,28 @@
                         <viewLayoutGuide key="safeArea" id="cgq-As-YZs"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Movies" image="list_icon" id="hMD-BB-FBc"/>
-                    <navigationItem key="navigationItem" title="Movies" id="DkF-vv-XBN"/>
+                    <navigationItem key="navigationItem" title="Movies" id="DkF-vv-XBN">
+                        <barButtonItem key="backBarButtonItem" title="  " id="wKE-wX-8Uk"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="Cjj-DY-dHC" id="E4b-p2-i55"/>
+                        <segue destination="5Yc-uA-pUY" kind="show" identifier="detail" id="Jwz-fu-JjU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B6k-Wb-dlp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-115.94202898550725" y="117.85714285714285"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="fBS-XE-HCn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Detail" id="5Yc-uA-pUY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="mLW-hY-fg6"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oaz-iP-3gX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="351" y="118"/>
         </scene>
     </scenes>
     <resources>

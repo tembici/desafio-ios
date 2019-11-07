@@ -80,34 +80,6 @@ class CoreDataManager {
         }
     }
   
-    //NO CASO IMPLEMENTEI O UPDATE MAS NÃO USARIA PARA ESSE APP
-    func update(movie: Movie, favorite: Favorite) {
-        let context = CoreDataManager.sharedManager.persistentContainer.viewContext
-        do {
-            favorite.setValue(movie.posterPath, forKey: "url")
-            favorite.setValue(movie.id, forKey: "id")
-            favorite.setValue(movie.title, forKeyPath: "name")
-            favorite.setValue(movie.releaseDate, forKeyPath: "date")
-            favorite.setValue(movie.overview, forKey: "overview")
-      
-            print("\(favorite.value(forKey: "url") ?? "")")
-            print("\(favorite.value(forKey: "id") ?? "")")
-            print("\(favorite.value(forKey: "name") ?? "")")
-            print("\(favorite.value(forKey: "date") ?? "")")
-            print("\(favorite.value(forKey: "overview") ?? "")")
-            
-            do {
-                try context.save()
-                print("saved!")
-            } catch let error as NSError  {
-                print("Could not save \(error), \(error.userInfo)")
-            } catch {}
-      
-        } catch {
-            print("Error with request: \(error)")
-        }
-    }
-  
     func delete(favorite: Favorite){
         let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
         do {
@@ -136,23 +108,19 @@ class CoreDataManager {
         }
     }
   
-    func delete(id: Int) -> [Favorite]? {
+    func delete(id: Int) {
         let managedContext = CoreDataManager.sharedManager.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favorite")
         fetchRequest.predicate = NSPredicate(format: "id == %@" ,id)
         do {
             let favorites = try managedContext.fetch(fetchRequest)
-            var arrRemovedFavorites = [Favorite]()
             for i in favorites {
                 managedContext.delete(i)
                 try managedContext.save()
-                arrRemovedFavorites.append(i as! Favorite)
             }
-            return arrRemovedFavorites
       
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
-            return nil
         }
     }
     

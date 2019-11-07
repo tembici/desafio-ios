@@ -13,8 +13,6 @@
 		AC87FC1E2373B29500EA6C4F /* Desafio_TemBici.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC87FC1C2373B29500EA6C4F /* Desafio_TemBici.xcdatamodeld */; };
 		AC87FC202373B29800EA6C4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC87FC1F2373B29800EA6C4F /* Assets.xcassets */; };
 		AC87FC232373B29800EA6C4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC87FC212373B29800EA6C4F /* LaunchScreen.storyboard */; };
-		AC87FC2E2373B29800EA6C4F /* Desafio_TemBiciTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FC2D2373B29800EA6C4F /* Desafio_TemBiciTests.swift */; };
-		AC87FC392373B29800EA6C4F /* Desafio_TemBiciUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FC382373B29800EA6C4F /* Desafio_TemBiciUITests.swift */; };
 		AC87FC5A2373B6CE00EA6C4F /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FC562373B6CD00EA6C4F /* HTTPMethod.swift */; };
 		AC87FC5B2373B6CE00EA6C4F /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FC572373B6CE00EA6C4F /* HTTPTask.swift */; };
 		AC87FC5C2373B6CE00EA6C4F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FC582373B6CE00EA6C4F /* Router.swift */; };
@@ -53,17 +51,15 @@
 		AC87FCB22374667E00EA6C4F /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC87FCB12374667E00EA6C4F /* Favorites.storyboard */; };
 		AC87FCB523746C9200EA6C4F /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FCB423746C9200EA6C4F /* FavoriteCell.swift */; };
 		AC87FCB823746CB800EA6C4F /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FCB723746CB800EA6C4F /* FavoriteModel.swift */; };
+		AC87FCBC23747E6300EA6C4F /* FavoriteMovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FCBB23747E6300EA6C4F /* FavoriteMovieTests.swift */; };
+		AC87FCBF23747F9900EA6C4F /* joker.json in Resources */ = {isa = PBXBuildFile; fileRef = AC87FCBE23747F9900EA6C4F /* joker.json */; };
+		AC87FCC1237481BE00EA6C4F /* cars.json in Resources */ = {isa = PBXBuildFile; fileRef = AC87FCC0237481BE00EA6C4F /* cars.json */; };
+		AC87FCC62374866C00EA6C4F /* ListMovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87FCC52374866C00EA6C4F /* ListMovieTests.swift */; };
+		AC87FCC82374873900EA6C4F /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = AC87FCC72374873900EA6C4F /* list.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		AC87FC2A2373B29800EA6C4F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AC87FC082373B29500EA6C4F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AC87FC0F2373B29500EA6C4F;
-			remoteInfo = Desafio_TemBici;
-		};
-		AC87FC352373B29800EA6C4F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AC87FC082373B29500EA6C4F /* Project object */;
 			proxyType = 1;
@@ -82,11 +78,7 @@
 		AC87FC222373B29800EA6C4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC87FC242373B29800EA6C4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC87FC292373B29800EA6C4F /* Desafio_TemBiciTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Desafio_TemBiciTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC87FC2D2373B29800EA6C4F /* Desafio_TemBiciTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desafio_TemBiciTests.swift; sourceTree = "<group>"; };
 		AC87FC2F2373B29800EA6C4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC87FC342373B29800EA6C4F /* Desafio_TemBiciUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Desafio_TemBiciUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC87FC382373B29800EA6C4F /* Desafio_TemBiciUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desafio_TemBiciUITests.swift; sourceTree = "<group>"; };
-		AC87FC3A2373B29800EA6C4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC87FC562373B6CD00EA6C4F /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		AC87FC572373B6CE00EA6C4F /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
 		AC87FC582373B6CE00EA6C4F /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -125,6 +117,11 @@
 		AC87FCB12374667E00EA6C4F /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		AC87FCB423746C9200EA6C4F /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		AC87FCB723746CB800EA6C4F /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
+		AC87FCBB23747E6300EA6C4F /* FavoriteMovieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovieTests.swift; sourceTree = "<group>"; };
+		AC87FCBE23747F9900EA6C4F /* joker.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = joker.json; sourceTree = "<group>"; };
+		AC87FCC0237481BE00EA6C4F /* cars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cars.json; sourceTree = "<group>"; };
+		AC87FCC52374866C00EA6C4F /* ListMovieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMovieTests.swift; sourceTree = "<group>"; };
+		AC87FCC72374873900EA6C4F /* list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,13 +139,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC87FC312373B29800EA6C4F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -157,7 +147,6 @@
 			children = (
 				AC87FC122373B29500EA6C4F /* Desafio_TemBici */,
 				AC87FC2C2373B29800EA6C4F /* Desafio_TemBiciTests */,
-				AC87FC372373B29800EA6C4F /* Desafio_TemBiciUITests */,
 				AC87FC112373B29500EA6C4F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -167,7 +156,6 @@
 			children = (
 				AC87FC102373B29500EA6C4F /* Desafio_TemBici.app */,
 				AC87FC292373B29800EA6C4F /* Desafio_TemBiciTests.xctest */,
-				AC87FC342373B29800EA6C4F /* Desafio_TemBiciUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,19 +177,11 @@
 		AC87FC2C2373B29800EA6C4F /* Desafio_TemBiciTests */ = {
 			isa = PBXGroup;
 			children = (
-				AC87FC2D2373B29800EA6C4F /* Desafio_TemBiciTests.swift */,
+				AC87FCBA23747E3C00EA6C4F /* FavoriteMovieTests */,
+				AC87FCB923747E3200EA6C4F /* ListMovieTests */,
 				AC87FC2F2373B29800EA6C4F /* Info.plist */,
 			);
 			path = Desafio_TemBiciTests;
-			sourceTree = "<group>";
-		};
-		AC87FC372373B29800EA6C4F /* Desafio_TemBiciUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AC87FC382373B29800EA6C4F /* Desafio_TemBiciUITests.swift */,
-				AC87FC3A2373B29800EA6C4F /* Info.plist */,
-			);
-			path = Desafio_TemBiciUITests;
 			sourceTree = "<group>";
 		};
 		AC87FC462373B5FF00EA6C4F /* Network */ = {
@@ -522,6 +502,41 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AC87FCB923747E3200EA6C4F /* ListMovieTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC87FCC42374865A00EA6C4F /* Mock */,
+				AC87FCC52374866C00EA6C4F /* ListMovieTests.swift */,
+			);
+			path = ListMovieTests;
+			sourceTree = "<group>";
+		};
+		AC87FCBA23747E3C00EA6C4F /* FavoriteMovieTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC87FCBD23747F8C00EA6C4F /* Mock */,
+				AC87FCBB23747E6300EA6C4F /* FavoriteMovieTests.swift */,
+			);
+			path = FavoriteMovieTests;
+			sourceTree = "<group>";
+		};
+		AC87FCBD23747F8C00EA6C4F /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				AC87FCC0237481BE00EA6C4F /* cars.json */,
+				AC87FCBE23747F9900EA6C4F /* joker.json */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		AC87FCC42374865A00EA6C4F /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				AC87FCC72374873900EA6C4F /* list.json */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -560,24 +575,6 @@
 			productReference = AC87FC292373B29800EA6C4F /* Desafio_TemBiciTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AC87FC332373B29800EA6C4F /* Desafio_TemBiciUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AC87FC432373B29800EA6C4F /* Build configuration list for PBXNativeTarget "Desafio_TemBiciUITests" */;
-			buildPhases = (
-				AC87FC302373B29800EA6C4F /* Sources */,
-				AC87FC312373B29800EA6C4F /* Frameworks */,
-				AC87FC322373B29800EA6C4F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AC87FC362373B29800EA6C4F /* PBXTargetDependency */,
-			);
-			name = Desafio_TemBiciUITests;
-			productName = Desafio_TemBiciUITests;
-			productReference = AC87FC342373B29800EA6C4F /* Desafio_TemBiciUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -593,10 +590,7 @@
 					};
 					AC87FC282373B29800EA6C4F = {
 						CreatedOnToolsVersion = 11.0;
-						TestTargetID = AC87FC0F2373B29500EA6C4F;
-					};
-					AC87FC332373B29800EA6C4F = {
-						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 						TestTargetID = AC87FC0F2373B29500EA6C4F;
 					};
 				};
@@ -616,7 +610,6 @@
 			targets = (
 				AC87FC0F2373B29500EA6C4F /* Desafio_TemBici */,
 				AC87FC282373B29800EA6C4F /* Desafio_TemBiciTests */,
-				AC87FC332373B29800EA6C4F /* Desafio_TemBiciUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -639,13 +632,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC87FC322373B29800EA6C4F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				AC87FCC1237481BE00EA6C4F /* cars.json in Resources */,
+				AC87FCBF23747F9900EA6C4F /* joker.json in Resources */,
+				AC87FCC82374873900EA6C4F /* list.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,15 +690,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC87FC2E2373B29800EA6C4F /* Desafio_TemBiciTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC87FC302373B29800EA6C4F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AC87FC392373B29800EA6C4F /* Desafio_TemBiciUITests.swift in Sources */,
+				AC87FCC62374866C00EA6C4F /* ListMovieTests.swift in Sources */,
+				AC87FCBC23747E6300EA6C4F /* FavoriteMovieTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,11 +702,6 @@
 			isa = PBXTargetDependency;
 			target = AC87FC0F2373B29500EA6C4F /* Desafio_TemBici */;
 			targetProxy = AC87FC2A2373B29800EA6C4F /* PBXContainerItemProxy */;
-		};
-		AC87FC362373B29800EA6C4F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AC87FC0F2373B29500EA6C4F /* Desafio_TemBici */;
-			targetProxy = AC87FC352373B29800EA6C4F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -903,6 +880,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NJT4Q3F7S9;
 				INFOPLIST_FILE = Desafio_TemBiciTests/Info.plist;
@@ -914,6 +892,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "victor.Desafio-TemBiciTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Desafio_TemBici.app/Desafio_TemBici";
@@ -925,6 +904,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NJT4Q3F7S9;
 				INFOPLIST_FILE = Desafio_TemBiciTests/Info.plist;
@@ -939,46 +919,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Desafio_TemBici.app/Desafio_TemBici";
-			};
-			name = Release;
-		};
-		AC87FC442373B29800EA6C4F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NJT4Q3F7S9;
-				INFOPLIST_FILE = Desafio_TemBiciUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "victor.Desafio-TemBiciUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Desafio_TemBici;
-			};
-			name = Debug;
-		};
-		AC87FC452373B29800EA6C4F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NJT4Q3F7S9;
-				INFOPLIST_FILE = Desafio_TemBiciUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "victor.Desafio-TemBiciUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Desafio_TemBici;
 			};
 			name = Release;
 		};
@@ -1008,15 +948,6 @@
 			buildConfigurations = (
 				AC87FC412373B29800EA6C4F /* Debug */,
 				AC87FC422373B29800EA6C4F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AC87FC432373B29800EA6C4F /* Build configuration list for PBXNativeTarget "Desafio_TemBiciUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AC87FC442373B29800EA6C4F /* Debug */,
-				AC87FC452373B29800EA6C4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

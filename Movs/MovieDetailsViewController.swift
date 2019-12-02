@@ -28,6 +28,8 @@ class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
     private var api: MoviesServices = MoviesServices()
     private var favoriteFullIcon: UIImage?
     private var favoriteEmptyIcon: UIImage?
+    private var favoriteMovie: NSManagedObject?
+    private var dbResult: NSManagedObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +52,12 @@ class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
         favoriteButton.tintColor = .white
         favoriteButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         favoriteButton.imageView?.contentMode = .scaleToFill
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         loadData()
     }
     
@@ -71,6 +74,8 @@ class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
     }
     
     private func loadData() {
+        
+        favoriteMovie = CoreDataServices.shared.getFavoriteMovie(with: movieId!)
         
         api.details(movie: movieId!) { (data, error) in
             
@@ -124,10 +129,12 @@ class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
             circularProgress.setProgressWithAnimation(duration: 1.0, value: (Float(self.movie!.voteAverage / 10.0)))
             self.movieScore?.addSubview(circularProgress)
             
-            if (self.movie?.favorite)! {
+            if self.favoriteMovie != nil {
                 self.favoriteButton.setImage(self.favoriteFullIcon, for: .normal)
+                self.movie?.favorite = true
             } else {
                 self.favoriteButton.setImage(self.favoriteEmptyIcon, for: .normal)
+                self.movie?.favorite = false
             }
         }
     }
@@ -137,15 +144,12 @@ class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
         if (movie?.favorite)! {
             self.favoriteButton.setImage(self.favoriteEmptyIcon, for: .normal)
             movie?.favorite = false
+            CoreDataServices.shared.deleteItem(object: favoriteMovie!)
         } else {
             self.favoriteButton.setImage(self.favoriteFullIcon, for: .normal)
             movie?.favorite = true
             
-            try? {
-                CoreDataServices.shared.saveFavoriteMovie(
-
-            }
-            
+            CoreDataServices.shared.saveFavoriteMovie(id: "\((self.movie?.id)!)", posterPath: (self.movie?.posterPath)!, releaseDate: (self.movie?.releaseDate)!, title: (self.movie?.title)!, overview: (self.movie?.overview)!)
         }
     }
 }

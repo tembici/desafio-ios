@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import CoreData
 @testable import Movs
 
 class MovsAPITests: XCTestCase {
@@ -33,7 +34,7 @@ class MovsAPITests: XCTestCase {
     }
     
     func testMovieDetailsFound() {
-        let e = expectation(description: "MoviesServices - testGetPopularMovies")
+        let e = expectation(description: "MoviesServices - testMovieDetailsFound")
         
         movieAPI.details(movie: "645541") { (result, error) in
             XCTAssertNotNil(result!, "Expected non-nil data")
@@ -44,7 +45,7 @@ class MovsAPITests: XCTestCase {
     }
 
     func testMovieDetailsNotFound() {
-        let e = expectation(description: "MoviesServices - testGetPopularMovies")
+        let e = expectation(description: "MoviesServices - testMovieDetailsNotFound")
         
         movieAPI.details(movie: "0") { (result, error) in
             XCTAssertNil(result, "Expected nil data")
@@ -54,13 +55,24 @@ class MovsAPITests: XCTestCase {
     }
     
     func testMoviesSearch() {
-        let e = expectation(description: "MoviesServices - testGetPopularMovies")
+        let e = expectation(description: "MoviesServices - testMoviesSearch")
         
         movieAPI.search(query: "Lord of", page: 1) { (result, error) in
             XCTAssertNotNil(result!, "Expected non-nil data")
             XCTAssertTrue(!(result!.isEmpty))
             e.fulfill()
         }
+        waitForExpectations(timeout: 10.0, handler: nil)
+    }
+    
+    func testFavoritesDataBase() {
+        let e = expectation(description: "MoviesServices - textFavoritesDataBase")
+        
+        let result: [Favorites] = CoreDataServices.shared.getAllFavorites()
+        
+        XCTAssertTrue(result.count > 0)
+        e.fulfill()
+        
         waitForExpectations(timeout: 10.0, handler: nil)
     }
     

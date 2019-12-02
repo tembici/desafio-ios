@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import CoreData
 
 class SearchViewController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIScrollViewDelegate {
     
@@ -16,13 +17,12 @@ class SearchViewController: UIViewController, UITabBarDelegate, UITableViewDataS
     public var searchPage: Int = 0
     public var movieId: String?
     
-    private var favorites: [NSManagedObject] = []
     private var currentPage: Int = 0
     private var totalPages: Int = 100
     private var expectingEndDecelarationEvent: Bool = false
     private var movie: Movie?
     private var api: MoviesServices = MoviesServices()
-    
+    private var favorites: [Favorites]?
     
     @IBOutlet weak var searchBar: UISearchBar?
     @IBOutlet weak var tableView: UITableView!
@@ -40,6 +40,9 @@ class SearchViewController: UIViewController, UITabBarDelegate, UITableViewDataS
         
         if searchParameter != "" {
             loadMoreData()
+        } else {
+            favorites = CoreDataServices.shared.getAllFavorites()
+            tableView.reloadData()
         }
     }
     
@@ -48,35 +51,58 @@ class SearchViewController: UIViewController, UITabBarDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResult.count
+        if searchParameter != "" {
+            return searchResult.count
+        } else {
+            return favorites?.count ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath) as! SearchTableViewCell
         let repository = "https://image.tmdb.org/t/p/w154/"
-        let address = URL(string: "\(repository)\(searchResult[indexPath.row].posterPath)")
-        let data = try? Data(contentsOf: address!)
-        
-        if let imageData = data {
-            cell.poster?.image = UIImage(data: imageData)
-        }
-        cell.title?.text = searchResult[indexPath.row].originalTitle
-        cell.releaseDate?.text = searchResult[indexPath.row].releaseDate
-        
-        
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 5.0
         paragraphStyle.alignment = .justified
         
-        cell.itemDescription?.attributedText = NSMutableAttributedString(string: searchResult[indexPath.row].overview, attributes: [.font: UIFont.systemFont(ofSize: 16.0, weight: .regular), .foregroundColor: UIColor.white, .kern: 0.0, .paragraphStyle: paragraphStyle])
-        
+        if !searchParameter.isEmpty {
+
+            let address = URL(string: "\(repository)\(searchResult[indexPath.row].posterPath)")
+            let data = try? Data(contentsOf: address!)
+            
+            if let imageData = data {
+                cell.poster?.image = UIImage(data: imageData)
+            }
+            cell.title?.text = searchResult[indexPath.row].originalTitle
+            cell.releaseDate?.text = searchResult[indexPath.row].releaseDate
+            
+            cell.itemDescription?.attributedText = NSMutableAttributedString(string: searchResult[indexPath.row].overview, attributes: [.font: UIFont.systemFont(ofSize: 16.0, weight: .regular), .foregroundColor: UIColor.white, .kern: 0.0, .paragraphStyle: paragraphStyle])
+        } else {
+            
+            let address = URL(string: "\(repository)\(favorites![indexPath.row].posterPath!)")
+            let data = try? Data(contentsOf: address!)
+            
+            if let imageData = data {
+                cell.poster?.image = UIImage(data: imageData)
+            }
+            cell.title?.text = favorites![indexPath.row].title
+            cell.releaseDate?.text = favorites![indexPath.row].releaseDate
+            
+            cell.itemDescription?.attributedText = NSMutableAttributedString(string: favorites![indexPath.row].overview!, attributes: [.font: UIFont.systemFont(ofSize: 16.0, weight: .regular), .foregroundColor: UIColor.white, .kern: 0.0, .paragraphStyle: paragraphStyle])
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        movieId = searchResult[indexPath.row].itemId
-        performSegue(withIdentifier: "viewDetailsFromSearch", sender: nil)
+        
+        if !searchParameter.isEmpty {
+            movieId = searchResult[indexPath.row].itemId
+            performSegue(withIdentifier: "viewDetailsFromSearch", sender: nil)
+        } else {
+            movieId = favorites![indexPath.row].id!
+            performSegue(withIdentifier: "showDetailsFromFavorite", sender: nil)
+        }
 
     }
     

@@ -21,6 +21,7 @@
 		A71ECB212393C16400B3256D /* MoviesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71ECB202393C16400B3256D /* MoviesServices.swift */; };
 		A71ECB232393C45B00B3256D /* MoviesAPITypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71ECB222393C45B00B3256D /* MoviesAPITypes.swift */; };
 		A71ECB272393C60500B3256D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A71ECB262393C60500B3256D /* Podfile */; };
+		A7A4C023239498750044B68D /* NSPersistentStoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A4C022239498750044B68D /* NSPersistentStoreCoordinator.swift */; };
 		A7CA280B2393D840009FB59B /* DiscoverResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA280A2393D840009FB59B /* DiscoverResult.swift */; };
 		A7CA280D2393D8A8009FB59B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA280C2393D8A8009FB59B /* Movie.swift */; };
 		A7CA28102393DAC6009FB59B /* MovieCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA280E2393DAC6009FB59B /* MovieCardCollectionViewCell.swift */; };
@@ -77,6 +78,7 @@
 		A71ECB202393C16400B3256D /* MoviesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesServices.swift; sourceTree = "<group>"; };
 		A71ECB222393C45B00B3256D /* MoviesAPITypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAPITypes.swift; sourceTree = "<group>"; };
 		A71ECB262393C60500B3256D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A7A4C022239498750044B68D /* NSPersistentStoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPersistentStoreCoordinator.swift; sourceTree = "<group>"; };
 		A7CA280A2393D840009FB59B /* DiscoverResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverResult.swift; sourceTree = "<group>"; };
 		A7CA280C2393D8A8009FB59B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		A7CA280E2393DAC6009FB59B /* MovieCardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCardCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -130,7 +132,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		A70B64FF2393C8ED00889E63 /* Movs API */ = {
+		A70B64FF2393C8ED00889E63 /* MovsAPI */ = {
 			isa = PBXGroup;
 			children = (
 				A7E834C423948A94009520C7 /* Model */,
@@ -139,7 +141,7 @@
 				A71ECB202393C16400B3256D /* MoviesServices.swift */,
 				A7E834CA23948D9A009520C7 /* CoreDataServices.swift */,
 			);
-			path = "Movs API";
+			path = MovsAPI;
 			sourceTree = "<group>";
 		};
 		A71ECAE22393BA6D00B3256D = {
@@ -168,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				A71ECB1F2393BE0500B3256D /* Supporting Files */,
-				A70B64FF2393C8ED00889E63 /* Movs API */,
+				A70B64FF2393C8ED00889E63 /* MovsAPI */,
 				A7CA28162393DC64009FB59B /* Components */,
 				A71ECAF02393BA6E00B3256D /* ViewController.swift */,
 				A71ECAF22393BA6E00B3256D /* Main.storyboard */,
@@ -239,6 +241,7 @@
 				A7E834CC239491ED009520C7 /* CoreDataStack.swift */,
 				A7E834C523948C74009520C7 /* Favorites+CoreDataClass.swift */,
 				A7E834C723948CC6009520C7 /* Favorites+CoreDataProperties.swift */,
+				A7A4C022239498750044B68D /* NSPersistentStoreCoordinator.swift */,
 				A71ECAF52393BA6E00B3256D /* Movs.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -436,6 +439,7 @@
 				A71ECAF12393BA6E00B3256D /* ViewController.swift in Sources */,
 				A7CA28132393DBC1009FB59B /* UIViewController+Extensions.swift in Sources */,
 				A71ECAF72393BA6E00B3256D /* Movs.xcdatamodeld in Sources */,
+				A7A4C023239498750044B68D /* NSPersistentStoreCoordinator.swift in Sources */,
 				A7E834C823948CC7009520C7 /* Favorites+CoreDataProperties.swift in Sources */,
 				A70B65012393D2EB00889E63 /* DiscoverViewController.swift in Sources */,
 				A7E834CB23948D9A009520C7 /* CoreDataServices.swift in Sources */,

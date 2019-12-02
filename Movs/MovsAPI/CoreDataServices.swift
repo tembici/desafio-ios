@@ -16,13 +16,33 @@ class CoreDataServices {
     func saveFavoriteMovie(id: String, posterPath: String, releaseDate: String, title: String, overview: String) {
          let newItem = NSEntityDescription.insertNewObject(forEntityName: Favorites.entityName, into: CoreDataStack.shared.context!) as! Favorites
         
-         newItem.overview =  overview
+         newItem.overview = overview
          newItem.id =  id
          newItem.posterPath =  posterPath
          newItem.releaseDate =  releaseDate
          newItem.title =  title
         
         CoreDataStack.shared.saveContext()
+    }
+
+    func getFavoriteMovie(with id: String) -> NSManagedObject? {
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Favorites.entityName)
+        fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [NSPredicate(format: "id LIKE %@", id)])
+        fetchRequest.returnsDistinctResults = false
+        
+        do {
+            let response = try CoreDataStack.shared.context!.fetch(fetchRequest)
+            if response.count > 0 {
+                return response[0]
+            } else {
+                return nil
+            }
+        } catch let error as NSError {
+            // failure
+            print(error)
+            return nil
+        }
     }
     
     func getFavoriteMovies(withPredicates queries: [NSPredicate], distinct result: Bool) -> [Favorites] {
@@ -46,4 +66,10 @@ class CoreDataServices {
         CoreDataStack.shared.context!.delete(item)
     }
     
+    func getAllFavorites() -> [Favorites] {
+        
+        let resultSet: [Favorites] = getFavoriteMovies(withPredicates: [NSPredicate(value:true)], distinct: false)
+
+        return resultSet
+    }
 }

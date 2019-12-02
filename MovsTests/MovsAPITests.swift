@@ -32,6 +32,38 @@ class MovsAPITests: XCTestCase {
         waitForExpectations(timeout: 10.0, handler: nil)
     }
     
+    func testMovieDetailsFound() {
+        let e = expectation(description: "MoviesServices - testGetPopularMovies")
+        
+        movieAPI.details(movie: "645541") { (result, error) in
+            XCTAssertNotNil(result!, "Expected non-nil data")
+            XCTAssertTrue(!(result!.isEmpty))
+            e.fulfill()
+        }
+        waitForExpectations(timeout: 10.0, handler: nil)
+    }
+
+    func testMovieDetailsNotFound() {
+        let e = expectation(description: "MoviesServices - testGetPopularMovies")
+        
+        movieAPI.details(movie: "0") { (result, error) in
+            XCTAssertNil(result, "Expected nil data")
+            e.fulfill()
+        }
+        waitForExpectations(timeout: 10.0, handler: nil)
+    }
+    
+    func testMoviesSearch() {
+        let e = expectation(description: "MoviesServices - testGetPopularMovies")
+        
+        movieAPI.search(query: "Lord of", page: 1) { (result, error) in
+            XCTAssertNotNil(result!, "Expected non-nil data")
+            XCTAssertTrue(!(result!.isEmpty))
+            e.fulfill()
+        }
+        waitForExpectations(timeout: 10.0, handler: nil)
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

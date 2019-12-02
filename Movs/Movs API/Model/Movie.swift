@@ -22,6 +22,7 @@ struct Movie: Codable {
     var voteAverage: Double
     var voteCount: Int
     var genres: [String]
+    var favorite: Bool
     
     init(
         backdropPath: String? = "",
@@ -34,7 +35,8 @@ struct Movie: Codable {
         title: String? = "",
         voteAverage: Double? = 0.0,
         voteCount: Int? = 0,
-        genres: [String] = []
+        genres: [String] = [],
+        favorite: Bool? = false
         ) {
         self.backdropPath = backdropPath!
         self.id = id!
@@ -47,6 +49,7 @@ struct Movie: Codable {
         self.voteAverage = voteAverage!
         self.voteCount = voteCount!
         self.genres = genres
+        self.favorite = favorite!
     }
     
     init(with jsonResult: JSON) {
@@ -64,5 +67,8 @@ struct Movie: Codable {
         for item in jsonResult["genres"] {
             self.genres.append(item.1["name"].string!)
         }
+        
+        self.favorite = true
+//        self.favorite = QUERY DATABASE
     }
 }

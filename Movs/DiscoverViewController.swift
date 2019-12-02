@@ -191,4 +191,6 @@ UICollectionViewDelegateFlowLayout , UISearchBarDelegate, UIScrollViewDelegate {
             
         }
     }
+    
+    
 }

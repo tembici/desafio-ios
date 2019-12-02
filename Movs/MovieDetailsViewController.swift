@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 import SwiftyJSON
 
 class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
@@ -19,16 +20,36 @@ class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var movieGenre: UILabel!
     @IBOutlet weak var movieOverview: UILabel!
     @IBOutlet weak var movieScore: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton! 
     
     public var movieId: String?
     public var movie: Movie?
     
     private var api: MoviesServices = MoviesServices()
+    private var favoriteFullIcon: UIImage?
+    private var favoriteEmptyIcon: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        favoriteFullIcon = UIImage(named:
+            "favorite_full_icon")!
+        favoriteEmptyIcon = UIImage(named:
+            "favorite_empty_icon")!
+
+        favoriteButton.layer.cornerRadius = favoriteButton.frame.size.width / 2
+        favoriteButton.backgroundColor = .clear
+        favoriteButton.layer.borderWidth = 3.0
+        favoriteButton.layer.borderColor = UIColor.white.cgColor
+        favoriteButton.tintColor = .white
+        favoriteButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        favoriteButton.imageView?.contentMode = .scaleToFill
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,8 +76,6 @@ class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
             
             //            self.activityIndicator.stopAnimating()
             
-            var genreDescription: String = ""
-            
             guard error == nil else {
                 self.showAlert("Não foi possível realizar essa busca.")
                 return
@@ -66,9 +85,10 @@ class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
                 return
             }
             
+            var genreDescription: String = ""
+            let repository = "https://image.tmdb.org/t/p"
             let jsonResult = JSON.init(parseJSON: data!)
             self.movie = Movie(with: jsonResult)
-            let repository = "https://image.tmdb.org/t/p"
             var address: String = "\(repository)/w780\(self.movie!.backdropPath)"
             var imageURL = URL(string: address)
             var data = try? Data(contentsOf: imageURL!)
@@ -86,7 +106,7 @@ class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
             }
             
             self.movieTitle.text = self.movie?.title
-            self.movieReleaseDate.text = "Lançamento: \(self.movie?.releaseDate)"
+            self.movieReleaseDate.text = "Lançamento: \(self.movie!.releaseDate)"
             self.movieOverview.text = self.movie?.overview
             self.movieScore.text = String(self.movie?.voteAverage ?? 0)
             
@@ -103,6 +123,29 @@ class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
             circularProgress.center = (self.movieScore?.center)!
             circularProgress.setProgressWithAnimation(duration: 1.0, value: (Float(self.movie!.voteAverage / 10.0)))
             self.movieScore?.addSubview(circularProgress)
+            
+            if (self.movie?.favorite)! {
+                self.favoriteButton.setImage(self.favoriteFullIcon, for: .normal)
+            } else {
+                self.favoriteButton.setImage(self.favoriteEmptyIcon, for: .normal)
+            }
+        }
+    }
+    
+    @IBAction func setFavorite(_ sender: Any) {
+        
+        if (movie?.favorite)! {
+            self.favoriteButton.setImage(self.favoriteEmptyIcon, for: .normal)
+            movie?.favorite = false
+        } else {
+            self.favoriteButton.setImage(self.favoriteFullIcon, for: .normal)
+            movie?.favorite = true
+            
+            try? {
+                CoreDataServices.shared.saveFavoriteMovie(
+
+            }
+            
         }
     }
 }

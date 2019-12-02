@@ -15,6 +15,8 @@ class SearchViewController: UIViewController, UITabBarDelegate, UITableViewDataS
     public var searchParameter: String = ""
     public var searchPage: Int = 0
     public var movieId: String?
+    
+    private var favorites: [NSManagedObject] = []
     private var currentPage: Int = 0
     private var totalPages: Int = 100
     private var expectingEndDecelarationEvent: Bool = false

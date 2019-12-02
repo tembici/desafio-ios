@@ -53,16 +53,16 @@ struct Movie: Codable {
     }
     
     init(with jsonResult: JSON) {
-        self.backdropPath = jsonResult["backdrop_path"].string!
+        self.backdropPath = jsonResult["backdrop_path"].string ?? ""
         self.id = jsonResult["id"].int!
-        self.originalLanguage = jsonResult["original_language"].string!
-        self.originalTitle =  jsonResult["original_title"].string!
-        self.overview = jsonResult["overview"].string!
-        self.posterPath = jsonResult["poster_path"].string!
-        self.releaseDate = jsonResult["release_date"].string!
-        self.title = jsonResult["title"].string!
-        self.voteAverage = jsonResult["vote_average"].double!
-        self.voteCount = jsonResult["vote_count"].int!
+        self.originalLanguage = jsonResult["original_language"].string ?? ""
+        self.originalTitle =  jsonResult["original_title"].string ?? ""
+        self.overview = jsonResult["overview"].string ?? ""
+        self.posterPath = jsonResult["poster_path"].string ?? ""
+        self.releaseDate = jsonResult["release_date"].string ?? ""
+        self.title = jsonResult["title"].string ?? ""
+        self.voteAverage = jsonResult["vote_average"].double ?? 0.0
+        self.voteCount = jsonResult["vote_count"].int ?? 0
         self.genres = []
         for item in jsonResult["genres"] {
             self.genres.append(item.1["name"].string!)

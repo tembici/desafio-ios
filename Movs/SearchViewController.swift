@@ -26,6 +26,8 @@ class SearchViewController: UIViewController, UITabBarDelegate, UITableViewDataS
     
     @IBOutlet weak var searchBar: UISearchBar?
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +40,15 @@ class SearchViewController: UIViewController, UITabBarDelegate, UITableViewDataS
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        loadingView.isHidden = false
+        activityIndicator.startAnimating()
+        
         if searchParameter != "" {
             loadMoreData()
         } else {
             favorites = CoreDataServices.shared.getAllFavorites()
+            loadingView.isHidden = true
+            activityIndicator.stopAnimating()
             tableView.reloadData()
         }
     }
@@ -51,6 +58,7 @@ class SearchViewController: UIViewController, UITabBarDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         if searchParameter != "" {
             return searchResult.count
         } else {
@@ -140,17 +148,25 @@ class SearchViewController: UIViewController, UITabBarDelegate, UITableViewDataS
             api.search(query: searchBar?.text ?? searchParameter, page: currentPage) { (data, error) in
                 
                 guard error == nil else {
+                    self.activityIndicator.stopAnimating()
                     self.showAlert("Não foi possível realizar essa busca.")
                     return
                 }
                 
                 guard (data?.lengthOfBytes(using: .utf8))! > 0 else {
+                    self.activityIndicator.stopAnimating()
                     return
                 }
                 
                 let jsonResult = JSON.init(parseJSON: data!)
                 
-                self.totalPages = jsonResult["total_pages"].int ?? 0
+                if jsonResult["total_results"].int == 0 {
+                    self.activityIndicator.stopAnimating()
+                    self.showAlert("Não encontramos filmes com essas informações.")
+                    return
+                }
+                
+                self.totalPages = jsonResult["total_pages"].int!
                 
                 for result in jsonResult["results"] {
                     let item = SearchResult(itemId: String(result.1["id"].int!), releaseDate: result.1["release_date"].string ?? "", originalTitle: result.1["original_title"].string ?? "", posterPath: (result.1["poster_path"].string ?? ""), overview:  (result.1["overview"].string ?? ""))
@@ -158,9 +174,14 @@ class SearchViewController: UIViewController, UITabBarDelegate, UITableViewDataS
                 }
                 
                 DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                    self.loadingView.isHidden = true
                     self.tableView.reloadData()
                 }
             }
+        } else {
+            self.activityIndicator.stopAnimating()
+            self.loadingView.isHidden = true
         }
     }
     

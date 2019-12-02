@@ -21,6 +21,8 @@ class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var movieOverview: UILabel!
     @IBOutlet weak var movieScore: UILabel!
     @IBOutlet weak var favoriteButton: UIButton! 
+    @IBOutlet weak var activityView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     public var movieId: String?
     public var movie: Movie?
@@ -30,12 +32,6 @@ class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
     private var favoriteEmptyIcon: UIImage?
     private var favoriteMovie: NSManagedObject?
     private var dbResult: NSManagedObject?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -58,6 +54,8 @@ class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        activityIndicator.startAnimating()
+        
         loadData()
     }
     
@@ -79,7 +77,7 @@ class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
         
         api.details(movie: movieId!) { (data, error) in
             
-            //            self.activityIndicator.stopAnimating()
+            self.activityIndicator.stopAnimating()
             
             guard error == nil else {
                 self.showAlert("Não foi possível realizar essa busca.")
@@ -136,6 +134,8 @@ class MovieDetailsViewController: UIViewController, UISearchBarDelegate {
                 self.favoriteButton.setImage(self.favoriteEmptyIcon, for: .normal)
                 self.movie?.favorite = false
             }
+            
+            self.activityView.isHidden = true
         }
     }
     

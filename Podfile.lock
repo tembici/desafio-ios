@@ -1,0 +1,154 @@
+PODS:
+  - Alamofire (4.7.3)
+  - AlamofireImage (3.4.1):
+    - Alamofire (~> 4.7)
+  - Differentiator (3.1.0)
+  - IQKeyboardManagerSwift (6.0.5)
+  - Nimble (7.3.4)
+  - Quick (1.3.4)
+  - R.swift (5.0.3):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.1)
+  - Realm (3.21.0):
+    - Realm/Headers (= 3.21.0)
+  - Realm/Headers (3.21.0)
+  - RealmSwift (3.21.0):
+    - Realm (= 3.21.0)
+  - RxAtomic (4.4.2)
+  - RxBlocking (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxCocoa (4.4.2):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxGesture (2.1.0):
+    - RxCocoa (~> 4.4.0)
+    - RxSwift (~> 4.4.0)
+  - RxNimble/Core (4.4.0):
+    - Nimble (~> 7.0)
+    - RxSwift (~> 4.2)
+  - RxNimble/RxBlocking (4.4.0):
+    - RxBlocking
+    - RxNimble/Core
+  - RxNimble/RxTest (4.4.0):
+    - RxNimble/Core
+    - RxTest
+  - RxRealm (0.7.6):
+    - RealmSwift (~> 3.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.2):
+    - RxAtomic (>= 4.4.2, ~> 4.4)
+  - RxSwiftExt (3.4.0):
+    - RxSwiftExt/Core (= 3.4.0)
+    - RxSwiftExt/RxCocoa (= 3.4.0)
+  - RxSwiftExt/Core (3.4.0):
+    - RxSwift (~> 4.0)
+  - RxSwiftExt/RxCocoa (3.4.0):
+    - RxCocoa (~> 4.0)
+    - RxSwiftExt/Core
+  - RxSwiftUtilities (2.1.0):
+    - RxCocoa (~> 4.4)
+    - RxSwift (~> 4.4)
+  - RxTest (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - SnapKit (4.2.0)
+  - SpringIndicator (4.0.1)
+  - StatefulViewController (3.0)
+  - SwiftLint (0.39.1)
+  - SwipeCellKit (2.7.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7.3)
+  - AlamofireImage
+  - IQKeyboardManagerSwift (~> 6.0.4)
+  - Nimble (~> 7.3.4)
+  - Quick (~> 1.3.4)
+  - R.swift (~> 5.0.3)
+  - RealmSwift
+  - RxCocoa (~> 4.4.2)
+  - RxDataSources (~> 3.1.0)
+  - RxGesture
+  - RxNimble/RxBlocking
+  - RxNimble/RxTest
+  - RxRealm
+  - RxSwift (~> 4.4.2)
+  - RxSwiftExt
+  - RxSwiftUtilities (from `https://github.com/RxSwiftCommunity/RxSwiftUtilities`, branch `master`)
+  - SnapKit (~> 4.2.0)
+  - SpringIndicator (~> 4.0.0)
+  - StatefulViewController (~> 3.0)
+  - SwiftLint (~> 0.37)
+  - SwipeCellKit
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Differentiator
+    - IQKeyboardManagerSwift
+    - Nimble
+    - Quick
+    - R.swift
+    - R.swift.Library
+    - RxAtomic
+    - RxBlocking
+    - RxCocoa
+    - RxDataSources
+    - RxGesture
+    - RxNimble
+    - RxSwift
+    - RxSwiftExt
+    - RxTest
+    - SnapKit
+    - SpringIndicator
+    - StatefulViewController
+  trunk:
+    - AlamofireImage
+    - Realm
+    - RealmSwift
+    - RxRealm
+    - SwiftLint
+    - SwipeCellKit
+
+EXTERNAL SOURCES:
+  RxSwiftUtilities:
+    :branch: master
+    :git: https://github.com/RxSwiftCommunity/RxSwiftUtilities
+
+CHECKOUT OPTIONS:
+  RxSwiftUtilities:
+    :commit: 3cfa7b33e8fb19f98616b55fa0b010d0b6690726
+    :git: https://github.com/RxSwiftCommunity/RxSwiftUtilities
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  IQKeyboardManagerSwift: c14eca30f6001457d6ddf25e313f23fb6578c41c
+  Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
+  Quick: f4f7f063c524394c73ed93ac70983c609805d481
+  R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
+  R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
+  Realm: 38e9dcb19104b58407167d99f70d4995f7c16023
+  RealmSwift: 3183cc1ad48378fbcd634311b22c0e6c44021152
+  RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
+  RxBlocking: 79413e4d916f44bb3e113c5b2cc059e36fe58910
+  RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxGesture: 7f6dfb45dbde06e618c24442d38493e3144f2c95
+  RxNimble: ba6caf0195c37fd50dd4b967624b66ff580d781a
+  RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
+  RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
+  RxSwiftExt: 01f8ecbeeb355698e9c75365ebe908b00dacf45d
+  RxSwiftUtilities: 1ba1c814e7fa32bab0605f08accedac33517f40c
+  RxTest: 3ccb66bfbace0bf7df1c43a7c75d046f8ce60372
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SpringIndicator: 96eb6158a9dc94c1623d84130639a52225f04056
+  StatefulViewController: 4803bf900d44de26074344998e10e041113b5931
+  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
+  SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
+
+PODFILE CHECKSUM: e144e0c6527f1f29d4f4762b34dd704d477a550b
+
+COCOAPODS: 1.8.4

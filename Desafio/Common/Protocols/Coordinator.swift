@@ -3,7 +3,7 @@ import UIKit
 public protocol CoordinatorPath { }
 
 public enum StartType {
-    case modal(animated: Bool), push(fade: Bool, animated: Bool), root(withNavigationController: Bool), tabItem(title: String?, image: UIImage?, selectedImage: UIImage?, animated: Bool)
+    case modal(animated: Bool), root(withNavigationController: Bool), tabItem(title: String?, image: UIImage?, selectedImage: UIImage?, animated: Bool)
 }
 
 public protocol CoordinatorProtocol: class {
@@ -23,21 +23,9 @@ public protocol Coordinator: CoordinatorProtocol {
 
 public extension Coordinator {
     
-    var currentRootViewController: UIViewController? {
-        return window.rootViewController
-    }
-    
     var currentViewController: UIViewController? {
         guard let rootViewController = window.rootViewController else { return nil }
         return currentViewController(root: rootViewController)
-    }
-    
-    var currentNavigationController: UINavigationController? {
-        if let navigationController = currentViewController as? UINavigationController {
-            return navigationController
-        } else {
-            return currentViewController?.navigationController
-        }
     }
     
     var currentTabBarController: UITabBarController? {
@@ -71,14 +59,6 @@ public extension Coordinator {
 }
 
 public extension Coordinator {
-    
-    private func push(_ viewController: UIViewController, fade: Bool, animated: Bool) {
-        if fade {
-            currentNavigationController?.fadePush(viewController)
-        } else {
-            currentNavigationController?.pushViewController(viewController, animated: animated)
-        }
-    }
     
     func present(_ viewController: UIViewController, animated: Bool = true) {
         if let tabBarController = currentTabBarController {
@@ -115,8 +95,6 @@ public extension Coordinator {
         switch startType {
         case .modal(let animated):
             present(viewController, animated: animated)
-        case .push(let fade, let animated):
-            push(viewController, fade: fade, animated: animated)
         case .root(let withNavigation):
             if withNavigation {
                 let navController = UINavigationController(rootViewController: viewController)

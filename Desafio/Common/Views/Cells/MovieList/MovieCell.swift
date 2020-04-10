@@ -25,7 +25,6 @@ class MovieCell: UICollectionViewCell {
         setupMoviePoster()
         setupFavoriteMovie()
 		setupTitleLabel()
-        setupSubscribers()
 	}
     
     private func setupMoviePoster() {
@@ -59,6 +58,21 @@ class MovieCell: UICollectionViewCell {
     }
     
     private func setupSubscribers() {
+        // swiftlint:disable force_try
+
+        let movieRealm = try! FavoriteMovieDataSource(realmProvider: RealmProvider()).provider.loadRealm().object(ofType: RMFavoriteMovie.self, forPrimaryKey: movie.movieCoverURL)
+        Observable
+            .just(movieRealm)
+            .subscribe(onNext: { [weak self] value in
+            guard let this = self else { return }
+                
+            if value != nil {
+                this.favoriteMovieImageView.image = R.image.ic_favorite_full()
+            } else {
+                this.favoriteMovieImageView.image = R.image.ic_favorite_gray()
+            }
+        }).disposed(by: disposeBag)
+        
         favoriteMovieImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
             guard let this = self else { return }
             if this.favoriteMovieImageView.image == R.image.ic_favorite_gray() {
@@ -85,6 +99,7 @@ class MovieCell: UICollectionViewCell {
         if let movieURL = URL(string: R.string.movs.baseImageUrl(viewModel.movie.movieCoverURL)) {
             moviePoster.af_setImage(withURL: movieURL)
         }
+        setupSubscribers()
 	}
 
 }

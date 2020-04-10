@@ -1,7 +1,7 @@
 import Foundation
 
 public struct ErrorWrapper {
-    var error: Error = AppError.fatal
+    var error: Error = MovsError.noConnection
     var message: String = "Erro"
     
     init() {}
@@ -33,6 +33,8 @@ extension Result {
     }
 }
 
-enum AppError: Error {
-    case fatal
+enum MovsError: Error {
+    case noConnection
+    case parseError
 }
+

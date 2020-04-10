@@ -36,6 +36,7 @@ class MovieListView: BaseMainView {
         containerView.addSubview(collectionView)
         collectionView.backgroundColor = UIColor.white
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.backgroundColor = .clear
         collectionView.snp_makeConstraints { make in
             make.top.equalToSuperview().offset(8)
             make.bottom.equalToSuperview()

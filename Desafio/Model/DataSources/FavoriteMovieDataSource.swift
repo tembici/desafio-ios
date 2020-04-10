@@ -41,6 +41,8 @@ class FavoriteMovieDataSource: MovieDataLogic {
     public func objectExist (id: String) -> Bool {
         // swiftlint:disable force_try
 
-        return try! RealmProvider().loadRealm().object(ofType: RMFavoriteMovie.self, forPrimaryKey: id) != nil
+        return try! RealmProvider()
+            .loadRealm()
+            .object(ofType: RMFavoriteMovie.self, forPrimaryKey: id) != nil
     }
 }

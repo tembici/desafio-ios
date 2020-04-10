@@ -35,6 +35,7 @@ class FavoriteListView: BaseMainView {
         containerView.addSubview(tableView)
         tableView.separatorColor = .clear
         tableView.allowsSelection = false
+        tableView.backgroundColor = .clear
         tableView.snp_makeConstraints { make in
             make.top.equalToSuperview().offset(8)
             make.bottom.equalToSuperview()

@@ -21,12 +21,12 @@ extension Reactive where Base: API {
                             observer.onNext(.success(movies))
                             observer.onCompleted()
                         } else {
-                            observer.onError(AppError.fatal)
+                            observer.onError(MovsError.parseError)
                             observer.onCompleted()
                         }
                     }
-                case .failure(let error):
-                    observer.onError(error)
+                case .failure:
+                    observer.onError(MovsError.noConnection)
                     observer.onCompleted()
                 }
             }
@@ -45,12 +45,12 @@ extension Reactive where Base: API {
                             observer.onNext(.success(movies))
                             observer.onCompleted()
                         } else {
-                            observer.onError(AppError.fatal)
+                            observer.onError(MovsError.parseError)
                             observer.onCompleted()
                         }
                     }
-                case .failure(let error):
-                    observer.onError(error)
+                case .failure:
+                    observer.onError(MovsError.noConnection)
                     observer.onCompleted()
                 }
             }

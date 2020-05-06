@@ -21,7 +21,6 @@ final class MainPresenter {
     }
 
     private var pageToFetch = 0
-
     private var mainMovies: [MainMovie] = []
 
     private var currentQuery = ""
@@ -31,12 +30,14 @@ final class MainPresenter {
         self.interactor.fetchMoviesOnApi(with: self.pageToFetch)
     }
 
-    private func updateMoviesWithQuery() {
-        let query = self.currentQuery.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        if query.isEmpty {
-            self.view.updateMovies(with: self.mainMovies)
+    private func updateMoviesWithQuery(moviesToUpdate: [MainMovie]? = nil) {
+        let movies = moviesToUpdate ?? self.mainMovies
+
+        if self.currentQuery.isEmpty {
+            self.view.updateMovies(with: movies)
         } else {
-            let mainMovies = self.mainMovies.filter { $0.originalTitle.lowercased().contains(query)}
+            let mainMovies = movies.filter { $0.originalTitle.lowercased().contains(self.currentQuery)}
+            guard mainMovies.count > 0 else { return }
             self.view.updateMovies(with: mainMovies)
         }
     }
@@ -55,6 +56,14 @@ extension MainPresenter: MainPresenterToView {
         self.fetchMovies()
     }
 
+    func filterMainMovies(with query: String?) {
+        guard let queryToFetch = query else { return }
+
+        self.currentQuery = queryToFetch.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        self.view.removeMovies()
+        self.updateMoviesWithQuery()
+    }
+
 }
 
 // MARK: - MainPresenterToInteractorProtocol
@@ -62,7 +71,7 @@ extension MainPresenter: MainPresenterToView {
 extension MainPresenter: MainPresenterToInteractor {
 
     func didFetchMoviesOnApi(_ mainMovies: [MainMovie]) {
-        self.mainMovies = mainMovies
-        self.updateMoviesWithQuery()
+        self.mainMovies.append(contentsOf: mainMovies)
+        self.updateMoviesWithQuery(moviesToUpdate: mainMovies)
     }
 }

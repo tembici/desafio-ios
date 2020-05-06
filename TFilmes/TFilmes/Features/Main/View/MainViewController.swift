@@ -33,7 +33,19 @@ class MainViewController: UIViewController {
 
 }
 
+extension MainViewController: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.presenter.filterMainMovies(with: searchBar.text)
+    }
+
+}
+
 extension MainViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        debugPrint(indexPath.row)
+    }
 
 }
 
@@ -63,6 +75,10 @@ extension MainViewController: MainViewToPresenter {
 
     func updateMovies(with mainMovies: [MainMovie]) {
         self.mainMovies.append(contentsOf: mainMovies)
+    }
+
+    func removeMovies() {
+        self.mainMovies = []
     }
 
 }

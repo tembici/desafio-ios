@@ -20,6 +20,13 @@ final class MainPresenter {
         self.view = view
     }
 
+    private var pageToFetch = 0
+
+    private func fetchMovies() {
+        self.pageToFetch += 1
+        self.interactor.fetchMoviesOnApi(with: self.pageToFetch)
+    }
+
 }
 
 // MARK: - MainPresenterToViewProtocol
@@ -27,7 +34,7 @@ final class MainPresenter {
 extension MainPresenter: MainPresenterToView {
 
     func viewDidLoad() {
-
+        self.fetchMovies()
     }
 
 }

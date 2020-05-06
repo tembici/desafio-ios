@@ -22,9 +22,23 @@ final class MainPresenter {
 
     private var pageToFetch = 0
 
+    private var mainMovies: [MainMovie] = []
+
+    private var currentQuery = ""
+
     private func fetchMovies() {
         self.pageToFetch += 1
         self.interactor.fetchMoviesOnApi(with: self.pageToFetch)
+    }
+
+    private func updateMoviesWithQuery() {
+        let query = self.currentQuery.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        if query.isEmpty {
+            self.view.updateMovies(with: self.mainMovies)
+        } else {
+            let mainMovies = self.mainMovies.filter { $0.originalTitle.lowercased().contains(query)}
+            self.view.updateMovies(with: mainMovies)
+        }
     }
 
 }
@@ -37,10 +51,18 @@ extension MainPresenter: MainPresenterToView {
         self.fetchMovies()
     }
 
+    func fetchMoreMovies() {
+        self.fetchMovies()
+    }
+
 }
 
 // MARK: - MainPresenterToInteractorProtocol
 
 extension MainPresenter: MainPresenterToInteractor {
 
+    func didFetchMoviesOnApi(_ mainMovies: [MainMovie]) {
+        self.mainMovies = mainMovies
+        self.updateMoviesWithQuery()
+    }
 }

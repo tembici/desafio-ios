@@ -8,11 +8,11 @@
 
 import Foundation
 
-class MoviePopular: Codable {
+class MovieResponse: Codable {
 
     let poster_path: String?
     let overview: String
-    let release_date: String
+    let release_date: String?
     let genre_ids: [Int]
     let id: Int
     let original_title: String

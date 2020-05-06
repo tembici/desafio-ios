@@ -8,4 +8,6 @@
 
 protocol MainPresenterToInteractor {
 
+    func didFetchMoviesOnApi(_ mainMovies: [MainMovie])
+
 }

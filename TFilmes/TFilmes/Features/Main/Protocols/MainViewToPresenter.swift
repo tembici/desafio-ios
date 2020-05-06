@@ -8,4 +8,6 @@
 
 protocol MainViewToPresenter {
 
+    func updateMovies(with mainMovies: [MainMovie])
+
 }

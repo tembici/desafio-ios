@@ -8,10 +8,9 @@
 
 import Foundation
 
-class MoviePopularResponse: Codable {
+class PopularMovieResponse: Codable {
 
     let page: Int?
-    let results: [MoviePopularResponse]?
-    let total_pages: Int?
+    let results: [MovieResponse]?
 
 }

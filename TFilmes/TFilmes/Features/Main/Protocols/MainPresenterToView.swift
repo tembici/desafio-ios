@@ -9,5 +9,6 @@
 protocol MainPresenterToView {
 
     func viewDidLoad()
+    func fetchMoreMovies()
 
 }

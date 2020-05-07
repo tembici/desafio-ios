@@ -64,6 +64,10 @@ extension MainPresenter: MainPresenterToView {
         self.updateMoviesWithQuery()
     }
 
+    func favoriteChanged(mainMovie: MainMovie) {
+        self.interactor.updateFavoriteState(of: mainMovie)
+    }
+
 }
 
 // MARK: - MainPresenterToInteractorProtocol

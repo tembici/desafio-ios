@@ -15,37 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOo-Bf-Mb8">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnI-3H-GOB">
-                                        <rect key="frame" x="0.0" y="10" width="375" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjF-01-Vxr">
-                                        <rect key="frame" x="0.0" y="36" width="375" height="56"/>
-                                        <color key="barTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="wiv-WC-Cob"/>
-                                        </connections>
-                                    </searchBar>
-                                </subviews>
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjF-01-Vxr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="nnI-3H-GOB" secondAttribute="trailing" id="7QF-H9-c1B"/>
-                                    <constraint firstItem="jjF-01-Vxr" firstAttribute="leading" secondItem="jOo-Bf-Mb8" secondAttribute="leading" id="WKv-RA-mJf"/>
-                                    <constraint firstAttribute="height" constant="100" id="Wbs-CN-0Fm"/>
-                                    <constraint firstItem="jjF-01-Vxr" firstAttribute="top" secondItem="nnI-3H-GOB" secondAttribute="bottom" constant="5" id="aZk-FJ-VsN"/>
-                                    <constraint firstAttribute="trailing" secondItem="jjF-01-Vxr" secondAttribute="trailing" id="uQs-LV-bpB"/>
-                                    <constraint firstItem="nnI-3H-GOB" firstAttribute="leading" secondItem="jOo-Bf-Mb8" secondAttribute="leading" id="y2w-rn-hBK"/>
-                                    <constraint firstItem="nnI-3H-GOB" firstAttribute="top" secondItem="jOo-Bf-Mb8" secondAttribute="top" constant="10" id="z55-yq-rri"/>
-                                </constraints>
-                            </view>
+                                <color key="barTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="wiv-WC-Cob"/>
+                                </connections>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kvQ-kB-GxV">
-                                <rect key="frame" x="20" y="110" width="335" height="557"/>
+                                <rect key="frame" x="20" y="61" width="335" height="606"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BN9-7G-wMY">
                                     <size key="itemSize" width="160" height="230"/>
@@ -62,23 +42,35 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="jOo-Bf-Mb8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4QJ-Vg-cQx"/>
+                            <constraint firstItem="jjF-01-Vxr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5kO-1G-zTT"/>
                             <constraint firstItem="kvQ-kB-GxV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JX3-rD-Pqs"/>
+                            <constraint firstItem="kvQ-kB-GxV" firstAttribute="top" secondItem="jjF-01-Vxr" secondAttribute="bottom" constant="5" id="Qlu-6Q-jdw"/>
+                            <constraint firstItem="jjF-01-Vxr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ssd-qf-jSR"/>
+                            <constraint firstItem="jjF-01-Vxr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Sxf-Zv-2K8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kvQ-kB-GxV" secondAttribute="trailing" constant="20" id="Y2n-KG-4Uh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kvQ-kB-GxV" secondAttribute="bottom" id="bwK-V8-RUb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jOo-Bf-Mb8" secondAttribute="trailing" id="c6E-EO-OmL"/>
-                            <constraint firstItem="kvQ-kB-GxV" firstAttribute="top" secondItem="jOo-Bf-Mb8" secondAttribute="bottom" constant="10" id="dpx-TD-Udy"/>
-                            <constraint firstItem="jOo-Bf-Mb8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sa7-Zm-NZ2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="kvQ-kB-GxV" id="3pV-tl-OGW"/>
+                        <segue destination="iWf-WU-WFF" kind="show" identifier="segueToMovieDetail" id="ylE-dU-Vm9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+        <!--MovieDetail-->
+        <scene sceneID="6H7-tG-KoI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MovieDetail" id="iWf-WU-WFF" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="e3Y-9f-AQx"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XfX-vp-utC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="986" y="137"/>
         </scene>
     </scenes>
 </document>

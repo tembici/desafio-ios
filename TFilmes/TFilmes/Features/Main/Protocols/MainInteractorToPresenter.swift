@@ -9,5 +9,6 @@
 protocol MainInteractorToPresenter {
 
     func fetchMoviesOnApi(with page: Int)
+    func updateFavoriteState(of mainMovie: MainMovie)
 
 }

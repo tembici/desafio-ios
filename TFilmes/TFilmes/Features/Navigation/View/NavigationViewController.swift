@@ -1,5 +1,5 @@
 //
-//  TabsViewController.swift
+//  NavigationViewController.swift
 //  TFilmes
 //
 //  Created by Vandcarlos Mouzinho Sandes Junior on 06/05/20.
@@ -8,10 +8,6 @@
 
 import UIKit
 
-class TabsViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+class NavigationViewController: UINavigationController {
 
 }

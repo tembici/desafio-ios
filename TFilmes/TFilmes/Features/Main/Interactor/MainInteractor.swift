@@ -72,6 +72,13 @@ extension MainInteractor: MainInteractorToPresenter {
 
 
         }.resume()
+    }
 
+    func updateFavoriteState(of mainMovie: MainMovie) {
+        if mainMovie.favorite {
+            // Create in DB
+        } else {
+            // Remove from DB
+        }
     }
 }

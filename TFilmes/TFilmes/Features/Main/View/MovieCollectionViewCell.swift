@@ -16,6 +16,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
 
     private var mainMovie: MainMovie?
 
+    weak var delegate: MovieColletionViewCellDelegate?
+
     func updateData(with mainMovie: MainMovie) {
         self.mainMovie = mainMovie
 
@@ -39,23 +41,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
         } else {
             self.favoriteButton.tintColor = UIColor.gray
         }
+
+        self.delegate?.favoriteChanged(mainMovie: mainMovie)
     }
 
-
-}
-
-extension UIImageView {
-    func load(url: URL?) {
-        guard let imageURL = url else { return }
-
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: imageURL) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
-    }
 }

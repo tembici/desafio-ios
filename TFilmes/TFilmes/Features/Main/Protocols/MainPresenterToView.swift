@@ -11,5 +11,6 @@ protocol MainPresenterToView {
     func viewDidLoad()
     func fetchMoreMovies()
     func filterMainMovies(with query: String?)
+    func favoriteChanged(mainMovie: MainMovie)
 
 }

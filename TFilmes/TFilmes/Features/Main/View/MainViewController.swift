@@ -24,11 +24,20 @@ class MainViewController: UIViewController {
         }
     }
 
+    private var rowTapped: Int?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.viewDidLoad()
 
         self.collectionView.register(UINib.init(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let row = self.rowTapped, row < self.mainMovies.count else { return }
+        guard let viewController = segue.destination as? MovieDetailViewController else { return }
+
+        viewController.movieToShow = self.mainMovies[row]
     }
 
 }
@@ -44,7 +53,8 @@ extension MainViewController: UISearchBarDelegate {
 extension MainViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        debugPrint(indexPath.row)
+        self.rowTapped = indexPath.row
+        self.performSegue(withIdentifier: "segueToMovieDetail", sender: self)
     }
 
 }
@@ -59,6 +69,7 @@ extension MainViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath as IndexPath) as! MovieCollectionViewCell
 
         cell.updateData(with: self.mainMovies[indexPath.row])
+        cell.delegate = self
 
         if indexPath.row == self.mainMovies.count - 1 {
             self.presenter.fetchMoreMovies()
@@ -79,6 +90,14 @@ extension MainViewController: MainViewToPresenter {
 
     func removeMovies() {
         self.mainMovies = []
+    }
+
+}
+
+extension MainViewController: MovieColletionViewCellDelegate {
+
+    func favoriteChanged(mainMovie: MainMovie) {
+        self.presenter.favoriteChanged(mainMovie: mainMovie)
     }
 
 }

@@ -6,9 +6,11 @@
 //  Copyright © 2020 Vandcarlos Mouzinho Sandes Junior. All rights reserved.
 //
 
+import Foundation
+
 protocol MainInteractorToPresenter: class {
 
     func fetchMoviesOnApi(with page: Int)
-    func updateFavoriteState(of movie: Movie)
+    func updateFavoriteState(of movie: Movie, imageData: Data?)
 
 }

@@ -136,8 +136,8 @@ extension MainViewController: MainViewToPresenter {
 
 extension MainViewController: MovieColletionViewCellDelegate {
 
-    func favoriteChanged(movie: Movie) {
-        self.presenter.favoriteChanged(movie: movie)
+    func favoriteChanged(movie: Movie, imageData: Data?) {
+        self.presenter.favoriteChanged(movie: movie, imageData: imageData)
     }
 
 }

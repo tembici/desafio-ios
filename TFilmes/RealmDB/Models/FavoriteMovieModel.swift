@@ -16,7 +16,7 @@ class FavoriteMovieModel: Object {
     @objc dynamic var imageURL: String?
 
     var genres: [GenreModel] {
-        return FavoriteMovieGenreModel.getAllWith(movieId: self.id).compactMap { $0.genre }
+        return FavoriteMovieGenreModel.getAll(WithMovieId: self.id).compactMap { $0.genre }
     }
 
     static func create(
@@ -49,11 +49,9 @@ class FavoriteMovieModel: Object {
     }
 
     static func getBy(id: Int) -> FavoriteMovieModel? {
-        let query = NSPredicate(format: "id = %@", id)
-
         return try! Realm()
             .objects(FavoriteMovieModel.self)
-            .filter(query)
+            .filter("id == \(id)")
             .first
     }
 

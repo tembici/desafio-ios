@@ -26,7 +26,9 @@ final class MainInteractor {
         for movieResponse in moviesResponse {
             let imageURL = API.instance.generateImageURL(path: movieResponse.poster_path)
 
-            movies.append(Movie(movieResponse: movieResponse, imageURL: imageURL, favorite: false))
+            let favorite = FavoriteMovieModel.getBy(id: movieResponse.id) != nil
+
+            movies.append(Movie(movieResponse: movieResponse, imageURL: imageURL, favorite: favorite))
         }
 
         self.presenter.didFetchMoviesOnApi(movies)
@@ -62,11 +64,19 @@ extension MainInteractor: MainInteractorToPresenter {
         }
     }
 
-    func updateFavoriteState(of movie: Movie) {
+    func updateFavoriteState(of movie: Movie, imageData: Data?) {
         if movie.favorite {
-            // Create in DB
+            let imageURL = MovieLocalImage.save(imageData: imageData, imageURL: movie.imageURL)
+            FavoriteMovieModel.create(
+                id: movie.id,
+                overview: movie.overview,
+                releaseDate: movie.releaseDate,
+                imageURL: imageURL,
+                genreIds: movie.genreIds
+            )
         } else {
-            // Remove from DB
+            MovieLocalImage.delete(imageURL: movie.imageURL)
+            FavoriteMovieModel.deleteBy(id: movie.id)
         }
     }
 }

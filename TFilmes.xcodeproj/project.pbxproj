@@ -58,6 +58,8 @@
 		A07CC9732463B37B00F08F2C /* FavoriteMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC9722463B37B00F08F2C /* FavoriteMovieModel.swift */; };
 		A07CC9752463B40600F08F2C /* FavoriteMovieGenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC9742463B40600F08F2C /* FavoriteMovieGenreModel.swift */; };
 		A07CC9772463B45D00F08F2C /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC9762463B45D00F08F2C /* GenreModel.swift */; };
+		A07CC979246439DA00F08F2C /* MovieLocalImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC978246439DA00F08F2C /* MovieLocalImage.swift */; };
+		A07CC97B24643B5900F08F2C /* DocumentsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC97A24643B5900F08F2C /* DocumentsHelper.swift */; };
 		DCD151D92DF034875D49A4BD /* Pods_TFilmes_TFilmesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55027E2B02DD9DA28E062606 /* Pods_TFilmes_TFilmesUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +141,8 @@
 		A07CC9722463B37B00F08F2C /* FavoriteMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovieModel.swift; sourceTree = "<group>"; };
 		A07CC9742463B40600F08F2C /* FavoriteMovieGenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovieGenreModel.swift; sourceTree = "<group>"; };
 		A07CC9762463B45D00F08F2C /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
+		A07CC978246439DA00F08F2C /* MovieLocalImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLocalImage.swift; sourceTree = "<group>"; };
+		A07CC97A24643B5900F08F2C /* DocumentsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsHelper.swift; sourceTree = "<group>"; };
 		B2071E482C2F8DE527E8251C /* Pods_TFilmesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFilmesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C856A59C97F793F238FA15E5 /* Pods-TFilmes-TFilmesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFilmes-TFilmesUITests.debug.xcconfig"; path = "Target Support Files/Pods-TFilmes-TFilmesUITests/Pods-TFilmes-TFilmesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DEC3CCFDE1D9A2217960A4C5 /* Pods_TFilmes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFilmes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -356,6 +360,8 @@
 				A07CC9172463890600F08F2C /* ImageViewDownloadFromURL.swift */,
 				A07CC93824638F4800F08F2C /* API.swift */,
 				A07CC9652463A0FE00F08F2C /* CollorPallet.swift */,
+				A07CC978246439DA00F08F2C /* MovieLocalImage.swift */,
+				A07CC97A24643B5900F08F2C /* DocumentsHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -729,6 +735,7 @@
 			files = (
 				A07CC93524638A5500F08F2C /* NavigationViewController.swift in Sources */,
 				A07CC90B24635C2F00F08F2C /* MovieCollectionViewCell.swift in Sources */,
+				A07CC97B24643B5900F08F2C /* DocumentsHelper.swift in Sources */,
 				A07CC8F0246356C800F08F2C /* MainPresenterToInteractor.swift in Sources */,
 				A07CC92F2463899E00F08F2C /* MovieDetailInteractor.swift in Sources */,
 				A07CC92D2463899E00F08F2C /* MovieDetailPresenterToView.swift in Sources */,
@@ -742,6 +749,7 @@
 				A07CC8EE246356C800F08F2C /* MainPresenterToView.swift in Sources */,
 				A07CC9012463581B00F08F2C /* TabsViewController.swift in Sources */,
 				A07CC8AE2463554E00F08F2C /* SceneDelegate.swift in Sources */,
+				A07CC979246439DA00F08F2C /* MovieLocalImage.swift in Sources */,
 				A07CC92B2463899E00F08F2C /* MovieDetailInteractorToPresenter.swift in Sources */,
 				A07CC9752463B40600F08F2C /* FavoriteMovieGenreModel.swift in Sources */,
 				A07CC8EB246356C800F08F2C /* MainPresenter.swift in Sources */,

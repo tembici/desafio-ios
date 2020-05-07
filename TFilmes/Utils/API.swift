@@ -16,9 +16,10 @@ final class API {
 
     private let urlString = "https://api.themoviedb.org/3"
     private let imageUrlString = "https://image.tmdb.org/t/p/w185"
+    private let apiKey = "38187d3597431e7cbcc9a5985aacf2cc"
 
     private lazy var defaultQueryItems = [
-        URLQueryItem(name: "api_key", value: ProcessInfo.processInfo.environment["api_key"])
+        URLQueryItem(name: "api_key", value: self.apiKey)
     ]
 
     func get(

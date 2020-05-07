@@ -73,7 +73,7 @@
             <size key="customSize" width="194" height="242"/>
             <connections>
                 <outlet property="favoriteButton" destination="sq9-Am-bih" id="2SD-um-Jgs"/>
-                <outlet property="image" destination="Hwx-SB-why" id="Hbx-Fv-8ZE"/>
+                <outlet property="imageView" destination="Hwx-SB-why" id="Hbx-Fv-8ZE"/>
                 <outlet property="titleLabel" destination="Uyg-hq-tDr" id="CFT-Bt-LxQ"/>
             </connections>
             <point key="canvasLocation" x="50.724637681159422" y="99.107142857142847"/>

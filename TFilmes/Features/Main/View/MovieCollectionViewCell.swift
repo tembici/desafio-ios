@@ -11,7 +11,7 @@ import SkeletonView
 
 class MovieCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
 
@@ -23,8 +23,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
         self.movie = movie
 
         self.titleLabel.text = movie.originalTitle
-        self.image.showAnimatedGradientSkeleton()
-        self.image.load(url: movie.imageURL)
+        self.imageView.showAnimatedGradientSkeleton()
+        self.imageView.load(url: movie.imageURL)
 
         if movie.favorite {
             self.favoriteButton.tintColor = UIColor.yellow
@@ -44,7 +44,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
             self.favoriteButton.tintColor = CollorPallet.gray
         }
 
-        self.delegate?.favoriteChanged(movie: movie)
+        self.delegate?.favoriteChanged(movie: movie, imageData: self.imageView.image?.pngData())
     }
 
 }

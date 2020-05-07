@@ -10,7 +10,8 @@ import Foundation
 
 final class MovieDetailPresenter {
 
-    private let view: MovieDetailViewToPresenter
+    unowned private let view: MovieDetailViewToPresenter
+
     private lazy var interactor: MovieDetailInteractorToPresenter = {
         return MovieDetailInteractor(presenter: self)
     }()

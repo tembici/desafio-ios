@@ -10,7 +10,7 @@ import Foundation
 
 final class MovieDetailInteractor {
 
-    private let presenter: MovieDetailPresenterToInteractor
+    unowned private let presenter: MovieDetailPresenterToInteractor
 
     init (presenter: MovieDetailPresenterToInteractor) {
         self.presenter = presenter

@@ -6,6 +6,6 @@
 //  Copyright © 2020 Vandcarlos Mouzinho Sandes Junior. All rights reserved.
 //
 
-protocol MovieDetailPresenterToInteractor {
+protocol MovieDetailPresenterToInteractor: class {
 
 }

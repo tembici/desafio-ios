@@ -6,7 +6,7 @@
 //  Copyright © 2020 Vandcarlos Mouzinho Sandes Junior. All rights reserved.
 //
 
-protocol MainViewToPresenter {
+protocol MainViewToPresenter: class {
 
     func updateMovies(with mainMovies: [MainMovie])
     func removeMovies()

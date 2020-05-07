@@ -6,7 +6,7 @@
 //  Copyright © 2020 Vandcarlos Mouzinho Sandes Junior. All rights reserved.
 //
 
-protocol MainInteractorToPresenter {
+protocol MainInteractorToPresenter: class {
 
     func fetchMoviesOnApi(with page: Int)
     func updateFavoriteState(of mainMovie: MainMovie)

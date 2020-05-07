@@ -10,7 +10,7 @@ import Foundation
 
 final class MainPresenter {
 
-    private let view: MainViewToPresenter
+    unowned private let view: MainViewToPresenter
 
     private lazy var interactor: MainInteractorToPresenter = {
         return MainInteractor(presenter: self)

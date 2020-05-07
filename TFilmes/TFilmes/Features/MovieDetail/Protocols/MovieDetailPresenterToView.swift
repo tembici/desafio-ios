@@ -6,7 +6,7 @@
 //  Copyright © 2020 Vandcarlos Mouzinho Sandes Junior. All rights reserved.
 //
 
-protocol MovieDetailPresenterToView {
+protocol MovieDetailPresenterToView: class {
 
     func viewDidLoad()
 

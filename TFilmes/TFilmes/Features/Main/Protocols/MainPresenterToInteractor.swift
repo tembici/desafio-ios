@@ -6,7 +6,7 @@
 //  Copyright © 2020 Vandcarlos Mouzinho Sandes Junior. All rights reserved.
 //
 
-protocol MainPresenterToInteractor {
+protocol MainPresenterToInteractor: class {
 
     func didFetchMoviesOnApi(_ mainMovies: [MainMovie])
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieDetailViewController: UIViewController {
+final class MovieDetailViewController: UIViewController {
 
     private lazy var presenter: MovieDetailPresenterToView = {
         return MovieDetailPresenter(view: self)

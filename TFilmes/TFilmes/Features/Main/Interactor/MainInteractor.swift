@@ -10,7 +10,7 @@ import Foundation
 
 final class MainInteractor {
 
-    private let presenter: MainPresenterToInteractor
+    unowned private let presenter: MainPresenterToInteractor
 
     init (presenter: MainPresenterToInteractor) {
         self.presenter = presenter

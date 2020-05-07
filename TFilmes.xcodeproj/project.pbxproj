@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -54,6 +54,10 @@
 		A07CC9632463952A00F08F2C /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = A07CC9502463952A00F08F2C /* OFL.txt */; };
 		A07CC9662463A0FE00F08F2C /* CollorPallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC9652463A0FE00F08F2C /* CollorPallet.swift */; };
 		A07CC96D2463A7C500F08F2C /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC96C2463A7C500F08F2C /* MainTests.swift */; };
+		A07CC9702463B2FF00F08F2C /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC96F2463B2FF00F08F2C /* RealmDB.swift */; };
+		A07CC9732463B37B00F08F2C /* FavoriteMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC9722463B37B00F08F2C /* FavoriteMovieModel.swift */; };
+		A07CC9752463B40600F08F2C /* FavoriteMovieGenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC9742463B40600F08F2C /* FavoriteMovieGenreModel.swift */; };
+		A07CC9772463B45D00F08F2C /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC9762463B45D00F08F2C /* GenreModel.swift */; };
 		DCD151D92DF034875D49A4BD /* Pods_TFilmes_TFilmesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55027E2B02DD9DA28E062606 /* Pods_TFilmes_TFilmesUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +135,10 @@
 		A07CC9502463952A00F08F2C /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		A07CC9652463A0FE00F08F2C /* CollorPallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollorPallet.swift; sourceTree = "<group>"; };
 		A07CC96C2463A7C500F08F2C /* MainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
+		A07CC96F2463B2FF00F08F2C /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
+		A07CC9722463B37B00F08F2C /* FavoriteMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovieModel.swift; sourceTree = "<group>"; };
+		A07CC9742463B40600F08F2C /* FavoriteMovieGenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovieGenreModel.swift; sourceTree = "<group>"; };
+		A07CC9762463B45D00F08F2C /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
 		B2071E482C2F8DE527E8251C /* Pods_TFilmesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFilmesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C856A59C97F793F238FA15E5 /* Pods-TFilmes-TFilmesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFilmes-TFilmesUITests.debug.xcconfig"; path = "Target Support Files/Pods-TFilmes-TFilmesUITests/Pods-TFilmes-TFilmesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DEC3CCFDE1D9A2217960A4C5 /* Pods_TFilmes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFilmes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,7 +193,6 @@
 				364B0F744C8C1CA53F1DCDF9 /* Pods-TFilmesTests.debug.xcconfig */,
 				7FD814983C1E5F2E10449BD3 /* Pods-TFilmesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -217,6 +224,7 @@
 				A07CC8DB2463557300F08F2C /* Supporting Files */,
 				A07CC93A246391FE00F08F2C /* Entity */,
 				A07CC916246388EF00F08F2C /* Utils */,
+				A07CC96E2463B2EF00F08F2C /* RealmDB */,
 				A07CC8DC2463559700F08F2C /* Features */,
 			);
 			path = TFilmes;
@@ -446,6 +454,25 @@
 				A07CC9502463952A00F08F2C /* OFL.txt */,
 			);
 			path = Montserrat;
+			sourceTree = "<group>";
+		};
+		A07CC96E2463B2EF00F08F2C /* RealmDB */ = {
+			isa = PBXGroup;
+			children = (
+				A07CC9712463B36100F08F2C /* Models */,
+				A07CC96F2463B2FF00F08F2C /* RealmDB.swift */,
+			);
+			path = RealmDB;
+			sourceTree = "<group>";
+		};
+		A07CC9712463B36100F08F2C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A07CC9722463B37B00F08F2C /* FavoriteMovieModel.swift */,
+				A07CC9742463B40600F08F2C /* FavoriteMovieGenreModel.swift */,
+				A07CC9762463B45D00F08F2C /* GenreModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -709,12 +736,14 @@
 				A07CC9662463A0FE00F08F2C /* CollorPallet.swift in Sources */,
 				A07CC8F1246356C800F08F2C /* MainInteractor.swift in Sources */,
 				A07CC92A2463899E00F08F2C /* MovieDetailViewController.swift in Sources */,
+				A07CC9772463B45D00F08F2C /* GenreModel.swift in Sources */,
 				A07CC93C2463920700F08F2C /* Movie.swift in Sources */,
 				A07CC9112463679C00F08F2C /* MovieResponse.swift in Sources */,
 				A07CC8EE246356C800F08F2C /* MainPresenterToView.swift in Sources */,
 				A07CC9012463581B00F08F2C /* TabsViewController.swift in Sources */,
 				A07CC8AE2463554E00F08F2C /* SceneDelegate.swift in Sources */,
 				A07CC92B2463899E00F08F2C /* MovieDetailInteractorToPresenter.swift in Sources */,
+				A07CC9752463B40600F08F2C /* FavoriteMovieGenreModel.swift in Sources */,
 				A07CC8EB246356C800F08F2C /* MainPresenter.swift in Sources */,
 				A07CC8EC246356C800F08F2C /* MainViewController.swift in Sources */,
 				A07CC90F246366BF00F08F2C /* PopularMovieResponse.swift in Sources */,
@@ -722,6 +751,8 @@
 				A07CC8ED246356C800F08F2C /* MainInteractorToPresenter.swift in Sources */,
 				A07CC93924638F4800F08F2C /* API.swift in Sources */,
 				A07CC92C2463899E00F08F2C /* MovieDetailViewToPresenter.swift in Sources */,
+				A07CC9732463B37B00F08F2C /* FavoriteMovieModel.swift in Sources */,
+				A07CC9702463B2FF00F08F2C /* RealmDB.swift in Sources */,
 				A07CC8EF246356C800F08F2C /* MainViewToPresenter.swift in Sources */,
 				A07CC9292463899E00F08F2C /* MovieDetailPresenter.swift in Sources */,
 				A07CC92E2463899E00F08F2C /* MovieDetailPresenterToInteractor.swift in Sources */,

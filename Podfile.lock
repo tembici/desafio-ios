@@ -1,0 +1,26 @@
+PODS:
+  - Realm (4.3.2):
+    - Realm/Headers (= 4.3.2)
+  - Realm/Headers (4.3.2)
+  - RealmSwift (4.3.2):
+    - Realm (= 4.3.2)
+  - SkeletonView (1.8.6)
+
+DEPENDENCIES:
+  - RealmSwift
+  - SkeletonView
+
+SPEC REPOS:
+  trunk:
+    - Realm
+    - RealmSwift
+    - SkeletonView
+
+SPEC CHECKSUMS:
+  Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
+  RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
+  SkeletonView: 0bf463145522c0c551b76a829b397e2a15a16d46
+
+PODFILE CHECKSUM: 0449d31fff847b8f518ab63c88511564556ff482
+
+COCOAPODS: 1.8.4

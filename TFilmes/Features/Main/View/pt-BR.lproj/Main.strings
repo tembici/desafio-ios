@@ -1,0 +1,6 @@
+
+/* Class = "UILabel"; text = "Your search for \"text\" returned no results"; ObjectID = "Ff3-wa-9s7"; */
+"Ff3-wa-9s7.text" = "Your search for \"text\" returned no results";
+
+/* Class = "UIButton"; normalTitle = "Try to get movies again"; ObjectID = "S2I-XT-jR7"; */
+"S2I-XT-jR7.normalTitle" = "Tentar buscar filmes novamente";

@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  TFilmes
+
+  Created by Vandcarlos Mouzinho Sandes Junior on 07/05/20.
+  Copyright © 2020 Vandcarlos Mouzinho Sandes Junior. All rights reserved.
+*/
+
+"main.error.title" = "Error on get movies";
+"main.error.message" = "You can try get movies again";
+"main.error.try_again" = "Try again";
+"main.error.cancel" = "Cancel";
+"main.empty.default" = "No movies found";
+"main.empty.search" = "Your search for \"#text#\" returned no results";
+

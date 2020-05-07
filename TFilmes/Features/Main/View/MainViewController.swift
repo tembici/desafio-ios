@@ -16,9 +16,6 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var emptyStateLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
 
-    private let emptyStateMessage = "Your search for \"#text#\" returned no results"
-
-
     private lazy var presenter: MainPresenterToView = {
         return MainPresenter(view: self)
     }()
@@ -111,10 +108,11 @@ extension MainViewController: MainViewToPresenter {
 
         if self.movies.count == 0 {
             if let searchQuery = self.searchBar.text, !searchQuery.isEmpty {
-                let message = self.emptyStateMessage.replacingOccurrences(of: "#text#", with: searchQuery)
+                let baseMessage = NSLocalizedString("main.empty.search", comment: "Search base string")
+                let message = baseMessage.replacingOccurrences(of: "#text#", with: searchQuery)
                 self.emptyStateLabel.text = message
             } else {
-                self.emptyStateLabel.text = "No movies found"
+                self.emptyStateLabel.text = NSLocalizedString("main.empty.default", comment: "Default empty")
             }
 
             DispatchQueue.main.async { [weak self] in
@@ -133,18 +131,18 @@ extension MainViewController: MainViewToPresenter {
     }
 
     func showErrorState() {
-        let title = "Error on get movies"
-        let message = "You can try get movies again"
+        let title = NSLocalizedString("main.error.title", comment: "Error title")
+        let message = NSLocalizedString("main.error.message", comment: "Error message")
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
-        let tryAgainTitle = "Try again"
+        let tryAgainTitle = NSLocalizedString("main.error.try_agin", comment: "Error try again button")
         let tryAgainAction = UIAlertAction(title: tryAgainTitle, style: .default) { _ in
             self.presenter.tryToGetMoviesTapped()
         }
 
         alert.addAction(tryAgainAction)
 
-        let cancelTitle = "Cancel"
+        let cancelTitle = NSLocalizedString("main.error.try_agin", comment: "Error cancel button")
         let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel) { _ in
             self.tryGetMoviesAgainButton.isHidden = false
         }

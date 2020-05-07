@@ -12,6 +12,12 @@ final class MainViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tryGetMoviesAgainButton: UIButton!
+    @IBOutlet weak var emptyStateView: UIView!
+    @IBOutlet weak var emptyStateLabel: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
+
+    private let emptyStateMessage = "Your search for \"#text#\" returned no results"
+
 
     private lazy var presenter: MainPresenterToView = {
         return MainPresenter(view: self)
@@ -95,16 +101,30 @@ extension MainViewController: UICollectionViewDataSource {
 extension MainViewController: MainViewToPresenter {
 
     func updateMovies(with movies: [Movie]) {
-        self.movies.append(contentsOf: movies)
+        if movies.count > 0 {
+            self.movies.append(contentsOf: movies)
+        }
 
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.hideSkeleton()
         }
 
         if self.movies.count == 0 {
-            // show empty state
+            if let searchQuery = self.searchBar.text, !searchQuery.isEmpty {
+                let message = self.emptyStateMessage.replacingOccurrences(of: "#text#", with: searchQuery)
+                self.emptyStateLabel.text = message
+            } else {
+                self.emptyStateLabel.text = "No movies found"
+            }
+
+            DispatchQueue.main.async { [weak self] in
+                self?.emptyStateView.isHidden = false
+            }
+
         } else {
-            // hide empty state
+            DispatchQueue.main.async { [weak self] in
+                self?.emptyStateView.isHidden = true
+            }
         }
     }
 

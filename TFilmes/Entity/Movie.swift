@@ -13,7 +13,7 @@ class Movie {
 
     let id: Int
     let overview: String
-    let releaseDate: String?
+    let releaseDate: Date?
     let genreIds: [Int]
     let originalTitle: String
     let imageURL: URL?
@@ -25,10 +25,34 @@ class Movie {
         return GenreModel.find(byIdIn: self.genreIds).compactMap { $0.name }
     }
 
+    init(
+        id: Int,
+        overview: String,
+        releaseDate: Date?,
+        genreIds: [Int],
+        originalTitle: String,
+        imageURL: URL?,
+        favorite: Bool
+    ) {
+        self.id = id
+        self.overview = overview
+        self.releaseDate = releaseDate
+        self.genreIds = genreIds
+        self.originalTitle = originalTitle
+        self.imageURL = imageURL
+        self.favorite = favorite
+    }
+
     init(movieResponse: MovieResponse, imageURL: URL?, favorite: Bool) {
         self.id = movieResponse.id
         self.overview = movieResponse.overview
-        self.releaseDate = movieResponse.release_date
+
+        if let releaseDate = movieResponse.release_date {
+            self.releaseDate = Date(from: releaseDate, format: "yyyy-MM-dd")
+        } else {
+            self.releaseDate = nil
+        }
+
         self.genreIds = movieResponse.genre_ids
         self.originalTitle = movieResponse.original_title
 

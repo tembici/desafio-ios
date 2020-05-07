@@ -12,7 +12,7 @@ class FavoriteMovieModel: Object {
 
     @objc dynamic var id: Int = 0
     @objc dynamic var overview: String = ""
-    @objc dynamic var releaseDate: String?
+    @objc dynamic var releaseDate: Date?
     @objc dynamic var imageURL: String?
 
     var genres: [GenreModel] {
@@ -22,7 +22,7 @@ class FavoriteMovieModel: Object {
     static func create(
         id: Int,
         overview: String,
-        releaseDate: String?,
+        releaseDate: Date?,
         imageURL: String?,
         genreIds: [Int]
     ) {

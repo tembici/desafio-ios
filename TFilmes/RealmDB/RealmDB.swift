@@ -12,9 +12,22 @@ final class RealmDB {
 
     static func configRealm() {
         let config = Realm.Configuration(
-            schemaVersion: 0,
-            migrationBlock: { _, _ in }
-        )
+            schemaVersion: 1,
+            migrationBlock: { migration, oldSchemaVersion in
+
+            if (oldSchemaVersion < 1) {
+                migration.enumerateObjects(
+                    ofType: FavoriteMovieModel.className()
+                ) { oldObject, newObject in
+
+                    guard let releaseDateString = oldObject?["releaseDate"] as? String else { return }
+
+                    if let releaseDate = Date(from: releaseDateString, format: "yyyy-MM-dd") {
+                        newObject!["releaseDate"] = releaseDate
+                    }
+                }
+            }
+        })
 
         Realm.Configuration.defaultConfiguration = config
 

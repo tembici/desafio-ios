@@ -137,7 +137,7 @@ extension MainViewController: MainViewToPresenter {
         let message = NSLocalizedString("main.error.message", comment: "Error message")
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
-        let tryAgainTitle = NSLocalizedString("main.error.try_agin", comment: "Error try again button")
+        let tryAgainTitle = NSLocalizedString("main.error.try_again", comment: "Error try again button")
         let tryAgainAction = UIAlertAction(title: tryAgainTitle, style: .default) { _ in
             self.presenter.tryToGetMoviesTapped()
         }

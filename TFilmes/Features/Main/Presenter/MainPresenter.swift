@@ -43,7 +43,7 @@ final class MainPresenter {
 
 }
 
-// MARK: - MainPresenterToViewProtocol
+// MARK: - MainPresenterToView
 
 extension MainPresenter: MainPresenterToView {
 

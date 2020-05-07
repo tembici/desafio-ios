@@ -31,7 +31,12 @@ final class MovieDetailViewController: UITableViewController {
         self.updateFavoriteColor()
 
         self.titleLabel.text = self.movieToShow?.originalTitle
-        self.yearLabel.text = self.movieToShow?.releaseDate
+        if let releaseData = self.movieToShow?.releaseDate {
+            self.yearLabel.text = String(releaseData.getYear())
+        } else {
+            self.yearLabel.text = ""
+        }
+
         let genres = self.movieToShow?.genres
             .description
             .replacingOccurrences(of: "[", with: "")

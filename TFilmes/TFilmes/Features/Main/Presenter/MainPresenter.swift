@@ -21,7 +21,7 @@ final class MainPresenter {
     }
 
     private var pageToFetch = 0
-    private var Movies: [Movie] = []
+    private var movies: [Movie] = []
 
     private var currentQuery = ""
 
@@ -31,7 +31,7 @@ final class MainPresenter {
     }
 
     private func updateMoviesWithQuery(moviesToUpdate: [Movie]? = nil) {
-        let movies = moviesToUpdate ?? self.Movies
+        let movies = moviesToUpdate ?? self.movies
 
         if self.currentQuery.isEmpty {
             self.view.updateMovies(with: movies)
@@ -68,6 +68,10 @@ extension MainPresenter: MainPresenterToView {
         self.interactor.updateFavoriteState(of: movie)
     }
 
+    func tryToGetMoviesTapped() {
+        self.interactor.fetchMoviesOnApi(with: self.pageToFetch)
+    }
+
 }
 
 // MARK: - MainPresenterToInteractorProtocol
@@ -75,7 +79,11 @@ extension MainPresenter: MainPresenterToView {
 extension MainPresenter: MainPresenterToInteractor {
 
     func didFetchMoviesOnApi(_ Movies: [Movie]) {
-        self.Movies.append(contentsOf: Movies)
+        self.movies.append(contentsOf: Movies)
         self.updateMoviesWithQuery(moviesToUpdate: Movies)
+    }
+
+    func didFailToFetchMovies() {
+        self.view.showErrorState()
     }
 }

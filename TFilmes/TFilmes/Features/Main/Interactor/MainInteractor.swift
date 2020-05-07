@@ -17,7 +17,6 @@ final class MainInteractor {
     }
 
     private let urlPath = "/movie/popular"
-    private let urlString = "https://api.themoviedb.org/3"
 
     private func parsePopularMoviesResponse(_ response: PopularMovieResponse) {
         guard let moviesResponse = response.results else { return }
@@ -47,6 +46,7 @@ extension MainInteractor: MainInteractorToPresenter {
         API.instance.get(path: self.urlPath, query: query) { (data, _, error) in
             if let error = error {
                 debugPrint(error)
+                self.presenter.didFailToFetchMovies()
                 return
             }
 
@@ -57,6 +57,7 @@ extension MainInteractor: MainInteractorToPresenter {
                 self.parsePopularMoviesResponse(res)
             } catch let error {
                 debugPrint(error)
+                self.presenter.didFailToFetchMovies()
             }
         }
     }

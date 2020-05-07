@@ -9,5 +9,6 @@
 protocol MainPresenterToInteractor: class {
 
     func didFetchMoviesOnApi(_ movies: [Movie])
+    func didFailToFetchMovies()
 
 }

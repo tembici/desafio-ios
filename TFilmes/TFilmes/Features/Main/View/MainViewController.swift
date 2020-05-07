@@ -11,6 +11,7 @@ import UIKit
 final class MainViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tryGetMoviesAgainButton: UIButton!
 
     private lazy var presenter: MainPresenterToView = {
         return MainPresenter(view: self)
@@ -40,6 +41,10 @@ final class MainViewController: UIViewController {
         viewController.movieToShow = self.movies[row]
     }
 
+    @IBAction func tryGetMoviesAgainTapped(_ sender: Any) {
+        self.tryGetMoviesAgainButton.isHidden = true
+        self.presenter.tryToGetMoviesTapped()
+    }
 }
 
 extension MainViewController: UISearchBarDelegate {
@@ -85,11 +90,36 @@ extension MainViewController: UICollectionViewDataSource {
 extension MainViewController: MainViewToPresenter {
 
     func updateMovies(with movies: [Movie]) {
+
         self.movies.append(contentsOf: movies)
     }
 
     func removeMovies() {
         self.movies = []
+    }
+
+    func showErrorState() {
+        let title = "Error on get movies"
+        let message = "You can try get movies again"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        let tryAgainTitle = "Try again"
+        let tryAgainAction = UIAlertAction(title: tryAgainTitle, style: .default) { _ in
+            self.presenter.tryToGetMoviesTapped()
+        }
+
+        alert.addAction(tryAgainAction)
+
+        let cancelTitle = "Cancel"
+        let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel) { _ in
+            self.tryGetMoviesAgainButton.isHidden = false
+        }
+
+        alert.addAction(cancelAction)
+
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alert, animated: true)
+        }
     }
 
 }

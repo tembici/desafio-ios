@@ -10,5 +10,6 @@ protocol MainViewToPresenter: class {
 
     func updateMovies(with movies: [Movie])
     func removeMovies()
+    func showErrorState()
 
 }

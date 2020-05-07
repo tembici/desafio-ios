@@ -50,6 +50,7 @@
 		A07CC9602463952A00F08F2C /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A07CC94D2463952900F08F2C /* Montserrat-Light.ttf */; };
 		A07CC9612463952A00F08F2C /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A07CC94E2463952A00F08F2C /* Montserrat-SemiBold.ttf */; };
 		A07CC9632463952A00F08F2C /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = A07CC9502463952A00F08F2C /* OFL.txt */; };
+		A07CC9662463A0FE00F08F2C /* CollorPallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC9652463A0FE00F08F2C /* CollorPallet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		A07CC94D2463952900F08F2C /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		A07CC94E2463952A00F08F2C /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		A07CC9502463952A00F08F2C /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		A07CC9652463A0FE00F08F2C /* CollorPallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollorPallet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,7 @@
 			children = (
 				A07CC9172463890600F08F2C /* ImageViewDownloadFromURL.swift */,
 				A07CC93824638F4800F08F2C /* API.swift */,
+				A07CC9652463A0FE00F08F2C /* CollorPallet.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				A07CC92F2463899E00F08F2C /* MovieDetailInteractor.swift in Sources */,
 				A07CC92D2463899E00F08F2C /* MovieDetailPresenterToView.swift in Sources */,
 				A07CC8AC2463554E00F08F2C /* AppDelegate.swift in Sources */,
+				A07CC9662463A0FE00F08F2C /* CollorPallet.swift in Sources */,
 				A07CC8F1246356C800F08F2C /* MainInteractor.swift in Sources */,
 				A07CC92A2463899E00F08F2C /* MovieDetailViewController.swift in Sources */,
 				A07CC93C2463920700F08F2C /* Movie.swift in Sources */,

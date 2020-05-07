@@ -37,9 +37,9 @@ class MovieCollectionViewCell: UICollectionViewCell {
         self.movie = movie
 
         if movie.favorite {
-            self.favoriteButton.tintColor = UIColor.yellow
+            self.favoriteButton.tintColor = CollorPallet.primary
         } else {
-            self.favoriteButton.tintColor = UIColor.gray
+            self.favoriteButton.tintColor = CollorPallet.gray
         }
 
         self.delegate?.favoriteChanged(movie: movie)

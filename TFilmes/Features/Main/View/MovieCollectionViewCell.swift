@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class MovieCollectionViewCell: UICollectionViewCell {
 
@@ -22,6 +23,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
         self.movie = movie
 
         self.titleLabel.text = movie.originalTitle
+        self.image.showAnimatedGradientSkeleton()
         self.image.load(url: movie.imageURL)
 
         if movie.favorite {

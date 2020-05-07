@@ -29,6 +29,7 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.showAnimatedGradientSkeleton()
         self.presenter.viewDidLoad()
 
         self.collectionView.register(UINib.init(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
@@ -91,6 +92,16 @@ extension MainViewController: MainViewToPresenter {
 
     func updateMovies(with movies: [Movie]) {
         self.movies.append(contentsOf: movies)
+
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.hideSkeleton()
+        }
+
+        if self.movies.count == 0 {
+            // show empty state
+        } else {
+            // hide empty state
+        }
     }
 
     func removeMovies() {

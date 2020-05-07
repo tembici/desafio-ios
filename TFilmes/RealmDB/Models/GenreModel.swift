@@ -38,7 +38,7 @@ class GenreModel: Object {
     static func getBy(id: Int) -> GenreModel? {
         return try! Realm()
             .objects(GenreModel.self)
-            .filter(.filter("id == \(id)"))
+            .filter("id == \(id)")
             .first
     }
 

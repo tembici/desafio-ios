@@ -55,8 +55,8 @@ class FavoriteMovieGenreModel: Object {
 
     static func deleteAll(ofMovieId movieId: Int) {
         let movieGenres = try! Realm()
+            .objects(FavoriteMovieGenreModel.self)
             .filter("movieId == \(movieId)")
-            .filter(query)
 
         let realm = try! Realm()
         try! realm.write {

@@ -6,6 +6,9 @@
   Copyright © 2020 Vandcarlos Mouzinho Sandes Junior. All rights reserved.
 */
 
+"tabs.movies" = "MOVIES";
+"tabs.favorites" = "FAVORIES";
+
 "splash.error.title" = "Error on get genres";
 "splash.error.message" = "You can try get genres again";
 "splash.error.try_again" = "Try again";

@@ -3,20 +3,23 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Movies-->
         <scene sceneID="1iX-Ke-HoK">
             <objects>
-                <tabBarController title="Movies" id="c3d-Yv-XYJ" sceneMemberID="viewController">
+                <tabBarController title="Movies" id="c3d-Yv-XYJ" customClass="TabsViewController" customModule="TFilmes" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Msw-iH-8gq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="primary_color"/>
                     </tabBar>
                     <connections>
                         <segue destination="VZz-lU-ezI" kind="relationship" relationship="viewControllers" id="qZX-Il-kwN"/>
+                        <segue destination="KUe-pw-NZg" kind="relationship" relationship="viewControllers" id="ugh-k0-lHt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4I-gK-g2z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -33,5 +36,20 @@
             </objects>
             <point key="canvasLocation" x="124" y="-250"/>
         </scene>
+        <!--Main-->
+        <scene sceneID="ZGT-h2-9vh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="KUe-pw-NZg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="vUS-bx-aIZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hYj-jR-VkY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="59" y="-76"/>
+        </scene>
     </scenes>
+    <resources>
+        <namedColor name="primary_color">
+            <color red="0.94499999284744263" green="0.80800002813339233" blue="0.4309999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

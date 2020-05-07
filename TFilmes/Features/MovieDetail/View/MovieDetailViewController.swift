@@ -30,7 +30,12 @@ final class MovieDetailViewController: UITableViewController {
         self.imageView.load(url: self.movieToShow?.imageURL)
         self.titleLabel.text = self.movieToShow?.originalTitle
         self.yearLabel.text = self.movieToShow?.releaseDate
-//        self.genresLabel.text = self.movieToShow
+        let genres = self.movieToShow?.genres
+            .description
+            .replacingOccurrences(of: "[", with: "")
+            .replacingOccurrences(of: "]", with: "")
+
+        self.genresLabel.text = genres
         self.overviewLabel.text = self.movieToShow?.overview
 
         if self.movieToShow?.favorite ?? false {

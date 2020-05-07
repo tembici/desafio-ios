@@ -25,13 +25,3 @@ final class RealmDB {
     }
 
 }
-
-extension Array {
-
-    var realmQuery: String {
-        self.description
-        .replacingOccurrences(of: "[", with: "{")
-        .replacingOccurrences(of: "]", with: "}")
-    }
-
-}

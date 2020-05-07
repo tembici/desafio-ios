@@ -18,6 +18,10 @@ struct Movie {
     let imageURL: URL?
     var favorite: Bool
 
+    var genres: [String] {
+        return GenreModel.find(byIdIn: self.genreIds).compactMap { $0.name }
+    }
+
     init(movieResponse: MovieResponse, imageURL: URL?, favorite: Bool) {
         self.id = movieResponse.id
         self.overview = movieResponse.overview

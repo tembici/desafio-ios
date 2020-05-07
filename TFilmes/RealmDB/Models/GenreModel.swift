@@ -42,4 +42,13 @@ class GenreModel: Object {
             .first
     }
 
+    static func find(byIdIn ids: [Int]) -> [GenreModel] {
+        let query = NSPredicate(format: "id IN %@", ids)
+
+        return try! Realm()
+            .objects(GenreModel.self)
+            .filter(query)
+            .compactMap { $0 }
+    }
+
 }

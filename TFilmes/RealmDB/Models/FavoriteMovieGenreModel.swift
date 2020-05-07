@@ -43,7 +43,7 @@ class FavoriteMovieGenreModel: Object {
     }
 
     static func getMoviesIds(ofGenreIds genreIds: [Int]) -> Set<Int> {
-        let query = NSPredicate(format: "genreId in %@", genreIds.realmQuery)
+        let query = NSPredicate(format: "genreId IN %@", genreIds)
 
         let moviesId = try! Realm()
             .objects(FavoriteMovieGenreModel.self)

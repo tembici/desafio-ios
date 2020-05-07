@@ -8,22 +8,40 @@
 
 import UIKit
 
-final class MovieDetailViewController: UIViewController {
+final class MovieDetailViewController: UITableViewController {
 
     private lazy var presenter: MovieDetailPresenterToView = {
         return MovieDetailPresenter(view: self)
     }()
 
-    @IBOutlet weak var movieTitleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var genresLabel: UILabel!
+    @IBOutlet weak var overviewLabel: UILabel!
 
     var movieToShow: Movie?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.viewDidLoad()
-        self.movieTitleLabel.text = self.movieToShow?.originalTitle
+        self.imageView.showAnimatedGradientSkeleton()
+        self.imageView.load(url: self.movieToShow?.imageURL)
+        self.titleLabel.text = self.movieToShow?.originalTitle
+        self.yearLabel.text = self.movieToShow?.releaseDate
+//        self.genresLabel.text = self.movieToShow
+        self.overviewLabel.text = self.movieToShow?.overview
+
+        if self.movieToShow?.favorite ?? false {
+            self.favoriteButton.tintColor = CollorPallet.primary
+        } else {
+            self.favoriteButton.tintColor = CollorPallet.gray
+        }
     }
 
+    @IBAction func favoriteButtonTapped(_ sender: Any) {
+    }
 }
 
 // MARK: - MovieDetailViewToPresenter

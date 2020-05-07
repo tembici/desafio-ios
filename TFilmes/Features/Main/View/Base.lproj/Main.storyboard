@@ -48,6 +48,10 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="itv-R4-SGh"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mT6-gt-l37" userLabel="Empty State">
+                                <rect key="frame" x="20" y="61" width="335" height="606"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                             <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2I-XT-jR7">
                                 <rect key="frame" x="10" y="622" width="355" height="40"/>
                                 <color key="backgroundColor" name="text_color"/>
@@ -71,7 +75,10 @@
                         <color key="backgroundColor" name="background_color"/>
                         <constraints>
                             <constraint firstItem="S2I-XT-jR7" firstAttribute="bottom" secondItem="kvQ-kB-GxV" secondAttribute="bottom" constant="-5" id="1qj-zX-Hkl"/>
+                            <constraint firstItem="mT6-gt-l37" firstAttribute="leading" secondItem="kvQ-kB-GxV" secondAttribute="leading" id="4dZ-pG-x9U"/>
                             <constraint firstItem="jjF-01-Vxr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5kO-1G-zTT"/>
+                            <constraint firstItem="mT6-gt-l37" firstAttribute="trailing" secondItem="kvQ-kB-GxV" secondAttribute="trailing" id="AWW-Mm-KOG"/>
+                            <constraint firstItem="mT6-gt-l37" firstAttribute="top" secondItem="kvQ-kB-GxV" secondAttribute="top" id="FK7-yi-H55"/>
                             <constraint firstItem="S2I-XT-jR7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="GWE-Kc-rMe"/>
                             <constraint firstItem="kvQ-kB-GxV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JX3-rD-Pqs"/>
                             <constraint firstItem="kvQ-kB-GxV" firstAttribute="top" secondItem="jjF-01-Vxr" secondAttribute="bottom" constant="5" id="Qlu-6Q-jdw"/>
@@ -80,6 +87,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kvQ-kB-GxV" secondAttribute="trailing" constant="20" id="Y2n-KG-4Uh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kvQ-kB-GxV" secondAttribute="bottom" id="bwK-V8-RUb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S2I-XT-jR7" secondAttribute="trailing" constant="10" id="nLc-7J-0Qx"/>
+                            <constraint firstItem="mT6-gt-l37" firstAttribute="bottom" secondItem="kvQ-kB-GxV" secondAttribute="bottom" id="rOE-yu-qNl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

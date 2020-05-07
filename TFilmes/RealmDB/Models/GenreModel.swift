@@ -36,11 +36,9 @@ class GenreModel: Object {
     }
 
     static func getBy(id: Int) -> GenreModel? {
-        let query = NSPredicate(format: "id = %@", id)
-
         return try! Realm()
             .objects(GenreModel.self)
-            .filter(query)
+            .filter(.filter("id == \(id)"))
             .first
     }
 

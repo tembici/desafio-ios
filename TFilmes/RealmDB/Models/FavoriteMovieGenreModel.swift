@@ -36,11 +36,9 @@ class FavoriteMovieGenreModel: Object {
     }
 
     static func getAll(WithMovieId movieId: Int) -> [FavoriteMovieGenreModel] {
-        let query = NSPredicate(format: "movieId = %@", movieId)
-
         return try! Realm()
             .objects(FavoriteMovieGenreModel.self)
-            .filter(query)
+            .filter("movieId == \(movieId)")
             .compactMap { $0 }
     }
 
@@ -56,10 +54,8 @@ class FavoriteMovieGenreModel: Object {
     }
 
     static func deleteAll(ofMovieId movieId: Int) {
-        let query = NSPredicate(format: "movieId = %@", movieId)
-
         let movieGenres = try! Realm()
-            .objects(FavoriteMovieGenreModel.self)
+            .filter("movieId == \(movieId)")
             .filter(query)
 
         let realm = try! Realm()

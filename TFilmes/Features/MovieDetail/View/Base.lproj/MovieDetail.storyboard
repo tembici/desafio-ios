@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Movie Detail View Controller-->
+        <!--About-->
         <scene sceneID="lD2-N6-BwZ">
             <objects>
-                <tableViewController id="Cpo-xF-vaO" customClass="MovieDetailViewController" customModule="TFilmes" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="About" id="Cpo-xF-vaO" customClass="MovieDetailViewController" customModule="TFilmes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qZg-Zl-wui">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

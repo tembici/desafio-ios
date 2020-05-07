@@ -21,13 +21,15 @@ final class MovieDetailViewController: UITableViewController {
     @IBOutlet weak var genresLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
 
+    weak var delegate: MovieDetailDelegate?
     var movieToShow: Movie?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter.viewDidLoad()
-        self.imageView.showAnimatedGradientSkeleton()
-        self.imageView.load(url: self.movieToShow?.imageURL)
+
+        self.updateImage()
+        self.updateFavoriteColor()
+
         self.titleLabel.text = self.movieToShow?.originalTitle
         self.yearLabel.text = self.movieToShow?.releaseDate
         let genres = self.movieToShow?.genres
@@ -38,7 +40,20 @@ final class MovieDetailViewController: UITableViewController {
 
         self.genresLabel.text = genres
         self.overviewLabel.text = self.movieToShow?.overview
+    }
 
+    @IBAction func favoriteButtonTapped(_ sender: Any) {
+        guard let movie = self.movieToShow else { return }
+        movie.favorite = !movie.favorite
+        self.movieToShow = movie
+
+        self.updateFavoriteColor()
+        self.presenter.favoriteButtonTapped()
+
+        self.delegate?.favoriteChanged(movie: movie)
+    }
+
+    private func updateFavoriteColor() {
         if self.movieToShow?.favorite ?? false {
             self.favoriteButton.tintColor = CollorPallet.primary
         } else {
@@ -46,12 +61,27 @@ final class MovieDetailViewController: UITableViewController {
         }
     }
 
-    @IBAction func favoriteButtonTapped(_ sender: Any) {
+    private func updateImage() {
+        if let image = self.movieToShow?.image {
+            self.imageView.image = image
+        } else {
+            self.imageView.showAnimatedGradientSkeleton()
+            self.movieToShow?.getImage { image in
+                DispatchQueue.main.async { [weak self] in
+                    self?.imageView.image = image
+                    self?.imageView.hideSkeleton()
+                }
+            }
+        }
     }
 }
 
 // MARK: - MovieDetailViewToPresenter
 
 extension MovieDetailViewController: MovieDetailViewToPresenter {
+
+    var movie: Movie? {
+        self.movieToShow
+    }
 
 }

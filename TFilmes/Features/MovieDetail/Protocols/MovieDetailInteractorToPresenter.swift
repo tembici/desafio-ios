@@ -8,4 +8,6 @@
 
 protocol MovieDetailInteractorToPresenter: class {
 
+    func updateFavoriteState(of movie: Movie)
+
 }

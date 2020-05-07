@@ -13,7 +13,7 @@ protocol MainPresenterToView: class {
     func viewDidLoad()
     func fetchMoreMovies()
     func filterMovies(with query: String?)
-    func favoriteChanged(movie: Movie, imageData: Data?)
+    func favoriteChanged(movie: Movie)
     func tryToGetMoviesTapped()
 
 }

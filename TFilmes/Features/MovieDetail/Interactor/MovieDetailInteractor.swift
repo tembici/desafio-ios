@@ -22,4 +22,20 @@ final class MovieDetailInteractor {
 
 extension MovieDetailInteractor: MovieDetailInteractorToPresenter {
 
+    func updateFavoriteState(of movie: Movie) {
+        if movie.favorite {
+            let imageURL = MovieLocalImage.save(imageData: movie.image?.pngData(), imageURL: movie.imageURL)
+            FavoriteMovieModel.create(
+                id: movie.id,
+                overview: movie.overview,
+                releaseDate: movie.releaseDate,
+                imageURL: imageURL,
+                genreIds: movie.genreIds
+            )
+        } else {
+            MovieLocalImage.delete(imageURL: movie.imageURL)
+            FavoriteMovieModel.deleteBy(id: movie.id)
+        }
+    }
+
 }

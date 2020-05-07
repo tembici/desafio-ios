@@ -37,6 +37,7 @@ final class MainViewController: UIViewController {
         guard let viewController = segue.destination as? MovieDetailViewController else { return }
 
         viewController.movieToShow = self.movies[row]
+        viewController.delegate = self
     }
 
     @IBAction func tryGetMoviesAgainTapped(_ sender: Any) {
@@ -157,14 +158,29 @@ extension MainViewController: MainViewToPresenter {
 
 }
 
+// MARK: - MovieColletionViewCellDelegate
+
 extension MainViewController: MovieColletionViewCellDelegate {
 
-    func favoriteChanged(movie: Movie, imageData: Data?) {
+    func favoriteButtonTapped(movie: Movie) {
         if let currentMovieIndex = self.movies.firstIndex(where: { $0.id == movie.id }) {
             self.movies[currentMovieIndex].favorite = movie.favorite
         }
 
-        self.presenter.favoriteChanged(movie: movie, imageData: imageData)
+        self.presenter.favoriteChanged(movie: movie)
+    }
+
+}
+
+// MARK: - MovieDetailDelegate
+
+extension MainViewController: MovieDetailDelegate {
+
+    func favoriteChanged(movie: Movie) {
+        if let currentMovieIndex = self.movies.firstIndex(where: { $0.id == movie.id }) {
+            self.movies[currentMovieIndex].favorite = movie.favorite
+        }
+        self.collectionView.reloadData()
     }
 
 }

@@ -8,4 +8,6 @@
 
 protocol MovieDetailViewToPresenter: class {
 
+    var movie: Movie? { get }
+
 }

@@ -23,28 +23,40 @@ class MovieCollectionViewCell: UICollectionViewCell {
         self.movie = movie
 
         self.titleLabel.text = movie.originalTitle
-        self.imageView.showAnimatedGradientSkeleton()
-        self.imageView.load(url: movie.imageURL)
-
-        if movie.favorite {
-            self.favoriteButton.tintColor = UIColor.yellow
-        } else {
-            self.favoriteButton.tintColor = UIColor.gray
-        }
+        self.updateImage()
+        self.updateFavoriteColor()
     }
 
     @IBAction func favoriteTapped(_ sender: Any) {
-        guard var movie = self.movie else { return }
+        guard let movie = self.movie else { return }
         movie.favorite = !movie.favorite
         self.movie = movie
 
-        if movie.favorite {
+        self.updateFavoriteColor()
+
+        self.delegate?.favoriteButtonTapped(movie: movie)
+    }
+
+    private func updateImage() {
+        if let image = self.movie?.image {
+            self.imageView.image = image
+        } else {
+            self.imageView.showAnimatedGradientSkeleton()
+            self.movie?.getImage { image in
+                DispatchQueue.main.async { [weak self] in
+                    self?.imageView.image = image
+                    self?.imageView.hideSkeleton()
+                }
+            }
+        }
+    }
+
+    private func updateFavoriteColor() {
+        if self.movie?.favorite ?? false {
             self.favoriteButton.tintColor = CollorPallet.primary
         } else {
             self.favoriteButton.tintColor = CollorPallet.gray
         }
-
-        self.delegate?.favoriteChanged(movie: movie, imageData: self.imageView.image?.pngData())
     }
 
 }

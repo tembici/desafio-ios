@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-struct Movie {
+class Movie {
 
     let id: Int
     let overview: String
@@ -17,6 +18,8 @@ struct Movie {
     let originalTitle: String
     let imageURL: URL?
     var favorite: Bool
+
+    var image: UIImage?
 
     var genres: [String] {
         return GenreModel.find(byIdIn: self.genreIds).compactMap { $0.name }
@@ -31,6 +34,29 @@ struct Movie {
 
         self.imageURL = imageURL
         self.favorite = favorite
+    }
+
+    func getImage(completion: @escaping ((_ image: UIImage?) -> Void)) {
+        if let image = self.image {
+            completion(image)
+        } else {
+            self.downloadImage(completion: completion)
+        }
+    }
+
+    private func downloadImage(completion: @escaping ((_ image: UIImage?) -> Void)) {
+        DispatchQueue.global().async { [self] in
+            guard let imageURL = self.imageURL,
+                let data = try? Data(contentsOf: imageURL),
+                let image = UIImage(data: data)
+                else {
+                    completion(nil)
+                    return
+                }
+
+            self.image = image
+            completion(image)
+        }
     }
 
 }

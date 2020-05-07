@@ -11,6 +11,6 @@ import Foundation
 protocol MainInteractorToPresenter: class {
 
     func fetchMoviesOnApi(with page: Int)
-    func updateFavoriteState(of movie: Movie, imageData: Data?)
+    func updateFavoriteState(of movie: Movie)
 
 }

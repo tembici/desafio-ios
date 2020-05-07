@@ -26,8 +26,9 @@ final class MovieDetailPresenter {
 
 extension MovieDetailPresenter: MovieDetailPresenterToView {
 
-    func viewDidLoad() {
-
+    func favoriteButtonTapped() {
+        guard let movie = self.view.movie else { return }
+        self.interactor.updateFavoriteState(of: movie)
     }
 
 }

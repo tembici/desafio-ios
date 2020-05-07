@@ -63,8 +63,8 @@ extension MainPresenter: MainPresenterToView {
         self.updateMoviesWithQuery()
     }
 
-    func favoriteChanged(movie: Movie, imageData: Data?) {
-        self.interactor.updateFavoriteState(of: movie, imageData: imageData)
+    func favoriteChanged(movie: Movie) {
+        self.interactor.updateFavoriteState(of: movie)
     }
 
     func tryToGetMoviesTapped() {

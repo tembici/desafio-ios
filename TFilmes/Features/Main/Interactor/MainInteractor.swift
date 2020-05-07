@@ -67,9 +67,9 @@ extension MainInteractor: MainInteractorToPresenter {
         }
     }
 
-    func updateFavoriteState(of movie: Movie, imageData: Data?) {
+    func updateFavoriteState(of movie: Movie) {
         if movie.favorite {
-            let imageURL = MovieLocalImage.save(imageData: imageData, imageURL: movie.imageURL)
+            let imageURL = MovieLocalImage.save(imageData: movie.image?.pngData(), imageURL: movie.imageURL)
             FavoriteMovieModel.create(
                 id: movie.id,
                 overview: movie.overview,

@@ -8,6 +8,6 @@
 
 protocol MovieDetailPresenterToView: class {
 
-    func viewDidLoad()
+    func favoriteButtonTapped()
 
 }

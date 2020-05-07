@@ -50,6 +50,10 @@ final class MainViewController: UIViewController {
 
 extension MainViewController: UISearchBarDelegate {
 
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.view.endEditing(true)
+    }
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.presenter.filterMovies(with: searchBar.text)
     }

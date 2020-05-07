@@ -15,6 +15,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Hqj-9D-XVP" kind="relationship" relationship="rootViewController" id="5Nk-KW-o0j"/>

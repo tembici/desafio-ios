@@ -36,7 +36,7 @@ extension MainPresenterTests {
 
     func testGetDataFromAPI() throws {
         let currentMovies = self.viewToPresenter.movies.count
-        self.viewToPresenter.completion = {
+        self.viewToPresenter.updateMoviesCompletion = {
             XCTAssertGreaterThan(self.viewToPresenter.movies.count, currentMovies)
         }
 
@@ -44,10 +44,10 @@ extension MainPresenterTests {
     }
 
     func testGetMoreDataFromAPI() throws {
-        self.viewToPresenter.completion = {
+        self.viewToPresenter.updateMoviesCompletion = {
             let current = self.viewToPresenter.movies.count
 
-            self.viewToPresenter.completion = {
+            self.viewToPresenter.updateMoviesCompletion = {
                 XCTAssertFalse(self.viewToPresenter.hasError)
                 XCTAssertGreaterThan(self.viewToPresenter.movies.count, current)
             }
@@ -59,42 +59,53 @@ extension MainPresenterTests {
         self.presenter.viewDidLoad()
     }
 
-    func testFilterMovies() throws {
-        self.viewToPresenter.completion = {
-            let movie = self.viewToPresenter.movies[0]
-
-            self.viewToPresenter.completion = {
-                XCTAssertFalse(self.viewToPresenter.hasError)
-                XCTAssertGreaterThan(self.viewToPresenter.movies.count, 0)
-                XCTAssertNotNil(self.viewToPresenter.movies.first(where: { $0.id == movie.id }))
-            }
-
-            self.presenter.filterMovies(with: movie.originalTitle)
-        }
-
-        self.presenter.viewDidLoad()
-    }
-
-    func testFilterMovieNotExists() throws {
-        self.viewToPresenter.completion = {
-            self.viewToPresenter.completion = {
-                XCTAssertFalse(self.viewToPresenter.hasError)
-                XCTAssertEqual(self.viewToPresenter.movies.count, 0)
-            }
-
-            self.presenter.filterMovies(with: "This film not exists")
-        }
-
-        self.presenter.viewDidLoad()
-    }
-
     func testTryToGetMoreMoviesWithSamePage() throws {
         let currentMovies = self.viewToPresenter.movies.count
-        self.viewToPresenter.completion = {
+        self.viewToPresenter.updateMoviesCompletion = {
             XCTAssertGreaterThan(self.viewToPresenter.movies.count, currentMovies)
         }
 
         self.presenter.tryToGetMoviesTapped()
+    }
+
+    func testFilterMovies() throws {
+        let fakeMovies = FakerMovie.generate(quantity: 10)
+        let anyMovie = fakeMovies[3]
+
+        self.viewToPresenter.updateMoviesCompletion = {
+            self.viewToPresenter.updateMoviesCompletion = {
+                XCTAssertFalse(self.viewToPresenter.hasError)
+                let movie = self.viewToPresenter.movies.first(where: { $0.id == anyMovie.id })
+                XCTAssertNotNil(movie)
+            }
+
+            self.presenter.filterMovies(with: anyMovie.originalTitle)
+
+        }
+
+
+        self.presenter.didFetchMoviesOnApi(fakeMovies)
+    }
+
+    func testFilterMovieNotExists() throws {
+        let fakeMovie = FakerMovie.generate()
+
+        self.viewToPresenter.updateMoviesCompletion = {
+            self.viewToPresenter.updateMoviesCompletion = {
+                XCTAssertFalse(self.viewToPresenter.hasError)
+                XCTAssertEqual(self.viewToPresenter.movies.count, 0)
+            }
+
+            self.presenter.filterMovies(with: "\(fakeMovie.originalTitle) test")
+        }
+    }
+
+    func testErrorIsCalled() throws {
+        self.viewToPresenter.showErrorStateCompletion = {
+            XCTAssertTrue(self.viewToPresenter.hasError)
+        }
+
+        self.presenter.didFailToFetchMovies()
     }
 
 }
@@ -106,21 +117,23 @@ extension MainPresenterTests {
         var movies: [Movie] = []
         var hasError: Bool = false
 
-        var completion: (() -> ())?
+        var updateMoviesCompletion: (() -> ())?
+        var removeMoviesCompletion: (() -> ())?
+        var showErrorStateCompletion: (() -> ())?
 
         func updateMovies(with movies: [Movie]) {
             self.movies = movies
-            self.completion?()
+            self.updateMoviesCompletion?()
         }
 
         func removeMovies() {
             self.movies = []
-            self.completion?()
+            self.removeMoviesCompletion?()
         }
 
         func showErrorState() {
             self.hasError = true
-            self.completion?()
+            self.showErrorStateCompletion?()
         }
 
     }

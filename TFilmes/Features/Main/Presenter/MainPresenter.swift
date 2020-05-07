@@ -36,7 +36,12 @@ final class MainPresenter {
         if self.currentQuery.isEmpty {
             self.view.updateMovies(with: movies)
         } else {
-            let movies = movies.filter { $0.originalTitle.lowercased().contains(self.currentQuery)}
+            let movies = movies.filter {
+                $0.originalTitle
+                    .trimmingCharacters(in: .whitespacesAndNewlines)
+                    .lowercased()
+                    .contains(self.currentQuery)
+            }
             self.view.updateMovies(with: movies)
         }
     }

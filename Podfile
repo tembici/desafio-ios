@@ -9,6 +9,7 @@ target 'TFilmes' do
 
   pod 'RealmSwift'
   pod 'SkeletonView'
+  pod 'Fakery'
 
   target 'TFilmesTests' do
     inherit! :search_paths

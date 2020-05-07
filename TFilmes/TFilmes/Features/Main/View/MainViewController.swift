@@ -16,7 +16,7 @@ final class MainViewController: UIViewController {
         return MainPresenter(view: self)
     }()
 
-    private var mainMovies: [MainMovie] = [] {
+    private var movies: [Movie] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -34,10 +34,10 @@ final class MainViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let row = self.rowTapped, row < self.mainMovies.count else { return }
+        guard let row = self.rowTapped, row < self.movies.count else { return }
         guard let viewController = segue.destination as? MovieDetailViewController else { return }
 
-        viewController.movieToShow = self.mainMovies[row]
+        viewController.movieToShow = self.movies[row]
     }
 
 }
@@ -45,7 +45,7 @@ final class MainViewController: UIViewController {
 extension MainViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.presenter.filterMainMovies(with: searchBar.text)
+        self.presenter.filterMovies(with: searchBar.text)
     }
 
 }
@@ -62,16 +62,16 @@ extension MainViewController: UICollectionViewDelegate {
 extension MainViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.mainMovies.count
+        return self.movies.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath as IndexPath) as! MovieCollectionViewCell
 
-        cell.updateData(with: self.mainMovies[indexPath.row])
+        cell.updateData(with: self.movies[indexPath.row])
         cell.delegate = self
 
-        if indexPath.row == self.mainMovies.count - 1 {
+        if indexPath.row == self.movies.count - 1 {
             self.presenter.fetchMoreMovies()
         }
 
@@ -84,20 +84,20 @@ extension MainViewController: UICollectionViewDataSource {
 
 extension MainViewController: MainViewToPresenter {
 
-    func updateMovies(with mainMovies: [MainMovie]) {
-        self.mainMovies.append(contentsOf: mainMovies)
+    func updateMovies(with movies: [Movie]) {
+        self.movies.append(contentsOf: movies)
     }
 
     func removeMovies() {
-        self.mainMovies = []
+        self.movies = []
     }
 
 }
 
 extension MainViewController: MovieColletionViewCellDelegate {
 
-    func favoriteChanged(mainMovie: MainMovie) {
-        self.presenter.favoriteChanged(mainMovie: mainMovie)
+    func favoriteChanged(movie: Movie) {
+        self.presenter.favoriteChanged(movie: movie)
     }
 
 }

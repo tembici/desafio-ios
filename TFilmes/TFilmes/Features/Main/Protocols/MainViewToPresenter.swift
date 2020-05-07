@@ -8,7 +8,7 @@
 
 protocol MainViewToPresenter: class {
 
-    func updateMovies(with mainMovies: [MainMovie])
+    func updateMovies(with movies: [Movie])
     func removeMovies()
 
 }

@@ -10,7 +10,7 @@ protocol MainPresenterToView: class {
 
     func viewDidLoad()
     func fetchMoreMovies()
-    func filterMainMovies(with query: String?)
-    func favoriteChanged(mainMovie: MainMovie)
+    func filterMovies(with query: String?)
+    func favoriteChanged(movie: Movie)
 
 }

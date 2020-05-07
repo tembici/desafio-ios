@@ -8,6 +8,6 @@
 
 protocol MainPresenterToInteractor: class {
 
-    func didFetchMoviesOnApi(_ mainMovies: [MainMovie])
+    func didFetchMoviesOnApi(_ movies: [Movie])
 
 }

@@ -16,7 +16,7 @@ final class MovieDetailViewController: UIViewController {
 
     @IBOutlet weak var movieTitleLabel: UILabel!
 
-    var movieToShow: MainMovie?
+    var movieToShow: Movie?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -14,17 +14,17 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
 
-    private var mainMovie: MainMovie?
+    private var movie: Movie?
 
     weak var delegate: MovieColletionViewCellDelegate?
 
-    func updateData(with mainMovie: MainMovie) {
-        self.mainMovie = mainMovie
+    func updateData(with movie: Movie) {
+        self.movie = movie
 
-        self.titleLabel.text = mainMovie.originalTitle
-        self.image.load(url: mainMovie.imageURL)
+        self.titleLabel.text = movie.originalTitle
+        self.image.load(url: movie.imageURL)
 
-        if mainMovie.favorite {
+        if movie.favorite {
             self.favoriteButton.tintColor = UIColor.yellow
         } else {
             self.favoriteButton.tintColor = UIColor.gray
@@ -32,17 +32,17 @@ class MovieCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func favoriteTapped(_ sender: Any) {
-        guard var mainMovie = self.mainMovie else { return }
-        mainMovie.favorite = !mainMovie.favorite
-        self.mainMovie = mainMovie
+        guard var movie = self.movie else { return }
+        movie.favorite = !movie.favorite
+        self.movie = movie
 
-        if mainMovie.favorite {
+        if movie.favorite {
             self.favoriteButton.tintColor = UIColor.yellow
         } else {
             self.favoriteButton.tintColor = UIColor.gray
         }
 
-        self.delegate?.favoriteChanged(mainMovie: mainMovie)
+        self.delegate?.favoriteChanged(movie: movie)
     }
 
 }

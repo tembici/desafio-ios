@@ -21,7 +21,7 @@ final class MainPresenter {
     }
 
     private var pageToFetch = 0
-    private var mainMovies: [MainMovie] = []
+    private var Movies: [Movie] = []
 
     private var currentQuery = ""
 
@@ -30,15 +30,15 @@ final class MainPresenter {
         self.interactor.fetchMoviesOnApi(with: self.pageToFetch)
     }
 
-    private func updateMoviesWithQuery(moviesToUpdate: [MainMovie]? = nil) {
-        let movies = moviesToUpdate ?? self.mainMovies
+    private func updateMoviesWithQuery(moviesToUpdate: [Movie]? = nil) {
+        let movies = moviesToUpdate ?? self.Movies
 
         if self.currentQuery.isEmpty {
             self.view.updateMovies(with: movies)
         } else {
-            let mainMovies = movies.filter { $0.originalTitle.lowercased().contains(self.currentQuery)}
-            guard mainMovies.count > 0 else { return }
-            self.view.updateMovies(with: mainMovies)
+            let Movies = movies.filter { $0.originalTitle.lowercased().contains(self.currentQuery)}
+            guard Movies.count > 0 else { return }
+            self.view.updateMovies(with: Movies)
         }
     }
 
@@ -56,7 +56,7 @@ extension MainPresenter: MainPresenterToView {
         self.fetchMovies()
     }
 
-    func filterMainMovies(with query: String?) {
+    func filterMovies(with query: String?) {
         guard let queryToFetch = query else { return }
 
         self.currentQuery = queryToFetch.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
@@ -64,8 +64,8 @@ extension MainPresenter: MainPresenterToView {
         self.updateMoviesWithQuery()
     }
 
-    func favoriteChanged(mainMovie: MainMovie) {
-        self.interactor.updateFavoriteState(of: mainMovie)
+    func favoriteChanged(movie: Movie) {
+        self.interactor.updateFavoriteState(of: movie)
     }
 
 }
@@ -74,8 +74,8 @@ extension MainPresenter: MainPresenterToView {
 
 extension MainPresenter: MainPresenterToInteractor {
 
-    func didFetchMoviesOnApi(_ mainMovies: [MainMovie]) {
-        self.mainMovies.append(contentsOf: mainMovies)
-        self.updateMoviesWithQuery(moviesToUpdate: mainMovies)
+    func didFetchMoviesOnApi(_ Movies: [Movie]) {
+        self.Movies.append(contentsOf: Movies)
+        self.updateMoviesWithQuery(moviesToUpdate: Movies)
     }
 }

@@ -20,23 +20,17 @@ final class MainInteractor {
     private let urlString = "https://api.themoviedb.org/3"
 
     private func parsePopularMoviesResponse(_ response: PopularMovieResponse) {
-        guard let movies = response.results else { return }
+        guard let moviesResponse = response.results else { return }
 
-        var mainMovies: [MainMovie] = []
+        var movies: [Movie] = []
 
-        for movie in movies {
-            let imageURL = self.generateImageURL(with: movie.poster_path)
+        for movieResponse in moviesResponse {
+            let imageURL = API.instance.generateImageURL(path: movieResponse.poster_path)
 
-            mainMovies.append(MainMovie(movieResponse: movie, imageURL: imageURL, favorite: false))
+            movies.append(Movie(movieResponse: movieResponse, imageURL: imageURL, favorite: false))
         }
 
-        self.presenter.didFetchMoviesOnApi(mainMovies)
-    }
-
-    private func generateImageURL(with posterPath: String?) -> URL? {
-        guard let posterPath = posterPath else { return nil }
-        let imageBase = "https://image.tmdb.org/t/p/w185"
-        return URL(string: "\(imageBase)\(posterPath)")
+        self.presenter.didFetchMoviesOnApi(movies)
     }
 
 }
@@ -46,16 +40,11 @@ final class MainInteractor {
 extension MainInteractor: MainInteractorToPresenter {
 
     func fetchMoviesOnApi(with page: Int) {
-        guard var urlComponenet = URLComponents(string: "\(self.urlString)\(self.urlPath)") else { return }
-
-        urlComponenet.queryItems = [
-            URLQueryItem(name: "api_key", value: "38187d3597431e7cbcc9a5985aacf2cc"),
+        let query = [
             URLQueryItem(name: "page", value: String(page))
         ]
-
-        guard let url = urlComponenet.url else { return }
-
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
+    
+        API.instance.get(path: self.urlPath, query: query) { (data, _, error) in
             if let error = error {
                 debugPrint(error)
                 return
@@ -69,13 +58,11 @@ extension MainInteractor: MainInteractorToPresenter {
             } catch let error {
                 debugPrint(error)
             }
-
-
-        }.resume()
+        }
     }
 
-    func updateFavoriteState(of mainMovie: MainMovie) {
-        if mainMovie.favorite {
+    func updateFavoriteState(of movie: Movie) {
+        if movie.favorite {
             // Create in DB
         } else {
             // Remove from DB

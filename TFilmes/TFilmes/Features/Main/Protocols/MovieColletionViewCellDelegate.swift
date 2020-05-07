@@ -10,6 +10,6 @@ import Foundation
 
 protocol MovieColletionViewCellDelegate: class {
 
-    func favoriteChanged(mainMovie: MainMovie)
+    func favoriteChanged(movie: Movie)
 
 }

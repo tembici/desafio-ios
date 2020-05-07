@@ -1,5 +1,5 @@
 //
-//  MainMovie.swift
+//  Movie.swift
 //  TFilmes
 //
 //  Created by Vandcarlos Mouzinho Sandes Junior on 06/05/20.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-
-struct MainMovie {
+struct Movie {
 
     let id: Int
     let overview: String

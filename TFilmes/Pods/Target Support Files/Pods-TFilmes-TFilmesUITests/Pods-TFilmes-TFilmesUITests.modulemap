@@ -1,6 +1,0 @@
-framework module Pods_TFilmes_TFilmesUITests {
-  umbrella header "Pods-TFilmes-TFilmesUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

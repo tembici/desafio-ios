@@ -29,6 +29,7 @@ final class MovieDetailViewController: UITableViewController {
 
         self.updateImage()
         self.updateFavoriteColor()
+        self.imageView.image = movieToShow?.image
 
         self.titleLabel.text = self.movieToShow?.originalTitle
         if let releaseData = self.movieToShow?.releaseDate {
@@ -67,17 +68,7 @@ final class MovieDetailViewController: UITableViewController {
     }
 
     private func updateImage() {
-        if let image = self.movieToShow?.image {
-            self.imageView.image = image
-        } else {
-            self.imageView.showAnimatedGradientSkeleton()
-            self.movieToShow?.getImage { image in
-                DispatchQueue.main.async { [weak self] in
-                    self?.imageView.image = image
-                    self?.imageView.hideSkeleton()
-                }
-            }
-        }
+
     }
 }
 

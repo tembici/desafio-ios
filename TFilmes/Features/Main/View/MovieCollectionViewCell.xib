@@ -25,14 +25,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="160" height="220"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hwx-SB-why">
-                                <rect key="frame" x="0.0" y="0.0" width="160" height="190"/>
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="189"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="189" id="5bf-j9-BtL"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyg-hq-tDr">
-                                <rect key="frame" x="2" y="195" width="156" height="20"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyg-hq-tDr">
+                                <rect key="frame" x="2" y="194" width="156" height="21"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <color key="textColor" name="white_color"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -57,7 +60,7 @@
                             <constraint firstAttribute="trailing" secondItem="Hwx-SB-why" secondAttribute="trailing" id="WWA-Du-Sl7"/>
                             <constraint firstItem="Hwx-SB-why" firstAttribute="top" secondItem="FkX-Z0-T3j" secondAttribute="top" id="ZjH-Gm-oNH"/>
                             <constraint firstAttribute="trailing" secondItem="Uyg-hq-tDr" secondAttribute="trailing" constant="2" id="e20-DM-7Jp"/>
-                            <constraint firstItem="Uyg-hq-tDr" firstAttribute="top" secondItem="Hwx-SB-why" secondAttribute="bottom" constant="5" id="g8S-o3-5K4"/>
+                            <constraint firstItem="Uyg-hq-tDr" firstAttribute="top" secondItem="Hwx-SB-why" secondAttribute="bottom" priority="999" constant="5" id="g8S-o3-5K4"/>
                             <constraint firstAttribute="bottom" secondItem="Uyg-hq-tDr" secondAttribute="bottom" constant="5" id="hhF-te-ZFw"/>
                             <constraint firstItem="sq9-Am-bih" firstAttribute="top" secondItem="Hwx-SB-why" secondAttribute="top" id="ula-I1-kBd"/>
                         </constraints>
@@ -71,6 +74,9 @@
                 <constraint firstAttribute="top" secondItem="FkX-Z0-T3j" secondAttribute="top" id="k2s-OA-2SD"/>
             </constraints>
             <size key="customSize" width="194" height="242"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="favoriteButton" destination="sq9-Am-bih" id="2SD-um-Jgs"/>
                 <outlet property="imageView" destination="Hwx-SB-why" id="Hbx-Fv-8ZE"/>

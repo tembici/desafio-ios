@@ -24,12 +24,13 @@ extension MovieDetailInteractor: MovieDetailInteractorToPresenter {
 
     func updateFavoriteState(of movie: Movie) {
         if movie.favorite {
-            let imageURL = MovieLocalImage.save(imageData: movie.image?.pngData(), imageURL: movie.imageURL)
+            let imageName = MovieLocalImage.save(imageData: movie.image?.pngData(), imageURL: movie.imageURL)
             FavoriteMovieModel.create(
                 id: movie.id,
+                originalTitle: movie.originalTitle,
                 overview: movie.overview,
                 releaseDate: movie.releaseDate,
-                imageURL: imageURL,
+                imageName: imageName,
                 genreIds: movie.genreIds
             )
         } else {

@@ -10,11 +10,13 @@ import UIKit
 
 final class MainViewController: UIViewController {
 
+    @IBOutlet weak var skeletonCollectionView: UICollectionView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tryGetMoviesAgainButton: UIButton!
     @IBOutlet weak var emptyStateView: UIView!
     @IBOutlet weak var emptyStateLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var loadMoreIndicator: UIActivityIndicatorView!
 
     private lazy var presenter: MainPresenterToView = {
         return MainPresenter(view: self)
@@ -26,10 +28,10 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView.showAnimatedGradientSkeleton()
-        self.presenter.viewDidLoad()
-
+        self.skeletonCollectionView.showAnimatedGradientSkeleton()
         self.collectionView.register(UINib.init(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
+
+        self.presenter.viewDidLoad()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -70,17 +72,28 @@ extension MainViewController: UICollectionViewDelegate {
 extension MainViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.movies.count
+        if collectionView == self.collectionView {
+            return self.movies.count
+        } else {
+            return 10
+        }
+
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath as IndexPath) as! MovieCollectionViewCell
+        if collectionView == self.skeletonCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DumyCell", for: indexPath)
+            cell.showAnimatedGradientSkeleton()
+            return cell
+        }
 
-        debugPrint(indexPath.row)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as! MovieCollectionViewCell
+
         cell.updateData(with: self.movies[indexPath.row])
         cell.delegate = self
 
         if indexPath.row == self.movies.count - 1 {
+            self.loadMoreIndicator.startAnimating()
             self.presenter.fetchMoreMovies()
         }
 
@@ -94,15 +107,17 @@ extension MainViewController: UICollectionViewDataSource {
 extension MainViewController: MainViewToPresenter {
 
     func updateMovies(with movies: [Movie]) {
+        DispatchQueue.main.async { [weak self] in
+            self?.loadMoreIndicator.stopAnimating()
+            self?.skeletonCollectionView.hideSkeleton()
+            self?.skeletonCollectionView.isHidden = true
+        }
+
         if movies.count > 0 {
             self.movies.append(contentsOf: movies)
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
-        }
-
-        DispatchQueue.main.async { [weak self] in
-            self?.collectionView.hideSkeleton()
         }
 
         if self.movies.count == 0 {

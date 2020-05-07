@@ -11,9 +11,10 @@ import RealmSwift
 class FavoriteMovieModel: Object {
 
     @objc dynamic var id: Int = 0
+    @objc dynamic var originalTitle: String = ""
     @objc dynamic var overview: String = ""
     @objc dynamic var releaseDate: Date?
-    @objc dynamic var imageURL: String?
+    @objc dynamic var imageName: String?
 
     var genres: [GenreModel] {
         return FavoriteMovieGenreModel.getAll(WithMovieId: self.id).compactMap { $0.genre }
@@ -21,18 +22,20 @@ class FavoriteMovieModel: Object {
 
     static func create(
         id: Int,
+        originalTitle: String,
         overview: String,
         releaseDate: Date?,
-        imageURL: String?,
+        imageName: String?,
         genreIds: [Int]
     ) {
         guard FavoriteMovieModel.getBy(id: id) == nil else { return }
 
         let favoriteMovieModel = FavoriteMovieModel()
         favoriteMovieModel.id = id
+        favoriteMovieModel.originalTitle = originalTitle
         favoriteMovieModel.overview = overview
         favoriteMovieModel.releaseDate = releaseDate
-        favoriteMovieModel.imageURL = imageURL
+        favoriteMovieModel.imageName = imageName
 
         let realm = try! Realm()
         try! realm.write {

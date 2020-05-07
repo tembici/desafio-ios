@@ -41,6 +41,7 @@ class Movie {
         self.originalTitle = originalTitle
         self.imageURL = imageURL
         self.favorite = favorite
+        self.downloadImage()
     }
 
     init(movieResponse: MovieResponse, imageURL: URL?, favorite: Bool) {
@@ -58,29 +59,34 @@ class Movie {
 
         self.imageURL = imageURL
         self.favorite = favorite
+        self.downloadImage()
     }
 
-    func getImage(completion: @escaping ((_ image: UIImage?) -> Void)) {
-        if let image = self.image {
-            completion(image)
+    init(favoriteMovieModel: FavoriteMovieModel) {
+        self.id = favoriteMovieModel.id
+        self.overview = favoriteMovieModel.overview
+        self.releaseDate = favoriteMovieModel.releaseDate
+        self.genreIds = favoriteMovieModel.genres.compactMap { $0.id }
+        self.originalTitle = favoriteMovieModel.originalTitle
+
+        if let imageName = favoriteMovieModel.imageName {
+            self.imageURL = MovieLocalImage.getFileDir(imageName: imageName)
         } else {
-            self.downloadImage(completion: completion)
+            self.imageURL = nil
         }
+
+        self.favorite = true
+        self.downloadImage()
     }
 
-    private func downloadImage(completion: @escaping ((_ image: UIImage?) -> Void)) {
-        DispatchQueue.global().async { [self] in
-            guard let imageURL = self.imageURL,
-                let data = try? Data(contentsOf: imageURL),
-                let image = UIImage(data: data)
-                else {
-                    completion(nil)
-                    return
-                }
+    private func downloadImage() {
+        guard let imageURL = self.imageURL,
+            let data = try? Data(contentsOf: imageURL),
+            let image = UIImage(data: data)
+            else {
+                return
+            }
 
-            self.image = image
-            completion(image)
-        }
+        self.image = image
     }
-
 }

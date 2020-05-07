@@ -22,8 +22,9 @@ class MovieCollectionViewCell: UICollectionViewCell {
     func updateData(with movie: Movie) {
         self.movie = movie
 
+        self.imageView.image = movie.image
         self.titleLabel.text = movie.originalTitle
-        self.updateImage()
+
         self.updateFavoriteColor()
     }
 
@@ -35,20 +36,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
         self.updateFavoriteColor()
 
         self.delegate?.favoriteButtonTapped(movie: movie)
-    }
-
-    private func updateImage() {
-        if let image = self.movie?.image {
-            self.imageView.image = image
-        } else {
-            self.imageView.showAnimatedGradientSkeleton()
-            self.movie?.getImage { image in
-                DispatchQueue.main.async { [weak self] in
-                    self?.imageView.image = image
-                    self?.imageView.hideSkeleton()
-                }
-            }
-        }
     }
 
     private func updateFavoriteColor() {

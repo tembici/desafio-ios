@@ -12,7 +12,7 @@
 		A07CC8B32463554E00F08F2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07CC8B12463554E00F08F2C /* Main.storyboard */; };
 		A07CC8B52463555000F08F2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A07CC8B42463555000F08F2C /* Assets.xcassets */; };
 		A07CC8B82463555000F08F2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A07CC8B62463555000F08F2C /* LaunchScreen.storyboard */; };
-		A07CC8C32463555000F08F2C /* TFilmesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC8C22463555000F08F2C /* TFilmesTests.swift */; };
+		A07CC8C32463555000F08F2C /* CollorPalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC8C22463555000F08F2C /* CollorPalletTests.swift */; };
 		A07CC8CE2463555000F08F2C /* TFilmesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC8CD2463555000F08F2C /* TFilmesUITests.swift */; };
 		A07CC8EB246356C800F08F2C /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC8E1246356C800F08F2C /* MainPresenter.swift */; };
 		A07CC8EC246356C800F08F2C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC8E3246356C800F08F2C /* MainViewController.swift */; };
@@ -51,6 +51,7 @@
 		A07CC9612463952A00F08F2C /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A07CC94E2463952A00F08F2C /* Montserrat-SemiBold.ttf */; };
 		A07CC9632463952A00F08F2C /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = A07CC9502463952A00F08F2C /* OFL.txt */; };
 		A07CC9662463A0FE00F08F2C /* CollorPallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC9652463A0FE00F08F2C /* CollorPallet.swift */; };
+		A07CC96D2463A7C500F08F2C /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CC96C2463A7C500F08F2C /* MainTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +80,7 @@
 		A07CC8B72463555000F08F2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A07CC8B92463555000F08F2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A07CC8BE2463555000F08F2C /* TFilmesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFilmesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A07CC8C22463555000F08F2C /* TFilmesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFilmesTests.swift; sourceTree = "<group>"; };
+		A07CC8C22463555000F08F2C /* CollorPalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollorPalletTests.swift; sourceTree = "<group>"; };
 		A07CC8C42463555000F08F2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A07CC8C92463555000F08F2C /* TFilmesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFilmesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07CC8CD2463555000F08F2C /* TFilmesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFilmesUITests.swift; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 		A07CC94E2463952A00F08F2C /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		A07CC9502463952A00F08F2C /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		A07CC9652463A0FE00F08F2C /* CollorPallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollorPallet.swift; sourceTree = "<group>"; };
+		A07CC96C2463A7C500F08F2C /* MainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,8 +184,9 @@
 		A07CC8C12463555000F08F2C /* TFilmesTests */ = {
 			isa = PBXGroup;
 			children = (
-				A07CC8C22463555000F08F2C /* TFilmesTests.swift */,
 				A07CC8C42463555000F08F2C /* Info.plist */,
+				A07CC8C22463555000F08F2C /* CollorPalletTests.swift */,
+				A07CC96C2463A7C500F08F2C /* MainTests.swift */,
 			);
 			path = TFilmesTests;
 			sourceTree = "<group>";
@@ -191,8 +194,8 @@
 		A07CC8CC2463555000F08F2C /* TFilmesUITests */ = {
 			isa = PBXGroup;
 			children = (
-				A07CC8CD2463555000F08F2C /* TFilmesUITests.swift */,
 				A07CC8CF2463555000F08F2C /* Info.plist */,
+				A07CC8CD2463555000F08F2C /* TFilmesUITests.swift */,
 			);
 			path = TFilmesUITests;
 			sourceTree = "<group>";
@@ -581,7 +584,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A07CC8C32463555000F08F2C /* TFilmesTests.swift in Sources */,
+				A07CC96D2463A7C500F08F2C /* MainTests.swift in Sources */,
+				A07CC8C32463555000F08F2C /* CollorPalletTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

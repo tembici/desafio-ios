@@ -90,7 +90,6 @@ extension MainViewController: UICollectionViewDataSource {
 extension MainViewController: MainViewToPresenter {
 
     func updateMovies(with movies: [Movie]) {
-
         self.movies.append(contentsOf: movies)
     }
 

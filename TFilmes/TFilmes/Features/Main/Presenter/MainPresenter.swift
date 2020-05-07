@@ -86,4 +86,5 @@ extension MainPresenter: MainPresenterToInteractor {
     func didFailToFetchMovies() {
         self.view.showErrorState()
     }
+
 }

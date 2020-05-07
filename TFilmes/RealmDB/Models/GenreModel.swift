@@ -25,6 +25,8 @@ class GenreModel: Object {
         id: Int,
         name: String
     ) {
+        guard GenreModel.getBy(id: id) == nil else { return }
+
         let genreModel = GenreModel()
         genreModel.id = id
         genreModel.name = name

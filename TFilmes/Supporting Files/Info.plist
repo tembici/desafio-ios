@@ -5,13 +5,13 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-Black.ttf</string>
-        <string>Montserrat-Bold.ttf</string>
-        <string>Montserrat-ExtraLight.ttf</string>
-        <string>Montserrat-Light.ttf</string>
-        <string>Montserrat-Medium.ttf</string>
-        <string>Montserrat-Regular.ttf</string>
-        <string>Montserrat-SemiBold.ttf</string>
-        <string>Montserrat-Thin.ttf</string>
+		<string>Montserrat-Bold.ttf</string>
+		<string>Montserrat-ExtraLight.ttf</string>
+		<string>Montserrat-Light.ttf</string>
+		<string>Montserrat-Medium.ttf</string>
+		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-SemiBold.ttf</string>
+		<string>Montserrat-Thin.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
@@ -45,7 +45,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>Navigation</string>
+					<string>Splash</string>
 				</dict>
 			</array>
 		</dict>
@@ -53,7 +53,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Navigation</string>
+	<string>Splash</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

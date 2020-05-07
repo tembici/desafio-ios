@@ -25,6 +25,8 @@ class FavoriteMovieGenreModel: Object {
         movieId: Int,
         genreId: Int
     ) {
+        guard FavoriteMovieGenreModel.getExactly(movieId: movieId, genreId: genreId) == nil else { return }
+
         let favoriteMovieGenreModel = FavoriteMovieGenreModel()
         favoriteMovieGenreModel.movieId = movieId
         favoriteMovieGenreModel.genreId = genreId
@@ -33,6 +35,13 @@ class FavoriteMovieGenreModel: Object {
         try! realm.write {
             realm.add(favoriteMovieGenreModel)
         }
+    }
+
+    static func getExactly(movieId: Int, genreId: Int) -> FavoriteMovieGenreModel? {
+        return try! Realm()
+            .objects(FavoriteMovieGenreModel.self)
+            .filter("movieId == \(movieId) AND genreId == \(genreId)")
+            .first
     }
 
     static func getAll(WithMovieId movieId: Int) -> [FavoriteMovieGenreModel] {

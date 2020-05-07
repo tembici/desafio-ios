@@ -34,6 +34,7 @@ final class MovieDetailViewController: UITableViewController {
             .description
             .replacingOccurrences(of: "[", with: "")
             .replacingOccurrences(of: "]", with: "")
+            .replacingOccurrences(of: "\"", with: "")
 
         self.genresLabel.text = genres
         self.overviewLabel.text = self.movieToShow?.overview

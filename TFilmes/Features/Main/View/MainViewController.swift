@@ -20,13 +20,7 @@ final class MainViewController: UIViewController {
         return MainPresenter(view: self)
     }()
 
-    private var movies: [Movie] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
-    }
+    private var movies: [Movie] = []
 
     private var rowTapped: Int?
 
@@ -81,6 +75,7 @@ extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath as IndexPath) as! MovieCollectionViewCell
 
+        debugPrint(indexPath.row)
         cell.updateData(with: self.movies[indexPath.row])
         cell.delegate = self
 
@@ -100,6 +95,9 @@ extension MainViewController: MainViewToPresenter {
     func updateMovies(with movies: [Movie]) {
         if movies.count > 0 {
             self.movies.append(contentsOf: movies)
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
 
         DispatchQueue.main.async { [weak self] in
@@ -128,6 +126,9 @@ extension MainViewController: MainViewToPresenter {
 
     func removeMovies() {
         self.movies = []
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
 
     func showErrorState() {
@@ -142,7 +143,7 @@ extension MainViewController: MainViewToPresenter {
 
         alert.addAction(tryAgainAction)
 
-        let cancelTitle = NSLocalizedString("main.error.try_agin", comment: "Error cancel button")
+        let cancelTitle = NSLocalizedString("main.error.cancel", comment: "Error cancel button")
         let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel) { _ in
             self.tryGetMoviesAgainButton.isHidden = false
         }
@@ -159,6 +160,10 @@ extension MainViewController: MainViewToPresenter {
 extension MainViewController: MovieColletionViewCellDelegate {
 
     func favoriteChanged(movie: Movie, imageData: Data?) {
+        if let currentMovieIndex = self.movies.firstIndex(where: { $0.id == movie.id }) {
+            self.movies[currentMovieIndex].favorite = movie.favorite
+        }
+
         self.presenter.favoriteChanged(movie: movie, imageData: imageData)
     }
 

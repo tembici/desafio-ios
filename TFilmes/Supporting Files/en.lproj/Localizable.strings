@@ -6,6 +6,11 @@
   Copyright © 2020 Vandcarlos Mouzinho Sandes Junior. All rights reserved.
 */
 
+"splash.error.title" = "Error on get genres";
+"splash.error.message" = "You can try get genres again";
+"splash.error.try_again" = "Try again";
+"splash.error.cancel" = "Cancel";
+
 "main.error.title" = "Error on get movies";
 "main.error.message" = "You can try get movies again";
 "main.error.try_again" = "Try again";

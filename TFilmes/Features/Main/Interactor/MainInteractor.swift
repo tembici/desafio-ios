@@ -45,21 +45,24 @@ extension MainInteractor: MainInteractorToPresenter {
             URLQueryItem(name: "page", value: String(page))
         ]
     
-        API.instance.get(path: self.urlPath, query: query) { (data, _, error) in
+        API.instance.get(path: self.urlPath, query: query) { [weak self] (data, _, error) in
             if let error = error {
                 debugPrint(error)
-                self.presenter.didFailToFetchMovies()
+                self?.presenter.didFailToFetchMovies()
                 return
             }
 
-            guard let data = data else { return }
+            guard let data = data else {
+                self?.presenter.didFailToFetchMovies()
+                return
+            }
 
             do {
                 let res = try JSONDecoder().decode(PopularMovieResponse.self, from: data)
-                self.parsePopularMoviesResponse(res)
+                self?.parsePopularMoviesResponse(res)
             } catch let error {
                 debugPrint(error)
-                self.presenter.didFailToFetchMovies()
+                self?.presenter.didFailToFetchMovies()
             }
         }
     }

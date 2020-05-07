@@ -26,6 +26,8 @@ class FavoriteMovieModel: Object {
         imageURL: String?,
         genreIds: [Int]
     ) {
+        guard FavoriteMovieModel.getBy(id: id) == nil else { return }
+
         let favoriteMovieModel = FavoriteMovieModel()
         favoriteMovieModel.id = id
         favoriteMovieModel.overview = overview

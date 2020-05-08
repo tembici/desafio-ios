@@ -21,7 +21,7 @@
 "main.empty.default" = "No movies found";
 "main.empty.search" = "Your search for \"#text#\" returned no results";
 
-"favorites.empty.default" = "No movies found";
+"favorites.empty.default" = "No favorite movies found";
 "favorites.empty.only_query" = "Your search for \"#text#\" returned no results";
 "favorites.empty.only_filter" = "Your filters returned no results";
 "favorites.empty.query_with_filters" = "Your search for \"#text#\" with your filters returned no results";

@@ -33,7 +33,7 @@ final class FavoriteMoviesPresenter {
     }
 
     private func checkFilters() {
-        if self.currentYearsFilter.isEmpty && self.currentYearsFilter.isEmpty {
+        if self.currentYearsFilter.isEmpty && self.currentGenreIdsFilter.isEmpty {
             self.view.setRemoveFilterIsHiden()
         } else {
             self.view.setRemoveFilterIsVisible()
@@ -56,6 +56,7 @@ extension FavoriteMoviesPresenter: FavoriteMoviesPresenterToView {
 
     func viewDidAppear() {
         self.fetchFavoriteMovies()
+        self.checkFilters()
     }
 
     func filterMovies(with searchQuery: String?) {

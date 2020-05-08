@@ -36,6 +36,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="942-0D-R8V"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                 <state key="normal" title="REMOVE FILTERS">
                                     <color key="titleColor" name="white_color"/>
                                 </state>
@@ -68,7 +69,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your search for &quot;text&quot; returned no results" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb3-xr-dXD">
-                                        <rect key="frame" x="20" y="230" width="354" height="20"/>
+                                        <rect key="frame" x="20" y="230" width="354" height="21"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                         <color key="textColor" name="text_color"/>
                                         <nil key="highlightedColor"/>

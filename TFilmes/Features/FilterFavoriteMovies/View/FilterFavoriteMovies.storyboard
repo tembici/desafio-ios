@@ -12,10 +12,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Filter Favorite Movies View Controller-->
+        <!--Filter-->
         <scene sceneID="xye-WK-PZm">
             <objects>
-                <tableViewController id="Wt7-oP-CmV" customClass="FilterFavoriteMoviesViewController" customModule="TFilmes" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Filter" id="Wt7-oP-CmV" customClass="FilterFavoriteMoviesViewController" customModule="TFilmes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="O49-yT-kGb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

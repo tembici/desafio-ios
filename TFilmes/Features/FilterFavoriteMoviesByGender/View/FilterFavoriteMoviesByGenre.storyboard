@@ -12,10 +12,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Filter Favorite Movies By Genre View Controller-->
+        <!--Filter by genre-->
         <scene sceneID="OyK-27-Yhd">
             <objects>
-                <tableViewController id="rU0-Z2-5MF" customClass="FilterFavoriteMoviesByGenreViewController" customModule="TFilmes" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Filter by genre" id="rU0-Z2-5MF" customClass="FilterFavoriteMoviesByGenreViewController" customModule="TFilmes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3yq-hw-Cm1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,6 +40,7 @@
                                         <constraint firstItem="oFw-ol-jfZ" firstAttribute="leading" secondItem="k8j-hZ-lwJ" secondAttribute="leading" constant="10" id="uqh-Eb-E0l"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="tintColor" name="primary_color"/>
                                 <connections>
                                     <outlet property="genderLabel" destination="oFw-ol-jfZ" id="sAS-Q2-Zqm"/>
                                 </connections>
@@ -57,6 +58,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="primary_color">
+            <color red="0.94499999284744263" green="0.80800002813339233" blue="0.4309999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="text_color">
             <color red="0.13699999451637268" green="0.13300000131130219" blue="0.25099998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

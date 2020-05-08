@@ -8,11 +8,13 @@
 
 import UIKit
 
-final class FilterFavoriteMoviesByGenderViewController: UIViewController {
+final class FilterFavoriteMoviesByGenreViewController: UITableViewController {
 
     private lazy var presenter: FilterFavoriteMoviesByGenderPresenterToView = {
         return FilterFavoriteMoviesByGenderPresenter(view: self)
     }()
+
+    var genresSelected: [Int] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,6 @@ final class FilterFavoriteMoviesByGenderViewController: UIViewController {
 
 // MARK: - FilterFavoriteMoviesByGenderViewToPresenter
 
-extension FilterFavoriteMoviesByGenderViewController: FilterFavoriteMoviesByGenderViewToPresenter {
+extension FilterFavoriteMoviesByGenreViewController: FilterFavoriteMoviesByGenderViewToPresenter {
 
 }

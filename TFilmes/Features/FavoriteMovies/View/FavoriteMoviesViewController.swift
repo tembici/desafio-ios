@@ -14,6 +14,8 @@ final class FavoriteMoviesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyStateView: UIView!
     @IBOutlet weak var emptyStateLabel: UILabel!
+    @IBOutlet weak var removeFiltersButton: UIButton!
+    @IBOutlet weak var tableViewConstrainToRemoveFilterButton: NSLayoutConstraint!
 
     private let segueToFilterIdentifier = "segueToFilter"
     private let segueToMovieDetailIdentifier = "segueToMovieDetail"
@@ -55,6 +57,10 @@ extension FavoriteMoviesViewController {
         self.performSegue(withIdentifier: self.segueToFilterIdentifier, sender: self)
     }
 
+    @IBAction func removeFiltersTapped(_ sender: UIButton) {
+        self.presenter.removeFiltersTapped()
+    }
+
 }
 
 
@@ -80,8 +86,8 @@ extension FavoriteMoviesViewController {
     private func prepareFilterFavorite(_ destination: UIViewController) {
         guard let view = destination as? FilterFavoriteMoviesViewController else { return }
         view.delegate = self
-        view.genreIdsFilter = self.presenter.genreIdsFilter
         view.yearsFilter = self.presenter.yearsFilter
+        view.genreIdsFilter = self.presenter.genreIdsFilter
     }
 
     private func prepareDetail(_ destination: UIViewController) {
@@ -207,6 +213,16 @@ extension FavoriteMoviesViewController: FavoriteMoviesViewToPresenter {
         }
 
         self.checkEmptyState()
+    }
+
+    func setRemoveFilterIsVisible() {
+        self.removeFiltersButton.isHidden = false
+        self.tableViewConstrainToRemoveFilterButton.constant = 0
+    }
+
+    func setRemoveFilterIsHiden() {
+        self.removeFiltersButton.isHidden = true
+        self.tableViewConstrainToRemoveFilterButton.constant = -self.removeFiltersButton.frame.height
     }
 
 }

@@ -65,6 +65,9 @@
                                                 <constraint firstItem="hHK-Cu-zZF" firstAttribute="leading" secondItem="lRw-Nf-u0e" secondAttribute="leading" constant="10" id="WLH-vC-zIO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ejR-NU-m5d" kind="show" identifier="segueToFilterByGenre" id="dT6-x8-0nx"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -87,7 +90,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tdv-bZ-73r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="45"/>
+            <point key="canvasLocation" x="975" y="88"/>
+        </scene>
+        <!--FilterFavoriteMoviesByGenre-->
+        <scene sceneID="uPI-VA-56P">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FilterFavoriteMoviesByGenre" id="ejR-NU-m5d" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="NQa-Ed-S6p"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oJ8-hs-qvD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988" y="173"/>
         </scene>
     </scenes>
     <resources>

@@ -28,4 +28,5 @@ extension FilterFavoriteMoviesByYearInteractor: FilterFavoriteMoviesByYearIntera
         let uniqueYearsArray = Array(uniqueYearsSet).sorted()
         self.presenter.didFetchAllYearsInFavorite(uniqueYearsArray)
     }
+
 }

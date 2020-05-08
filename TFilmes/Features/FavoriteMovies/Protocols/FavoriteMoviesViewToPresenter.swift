@@ -10,4 +10,7 @@ protocol FavoriteMoviesViewToPresenter: class {
 
     func updateMovies(with movies: [Movie])
 
+    func setRemoveFilterIsVisible()
+    func setRemoveFilterIsHiden()
+
 }

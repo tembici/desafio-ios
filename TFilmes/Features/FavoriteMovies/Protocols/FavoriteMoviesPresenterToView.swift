@@ -15,5 +15,6 @@ protocol FavoriteMoviesPresenterToView: class {
     func filterMovies(with searchQuery: String?)
     func filterUpdated(years: [Int], genreIds: [Int])
     func deleteFavoriteTrigger(_ movie: Movie)
+    func removeFiltersTapped()
 
 }

@@ -15,6 +15,9 @@ final class FilterFavoriteMoviesViewController: UITableViewController {
     var yearsFilter: [Int] = []
     var genreIdsFilter: [Int] = []
 
+    private let segueToFilterByYear = "segueToFilterByYear"
+    private let segueToFilterByGenre = "segueToFilterByGenre"
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let barButton = UIBarButtonItem(
@@ -32,10 +35,23 @@ final class FilterFavoriteMoviesViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let viewController = segue.destination as? FilterFavoriteMoviesByYearViewController {
-            viewController.yearsSelected = self.yearsFilter
-            viewController.delegate = self
+        switch segue.identifier {
+        case self.segueToFilterByYear: self.prepareYearFilter(segue.destination)
+        case self.segueToFilterByGenre: self.prepareGenreFilter(segue.destination)
+        default: break
         }
+    }
+
+    private func prepareYearFilter(_ destination: UIViewController) {
+        guard let view = destination as? FilterFavoriteMoviesByYearViewController else { return }
+        view.delegate = self
+        view.yearsSelected = self.yearsFilter
+    }
+
+    private func prepareGenreFilter(_ destination: UIViewController) {
+        guard let view = destination as? FilterFavoriteMoviesByGenreViewController else { return }
+        view.delegate = self
+        view.genreIdsSelected = self.genreIdsFilter
     }
 
 }
@@ -57,6 +73,16 @@ extension FilterFavoriteMoviesViewController: FilterFavoriteMoviesByYearDelegate
 
     func yearApplyTapped(_ years: [Int]) {
         self.yearsFilter = years
+    }
+
+}
+
+// MARK: - FilterFavoriteMoviesByGenreDelegate
+
+extension FilterFavoriteMoviesViewController: FilterFavoriteMoviesByGenreDelegate {
+
+    func genreApplyTapped(_ genreIds: [Int]) {
+        self.genreIdsFilter = genreIds
     }
 
 }

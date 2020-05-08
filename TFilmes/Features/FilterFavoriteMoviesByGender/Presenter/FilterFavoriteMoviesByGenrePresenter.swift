@@ -1,5 +1,5 @@
 //
-//  FilterFavoriteMoviesByGenderPresenter.swift
+//  FilterFavoriteMoviesByGenrePresenter.swift
 //  TFilmes
 //
 //  Created by Vandcarlos Mouzinho Sandes Junior on 08/05/20.
@@ -22,7 +22,7 @@ final class FilterFavoriteMoviesByGenrePresenter {
 
 }
 
-// MARK: - FilterFavoriteMoviesByGenderPresenterToView
+// MARK: - FilterFavoriteMoviesByGenrePresenterToView
 
 extension FilterFavoriteMoviesByGenrePresenter: FilterFavoriteMoviesByGenrePresenterToView {
 
@@ -32,8 +32,12 @@ extension FilterFavoriteMoviesByGenrePresenter: FilterFavoriteMoviesByGenrePrese
 
 }
 
-// MARK: - FilterFavoriteMoviesByGenderPresenterToInteractor
+// MARK: - FilterFavoriteMoviesByGenrePresenterToInteractor
 
 extension FilterFavoriteMoviesByGenrePresenter: FilterFavoriteMoviesByGenrePresenterToInteractor {
+
+    func didFetchAllGenresInFavorite(_ genres: [GenreFilterItem]) {
+        self.view.updateGenres(with: genres)
+    }
 
 }

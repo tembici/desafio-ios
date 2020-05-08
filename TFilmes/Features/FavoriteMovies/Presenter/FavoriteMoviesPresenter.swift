@@ -32,6 +32,14 @@ final class FavoriteMoviesPresenter {
         )
     }
 
+    private func checkFilters() {
+        if self.currentYearsFilter.isEmpty && self.currentYearsFilter.isEmpty {
+            self.view.setRemoveFilterIsHiden()
+        } else {
+            self.view.setRemoveFilterIsVisible()
+        }
+    }
+
 }
 
 // MARK: - FavoriteMoviesPresenterToView
@@ -39,7 +47,7 @@ final class FavoriteMoviesPresenter {
 extension FavoriteMoviesPresenter: FavoriteMoviesPresenterToView {
 
     var yearsFilter: [Int] {
-        self.currentGenreIdsFilter
+        self.currentYearsFilter
     }
 
     var genreIdsFilter: [Int] {
@@ -59,10 +67,18 @@ extension FavoriteMoviesPresenter: FavoriteMoviesPresenterToView {
         self.currentYearsFilter = years
         self.currentGenreIdsFilter = genreIds
         self.fetchFavoriteMovies()
+        self.checkFilters()
     }
 
     func deleteFavoriteTrigger(_ movie: Movie) {
         self.interactor.removeMovieFavorite(movie)
+    }
+
+    func removeFiltersTapped() {
+        self.currentYearsFilter = []
+        self.currentGenreIdsFilter = []
+        self.checkFilters()
+        self.fetchFavoriteMovies()
     }
 
 }

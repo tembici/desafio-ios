@@ -10,10 +10,8 @@ import Foundation
 
 final class MovieLocalImage {
 
-    private static let imagesFolder = "movies-image"
-
     static func getFileDir(imageName: String) -> URL {
-        return getDocumentsDirectory().appendingPathComponent("\(self.imagesFolder)\(imageName)")
+        return getDocumentsDirectory().appendingPathComponent(imageName)
     }
 
     static func save(imageData: Data?, imageURL: URL?) -> String? {

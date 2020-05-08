@@ -28,8 +28,7 @@ final class MainViewController: UIViewController {
     private let dumyIdentifier = "DumyCell"
     private let segueToMovieDetailIdentifier = "segueToMovieDetail"
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLoad() {
         self.skeletonCollectionView.showAnimatedGradientSkeleton()
 
         let nib = UINib(nibName: MovieCollectionViewCell.nibName, bundle: nil)
@@ -66,30 +65,27 @@ extension MainViewController {
 extension MainViewController {
 
     private func checkEmptyState() {
-        if self.movies.count == 0 {
-            if let searchQuery = self.searchBar.text, !searchQuery.isEmpty {
-                let baseMessage = NSLocalizedString("main.empty.search", comment: "Search base string")
-                let message = baseMessage.replacingOccurrences(of: "#text#", with: searchQuery)
-                self.emptyStateLabel.text = message
-            } else {
-                self.emptyStateLabel.text = NSLocalizedString("main.empty.default", comment: "Default empty")
-            }
+        self.emptyStateView.isHidden = !self.movies.isEmpty
 
-            DispatchQueue.main.async { [weak self] in
-                self?.emptyStateView.isHidden = false
-            }
+        guard !self.movies.isEmpty else { return }
 
-        } else {
-            DispatchQueue.main.async { [weak self] in
-                self?.emptyStateView.isHidden = true
-            }
+        var message = NSLocalizedString("main.empty.default", comment: "Default empty")
+
+        defer {
+            self.emptyStateLabel.text = message
         }
+
+        guard let searchQuery = self.searchBar.text, !searchQuery.isEmpty else { return }
+
+        message = NSLocalizedString("main.empty.search", comment: "Search base string")
+        message = message.replacingOccurrences(of: "#text#", with: searchQuery)
     }
 
     private func prepareDetail(_ destination: UIViewController) {
-         guard let row = self.rowTapped, row < self.movies.count else { return }
-         guard let view = destination as? MovieDetailViewController else { return }
-         view.movieToShow = self.movies[row]
+        guard let row = self.rowTapped, row < self.movies.count else { return }
+        guard let view = destination as? MovieDetailViewController else { return }
+        view.movieToShow = self.movies[row]
+        view.delegate = self
     }
 
 }
@@ -166,14 +162,18 @@ extension MainViewController: MainViewToPresenter {
             self?.skeletonCollectionView.isHidden = true
         }
 
-        if movies.count > 0 {
-            self.movies.append(contentsOf: movies)
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
+        self.movies.append(contentsOf: movies)
+
+        if !movies.isEmpty {
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView.reloadData()
             }
         }
 
-        self.checkEmptyState()
+        DispatchQueue.main.async { [weak self] in
+            self?.checkEmptyState()
+        }
+
     }
 
     func removeMovies() {
@@ -230,6 +230,20 @@ extension MainViewController: MovieDetailDelegate {
     func favoriteChanged(movie: Movie) {
         if let currentMovieIndex = self.movies.firstIndex(where: { $0.id == movie.id }) {
             self.movies[currentMovieIndex].favorite = movie.favorite
+        }
+
+        self.collectionView.reloadData()
+    }
+
+}
+
+// MARK: - FavoriteMoviesActions
+
+extension MainViewController: FavoriteMoviesActions {
+
+    func favoriteDeleted(_ movie: Movie) {
+        if let currentMovieIndex = self.movies.firstIndex(where: { $0.id == movie.id }) {
+            self.movies[currentMovieIndex].favorite = false
         }
 
         self.collectionView.reloadData()

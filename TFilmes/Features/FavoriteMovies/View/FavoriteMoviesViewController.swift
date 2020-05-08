@@ -84,11 +84,13 @@ extension FavoriteMoviesViewController {
         view.yearsFilter = self.presenter.yearsFilter
     }
 
-   private func prepareDetail(_ destination: UIViewController) {
+    private func prepareDetail(_ destination: UIViewController) {
         guard let row = self.rowTapped, row < self.movies.count else { return }
         guard let view = destination as? MovieDetailViewController else { return }
         view.movieToShow = self.movies[row]
-   }
+        view.delegate = self
+
+    }
 
     private func checkEmptyState() {
         self.emptyStateView.isHidden = !self.movies.isEmpty
@@ -124,6 +126,12 @@ extension FavoriteMoviesViewController {
 
         message = NSLocalizedString(keyMessage, comment: "Query message")
         message = message.replacingOccurrences(of: "#text#", with: searchQuery)
+    }
+
+    private func propagueteFavoriteDelete(onMovie movie: Movie) {
+        if let favoriteMoviesAction = self.tabBarController?.viewControllers?[0] as? FavoriteMoviesActions {
+            favoriteMoviesAction.favoriteDeleted(movie)
+        }
     }
 
 }
@@ -162,10 +170,12 @@ extension FavoriteMoviesViewController: UITableViewDelegate, UITableViewDataSour
         forRowAt indexPath: IndexPath
     ) {
         if editingStyle == .delete {
-            self.presenter.deleteFavoriteTrigger(self.movies[indexPath.row])
+            let movie = self.movies[indexPath.row]
+            self.presenter.deleteFavoriteTrigger(movie)
             self.movies.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             self.checkEmptyState()
+            self.propagueteFavoriteDelete(onMovie: movie)
         }
     }
 
@@ -207,6 +217,16 @@ extension FavoriteMoviesViewController: FilterFavoriteMoviesDelegate {
 
     func applyFiltersTapped(years: [Int], genreIds: [Int]) {
         self.presenter.filterUpdated(years: years, genreIds: genreIds)
+    }
+
+}
+
+// MARK: -
+
+extension FavoriteMoviesViewController: MovieDetailDelegate {
+
+    func favoriteChanged(movie: Movie) {
+        self.propagueteFavoriteDelete(onMovie: movie)
     }
 
 }

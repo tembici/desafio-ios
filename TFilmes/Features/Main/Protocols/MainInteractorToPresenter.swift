@@ -10,7 +10,7 @@ import Foundation
 
 protocol MainInteractorToPresenter: class {
 
-    func fetchMoviesOnApi(with page: Int)
+    func fetchMoviesOnApi(withPage page: Int)
     func updateFavoriteState(of movie: Movie)
 
 }

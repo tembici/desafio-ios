@@ -1,8 +1,8 @@
 //
-//  FakerMovie.swift
+//  FakeGenre.swift
 //  TFilmesTests
 //
-//  Created by Vandcarlos Mouzinho Sandes Junior on 07/05/20.
+//  Created by Vandcarlos Mouzinho Sandes Junior on 08/05/20.
 //  Copyright © 2020 Vandcarlos Mouzinho Sandes Junior. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import Fakery
 @testable import TFilmes
 
-final class FakerMovie {
+final class FakeGenreModel {
 
     private static let faker = Faker()
 

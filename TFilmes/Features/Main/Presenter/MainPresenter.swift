@@ -20,14 +20,14 @@ final class MainPresenter {
         self.view = view
     }
 
-    private var pageToFetch = 0
+    private var pageToFetch = 1
     private var movies: [Movie] = []
 
     private var currentQuery = ""
 
     private func fetchMovies() {
+        self.interactor.fetchMoviesOnApi(withPage: self.pageToFetch)
         self.pageToFetch += 1
-        self.interactor.fetchMoviesOnApi(with: self.pageToFetch)
     }
 
     private func updateMoviesWithQuery(moviesToUpdate: [Movie]? = nil) {
@@ -73,7 +73,7 @@ extension MainPresenter: MainPresenterToView {
     }
 
     func tryToGetMoviesTapped() {
-        self.interactor.fetchMoviesOnApi(with: self.pageToFetch)
+        self.interactor.fetchMoviesOnApi(withPage: self.pageToFetch)
     }
 
 }
@@ -82,9 +82,9 @@ extension MainPresenter: MainPresenterToView {
 
 extension MainPresenter: MainPresenterToInteractor {
 
-    func didFetchMoviesOnApi(_ Movies: [Movie]) {
-        self.movies.append(contentsOf: Movies)
-        self.updateMoviesWithQuery(moviesToUpdate: Movies)
+    func didFetchMoviesOnApi(_ movies: [Movie]) {
+        self.movies.append(contentsOf: movies)
+        self.updateMoviesWithQuery(moviesToUpdate: movies)
     }
 
     func didFailToFetchMovies() {

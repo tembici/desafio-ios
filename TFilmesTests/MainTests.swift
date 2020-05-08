@@ -15,7 +15,6 @@ class MainTests: XCTestCase {
     var presenter: MainPresenter!
     var viewToPresenter: MainViewToPresenterTest!
 
-
     override func setUpWithError() throws {
         super.setUp()
 
@@ -24,9 +23,14 @@ class MainTests: XCTestCase {
         self.presenter = MainPresenter(view: self.viewToPresenter)
     }
 
-}
+    override func tearDownWithError() throws {
+        let realm = try! Realm()
+        try! realm.write {
+          realm.deleteAll()
+        }
+    }
 
-// MARK: - MainPresenterToView functions
+}
 
 extension MainTests {
 

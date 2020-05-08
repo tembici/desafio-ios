@@ -237,7 +237,7 @@ extension FavoriteMoviesViewController: FilterFavoriteMoviesDelegate {
 
 }
 
-// MARK: -
+// MARK: - MovieDetailDelegate
 
 extension FavoriteMoviesViewController: MovieDetailDelegate {
 

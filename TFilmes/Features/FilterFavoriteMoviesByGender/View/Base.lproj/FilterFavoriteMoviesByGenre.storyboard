@@ -28,8 +28,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFw-ol-jfZ">
-                                            <rect key="frame" x="10" y="12" width="33.5" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFw-ol-jfZ">
+                                            <rect key="frame" x="10" y="12" width="46" height="20"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                             <color key="textColor" name="text_color"/>
                                             <nil key="highlightedColor"/>
@@ -37,6 +37,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="oFw-ol-jfZ" firstAttribute="centerY" secondItem="k8j-hZ-lwJ" secondAttribute="centerY" id="rL2-CD-1YU"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oFw-ol-jfZ" secondAttribute="trailing" constant="20" symbolic="YES" id="upJ-fF-eVs"/>
                                         <constraint firstItem="oFw-ol-jfZ" firstAttribute="leading" secondItem="k8j-hZ-lwJ" secondAttribute="leading" constant="10" id="uqh-Eb-E0l"/>
                                     </constraints>
                                 </tableViewCellContentView>

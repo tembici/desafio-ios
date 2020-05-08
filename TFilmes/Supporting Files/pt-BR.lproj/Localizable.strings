@@ -6,3 +6,22 @@
   Copyright © 2020 Vandcarlos Mouzinho Sandes Junior. All rights reserved.
 */
 
+"tabs.movies" = "FILMES";
+"tabs.favorites" = "FAVORITOS";
+
+"splash.error.title" = "Erro ao buscar gênreos";
+"splash.error.message" = "Você pode tentar buscar os gêneros novamente";
+
+"main.error.title" = "Erro ao buscar filmes";
+"main.error.message" = "Você pode tentar buscar os filmes novamente";
+"main.empty.default" = "Filmes não encontrado";
+"main.empty.search" = "Sua busca por \"#text#\" não retornou resultados";
+
+"favorites.empty.default" = "Sem filmes favoritos encontrado";
+"favorites.empty.only_query" = "Sua busca por \"#text#\" não retornou resultados";
+"favorites.empty.only_filter" = "Seus filtros não retornaram resultados";
+"favorites.empty.query_with_filters" = "Sua busca por \"#text#\" com fitros não retornou resultados";
+
+"try_again" = "tentar novamente";
+"cancel" = "cancelar";
+"apply" = "aplicar";

@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Years"; ObjectID = "3KX-rA-CSc"; */
+"3KX-rA-CSc.text" = "Anos";
+
+/* Class = "UITableViewController"; title = "Filter"; ObjectID = "Wt7-oP-CmV"; */
+"Wt7-oP-CmV.title" = "Filtros";
+
+/* Class = "UILabel"; text = "Genres"; ObjectID = "hHK-Cu-zZF"; */
+"hHK-Cu-zZF.text" = "Gêneros";

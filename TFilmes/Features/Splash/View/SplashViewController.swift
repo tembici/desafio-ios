@@ -36,14 +36,14 @@ extension SplashViewController: SplashViewToPresenter {
         let message = NSLocalizedString("splash.error.message", comment: "Error message")
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
-        let tryAgainTitle = NSLocalizedString("splash.error.try_agin", comment: "Error try again button")
+        let tryAgainTitle = NSLocalizedString("try_again", comment: "Error try again button")
         let tryAgainAction = UIAlertAction(title: tryAgainTitle, style: .default) { [weak self] _ in
             self?.presenter.tryToGetGenresTapped()
         }
 
         alert.addAction(tryAgainAction)
 
-        let cancelTitle = NSLocalizedString("splash.error.cancel", comment: "Error cancel button")
+        let cancelTitle = NSLocalizedString("cancel", comment: "Error cancel button")
         let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel) { [weak self] _ in
             self?.continueApp()
         }

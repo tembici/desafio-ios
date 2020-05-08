@@ -1,0 +1,6 @@
+
+/* Class = "UILabel"; text = "Year"; ObjectID = "lQY-MV-HN3"; */
+"lQY-MV-HN3.text" = "Ano";
+
+/* Class = "UITableViewController"; title = "Filter by year"; ObjectID = "ss2-O3-XW4"; */
+"ss2-O3-XW4.title" = "Filtro por ano";

@@ -26,7 +26,7 @@ final class FilterFavoriteMoviesByGenreViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let barButton = UIBarButtonItem(
-            title: "apply",
+            title: NSLocalizedString("apply", comment: "Apply word"),
             style: .done,
             target: self,
             action: #selector(applyTapped)

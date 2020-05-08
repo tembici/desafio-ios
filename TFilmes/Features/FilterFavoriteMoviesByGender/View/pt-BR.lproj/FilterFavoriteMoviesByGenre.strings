@@ -1,0 +1,6 @@
+
+/* Class = "UILabel"; text = "Year"; ObjectID = "oFw-ol-jfZ"; */
+"oFw-ol-jfZ.text" = "Gênero";
+
+/* Class = "UITableViewController"; title = "Filter by genre"; ObjectID = "rU0-Z2-5MF"; */
+"rU0-Z2-5MF.title" = "Filtro por gênero";

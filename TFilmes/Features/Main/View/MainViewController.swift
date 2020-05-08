@@ -42,14 +42,11 @@ final class MainViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let row = self.rowTapped, row < self.movies.count else { return }
-        guard let viewController = segue.destination as? MovieDetailViewController else { return }
-
-        viewController.movieToShow = self.movies[row]
-        viewController.delegate = self
+        switch segue.identifier {
+        case self.segueToMovieDetailIdentifier: self.prepareDetail(segue.destination)
+        default: break
+        }
     }
-
-
 
 }
 
@@ -60,6 +57,39 @@ extension MainViewController {
     @IBAction func tryGetMoviesAgainTapped(_ sender: Any) {
         self.tryGetMoviesAgainButton.isHidden = true
         self.presenter.tryToGetMoviesTapped()
+    }
+
+}
+
+// MARK: - Private methods
+
+extension MainViewController {
+
+    private func checkEmptyState() {
+        if self.movies.count == 0 {
+            if let searchQuery = self.searchBar.text, !searchQuery.isEmpty {
+                let baseMessage = NSLocalizedString("main.empty.search", comment: "Search base string")
+                let message = baseMessage.replacingOccurrences(of: "#text#", with: searchQuery)
+                self.emptyStateLabel.text = message
+            } else {
+                self.emptyStateLabel.text = NSLocalizedString("main.empty.default", comment: "Default empty")
+            }
+
+            DispatchQueue.main.async { [weak self] in
+                self?.emptyStateView.isHidden = false
+            }
+
+        } else {
+            DispatchQueue.main.async { [weak self] in
+                self?.emptyStateView.isHidden = true
+            }
+        }
+    }
+
+    private func prepareDetail(_ destination: UIViewController) {
+         guard let row = self.rowTapped, row < self.movies.count else { return }
+         guard let view = destination as? MovieDetailViewController else { return }
+         view.movieToShow = self.movies[row]
     }
 
 }
@@ -121,33 +151,6 @@ extension MainViewController: UICollectionViewDataSource {
         }
 
         return cell
-    }
-
-}
-
-// MARK: - Private methods
-
-extension MainViewController {
-
-    private func checkEmptyState() {
-        if self.movies.count == 0 {
-            if let searchQuery = self.searchBar.text, !searchQuery.isEmpty {
-                let baseMessage = NSLocalizedString("main.empty.search", comment: "Search base string")
-                let message = baseMessage.replacingOccurrences(of: "#text#", with: searchQuery)
-                self.emptyStateLabel.text = message
-            } else {
-                self.emptyStateLabel.text = NSLocalizedString("main.empty.default", comment: "Default empty")
-            }
-
-            DispatchQueue.main.async { [weak self] in
-                self?.emptyStateView.isHidden = false
-            }
-
-        } else {
-            DispatchQueue.main.async { [weak self] in
-                self?.emptyStateView.isHidden = true
-            }
-        }
     }
 
 }

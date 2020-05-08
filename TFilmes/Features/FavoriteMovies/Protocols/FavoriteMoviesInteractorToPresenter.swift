@@ -14,4 +14,6 @@ protocol FavoriteMoviesInteractorToPresenter: class {
         inGenreIds genreIds: [Int]?
     )
 
+    func removeMovieFavorite(_ movie: Movie)
+
 }

@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Favorite Movies View Controller-->
         <scene sceneID="gx2-vg-aix">
@@ -33,13 +38,44 @@
                                     <outlet property="delegate" destination="ucv-yR-0Sl" id="Siy-kG-Xsj"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5a-gl-tIf" userLabel="Empty State">
+                                <rect key="frame" x="10" y="149" width="394" height="664"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="S0B-gY-w1g">
+                                        <rect key="frame" x="122" y="51" width="150" height="148"/>
+                                        <color key="tintColor" name="tertiary_color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="dG7-yM-Emk"/>
+                                            <constraint firstAttribute="width" constant="150" id="vXN-Mq-VTP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your search for &quot;text&quot; returned no results" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb3-xr-dXD">
+                                        <rect key="frame" x="20" y="230" width="354" height="20"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                        <color key="textColor" name="text_color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="background_color"/>
+                                <constraints>
+                                    <constraint firstItem="S0B-gY-w1g" firstAttribute="top" secondItem="D5a-gl-tIf" secondAttribute="top" constant="50" id="9NO-2E-WqM"/>
+                                    <constraint firstItem="S0B-gY-w1g" firstAttribute="centerX" secondItem="D5a-gl-tIf" secondAttribute="centerX" id="PM7-fz-Td3"/>
+                                    <constraint firstItem="bb3-xr-dXD" firstAttribute="top" secondItem="S0B-gY-w1g" secondAttribute="bottom" constant="30" id="qyl-rp-fev"/>
+                                    <constraint firstAttribute="trailing" secondItem="bb3-xr-dXD" secondAttribute="trailing" constant="20" id="rUR-ex-Rle"/>
+                                    <constraint firstItem="bb3-xr-dXD" firstAttribute="leading" secondItem="D5a-gl-tIf" secondAttribute="leading" constant="20" id="wNf-Gt-1WL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="background_color"/>
                         <constraints>
                             <constraint firstItem="Hjr-Vo-O5Z" firstAttribute="trailing" secondItem="AqU-jO-9Oq" secondAttribute="trailing" id="07S-MG-XjO"/>
+                            <constraint firstItem="D5a-gl-tIf" firstAttribute="trailing" secondItem="0pK-YD-1v5" secondAttribute="trailing" id="4ev-cM-EPN"/>
+                            <constraint firstItem="D5a-gl-tIf" firstAttribute="top" secondItem="0pK-YD-1v5" secondAttribute="top" id="9Mh-dw-med"/>
                             <constraint firstItem="0pK-YD-1v5" firstAttribute="top" secondItem="Hjr-Vo-O5Z" secondAttribute="bottom" constant="5" id="9pM-9g-5Rh"/>
+                            <constraint firstItem="D5a-gl-tIf" firstAttribute="bottom" secondItem="0pK-YD-1v5" secondAttribute="bottom" id="QNx-m0-INI"/>
                             <constraint firstItem="Hjr-Vo-O5Z" firstAttribute="top" secondItem="AqU-jO-9Oq" secondAttribute="top" id="V3m-NF-SPt"/>
                             <constraint firstItem="Hjr-Vo-O5Z" firstAttribute="leading" secondItem="AqU-jO-9Oq" secondAttribute="leading" id="dNI-rV-9Uf"/>
+                            <constraint firstItem="D5a-gl-tIf" firstAttribute="leading" secondItem="0pK-YD-1v5" secondAttribute="leading" id="sEe-5O-Umk"/>
                             <constraint firstItem="AqU-jO-9Oq" firstAttribute="bottom" secondItem="0pK-YD-1v5" secondAttribute="bottom" id="xIL-kV-RjJ"/>
                             <constraint firstItem="AqU-jO-9Oq" firstAttribute="trailing" secondItem="0pK-YD-1v5" secondAttribute="trailing" constant="10" id="yIO-2u-Hdf"/>
                             <constraint firstItem="0pK-YD-1v5" firstAttribute="leading" secondItem="AqU-jO-9Oq" secondAttribute="leading" constant="10" id="yxm-ly-zbq"/>
@@ -50,9 +86,12 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="emptyStateLabel" destination="bb3-xr-dXD" id="oys-cQ-mM3"/>
+                        <outlet property="emptyStateView" destination="D5a-gl-tIf" id="OHd-Wx-3dz"/>
                         <outlet property="searchBar" destination="Hjr-Vo-O5Z" id="DBF-CK-ta8"/>
                         <outlet property="tableView" destination="0pK-YD-1v5" id="1gx-h4-ksL"/>
                         <segue destination="9lP-DF-35S" kind="show" identifier="segueToFilter" id="Ar5-xN-bRW"/>
+                        <segue destination="iDF-pQ-CPg" kind="show" identifier="segueToMovieDetail" id="OgM-UF-9oN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkS-CJ-TPc" sceneMemberID="firstResponder"/>
@@ -67,15 +106,32 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0V2-cY-4tc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="881" y="-54"/>
+            <point key="canvasLocation" x="796" y="103"/>
+        </scene>
+        <!--MovieDetail-->
+        <scene sceneID="6Dk-Nl-adc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MovieDetail" id="iDF-pQ-CPg" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ffx-Pp-Gn9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pl0-zU-OBa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="759" y="183"/>
         </scene>
     </scenes>
     <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="background_color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primary_color">
             <color red="0.94499999284744263" green="0.80800002813339233" blue="0.4309999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tertiary_color">
+            <color red="0.29399999976158142" green="0.48600000143051147" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text_color">
+            <color red="0.13699999451637268" green="0.13300000131130219" blue="0.25099998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

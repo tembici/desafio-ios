@@ -20,35 +20,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="background_color"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="X6j-Xc-Fqb">
-                            <rect key="frame" x="0.0" y="143" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgB-qZ-Tfq">
-                                    <rect key="frame" x="10" y="0.0" width="394" height="44"/>
-                                    <color key="backgroundColor" name="primary_color"/>
-                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
-                                    <state key="normal" title="APPLAY FILTER">
-                                        <color key="titleColor" name="white_color"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="5"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="applyFilterTapped:" destination="Wt7-oP-CmV" eventType="touchUpInside" id="gDn-Ia-X9v"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="wgB-qZ-Tfq" secondAttribute="bottom" id="Erg-5M-Cnk"/>
-                                <constraint firstItem="wgB-qZ-Tfq" firstAttribute="leading" secondItem="X6j-Xc-Fqb" secondAttribute="leading" constant="10" id="Su0-vl-b0a"/>
-                                <constraint firstItem="wgB-qZ-Tfq" firstAttribute="top" secondItem="X6j-Xc-Fqb" secondAttribute="top" id="WW3-Oj-Ypp"/>
-                                <constraint firstAttribute="trailing" secondItem="wgB-qZ-Tfq" secondAttribute="trailing" constant="10" id="XmQ-15-Qcv"/>
-                            </constraints>
-                        </view>
                         <sections>
                             <tableViewSection id="RDP-kg-WNq">
                                 <cells>
@@ -123,14 +94,8 @@
         <namedColor name="background_color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="primary_color">
-            <color red="0.94499999284744263" green="0.80800002813339233" blue="0.4309999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="text_color">
             <color red="0.13699999451637268" green="0.13300000131130219" blue="0.25099998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="white_color">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

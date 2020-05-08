@@ -61,6 +61,10 @@ extension FavoriteMoviesPresenter: FavoriteMoviesPresenterToView {
         self.fetchFavoriteMovies()
     }
 
+    func deleteFavoriteTrigger(_ movie: Movie) {
+        self.interactor.removeMovieFavorite(movie)
+    }
+
 }
 
 // MARK: - FavoriteMoviesPresenterToInteractor

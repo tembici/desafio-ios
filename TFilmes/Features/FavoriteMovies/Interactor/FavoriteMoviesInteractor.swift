@@ -59,4 +59,9 @@ extension FavoriteMoviesInteractor: FavoriteMoviesInteractorToPresenter {
         self.presenter.didFetchFavoriteMovies(movies)
     }
 
+    func removeMovieFavorite(_ movie: Movie) {
+        MovieLocalImage.delete(imageURL: movie.imageURL)
+        FavoriteMovieModel.deleteBy(id: movie.id)
+    }
+
 }

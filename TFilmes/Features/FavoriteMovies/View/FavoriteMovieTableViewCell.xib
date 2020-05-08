@@ -35,20 +35,20 @@
                             <constraint firstAttribute="width" constant="120" id="hsR-9a-jGO"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Di-8W-f3s">
-                        <rect key="frame" x="130" y="5" width="185" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Di-8W-f3s">
+                        <rect key="frame" x="130" y="5" width="185" height="21"/>
                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
                         <color key="textColor" name="text_color"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Year" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6l-7c-5BB">
-                        <rect key="frame" x="130" y="32" width="185" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6l-7c-5BB">
+                        <rect key="frame" x="130" y="31" width="185" height="19"/>
                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                         <color key="textColor" name="text_color"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Overview" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vy2-Bc-beQ">
-                        <rect key="frame" x="130" y="57" width="185" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vy2-Bc-beQ">
+                        <rect key="frame" x="130" y="55" width="185" height="19"/>
                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                         <color key="textColor" name="text_color"/>
                         <nil key="highlightedColor"/>
@@ -62,13 +62,12 @@
                     <constraint firstItem="r6l-7c-5BB" firstAttribute="trailing" secondItem="7Di-8W-f3s" secondAttribute="trailing" id="LF6-J9-NH5"/>
                     <constraint firstAttribute="trailing" secondItem="7Di-8W-f3s" secondAttribute="trailing" constant="5" id="OK9-hS-Q6Q"/>
                     <constraint firstItem="7Di-8W-f3s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Ofd-yV-f80"/>
-                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Vy2-Bc-beQ" secondAttribute="bottom" constant="53" id="Rde-BU-xl8"/>
                     <constraint firstItem="7Di-8W-f3s" firstAttribute="leading" secondItem="ebJ-5V-gZh" secondAttribute="trailing" constant="5" id="XUs-jH-3kj"/>
                     <constraint firstItem="Vy2-Bc-beQ" firstAttribute="trailing" secondItem="7Di-8W-f3s" secondAttribute="trailing" id="bJR-uW-Bvm"/>
                     <constraint firstItem="Vy2-Bc-beQ" firstAttribute="top" secondItem="r6l-7c-5BB" secondAttribute="bottom" constant="5" id="mcT-8b-WqG"/>
                     <constraint firstItem="r6l-7c-5BB" firstAttribute="leading" secondItem="7Di-8W-f3s" secondAttribute="leading" id="wBo-Bv-LFB"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Vy2-Bc-beQ" secondAttribute="bottom" constant="5" id="x7m-Bw-QCc"/>
                     <constraint firstItem="Vy2-Bc-beQ" firstAttribute="leading" secondItem="7Di-8W-f3s" secondAttribute="leading" id="zuv-2Y-w4J"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Vy2-Bc-beQ" secondAttribute="bottom" constant="5" id="zzn-qI-0uP"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

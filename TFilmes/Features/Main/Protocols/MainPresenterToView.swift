@@ -10,7 +10,7 @@ import Foundation
 
 protocol MainPresenterToView: class {
 
-    func viewDidLoad()
+    func viewDidAppear()
     func fetchMoreMovies()
     func filterMovies(with query: String?)
     func favoriteChanged(movie: Movie)

@@ -52,7 +52,7 @@ final class MainPresenter {
 
 extension MainPresenter: MainPresenterToView {
 
-    func viewDidLoad() {
+    func viewDidAppear() {
         self.fetchMovies()
     }
 

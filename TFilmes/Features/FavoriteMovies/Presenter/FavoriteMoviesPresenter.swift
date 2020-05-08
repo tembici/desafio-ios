@@ -20,14 +20,45 @@ final class FavoriteMoviesPresenter {
         self.view = view
     }
 
+    private var currentYearsFilter: [Int] = []
+    private var currentGenreIdsFilter: [Int] = []
+    private var searchQuery: String = ""
+
+    private func fetchFavoriteMovies() {
+        self.interactor.fetchFavoriteMovies(
+            withSearchQuery: self.searchQuery,
+            inYears: self.currentYearsFilter,
+            inGenreIds: self.currentGenreIdsFilter
+        )
+    }
+
 }
 
 // MARK: - FavoriteMoviesPresenterToView
 
 extension FavoriteMoviesPresenter: FavoriteMoviesPresenterToView {
 
-    func viewDidLoad() {
-        self.interactor.fetchFavoriteMovies()
+    var yearsFilter: [Int] {
+        self.currentGenreIdsFilter
+    }
+
+    var genreIdsFilter: [Int] {
+        self.currentGenreIdsFilter
+    }
+
+    func viewDidAppear() {
+        self.fetchFavoriteMovies()
+    }
+
+    func filterMovies(with searchQuery: String?) {
+        self.searchQuery = searchQuery ?? ""
+        self.fetchFavoriteMovies()
+    }
+
+    func filterUpdated(years: [Int], genreIds: [Int]) {
+        self.currentYearsFilter = years
+        self.currentGenreIdsFilter = genreIds
+        self.fetchFavoriteMovies()
     }
 
 }

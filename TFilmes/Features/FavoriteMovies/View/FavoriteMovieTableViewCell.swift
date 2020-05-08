@@ -10,6 +10,9 @@ import UIKit
 
 class FavoriteMovieTableViewCell: UITableViewCell {
 
+    static let nibName = "FavoriteMovieTableViewCell"
+    static let identifier = "FavoriteMovieTableViewCell"
+
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
@@ -30,5 +33,5 @@ class FavoriteMovieTableViewCell: UITableViewCell {
 
         self.overviewLabel.text = movie.overview
     }
-    
+
 }

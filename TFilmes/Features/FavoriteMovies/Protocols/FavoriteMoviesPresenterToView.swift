@@ -8,6 +8,11 @@
 
 protocol FavoriteMoviesPresenterToView: class {
 
-    func viewDidLoad()
+    var yearsFilter: [Int] { get }
+    var genreIdsFilter: [Int] { get }
+
+    func viewDidAppear()
+    func filterMovies(with searchQuery: String?)
+    func filterUpdated(years: [Int], genreIds: [Int])
 
 }

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hjr-Vo-O5Z">
-                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <color key="backgroundColor" name="primary_color"/>
                                 <color key="barTintColor" name="primary_color"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -26,7 +26,7 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0pK-YD-1v5">
-                                <rect key="frame" x="10" y="105" width="394" height="757"/>
+                                <rect key="frame" x="10" y="149" width="394" height="664"/>
                                 <color key="backgroundColor" name="background_color"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ucv-yR-0Sl" id="n7f-Uc-mW3"/>
@@ -46,15 +46,28 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AqU-jO-9Oq"/>
                     </view>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="Hjr-Vo-O5Z" id="DBF-CK-ta8"/>
                         <outlet property="tableView" destination="0pK-YD-1v5" id="1gx-h4-ksL"/>
+                        <segue destination="9lP-DF-35S" kind="show" identifier="segueToFilter" id="Ar5-xN-bRW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkS-CJ-TPc" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+        <!--FilterFavoriteMovies-->
+        <scene sceneID="dtP-qg-je3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FilterFavoriteMovies" id="9lP-DF-35S" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="WCQ-5F-gQZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0V2-cY-4tc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="-54"/>
         </scene>
     </scenes>
     <resources>

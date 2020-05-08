@@ -23,15 +23,22 @@ final class MainViewController: UIViewController {
     }()
 
     private var movies: [Movie] = []
-
     private var rowTapped: Int?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.skeletonCollectionView.showAnimatedGradientSkeleton()
-        self.collectionView.register(UINib.init(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
+    private let dumyIdentifier = "DumyCell"
+    private let segueToMovieDetailIdentifier = "segueToMovieDetail"
 
-        self.presenter.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.skeletonCollectionView.showAnimatedGradientSkeleton()
+
+        let nib = UINib(nibName: MovieCollectionViewCell.nibName, bundle: nil)
+        self.collectionView.register(
+            nib,
+            forCellWithReuseIdentifier: MovieCollectionViewCell.identifier
+        )
+
+        self.presenter.viewDidAppear()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,11 +49,22 @@ final class MainViewController: UIViewController {
         viewController.delegate = self
     }
 
+
+
+}
+
+// MARK: - Actions
+
+extension MainViewController {
+
     @IBAction func tryGetMoviesAgainTapped(_ sender: Any) {
         self.tryGetMoviesAgainButton.isHidden = true
         self.presenter.tryToGetMoviesTapped()
     }
+
 }
+
+// MARK: - UISearchBarDelegate
 
 extension MainViewController: UISearchBarDelegate {
 
@@ -60,34 +78,39 @@ extension MainViewController: UISearchBarDelegate {
 
 }
 
+// MARK: - UICollectionViewDelegate
+
 extension MainViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.rowTapped = indexPath.row
-        self.performSegue(withIdentifier: "segueToMovieDetail", sender: self)
+        self.performSegue(withIdentifier: self.segueToMovieDetailIdentifier, sender: self)
     }
 
 }
 
+// MARK: - UICollectionViewDataSource
+
 extension MainViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.collectionView {
-            return self.movies.count
-        } else {
-            return 10
-        }
-
+        return collectionView == self.collectionView ? self.movies.count : 10
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.skeletonCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DumyCell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: self.dumyIdentifier,
+                for: indexPath
+            )
             cell.showAnimatedGradientSkeleton()
             return cell
         }
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as! MovieCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: MovieCollectionViewCell.identifier,
+            for: indexPath
+        ) as! MovieCollectionViewCell
 
         cell.updateData(with: self.movies[indexPath.row])
         cell.delegate = self
@@ -98,6 +121,33 @@ extension MainViewController: UICollectionViewDataSource {
         }
 
         return cell
+    }
+
+}
+
+// MARK: - Private methods
+
+extension MainViewController {
+
+    private func checkEmptyState() {
+        if self.movies.count == 0 {
+            if let searchQuery = self.searchBar.text, !searchQuery.isEmpty {
+                let baseMessage = NSLocalizedString("main.empty.search", comment: "Search base string")
+                let message = baseMessage.replacingOccurrences(of: "#text#", with: searchQuery)
+                self.emptyStateLabel.text = message
+            } else {
+                self.emptyStateLabel.text = NSLocalizedString("main.empty.default", comment: "Default empty")
+            }
+
+            DispatchQueue.main.async { [weak self] in
+                self?.emptyStateView.isHidden = false
+            }
+
+        } else {
+            DispatchQueue.main.async { [weak self] in
+                self?.emptyStateView.isHidden = true
+            }
+        }
     }
 
 }
@@ -120,24 +170,7 @@ extension MainViewController: MainViewToPresenter {
             }
         }
 
-        if self.movies.count == 0 {
-            if let searchQuery = self.searchBar.text, !searchQuery.isEmpty {
-                let baseMessage = NSLocalizedString("main.empty.search", comment: "Search base string")
-                let message = baseMessage.replacingOccurrences(of: "#text#", with: searchQuery)
-                self.emptyStateLabel.text = message
-            } else {
-                self.emptyStateLabel.text = NSLocalizedString("main.empty.default", comment: "Default empty")
-            }
-
-            DispatchQueue.main.async { [weak self] in
-                self?.emptyStateView.isHidden = false
-            }
-
-        } else {
-            DispatchQueue.main.async { [weak self] in
-                self?.emptyStateView.isHidden = true
-            }
-        }
+        self.checkEmptyState()
     }
 
     func removeMovies() {
@@ -195,6 +228,7 @@ extension MainViewController: MovieDetailDelegate {
         if let currentMovieIndex = self.movies.firstIndex(where: { $0.id == movie.id }) {
             self.movies[currentMovieIndex].favorite = movie.favorite
         }
+
         self.collectionView.reloadData()
     }
 

@@ -40,7 +40,7 @@ extension MainPresenterTests {
             XCTAssertGreaterThan(self.viewToPresenter.movies.count, currentMovies)
         }
 
-        self.presenter.viewDidLoad()
+        self.presenter.viewDidAppear()
     }
 
     func testGetMoreDataFromAPI() throws {
@@ -56,7 +56,7 @@ extension MainPresenterTests {
 
         }
 
-        self.presenter.viewDidLoad()
+        self.presenter.viewDidAppear()
     }
 
     func testTryToGetMoreMoviesWithSamePage() throws {

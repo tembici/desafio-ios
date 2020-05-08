@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class FavoriteMoviesInteractor {
 
@@ -22,8 +23,31 @@ final class FavoriteMoviesInteractor {
 
 extension FavoriteMoviesInteractor: FavoriteMoviesInteractorToPresenter {
 
-    func fetchFavoriteMovies() {
-        let favoriteMovies = FavoriteMovieModel.getAll()
+    func fetchFavoriteMovies(
+        withSearchQuery searchQuery: String?,
+        inYears years: [Int]?,
+        inGenreIds genreIds: [Int]?
+    ) {
+
+        var realmResults = try! Realm()
+            .objects(FavoriteMovieModel.self)
+
+        if let searchQuery = searchQuery {
+            realmResults = realmResults.filter("originalTitle LIKE '*\(searchQuery)*'")
+        }
+
+        if let genreIds = genreIds, !genreIds.isEmpty {
+            let movieIds = FavoriteMovieGenreModel.getMoviesIds(ofGenreIds: genreIds)
+            let query = NSPredicate(format: "id IN %@", Array(movieIds))
+            realmResults = realmResults.filter(query)
+        }
+
+        let favoriteMovies: [FavoriteMovieModel] = realmResults.sorted(byKeyPath: "originalTitle").compactMap {
+            guard let years = years, !years.isEmpty else { return $0 }
+            guard let movieYear = $0.releaseDate?.getYear() else { return nil }
+            return years.contains(movieYear) ? $0 : nil
+
+        }
 
         var movies: [Movie] = []
         for favoriteMovie in favoriteMovies {

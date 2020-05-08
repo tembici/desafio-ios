@@ -8,6 +8,10 @@
 
 protocol FavoriteMoviesInteractorToPresenter: class {
 
-    func fetchFavoriteMovies()
+    func fetchFavoriteMovies(
+        withSearchQuery searchQuery: String?,
+        inYears years: [Int]?,
+        inGenreIds genreIds: [Int]?
+    )
 
 }

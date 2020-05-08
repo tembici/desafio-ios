@@ -27,7 +27,6 @@ final class MovieDetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.updateImage()
         self.updateFavoriteColor()
         self.imageView.image = movieToShow?.image
 
@@ -65,10 +64,6 @@ final class MovieDetailViewController: UITableViewController {
         } else {
             self.favoriteButton.tintColor = CollorPallet.gray
         }
-    }
-
-    private func updateImage() {
-
     }
 }
 

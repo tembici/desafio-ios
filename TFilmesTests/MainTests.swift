@@ -23,7 +23,7 @@ class MainTests: XCTestCase {
         self.presenter = MainPresenter(view: self.viewToPresenter)
     }
 
-    override class func tearDown() {
+    override func tearDownWithError() throws {
         let realm = try! Realm()
         try! realm.write {
           realm.deleteAll()

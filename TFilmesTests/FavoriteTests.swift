@@ -23,7 +23,7 @@ class FavoriteTests: XCTestCase {
         self.presenter = FavoriteMoviesPresenter(view: self.viewToPresenter)
     }
 
-    override class func tearDown() {
+    override func tearDownWithError() throws {
         let realm = try! Realm()
         try! realm.write {
           realm.deleteAll()
@@ -37,7 +37,6 @@ extension FavoriteTests {
     func testGetAllFavoriteMovies() {
         let expectation = self.expectation(description: "Get movies")
         let fakerMovies = FakerMovie.generate(quantity: 3)
-
         FakerMovie.saveInDB(fakerMovies)
 
         self.viewToPresenter.updateMoviesCompletion = {

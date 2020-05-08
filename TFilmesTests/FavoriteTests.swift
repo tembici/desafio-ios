@@ -23,6 +23,13 @@ class FavoriteTests: XCTestCase {
         self.presenter = FavoriteMoviesPresenter(view: self.viewToPresenter)
     }
 
+    override class func tearDown() {
+        let realm = try! Realm()
+        try! realm.write {
+          realm.deleteAll()
+        }
+    }
+
 }
 
 extension FavoriteTests {

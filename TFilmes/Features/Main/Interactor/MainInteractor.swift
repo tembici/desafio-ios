@@ -10,7 +10,7 @@ import Foundation
 
 final class MainInteractor {
 
-    unowned private let presenter: MainPresenterToInteractor
+    private unowned let presenter: MainPresenterToInteractor
 
     init (presenter: MainPresenterToInteractor) {
         self.presenter = presenter
@@ -40,7 +40,7 @@ final class MainInteractor {
 
 extension MainInteractor: MainInteractorToPresenter {
 
-    func fetchMoviesOnApi(with page: Int) {
+    func fetchMoviesOnApi(withPage page: Int) {
         let query = [
             URLQueryItem(name: "page", value: String(page))
         ]
@@ -83,4 +83,5 @@ extension MainInteractor: MainInteractorToPresenter {
             FavoriteMovieModel.deleteBy(id: movie.id)
         }
     }
+
 }

@@ -15,7 +15,6 @@ class MainTests: XCTestCase {
     var presenter: MainPresenter!
     var viewToPresenter: MainViewToPresenterTest!
 
-
     override func setUpWithError() throws {
         super.setUp()
 
@@ -25,8 +24,6 @@ class MainTests: XCTestCase {
     }
 
 }
-
-// MARK: - MainPresenterToView functions
 
 extension MainTests {
 

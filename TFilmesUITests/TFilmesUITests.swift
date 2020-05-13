@@ -7,37 +7,98 @@
 //
 
 import XCTest
+import RealmSwift
 
 class TFilmesUITests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var app: XCUIApplication!
 
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+    override func setUp() {
+        app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
-            }
+    override func setUpWithError() throws {
+
+        continueAfterFailure = false
+    }
+
+    func testLoadMoviesFromAPI() throws {
+        let firstMovieLabel = app.collectionViews.cells.staticTexts["movie-title"].firstMatch
+
+        XCTAssertTrue(firstMovieLabel.waitForExistence(timeout: 10))
+    }
+
+    func testShowMovieDetails() throws {
+        let firstMovieLabel = app.collectionViews.cells.staticTexts["movie-title"].firstMatch
+        let firstMovieLabelText = firstMovieLabel.label
+
+        XCTAssertTrue(firstMovieLabel.waitForExistence(timeout: 10))
+
+        firstMovieLabel.tap()
+
+        let movieTitleLabel = app.staticTexts["movie-title"].firstMatch
+
+        XCTAssertTrue(movieTitleLabel.waitForExistence(timeout: 10))
+        XCTAssertEqual(firstMovieLabelText, movieTitleLabel.label)
+    }
+
+    func testFavoriteMovieInMainAndShowItFavoritList() throws {
+        self.clearFavorites()
+
+        let firstCell = app.collectionViews.cells.firstMatch
+
+        let firstMovieLabel = firstCell.staticTexts["movie-title"].firstMatch
+
+        XCTAssertTrue(firstMovieLabel.waitForExistence(timeout: 10))
+
+        let movieTitle = firstMovieLabel.label
+
+        firstCell.buttons["movie-favorite-button"].tap()
+
+        app.buttons["Favorites Button"].tap()
+
+        XCTAssertTrue(app.tables.cells.staticTexts[movieTitle].firstMatch.waitForExistence(timeout: 3))
+    }
+
+    func testUnfavoriteMovie() throws {
+        self.clearFavorites()
+
+        let firstCollectionCell = app.collectionViews.cells.firstMatch
+
+        let firstMovieLabel = firstCollectionCell.staticTexts["movie-title"].firstMatch
+
+        XCTAssertTrue(firstMovieLabel.waitForExistence(timeout: 10))
+
+        let movieTitle = firstMovieLabel.label
+        firstCollectionCell.buttons["movie-favorite-button"].firstMatch.tap()
+
+        app.buttons["Favorites Button"].tap()
+
+        XCTAssertTrue(app.tables.firstMatch.waitForExistence(timeout: 2))
+        let movieFavoriteCell = app.tables.cells.firstMatch
+        XCTAssertTrue(movieFavoriteCell.staticTexts[movieTitle].exists)
+
+        movieFavoriteCell.swipeLeft()
+        movieFavoriteCell.buttons.firstMatch.tap()
+
+        XCTAssertFalse(movieFavoriteCell.staticTexts[movieTitle].exists)
+    }
+
+    private func clearFavorites() {
+        app.buttons["Favorites Button"].tap()
+
+        defer {
+            app.buttons["Movies Button"].tap()
+        }
+
+        guard app.tables.firstMatch.waitForExistence(timeout: 2) else { return }
+
+        while app.tables.cells.count > 0 {
+            let cell = app.tables.cells.firstMatch
+            cell.swipeLeft()
+            cell.buttons.firstMatch.tap()
         }
     }
+
 }

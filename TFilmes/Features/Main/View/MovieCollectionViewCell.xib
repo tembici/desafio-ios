@@ -35,12 +35,14 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyg-hq-tDr">
                                 <rect key="frame" x="2" y="194" width="156" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="movie-title"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <color key="textColor" name="white_color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sq9-Am-bih">
                                 <rect key="frame" x="124" y="0.0" width="36" height="36"/>
+                                <accessibility key="accessibilityConfiguration" identifier="movie-favorite-button"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="BUc-uu-yee"/>
                                     <constraint firstAttribute="height" constant="36" id="Wdm-pR-NqY"/>

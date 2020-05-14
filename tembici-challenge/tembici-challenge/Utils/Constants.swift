@@ -22,7 +22,7 @@ struct Constants {
             static let Yellow = "yellow"
             static let Gray = "gray"
             static let White = "white"
-
+            
             
         }
         struct Font {
@@ -30,6 +30,12 @@ struct Constants {
             static let Farah = "Farah"
             static let Thonburi = "Thonburi"
         }
+        
+    }
+    enum ImageType  {
+        case bigPoster
+        case smallPoster
+        case backdrop
         
     }
 }

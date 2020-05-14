@@ -1,0 +1,827 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5E0F49019F3AC6CDE4A9037B /* Pods_tembici_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C653A6D2D33E74E00E301A8 /* Pods_tembici_challenge.framework */; };
+		B61213CEEFE601913B88C292 /* Pods_tembici_challenge_tembici_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E47FD7082E9C1BFA665F5F9 /* Pods_tembici_challenge_tembici_challengeUITests.framework */; };
+		BB7697EF246DC70C007C08B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7697EE246DC70C007C08B5 /* AppDelegate.swift */; };
+		BB7697F1246DC70C007C08B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7697F0246DC70C007C08B5 /* SceneDelegate.swift */; };
+		BB7697F3246DC70C007C08B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7697F2246DC70C007C08B5 /* ContentView.swift */; };
+		BB7697F5246DC70E007C08B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7697F4246DC70E007C08B5 /* Assets.xcassets */; };
+		BB7697F8246DC70E007C08B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7697F7246DC70E007C08B5 /* Preview Assets.xcassets */; };
+		BB7697FB246DC70E007C08B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB7697F9246DC70E007C08B5 /* LaunchScreen.storyboard */; };
+		BB769806246DC70E007C08B5 /* tembici_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB769805246DC70E007C08B5 /* tembici_challengeTests.swift */; };
+		BB769811246DC70E007C08B5 /* tembici_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB769810246DC70E007C08B5 /* tembici_challengeUITests.swift */; };
+		BB769820246DC97A007C08B5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB76981F246DC97A007C08B5 /* Constants.swift */; };
+		BB769823246DCA46007C08B5 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB769822246DCA46007C08B5 /* MovieAPI.swift */; };
+		BB769825246DCC23007C08B5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB769824246DCC23007C08B5 /* NetworkManager.swift */; };
+		BB769828246DCCDC007C08B5 /* getPopularMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB769827246DCCDC007C08B5 /* getPopularMoviesUseCase.swift */; };
+		BB76982B246DCD2A007C08B5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB76982A246DCD2A007C08B5 /* Movie.swift */; };
+		BB76982D246DCE48007C08B5 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB76982C246DCE48007C08B5 /* Connectivity.swift */; };
+		BB769830246DCF45007C08B5 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB76982F246DCF45007C08B5 /* RootView.swift */; };
+		BB769832246DCFD7007C08B5 /* MoviesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB769831246DCFD7007C08B5 /* MoviesListView.swift */; };
+		BB769834246DCFFA007C08B5 /* FavoritesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB769833246DCFFA007C08B5 /* FavoritesListView.swift */; };
+		BB769836246DD128007C08B5 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB769835246DD128007C08B5 /* Colors.xcassets */; };
+		CA1E9FE3A5733BEAB8BA123F /* Pods_tembici_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA2FBD253CF56748C7A1676 /* Pods_tembici_challengeTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB769802246DC70E007C08B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB7697E3246DC70C007C08B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB7697EA246DC70C007C08B5;
+			remoteInfo = "tembici-challenge";
+		};
+		BB76980D246DC70E007C08B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB7697E3246DC70C007C08B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB7697EA246DC70C007C08B5;
+			remoteInfo = "tembici-challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E47FD7082E9C1BFA665F5F9 /* Pods_tembici_challenge_tembici_challengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tembici_challenge_tembici_challengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3188C5DE6D7D2E38FCAA2BFC /* Pods-tembici-challengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tembici-challengeTests.debug.xcconfig"; path = "Target Support Files/Pods-tembici-challengeTests/Pods-tembici-challengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3967C1393D24D69ADBE2AEDB /* Pods-tembici-challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tembici-challenge.release.xcconfig"; path = "Target Support Files/Pods-tembici-challenge/Pods-tembici-challenge.release.xcconfig"; sourceTree = "<group>"; };
+		4346095D4B14F3004AE551AE /* Pods-tembici-challenge-tembici-challengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tembici-challenge-tembici-challengeUITests.release.xcconfig"; path = "Target Support Files/Pods-tembici-challenge-tembici-challengeUITests/Pods-tembici-challenge-tembici-challengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6C653A6D2D33E74E00E301A8 /* Pods_tembici_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tembici_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D344680EB6A1374502482C1 /* Pods-tembici-challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tembici-challengeTests.release.xcconfig"; path = "Target Support Files/Pods-tembici-challengeTests/Pods-tembici-challengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		74665600E17CDB2BF62B0F32 /* Pods-tembici-challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tembici-challenge.debug.xcconfig"; path = "Target Support Files/Pods-tembici-challenge/Pods-tembici-challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		8CA2FBD253CF56748C7A1676 /* Pods_tembici_challengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tembici_challengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB7697EB246DC70C007C08B5 /* tembici-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tembici-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB7697EE246DC70C007C08B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB7697F0246DC70C007C08B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BB7697F2246DC70C007C08B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BB7697F4246DC70E007C08B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB7697F7246DC70E007C08B5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BB7697FA246DC70E007C08B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BB7697FC246DC70E007C08B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB769801246DC70E007C08B5 /* tembici-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tembici-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB769805246DC70E007C08B5 /* tembici_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tembici_challengeTests.swift; sourceTree = "<group>"; };
+		BB769807246DC70E007C08B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB76980C246DC70E007C08B5 /* tembici-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tembici-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB769810246DC70E007C08B5 /* tembici_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tembici_challengeUITests.swift; sourceTree = "<group>"; };
+		BB769812246DC70E007C08B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB76981F246DC97A007C08B5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BB769822246DCA46007C08B5 /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
+		BB769824246DCC23007C08B5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BB769827246DCCDC007C08B5 /* getPopularMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getPopularMoviesUseCase.swift; sourceTree = "<group>"; };
+		BB76982A246DCD2A007C08B5 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		BB76982C246DCE48007C08B5 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		BB76982F246DCF45007C08B5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		BB769831246DCFD7007C08B5 /* MoviesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListView.swift; sourceTree = "<group>"; };
+		BB769833246DCFFA007C08B5 /* FavoritesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListView.swift; sourceTree = "<group>"; };
+		BB769835246DD128007C08B5 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		EDB855FB3050BCBFB4C687B1 /* Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-tembici-challenge-tembici-challengeUITests/Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB7697E8246DC70C007C08B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E0F49019F3AC6CDE4A9037B /* Pods_tembici_challenge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB7697FE246DC70E007C08B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA1E9FE3A5733BEAB8BA123F /* Pods_tembici_challengeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB769809246DC70E007C08B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B61213CEEFE601913B88C292 /* Pods_tembici_challenge_tembici_challengeUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8CFCB2E555CB8D68BC9E5666 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C653A6D2D33E74E00E301A8 /* Pods_tembici_challenge.framework */,
+				0E47FD7082E9C1BFA665F5F9 /* Pods_tembici_challenge_tembici_challengeUITests.framework */,
+				8CA2FBD253CF56748C7A1676 /* Pods_tembici_challengeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB7697E2246DC70C007C08B5 = {
+			isa = PBXGroup;
+			children = (
+				BB7697ED246DC70C007C08B5 /* tembici-challenge */,
+				BB769804246DC70E007C08B5 /* tembici-challengeTests */,
+				BB76980F246DC70E007C08B5 /* tembici-challengeUITests */,
+				BB7697EC246DC70C007C08B5 /* Products */,
+				FD2B3E90FF8D30BF2B9395D5 /* Pods */,
+				8CFCB2E555CB8D68BC9E5666 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BB7697EC246DC70C007C08B5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB7697EB246DC70C007C08B5 /* tembici-challenge.app */,
+				BB769801246DC70E007C08B5 /* tembici-challengeTests.xctest */,
+				BB76980C246DC70E007C08B5 /* tembici-challengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB7697ED246DC70C007C08B5 /* tembici-challenge */ = {
+			isa = PBXGroup;
+			children = (
+				BB76982E246DCF32007C08B5 /* Views */,
+				BB769829246DCD10007C08B5 /* Models */,
+				BB769821246DCA17007C08B5 /* Services */,
+				BB76981E246DC91A007C08B5 /* Utils */,
+				BB7697EE246DC70C007C08B5 /* AppDelegate.swift */,
+				BB7697F0246DC70C007C08B5 /* SceneDelegate.swift */,
+				BB7697F2246DC70C007C08B5 /* ContentView.swift */,
+				BB7697F4246DC70E007C08B5 /* Assets.xcassets */,
+				BB769835246DD128007C08B5 /* Colors.xcassets */,
+				BB7697F9246DC70E007C08B5 /* LaunchScreen.storyboard */,
+				BB7697FC246DC70E007C08B5 /* Info.plist */,
+				BB7697F6246DC70E007C08B5 /* Preview Content */,
+			);
+			path = "tembici-challenge";
+			sourceTree = "<group>";
+		};
+		BB7697F6246DC70E007C08B5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BB7697F7246DC70E007C08B5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BB769804246DC70E007C08B5 /* tembici-challengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB769805246DC70E007C08B5 /* tembici_challengeTests.swift */,
+				BB769807246DC70E007C08B5 /* Info.plist */,
+			);
+			path = "tembici-challengeTests";
+			sourceTree = "<group>";
+		};
+		BB76980F246DC70E007C08B5 /* tembici-challengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BB769810246DC70E007C08B5 /* tembici_challengeUITests.swift */,
+				BB769812246DC70E007C08B5 /* Info.plist */,
+			);
+			path = "tembici-challengeUITests";
+			sourceTree = "<group>";
+		};
+		BB76981E246DC91A007C08B5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BB76981F246DC97A007C08B5 /* Constants.swift */,
+				BB76982C246DCE48007C08B5 /* Connectivity.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BB769821246DCA17007C08B5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BB769826246DCCBD007C08B5 /* UseCases */,
+				BB769822246DCA46007C08B5 /* MovieAPI.swift */,
+				BB769824246DCC23007C08B5 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BB769826246DCCBD007C08B5 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				BB769827246DCCDC007C08B5 /* getPopularMoviesUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		BB769829246DCD10007C08B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB76982A246DCD2A007C08B5 /* Movie.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BB76982E246DCF32007C08B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB76982F246DCF45007C08B5 /* RootView.swift */,
+				BB769831246DCFD7007C08B5 /* MoviesListView.swift */,
+				BB769833246DCFFA007C08B5 /* FavoritesListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FD2B3E90FF8D30BF2B9395D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74665600E17CDB2BF62B0F32 /* Pods-tembici-challenge.debug.xcconfig */,
+				3967C1393D24D69ADBE2AEDB /* Pods-tembici-challenge.release.xcconfig */,
+				EDB855FB3050BCBFB4C687B1 /* Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig */,
+				4346095D4B14F3004AE551AE /* Pods-tembici-challenge-tembici-challengeUITests.release.xcconfig */,
+				3188C5DE6D7D2E38FCAA2BFC /* Pods-tembici-challengeTests.debug.xcconfig */,
+				6D344680EB6A1374502482C1 /* Pods-tembici-challengeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB7697EA246DC70C007C08B5 /* tembici-challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB769815246DC70E007C08B5 /* Build configuration list for PBXNativeTarget "tembici-challenge" */;
+			buildPhases = (
+				BED2AA91B35265C0E8BC58E5 /* [CP] Check Pods Manifest.lock */,
+				BB7697E7246DC70C007C08B5 /* Sources */,
+				BB7697E8246DC70C007C08B5 /* Frameworks */,
+				BB7697E9246DC70C007C08B5 /* Resources */,
+				4C0A0B649D8AA8A42783A8E8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "tembici-challenge";
+			productName = "tembici-challenge";
+			productReference = BB7697EB246DC70C007C08B5 /* tembici-challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BB769800246DC70E007C08B5 /* tembici-challengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB769818246DC70E007C08B5 /* Build configuration list for PBXNativeTarget "tembici-challengeTests" */;
+			buildPhases = (
+				B44B9DDC24ED2D02DED725B9 /* [CP] Check Pods Manifest.lock */,
+				BB7697FD246DC70E007C08B5 /* Sources */,
+				BB7697FE246DC70E007C08B5 /* Frameworks */,
+				BB7697FF246DC70E007C08B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB769803246DC70E007C08B5 /* PBXTargetDependency */,
+			);
+			name = "tembici-challengeTests";
+			productName = "tembici-challengeTests";
+			productReference = BB769801246DC70E007C08B5 /* tembici-challengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BB76980B246DC70E007C08B5 /* tembici-challengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB76981B246DC70E007C08B5 /* Build configuration list for PBXNativeTarget "tembici-challengeUITests" */;
+			buildPhases = (
+				9E61D13011B6EAAAAAFD31DC /* [CP] Check Pods Manifest.lock */,
+				BB769808246DC70E007C08B5 /* Sources */,
+				BB769809246DC70E007C08B5 /* Frameworks */,
+				BB76980A246DC70E007C08B5 /* Resources */,
+				8901AD4303D61D907391659E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB76980E246DC70E007C08B5 /* PBXTargetDependency */,
+			);
+			name = "tembici-challengeUITests";
+			productName = "tembici-challengeUITests";
+			productReference = BB76980C246DC70E007C08B5 /* tembici-challengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB7697E3246DC70C007C08B5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Hannah ";
+				TargetAttributes = {
+					BB7697EA246DC70C007C08B5 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					BB769800246DC70E007C08B5 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = BB7697EA246DC70C007C08B5;
+					};
+					BB76980B246DC70E007C08B5 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = BB7697EA246DC70C007C08B5;
+					};
+				};
+			};
+			buildConfigurationList = BB7697E6246DC70C007C08B5 /* Build configuration list for PBXProject "tembici-challenge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB7697E2246DC70C007C08B5;
+			productRefGroup = BB7697EC246DC70C007C08B5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB7697EA246DC70C007C08B5 /* tembici-challenge */,
+				BB769800246DC70E007C08B5 /* tembici-challengeTests */,
+				BB76980B246DC70E007C08B5 /* tembici-challengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB7697E9246DC70C007C08B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB7697FB246DC70E007C08B5 /* LaunchScreen.storyboard in Resources */,
+				BB769836246DD128007C08B5 /* Colors.xcassets in Resources */,
+				BB7697F8246DC70E007C08B5 /* Preview Assets.xcassets in Resources */,
+				BB7697F5246DC70E007C08B5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB7697FF246DC70E007C08B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB76980A246DC70E007C08B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C0A0B649D8AA8A42783A8E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tembici-challenge/Pods-tembici-challenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tembici-challenge/Pods-tembici-challenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tembici-challenge/Pods-tembici-challenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8901AD4303D61D907391659E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tembici-challenge-tembici-challengeUITests/Pods-tembici-challenge-tembici-challengeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tembici-challenge-tembici-challengeUITests/Pods-tembici-challenge-tembici-challengeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tembici-challenge-tembici-challengeUITests/Pods-tembici-challenge-tembici-challengeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E61D13011B6EAAAAAFD31DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tembici-challenge-tembici-challengeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B44B9DDC24ED2D02DED725B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tembici-challengeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BED2AA91B35265C0E8BC58E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tembici-challenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB7697E7246DC70C007C08B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB769828246DCCDC007C08B5 /* getPopularMoviesUseCase.swift in Sources */,
+				BB769825246DCC23007C08B5 /* NetworkManager.swift in Sources */,
+				BB76982D246DCE48007C08B5 /* Connectivity.swift in Sources */,
+				BB7697EF246DC70C007C08B5 /* AppDelegate.swift in Sources */,
+				BB769830246DCF45007C08B5 /* RootView.swift in Sources */,
+				BB769832246DCFD7007C08B5 /* MoviesListView.swift in Sources */,
+				BB7697F1246DC70C007C08B5 /* SceneDelegate.swift in Sources */,
+				BB7697F3246DC70C007C08B5 /* ContentView.swift in Sources */,
+				BB769834246DCFFA007C08B5 /* FavoritesListView.swift in Sources */,
+				BB769820246DC97A007C08B5 /* Constants.swift in Sources */,
+				BB76982B246DCD2A007C08B5 /* Movie.swift in Sources */,
+				BB769823246DCA46007C08B5 /* MovieAPI.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB7697FD246DC70E007C08B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB769806246DC70E007C08B5 /* tembici_challengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB769808246DC70E007C08B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB769811246DC70E007C08B5 /* tembici_challengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB769803246DC70E007C08B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB7697EA246DC70C007C08B5 /* tembici-challenge */;
+			targetProxy = BB769802246DC70E007C08B5 /* PBXContainerItemProxy */;
+		};
+		BB76980E246DC70E007C08B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB7697EA246DC70C007C08B5 /* tembici-challenge */;
+			targetProxy = BB76980D246DC70E007C08B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BB7697F9246DC70E007C08B5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB7697FA246DC70E007C08B5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB769813246DC70E007C08B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB769814246DC70E007C08B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB769816246DC70E007C08B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74665600E17CDB2BF62B0F32 /* Pods-tembici-challenge.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"tembici-challenge/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "tembici-challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.tembici.tembici-challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB769817246DC70E007C08B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3967C1393D24D69ADBE2AEDB /* Pods-tembici-challenge.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"tembici-challenge/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "tembici-challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.tembici.tembici-challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BB769819246DC70E007C08B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3188C5DE6D7D2E38FCAA2BFC /* Pods-tembici-challengeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "tembici-challengeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.tembici.tembici-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tembici-challenge.app/tembici-challenge";
+			};
+			name = Debug;
+		};
+		BB76981A246DC70E007C08B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D344680EB6A1374502482C1 /* Pods-tembici-challengeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "tembici-challengeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.tembici.tembici-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tembici-challenge.app/tembici-challenge";
+			};
+			name = Release;
+		};
+		BB76981C246DC70E007C08B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDB855FB3050BCBFB4C687B1 /* Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "tembici-challengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.tembici.tembici-challengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "tembici-challenge";
+			};
+			name = Debug;
+		};
+		BB76981D246DC70E007C08B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4346095D4B14F3004AE551AE /* Pods-tembici-challenge-tembici-challengeUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "tembici-challengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.tembici.tembici-challengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "tembici-challenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB7697E6246DC70C007C08B5 /* Build configuration list for PBXProject "tembici-challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB769813246DC70E007C08B5 /* Debug */,
+				BB769814246DC70E007C08B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB769815246DC70E007C08B5 /* Build configuration list for PBXNativeTarget "tembici-challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB769816246DC70E007C08B5 /* Debug */,
+				BB769817246DC70E007C08B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB769818246DC70E007C08B5 /* Build configuration list for PBXNativeTarget "tembici-challengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB769819246DC70E007C08B5 /* Debug */,
+				BB76981A246DC70E007C08B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB76981B246DC70E007C08B5 /* Build configuration list for PBXNativeTarget "tembici-challengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB76981C246DC70E007C08B5 /* Debug */,
+				BB76981D246DC70E007C08B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB7697E3246DC70C007C08B5 /* Project object */;
+}

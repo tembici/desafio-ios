@@ -10,6 +10,8 @@ import SwiftUI
 
 struct RootView: View {
     
+    @EnvironmentObject var globalState: GlobalState
+    
     init() {
         
         UINavigationBar.appearance().largeTitleTextAttributes = [
@@ -38,6 +40,9 @@ struct RootView: View {
                 }
             }.navigationBarTitle(Text("Popular Movies"))
                 .accentColor(Color(Constants.Design.Color.Gold))
+        }  .onAppear(){
+            
+            self.globalState.fetchGenres()
         }
     }
 }

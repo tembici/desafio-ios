@@ -14,14 +14,19 @@ class MovieDetailViewModel: ObservableObject  {
     @Published var title = String()
     @Published var overview = String()
     @Published var date = String()
+    @Published var genresList = [String]()
     @Published var movie: Movie
+    
+    var globalState: GlobalState
 
-    init(movie: Movie) {
+    init(movie: Movie, globalState: GlobalState) {
         self.movie = movie
+        self.globalState = globalState
         self.setUrlImage()
         self.setTitle()
         self.setDate()
         self.setOverview()
+        self.setGenresList()
       }
     
     fileprivate func setTitle() {
@@ -37,6 +42,13 @@ class MovieDetailViewModel: ObservableObject  {
            if let poster = self.movie.backdropPath {
                self.urlImage = poster
            }
-       }
+    }
+    fileprivate func setGenresList() {
+        self.genresList =  (globalState.genres.filter {movie.genreIDS.contains ($0.id)}).map { $0.name }
+        print ("LIST---", self.globalState.genres)
+
+        print ("LIST---", self.genresList)
+    }
+       
 }
 

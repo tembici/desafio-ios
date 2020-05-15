@@ -11,9 +11,9 @@ import SwiftUI
 struct MovieDetailView: View {
     
     @ObservedObject var movieDetailVM: MovieDetailViewModel
-    
-    init(movie: Movie) {
-        movieDetailVM = MovieDetailViewModel(movie: movie)
+
+    init(movie: Movie, globalState: GlobalState ) {
+        movieDetailVM = MovieDetailViewModel(movie: movie, globalState: globalState )
     }
     
     var body: some View {
@@ -49,6 +49,22 @@ struct MovieDetailView: View {
                     Text("Relase Date: \(movieDetailVM.date)")
                         .padding()
                     
+                    ScrollView(.horizontal, showsIndicators: false){
+                                       
+                                       HStack(spacing: 10){
+                                        ForEach(movieDetailVM.genresList, id: \.self) { genere in
+                                               
+                                               Text(genere)
+                                                   .padding([.horizontal, .vertical], 8)
+                                                   .overlay(
+                                                       RoundedRectangle(cornerRadius: 5    )
+                                                           .stroke(Color.gray, lineWidth: 0.7))
+                                               
+                                           }
+                                           
+                                       }
+                                   }.padding()
+                    
                     Text(movieDetailVM.overview).textStyle(ContentStyle())
                 }
                 Spacer()
@@ -58,10 +74,10 @@ struct MovieDetailView: View {
     }
 }
 
-struct MovieDetailView_Previews: PreviewProvider {
-    @State static var movie = DataContants.sharedInstance.movieModelPreview
-    
-    static var previews: some View {
-        MovieDetailView(movie:movie)
-    }
-}
+//struct MovieDetailView_Previews: PreviewProvider {
+//    @State static var movie = DataContants.sharedInstance.movieModelPreview
+//
+//    static var previews: some View {
+//        MovieDetailView(movie:movie)
+//    }
+//}

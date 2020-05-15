@@ -11,8 +11,7 @@ import SwiftUI
 struct MoviesListCellView: View {
     
     @State var selectionTAG: Int? = nil
-    //     @EnvironmentObject var genreState: GenreState
-    
+    @EnvironmentObject var globalState: GlobalState
     @ObservedObject var movieListCellVM: MoviesListCellViewModel
     
     init(movie: Movie) {
@@ -22,9 +21,11 @@ struct MoviesListCellView: View {
     var body: some View {
         
         ZStack(alignment: .center){
-            NavigationLink(destination: MovieDetailView(movie: movieListCellVM.movie), tag: movieListCellVM.id, selection: self.$selectionTAG, label: {
+            NavigationLink(destination: MovieDetailView(movie: movieListCellVM.movie, globalState:globalState ), tag: movieListCellVM.id, selection: self.$selectionTAG, label: {
                 EmptyView()
-            })                    .buttonStyle(PlainButtonStyle())      .frame(width: 0, height: 0)
+            })
+                .buttonStyle(PlainButtonStyle())
+                .frame(width: 0, height: 0)
                 .disabled(true)
                 .hidden()     
             

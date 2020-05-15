@@ -9,8 +9,45 @@
 import SwiftUI
 
 struct MoviesListView: View {
+    
+    @ObservedObject var moviesListVM = MoviesListViewModel()
+ 
+    
+    init() {
+        UITableView.appearance().tableFooterView = UIView()
+        UITableView.appearance().separatorStyle = .none
+        self.fetchMovies()
+    }
+    
+    func fetchMovies()-> Void{
+           self.moviesListVM.fetchMovies()
+       }
+       
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/).background(Color.red)
+        ZStack{
+            LoadingView(isShowing: moviesListVM.isLoading && !moviesListVM.loadingMore , content: {
+                VStack{
+                    List{
+                        ForEach(0..<self.moviesListVM.moviesList.count, id: \.self) { indexRow in
+                            VStack {
+                                MoviesListRowView(moviesRow: self.moviesListVM.moviesList[indexRow])
+                                
+                            }.listRowInsets(EdgeInsets())
+                                .onAppear(){
+                                    self.moviesListVM.fetchLoadMore(row: indexRow)
+                            }
+                        }
+                        HStack(){
+                            Spacer()
+                            ActivityIndicator(isAnimating: true, style: .medium)
+                            Spacer()
+                        }
+                    }.onTapGesture {return}
+                }.padding(.top, 8)
+                
+            })
+//            ErrorView(show: moviesListVM.showMsgError, tapView: self.fetchMovies)
+        }
     }
 }
 

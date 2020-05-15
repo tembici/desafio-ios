@@ -14,8 +14,7 @@ class  MoviesListCellViewModel: ObservableObject {
     @Published var title = String()
     @Published var date = String()
     @Published var id: Int = 0
-
-    var movie: Movie
+    @Published var movie: Movie
 
     init(movie: Movie) {
         self.movie = movie

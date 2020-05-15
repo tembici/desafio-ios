@@ -22,6 +22,11 @@ struct MoviesListCellView: View {
     var body: some View {
         
         ZStack(alignment: .center){
+            NavigationLink(destination: MovieDetailView(movie: movieListCellVM.movie), tag: movieListCellVM.id, selection: self.$selectionTAG, label: {
+                EmptyView()
+            })                    .buttonStyle(PlainButtonStyle())      .frame(width: 0, height: 0)
+                .disabled(true)
+                .hidden()     
             
             Button(action: {
                 self.selectionTAG = self.movieListCellVM.id

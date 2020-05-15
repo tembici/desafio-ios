@@ -40,6 +40,7 @@
 		BB769854246E1938007C08B5 /* FormatterDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB769853246E1938007C08B5 /* FormatterDate.swift */; };
 		BBD5F444246E1E0E009888C0 /* CornerRadius+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F443246E1E0E009888C0 /* CornerRadius+View.swift */; };
 		BBD5F446246E1E4E009888C0 /* MoviesListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F445246E1E4E009888C0 /* MoviesListCellViewModel.swift */; };
+		BBD5F448246E29F0009888C0 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F447246E29F0009888C0 /* MovieDetailView.swift */; };
 		CA1E9FE3A5733BEAB8BA123F /* Pods_tembici_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA2FBD253CF56748C7A1676 /* Pods_tembici_challengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		BB769853246E1938007C08B5 /* FormatterDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterDate.swift; sourceTree = "<group>"; };
 		BBD5F443246E1E0E009888C0 /* CornerRadius+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CornerRadius+View.swift"; sourceTree = "<group>"; };
 		BBD5F445246E1E4E009888C0 /* MoviesListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListCellViewModel.swift; sourceTree = "<group>"; };
+		BBD5F447246E29F0009888C0 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		EDB855FB3050BCBFB4C687B1 /* Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-tembici-challenge-tembici-challengeUITests/Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -262,6 +264,7 @@
 				BB76982F246DCF45007C08B5 /* RootView.swift */,
 				BB769831246DCFD7007C08B5 /* MoviesListView.swift */,
 				BB769833246DCFFA007C08B5 /* FavoritesListView.swift */,
+				BBD5F447246E29F0009888C0 /* MovieDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				BB76983B246DE3BB007C08B5 /* ImageSizeHelper.swift in Sources */,
 				BB76982B246DCD2A007C08B5 /* Movie.swift in Sources */,
 				BB769843246DE912007C08B5 /* MoviesListCellView.swift in Sources */,
+				BBD5F448246E29F0009888C0 /* MovieDetailView.swift in Sources */,
 				BB76984D246DED7F007C08B5 /* ActivityIndicator.swift in Sources */,
 				BB769823246DCA46007C08B5 /* MovieAPI.swift in Sources */,
 				BB76984B246DED55007C08B5 /* LoadingView.swift in Sources */,

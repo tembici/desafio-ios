@@ -16,7 +16,7 @@ protocol Network {
 
 protocol NetworkManagerProtocol {
     
-//    func getGenres( completion: @escaping (GetGenreCompletion)->())
+        func getGenres( completion: @escaping (GetGenreCompletion)->())
     func getPopularMovies(page: Int, with completion: @escaping (GetPopularMoviesCompletion))
 }
 

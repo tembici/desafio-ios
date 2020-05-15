@@ -42,6 +42,9 @@
 		BBD5F446246E1E4E009888C0 /* MoviesListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F445246E1E4E009888C0 /* MoviesListCellViewModel.swift */; };
 		BBD5F448246E29F0009888C0 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F447246E29F0009888C0 /* MovieDetailView.swift */; };
 		BBD5F44A246E2B58009888C0 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F449246E2B58009888C0 /* MovieDetailViewModel.swift */; };
+		BBD5F44C246E2E40009888C0 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F44B246E2E40009888C0 /* Genre.swift */; };
+		BBD5F451246E2FD7009888C0 /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F450246E2FD7009888C0 /* GlobalState.swift */; };
+		BBD5F453246E3061009888C0 /* getGenreUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F452246E3061009888C0 /* getGenreUseCase.swift */; };
 		CA1E9FE3A5733BEAB8BA123F /* Pods_tembici_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA2FBD253CF56748C7A1676 /* Pods_tembici_challengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +113,9 @@
 		BBD5F445246E1E4E009888C0 /* MoviesListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListCellViewModel.swift; sourceTree = "<group>"; };
 		BBD5F447246E29F0009888C0 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		BBD5F449246E2B58009888C0 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		BBD5F44B246E2E40009888C0 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		BBD5F450246E2FD7009888C0 /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
+		BBD5F452246E3061009888C0 /* getGenreUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getGenreUseCase.swift; sourceTree = "<group>"; };
 		EDB855FB3050BCBFB4C687B1 /* Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-tembici-challenge-tembici-challengeUITests/Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,21 +182,17 @@
 		BB7697ED246DC70C007C08B5 /* tembici-challenge */ = {
 			isa = PBXGroup;
 			children = (
-				BB76984E246E1860007C08B5 /* Styles */,
-				BB769844246DEA38007C08B5 /* Extensions */,
-				BB76983C246DE4AB007C08B5 /* LocalPreviewData */,
-				BB769837246DE2FC007C08B5 /* Components */,
+				BBD5F44F246E2FBC009888C0 /* GlobalState */,
 				BB769847246DEAFF007C08B5 /* ViewModels */,
 				BB76982E246DCF32007C08B5 /* Views */,
 				BB769829246DCD10007C08B5 /* Models */,
+				BB769837246DE2FC007C08B5 /* Components */,
+				BB76984E246E1860007C08B5 /* Styles */,
 				BB769821246DCA17007C08B5 /* Services */,
+				BB769844246DEA38007C08B5 /* Extensions */,
 				BB76981E246DC91A007C08B5 /* Utils */,
-				BB7697EE246DC70C007C08B5 /* AppDelegate.swift */,
-				BB7697F0246DC70C007C08B5 /* SceneDelegate.swift */,
-				BB7697F4246DC70E007C08B5 /* Assets.xcassets */,
-				BB769835246DD128007C08B5 /* Colors.xcassets */,
-				BB7697F9246DC70E007C08B5 /* LaunchScreen.storyboard */,
-				BB7697FC246DC70E007C08B5 /* Info.plist */,
+				BBD5F44E246E2F50009888C0 /* Supporting Files */,
+				BB76983C246DE4AB007C08B5 /* LocalPreviewData */,
 				BB7697F6246DC70E007C08B5 /* Preview Content */,
 			);
 			path = "tembici-challenge";
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				BB769827246DCCDC007C08B5 /* getPopularMoviesUseCase.swift */,
+				BBD5F452246E3061009888C0 /* getGenreUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				BB76982A246DCD2A007C08B5 /* Movie.swift */,
+				BBD5F44B246E2E40009888C0 /* Genre.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -324,6 +328,27 @@
 				BB769851246E18F7007C08B5 /* TextStyles.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		BBD5F44E246E2F50009888C0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BB7697FC246DC70E007C08B5 /* Info.plist */,
+				BB7697F9246DC70E007C08B5 /* LaunchScreen.storyboard */,
+				BB7697EE246DC70C007C08B5 /* AppDelegate.swift */,
+				BB7697F0246DC70C007C08B5 /* SceneDelegate.swift */,
+				BB7697F4246DC70E007C08B5 /* Assets.xcassets */,
+				BB769835246DD128007C08B5 /* Colors.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BBD5F44F246E2FBC009888C0 /* GlobalState */ = {
+			isa = PBXGroup;
+			children = (
+				BBD5F450246E2FD7009888C0 /* GlobalState.swift */,
+			);
+			path = GlobalState;
 			sourceTree = "<group>";
 		};
 		FD2B3E90FF8D30BF2B9395D5 /* Pods */ = {
@@ -585,6 +610,7 @@
 				BB769849246DEB41007C08B5 /* MoviesListViewModel.swift in Sources */,
 				BB76983E246DE4BC007C08B5 /* DataContants.swift in Sources */,
 				BB7697EF246DC70C007C08B5 /* AppDelegate.swift in Sources */,
+				BBD5F453246E3061009888C0 /* getGenreUseCase.swift in Sources */,
 				BB769841246DE8FA007C08B5 /* MoviesListRowView.swift in Sources */,
 				BB769839246DE336007C08B5 /* ImageViewComponent.swift in Sources */,
 				BB769854246E1938007C08B5 /* FormatterDate.swift in Sources */,
@@ -598,6 +624,7 @@
 				BB769820246DC97A007C08B5 /* Constants.swift in Sources */,
 				BBD5F44A246E2B58009888C0 /* MovieDetailViewModel.swift in Sources */,
 				BB76983B246DE3BB007C08B5 /* ImageSizeHelper.swift in Sources */,
+				BBD5F451246E2FD7009888C0 /* GlobalState.swift in Sources */,
 				BB76982B246DCD2A007C08B5 /* Movie.swift in Sources */,
 				BB769843246DE912007C08B5 /* MoviesListCellView.swift in Sources */,
 				BBD5F448246E29F0009888C0 /* MovieDetailView.swift in Sources */,
@@ -606,6 +633,7 @@
 				BB76984B246DED55007C08B5 /* LoadingView.swift in Sources */,
 				BBD5F446246E1E4E009888C0 /* MoviesListCellViewModel.swift in Sources */,
 				BB769846246DEA4F007C08B5 /* Array+Chunk.swift in Sources */,
+				BBD5F44C246E2E40009888C0 /* Genre.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,7 +802,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"tembici-challenge/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "tembici-challenge/Info.plist";
+				INFOPLIST_FILE = "tembici-challenge/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -794,7 +822,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"tembici-challenge/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "tembici-challenge/Info.plist";
+				INFOPLIST_FILE = "tembici-challenge/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

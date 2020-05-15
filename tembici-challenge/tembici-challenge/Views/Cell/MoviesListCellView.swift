@@ -1,0 +1,74 @@
+//
+//  MoviesListCell.swift
+//  tembici-challenge
+//
+//  Created by Hannah  on 14/05/2020.
+//  Copyright © 2020 Hannah . All rights reserved.
+//
+
+import SwiftUI
+
+struct MoviesListCellView: View {
+    
+    @State var selectionTAG: Int? = nil
+    //     @EnvironmentObject var genreState: GenreState
+    
+    @ObservedObject var movieListCellVM: MoviesListCellViewModel
+    
+    init(movie: Movie) {
+        movieListCellVM = MoviesListCellViewModel(movie: movie)
+    }
+    
+    var body: some View {
+        
+        ZStack(alignment: .center){
+            
+            Button(action: {
+                self.selectionTAG = self.movieListCellVM.id
+            }, label: {
+                VStack (){
+                    ZStack(alignment:.top){
+                        ImageViewComponent(url: movieListCellVM.urlImage, type: .bigPoster)
+                            .cornerRadius(radius: 10, corners: [.topLeft, .topRight])
+                            .padding(0)
+                        
+                    }
+                    VStack(alignment: .leading) {
+                        
+                        Text(movieListCellVM.title)
+                            .fontWeight(.heavy)
+                            .textStyle(TitleCellStyle())
+                        
+                        Spacer()
+                        HStack{
+                            Text(movieListCellVM.date)
+                                .textStyle(DateCellStyle())
+                            Spacer()
+                            Image(systemName:"star")
+                                .font(.system(size: 12))
+                                .foregroundColor(Color(Constants.Design.Color.Gold)).padding(5)
+                        }
+                        .padding(.bottom, 10)
+                        .padding(.top, 0)
+                    }  .frame(width: nil, height: 75, alignment: .top)               .background(Color(Constants.Design.Color.Gray))
+                        .cornerRadius(radius: 10, corners: [.bottomLeft, .bottomRight])
+                        .padding(.top, -8)
+                }
+                
+                
+            }).buttonStyle(ButtonAnimatedStyless())
+            
+        }.onDisappear{
+            self.selectionTAG = nil
+        }
+    }
+}
+
+struct MoviesListCell_Previews: PreviewProvider {
+    @State static var movie = DataContants.sharedInstance.movieModelPreview
+    
+    
+    static var previews: some View {
+        MoviesListCellView(movie: movie)
+    }
+}

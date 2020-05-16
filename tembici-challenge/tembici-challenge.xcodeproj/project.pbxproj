@@ -14,6 +14,7 @@
 		BB08B4122470506600AA9B94 /* FavoritesListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB08B4112470506600AA9B94 /* FavoritesListCellView.swift */; };
 		BB08B4142470520100AA9B94 /* FavoritesListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB08B4132470520100AA9B94 /* FavoritesListCellViewModel.swift */; };
 		BB08B4162470582000AA9B94 /* PopularityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB08B4152470582000AA9B94 /* PopularityIndicator.swift */; };
+		BB5E54A12470B1DF00D11BAB /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5E54A02470B1DF00D11BAB /* SearchBar.swift */; };
 		BB7697EF246DC70C007C08B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7697EE246DC70C007C08B5 /* AppDelegate.swift */; };
 		BB7697F1246DC70C007C08B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7697F0246DC70C007C08B5 /* SceneDelegate.swift */; };
 		BB7697F5246DC70E007C08B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7697F4246DC70E007C08B5 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		BB769850246E187B007C08B5 /* ButtonAnimatedStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB76984F246E187B007C08B5 /* ButtonAnimatedStyle.swift */; };
 		BB769852246E18F7007C08B5 /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB769851246E18F7007C08B5 /* TextStyles.swift */; };
 		BB769854246E1938007C08B5 /* FormatterDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB769853246E1938007C08B5 /* FormatterDate.swift */; };
+		BB8DDBF524706C88000F92AE /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8DDBF424706C88000F92AE /* FavoritesListViewModel.swift */; };
 		BBD5F444246E1E0E009888C0 /* CornerRadius+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F443246E1E0E009888C0 /* CornerRadius+View.swift */; };
 		BBD5F446246E1E4E009888C0 /* MoviesListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F445246E1E4E009888C0 /* MoviesListCellViewModel.swift */; };
 		BBD5F448246E29F0009888C0 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F447246E29F0009888C0 /* MovieDetailView.swift */; };
@@ -84,6 +86,7 @@
 		BB08B4112470506600AA9B94 /* FavoritesListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListCellView.swift; sourceTree = "<group>"; };
 		BB08B4132470520100AA9B94 /* FavoritesListCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesListCellViewModel.swift; sourceTree = "<group>"; };
 		BB08B4152470582000AA9B94 /* PopularityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityIndicator.swift; sourceTree = "<group>"; };
+		BB5E54A02470B1DF00D11BAB /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		BB7697EB246DC70C007C08B5 /* tembici-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tembici-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7697EE246DC70C007C08B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB7697F0246DC70C007C08B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 		BB76984F246E187B007C08B5 /* ButtonAnimatedStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimatedStyle.swift; sourceTree = "<group>"; };
 		BB769851246E18F7007C08B5 /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 		BB769853246E1938007C08B5 /* FormatterDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterDate.swift; sourceTree = "<group>"; };
+		BB8DDBF424706C88000F92AE /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
 		BBD5F443246E1E0E009888C0 /* CornerRadius+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CornerRadius+View.swift"; sourceTree = "<group>"; };
 		BBD5F445246E1E4E009888C0 /* MoviesListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListCellViewModel.swift; sourceTree = "<group>"; };
 		BBD5F447246E29F0009888C0 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 				BB76984A246DED55007C08B5 /* LoadingView.swift */,
 				BB76984C246DED7F007C08B5 /* ActivityIndicator.swift */,
 				BB08B4152470582000AA9B94 /* PopularityIndicator.swift */,
+				BB5E54A02470B1DF00D11BAB /* SearchBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				BBD5F445246E1E4E009888C0 /* MoviesListCellViewModel.swift */,
 				BB08B4132470520100AA9B94 /* FavoritesListCellViewModel.swift */,
 				BBD5F449246E2B58009888C0 /* MovieDetailViewModel.swift */,
+				BB8DDBF424706C88000F92AE /* FavoritesListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -629,9 +635,11 @@
 				BB769841246DE8FA007C08B5 /* MoviesListRowView.swift in Sources */,
 				BB769839246DE336007C08B5 /* ImageViewComponent.swift in Sources */,
 				BB769854246E1938007C08B5 /* FormatterDate.swift in Sources */,
+				BB8DDBF524706C88000F92AE /* FavoritesListViewModel.swift in Sources */,
 				BBD5F444246E1E0E009888C0 /* CornerRadius+View.swift in Sources */,
 				BB769850246E187B007C08B5 /* ButtonAnimatedStyle.swift in Sources */,
 				BB769830246DCF45007C08B5 /* RootView.swift in Sources */,
+				BB5E54A12470B1DF00D11BAB /* SearchBar.swift in Sources */,
 				BB08B4162470582000AA9B94 /* PopularityIndicator.swift in Sources */,
 				BB769832246DCFD7007C08B5 /* MoviesListView.swift in Sources */,
 				BB7697F1246DC70C007C08B5 /* SceneDelegate.swift in Sources */,

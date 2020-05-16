@@ -9,9 +9,20 @@
 import SwiftUI
 
 struct FavoritesListView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/).background(Color.green)
-    }
+      @EnvironmentObject var globalState: GlobalState
+     
+     var body: some View {
+         return
+             ZStack{
+                 List{
+                     ForEach(globalState.favorites, id: \.self) { movie in
+                         
+                         FavoritesListCellView(movie: movie)
+                     }
+                     
+                 }
+         }
+     }
 }
 
 struct FavoritesListView_Previews: PreviewProvider {

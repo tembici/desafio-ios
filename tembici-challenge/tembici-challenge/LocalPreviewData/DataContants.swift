@@ -12,8 +12,8 @@ import Foundation
 class DataContants {
     static let sharedInstance = DataContants()
     let urlImage =  #"\/f4aul3FyD3jv3v4bul1IrkWZvzq.jpg"#
-    
-    let movieModelPreview = Movie(popularity: 140.588, voteCount: 1251, video: false, posterPath:  #"\/f4aul3FyD3jv3v4bul1IrkWZvzq.jpg"#, id: 10, adult: false, backdropPath: #"\/xFxk4vnirOtUxpOEWgA1MCRfy6J.jpg"#, originalLanguage: "en", originalTitle: "Onward", genreIDS:  [
+            
+    let movieModelPreview = Movie(id: 10, posterPath:  #"\/f4aul3FyD3jv3v4bul1IrkWZvzq.jpg"#, backdropPath: #"\/xFxk4vnirOtUxpOEWgA1MCRfy6J.jpg"#, genreIDS:[
         12,
         16,
         35,

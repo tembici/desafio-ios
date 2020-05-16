@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct RootView: View {
-        
+    var globalState = GlobalState()
     init() {
         
         UINavigationBar.appearance().largeTitleTextAttributes = [
@@ -31,14 +31,14 @@ struct RootView: View {
                         Image(systemName: "film.fill")
                         Text("Movies")
                 }
-                FavoritesListView()
+                FavoritesListView(globalState: globalState)
                     .tabItem {
                         Image(systemName: "star.fill")
                         Text("Favorites")
                 }
             }.navigationBarTitle(Text("Popular Movies"))
                 .accentColor(Color(Constants.Design.Color.Gold))
-        }.environmentObject(GlobalState())
+        }.environmentObject(globalState)
        
     }
 }

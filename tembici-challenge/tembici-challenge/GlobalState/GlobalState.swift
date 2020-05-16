@@ -10,27 +10,26 @@ import Foundation
 
 class GlobalState: ObservableObject {
     @Published var genres = [Genre]()
+    @Published var favorites = [Movie]()
+
     var isLoading = false
-    
-    func fetchGenres(){
-        if (isLoading){
-            return
-        }
-        isLoading = true
-        
-        let provider = NetworkManager()
-        
-        if(self.genres.isEmpty){
-            provider.getGenres { (result) in
-                self.isLoading = false
-                switch result {
-                case .success(let genresList):
-                    self.genres = genresList.genres
-                case .failure(let error):
-                    print(error)
+
+    func removeFavorite(movie: Movie){
+          if let index = favorites.firstIndex(of:movie) {
+                    favorites.remove(at: index)
+                }else{
+                    favorites.append(movie)
                 }
-                
-            }
-        }
-    }
+       }
+       
+   func addFavorite(movie:Movie){
+       
+       if let index = favorites.firstIndex(of:movie) {
+           favorites.remove(at: index)
+       }else{
+           favorites.append(movie)
+       }
+   }
+    
+  
 }

@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let globalState = GlobalState()
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
-            let contentView = rootView.environmentObject(globalState)
+            let contentView = rootView
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: contentView)
             window.overrideUserInterfaceStyle = .dark

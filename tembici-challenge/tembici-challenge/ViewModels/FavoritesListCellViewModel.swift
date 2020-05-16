@@ -25,6 +25,7 @@ class  FavoritesListCellViewModel: ObservableObject {
         self.setTitle()
         self.setDate()
         self.setVoteAverage()
+        self.setOverView()
       }
     
     fileprivate func setOverView() {

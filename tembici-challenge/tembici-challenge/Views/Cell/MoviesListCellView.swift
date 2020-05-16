@@ -13,9 +13,10 @@ struct MoviesListCellView: View {
     @State var selectionTAG: Int? = nil
     @EnvironmentObject var globalState: GlobalState
     @ObservedObject var movieListCellVM: MoviesListCellViewModel
-    
+    var movie: Movie
     init(movie: Movie) {
         movieListCellVM = MoviesListCellViewModel(movie: movie)
+        self.movie = movie
     }
     
     var body: some View {
@@ -50,7 +51,7 @@ struct MoviesListCellView: View {
                             Text(movieListCellVM.date)
                                 .textStyle(DateCellStyle())
                             Spacer()
-                            Image(systemName:"star")
+                            Image(systemName:self.globalState.favorites.contains(movie) ? "star.fill": "star")
                                 .font(.system(size: 12))
                                 .foregroundColor(Color(Constants.Design.Color.Gold)).padding(5)
                         }

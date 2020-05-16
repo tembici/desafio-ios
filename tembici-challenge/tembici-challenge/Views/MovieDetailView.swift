@@ -11,7 +11,7 @@ import SwiftUI
 struct MovieDetailView: View {
     
     @ObservedObject var movieDetailVM: MovieDetailViewModel
-
+    @EnvironmentObject var globalState: GlobalState
     init(movie: Movie, globalState: GlobalState ) {
         movieDetailVM = MovieDetailViewModel(movie: movie, globalState: globalState )
     }
@@ -33,10 +33,9 @@ struct MovieDetailView: View {
                         }
                         Spacer()
                         Button(action: {
-                            
-                            
+                            self.movieDetailVM.favorite()
                         }) {
-                            Image(systemName: "star.fill")
+                            Image(systemName: self.globalState.favorites.contains(movieDetailVM.movie) ? "star.fill" : "star")
                                 .foregroundColor(Color.yellow).padding(5)
                                 .font(.system(size: 30))
                         }       .padding(.trailing, 10)
@@ -71,6 +70,9 @@ struct MovieDetailView: View {
                 
             }
         }.navigationBarTitle("", displayMode: .inline)
+            .onAppear(){
+                self.movieDetailVM.fetchGenres()
+        }
     }
 }
 

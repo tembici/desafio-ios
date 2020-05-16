@@ -39,10 +39,7 @@ struct RootView: View {
             }.navigationBarTitle(Text("Popular Movies"))
                 .accentColor(Color(Constants.Design.Color.Gold))
         }.environmentObject(GlobalState())
-        .onAppear(){
-            
-//            self.globalState.fetchGenres()
-        }
+       
     }
 }
 

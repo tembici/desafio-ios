@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		5E0F49019F3AC6CDE4A9037B /* Pods_tembici_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C653A6D2D33E74E00E301A8 /* Pods_tembici_challenge.framework */; };
 		B61213CEEFE601913B88C292 /* Pods_tembici_challenge_tembici_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E47FD7082E9C1BFA665F5F9 /* Pods_tembici_challenge_tembici_challengeUITests.framework */; };
+		BB08B40C2470372D00AA9B94 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB08B40B2470372D00AA9B94 /* Favorite.swift */; };
+		BB08B40E2470428400AA9B94 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB08B40D2470428400AA9B94 /* RealmManager.swift */; };
+		BB08B4122470506600AA9B94 /* FavoritesListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB08B4112470506600AA9B94 /* FavoritesListCellView.swift */; };
+		BB08B4142470520100AA9B94 /* FavoritesListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB08B4132470520100AA9B94 /* FavoritesListCellViewModel.swift */; };
+		BB08B4162470582000AA9B94 /* PopularityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB08B4152470582000AA9B94 /* PopularityIndicator.swift */; };
 		BB7697EF246DC70C007C08B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7697EE246DC70C007C08B5 /* AppDelegate.swift */; };
 		BB7697F1246DC70C007C08B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7697F0246DC70C007C08B5 /* SceneDelegate.swift */; };
 		BB7697F5246DC70E007C08B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7697F4246DC70E007C08B5 /* Assets.xcassets */; };
@@ -74,6 +79,11 @@
 		6D344680EB6A1374502482C1 /* Pods-tembici-challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tembici-challengeTests.release.xcconfig"; path = "Target Support Files/Pods-tembici-challengeTests/Pods-tembici-challengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		74665600E17CDB2BF62B0F32 /* Pods-tembici-challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tembici-challenge.debug.xcconfig"; path = "Target Support Files/Pods-tembici-challenge/Pods-tembici-challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		8CA2FBD253CF56748C7A1676 /* Pods_tembici_challengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tembici_challengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB08B40B2470372D00AA9B94 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		BB08B40D2470428400AA9B94 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		BB08B4112470506600AA9B94 /* FavoritesListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListCellView.swift; sourceTree = "<group>"; };
+		BB08B4132470520100AA9B94 /* FavoritesListCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesListCellViewModel.swift; sourceTree = "<group>"; };
+		BB08B4152470582000AA9B94 /* PopularityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityIndicator.swift; sourceTree = "<group>"; };
 		BB7697EB246DC70C007C08B5 /* tembici-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tembici-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7697EE246DC70C007C08B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB7697F0246DC70C007C08B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -241,6 +251,7 @@
 				BB769826246DCCBD007C08B5 /* UseCases */,
 				BB769822246DCA46007C08B5 /* MovieAPI.swift */,
 				BB769824246DCC23007C08B5 /* NetworkManager.swift */,
+				BB08B40D2470428400AA9B94 /* RealmManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -259,6 +270,7 @@
 			children = (
 				BB76982A246DCD2A007C08B5 /* Movie.swift */,
 				BBD5F44B246E2E40009888C0 /* Genre.swift */,
+				BB08B40B2470372D00AA9B94 /* Favorite.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,6 +293,7 @@
 				BB769838246DE336007C08B5 /* ImageViewComponent.swift */,
 				BB76984A246DED55007C08B5 /* LoadingView.swift */,
 				BB76984C246DED7F007C08B5 /* ActivityIndicator.swift */,
+				BB08B4152470582000AA9B94 /* PopularityIndicator.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -298,6 +311,7 @@
 			children = (
 				BB769840246DE8FA007C08B5 /* MoviesListRowView.swift */,
 				BB769842246DE912007C08B5 /* MoviesListCellView.swift */,
+				BB08B4112470506600AA9B94 /* FavoritesListCellView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -316,6 +330,7 @@
 			children = (
 				BB769848246DEB41007C08B5 /* MoviesListViewModel.swift */,
 				BBD5F445246E1E4E009888C0 /* MoviesListCellViewModel.swift */,
+				BB08B4132470520100AA9B94 /* FavoritesListCellViewModel.swift */,
 				BBD5F449246E2B58009888C0 /* MovieDetailViewModel.swift */,
 			);
 			path = ViewModels;
@@ -617,18 +632,23 @@
 				BBD5F444246E1E0E009888C0 /* CornerRadius+View.swift in Sources */,
 				BB769850246E187B007C08B5 /* ButtonAnimatedStyle.swift in Sources */,
 				BB769830246DCF45007C08B5 /* RootView.swift in Sources */,
+				BB08B4162470582000AA9B94 /* PopularityIndicator.swift in Sources */,
 				BB769832246DCFD7007C08B5 /* MoviesListView.swift in Sources */,
 				BB7697F1246DC70C007C08B5 /* SceneDelegate.swift in Sources */,
 				BB769852246E18F7007C08B5 /* TextStyles.swift in Sources */,
 				BB769834246DCFFA007C08B5 /* FavoritesListView.swift in Sources */,
 				BB769820246DC97A007C08B5 /* Constants.swift in Sources */,
+				BB08B4142470520100AA9B94 /* FavoritesListCellViewModel.swift in Sources */,
 				BBD5F44A246E2B58009888C0 /* MovieDetailViewModel.swift in Sources */,
+				BB08B40C2470372D00AA9B94 /* Favorite.swift in Sources */,
 				BB76983B246DE3BB007C08B5 /* ImageSizeHelper.swift in Sources */,
 				BBD5F451246E2FD7009888C0 /* GlobalState.swift in Sources */,
 				BB76982B246DCD2A007C08B5 /* Movie.swift in Sources */,
 				BB769843246DE912007C08B5 /* MoviesListCellView.swift in Sources */,
 				BBD5F448246E29F0009888C0 /* MovieDetailView.swift in Sources */,
+				BB08B40E2470428400AA9B94 /* RealmManager.swift in Sources */,
 				BB76984D246DED7F007C08B5 /* ActivityIndicator.swift in Sources */,
+				BB08B4122470506600AA9B94 /* FavoritesListCellView.swift in Sources */,
 				BB769823246DCA46007C08B5 /* MovieAPI.swift in Sources */,
 				BB76984B246DED55007C08B5 /* LoadingView.swift in Sources */,
 				BBD5F446246E1E4E009888C0 /* MoviesListCellViewModel.swift in Sources */,

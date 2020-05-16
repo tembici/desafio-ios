@@ -8,7 +8,7 @@ target 'tembici-challenge' do
   # Pods for tembici-challenge
     pod 'Moya', '~> 13.0'
     pod 'Kingfisher/SwiftUI'
-
+    pod 'RealmSwift'
   target 'tembici-challengeTests' do
     inherit! :search_paths
     # Pods for testing

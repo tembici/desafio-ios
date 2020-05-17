@@ -20,6 +20,15 @@ struct TitleCellStyle: ViewModifier {
             .fixedSize(horizontal: false, vertical: true)
     }
 }
+struct BigTextStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(.white)
+            .multilineTextAlignment(.center)
+            .font(.custom(Constants.Design.Font.Thonburi, size: 25))
+            .fixedSize(horizontal: false, vertical: true)
+    }
+}
 struct DateCellStyle: ViewModifier {
     func body(content: Content) -> some View {
         content

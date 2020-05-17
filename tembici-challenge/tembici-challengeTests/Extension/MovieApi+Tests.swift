@@ -18,13 +18,13 @@ extension MovieAPI {
         
         switch self {
         case .popular(page: _):
-            dataUrl = Bundle(for: tembici_challengeTests.self).url(forResource: "Movies", withExtension: "json")
+            dataUrl = Bundle(for: APITests.self).url(forResource: "Movies", withExtension: "json")
             if let url = dataUrl, let data = try? Data(contentsOf: url) {
                 debugPrint(data)
                 return data
             }
         case .genre:
-            dataUrl = Bundle(for: tembici_challengeTests.self).url(forResource: "Genres", withExtension: "json")
+            dataUrl = Bundle(for: APITests.self).url(forResource: "Genres", withExtension: "json")
             if let url = dataUrl, let data = try? Data(contentsOf: url) {
                 debugPrint(data)
                 return data

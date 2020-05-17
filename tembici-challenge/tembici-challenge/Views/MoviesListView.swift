@@ -28,6 +28,8 @@ struct MoviesListView: View {
             LoadingView(isShowing: moviesListVM.isLoading && !moviesListVM.loadingMore , content: {
                 VStack{
                     List{
+                        Section(header:  SearchBar(text: self.$moviesListVM.searchText, placeholder: "search").listRowInsets(EdgeInsets())) {
+
                         ForEach(0..<self.moviesListVM.moviesList.count, id: \.self) { indexRow in
                             VStack {
                                 MoviesListRowView(moviesRow: self.moviesListVM.moviesList[indexRow])
@@ -37,6 +39,7 @@ struct MoviesListView: View {
                                     self.moviesListVM.fetchLoadMore(row: indexRow)
                             }
                         }
+                    }
                         HStack(){
                             Spacer()
                             ActivityIndicator(isAnimating: true, style: .medium)

@@ -18,8 +18,8 @@ extension Array {
         for index in 0...self.count {
             if index % size == 0 && index != 0 {
                 chunkedArray.append(Array(self[(index - size)..<index]) as! [Movie])
-            } else if(index == self.count && chunkedArray.count>0) {
-                chunkedArray.append(Array(self[index - 1..<index]) as! [Movie])
+            } else if(index == self.count && chunkedArray.count>=0) {
+                chunkedArray.append(Array(self[(index>0 ? index - 1 : index)..<index]) as! [Movie])
             }
         }
         return chunkedArray

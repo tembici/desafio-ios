@@ -14,11 +14,17 @@ class MoviesListViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var showMsgError = false
     @Published var loadingMore = false
+    @Published   var searchNotFound = false
+    @Published var searchText: String = "" {
+           didSet {
+               self.search()
+           }
+    }
+    
     let provider = NetworkManager()
     var totalPages = 0
     var page: Int = 1
     var movies = [Movie]()
-    
     
     
     // MARK: - Methods
@@ -52,11 +58,23 @@ class MoviesListViewModel: ObservableObject {
     }
     
     func fetchLoadMore(row: Int) {
-        if (row == self.moviesList.count-1){
+        if (row == self.moviesList.count-1 && searchText.isEmpty){
             self.fetchMovies()
             loadingMore = true
         }else{
             loadingMore = false
         }
     }
+    
+    func search (){
+        
+        moviesList = self.movies.filter {
+        searchText.isEmpty ? true : $0.title.lowercased().contains(searchText.lowercased())}.chunked(into: 2)
+           
+           if (moviesList.count == 0){
+               searchNotFound = true
+           }else{
+               searchNotFound = false
+           }
+       }
 }

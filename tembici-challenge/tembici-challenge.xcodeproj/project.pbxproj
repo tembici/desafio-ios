@@ -21,7 +21,6 @@
 		BB7697F5246DC70E007C08B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7697F4246DC70E007C08B5 /* Assets.xcassets */; };
 		BB7697F8246DC70E007C08B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7697F7246DC70E007C08B5 /* Preview Assets.xcassets */; };
 		BB7697FB246DC70E007C08B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB7697F9246DC70E007C08B5 /* LaunchScreen.storyboard */; };
-		BB769806246DC70E007C08B5 /* tembici_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB769805246DC70E007C08B5 /* tembici_challengeTests.swift */; };
 		BB769811246DC70E007C08B5 /* tembici_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB769810246DC70E007C08B5 /* tembici_challengeUITests.swift */; };
 		BB769820246DC97A007C08B5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB76981F246DC97A007C08B5 /* Constants.swift */; };
 		BB769823246DCA46007C08B5 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB769822246DCA46007C08B5 /* MovieAPI.swift */; };
@@ -56,6 +55,10 @@
 		BBDE8BAC2470D28800C94D6A /* NotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE8BAB2470D28800C94D6A /* NotFoundView.swift */; };
 		BBDE8BAE2470D80800C94D6A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE8BAD2470D80800C94D6A /* ErrorView.swift */; };
 		BBDE8BB72470E0A200C94D6A /* LEMONMILK-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBDE8BB62470E09900C94D6A /* LEMONMILK-Regular.otf */; };
+		BBF19B0B2470FF7F00AA09B1 /* MovieApi+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF19B0A2470FF7F00AA09B1 /* MovieApi+Tests.swift */; };
+		BBF19B0E2471000000AA09B1 /* Movies.json in Resources */ = {isa = PBXBuildFile; fileRef = BBF19B0D2471000000AA09B1 /* Movies.json */; };
+		BBF19B102471001800AA09B1 /* Genres.json in Resources */ = {isa = PBXBuildFile; fileRef = BBF19B0F2471001800AA09B1 /* Genres.json */; };
+		BBF19B122471017200AA09B1 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF19B112471017200AA09B1 /* APITests.swift */; };
 		CA1E9FE3A5733BEAB8BA123F /* Pods_tembici_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA2FBD253CF56748C7A1676 /* Pods_tembici_challengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,7 +103,6 @@
 		BB7697FA246DC70E007C08B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB7697FC246DC70E007C08B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB769801246DC70E007C08B5 /* tembici-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tembici-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB769805246DC70E007C08B5 /* tembici_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tembici_challengeTests.swift; sourceTree = "<group>"; };
 		BB769807246DC70E007C08B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB76980C246DC70E007C08B5 /* tembici-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tembici-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB769810246DC70E007C08B5 /* tembici_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tembici_challengeUITests.swift; sourceTree = "<group>"; };
@@ -138,6 +140,10 @@
 		BBDE8BAB2470D28800C94D6A /* NotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundView.swift; sourceTree = "<group>"; };
 		BBDE8BAD2470D80800C94D6A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		BBDE8BB62470E09900C94D6A /* LEMONMILK-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LEMONMILK-Regular.otf"; sourceTree = "<group>"; };
+		BBF19B0A2470FF7F00AA09B1 /* MovieApi+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieApi+Tests.swift"; sourceTree = "<group>"; };
+		BBF19B0D2471000000AA09B1 /* Movies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Movies.json; sourceTree = "<group>"; };
+		BBF19B0F2471001800AA09B1 /* Genres.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Genres.json; sourceTree = "<group>"; };
+		BBF19B112471017200AA09B1 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		EDB855FB3050BCBFB4C687B1 /* Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-tembici-challenge-tembici-challengeUITests/Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,8 +238,10 @@
 		BB769804246DC70E007C08B5 /* tembici-challengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				BB769805246DC70E007C08B5 /* tembici_challengeTests.swift */,
+				BBF19B0C2470FF9C00AA09B1 /* Stubs */,
+				BBF19B092470FF5F00AA09B1 /* Extension */,
 				BB769807246DC70E007C08B5 /* Info.plist */,
+				BBF19B112471017200AA09B1 /* APITests.swift */,
 			);
 			path = "tembici-challengeTests";
 			sourceTree = "<group>";
@@ -400,6 +408,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		BBF19B092470FF5F00AA09B1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BBF19B0A2470FF7F00AA09B1 /* MovieApi+Tests.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BBF19B0C2470FF9C00AA09B1 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				BBF19B0D2471000000AA09B1 /* Movies.json */,
+				BBF19B0F2471001800AA09B1 /* Genres.json */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		FD2B3E90FF8D30BF2B9395D5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +559,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBF19B0E2471000000AA09B1 /* Movies.json in Resources */,
+				BBF19B102471001800AA09B1 /* Genres.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,7 +728,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB769806246DC70E007C08B5 /* tembici_challengeTests.swift in Sources */,
+				BBF19B0B2470FF7F00AA09B1 /* MovieApi+Tests.swift in Sources */,
+				BBF19B122471017200AA09B1 /* APITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -912,7 +940,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tembici-challenge.app/tembici-challenge";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Movs.app/Movs";
 			};
 			name = Debug;
 		};
@@ -934,7 +962,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tembici-challenge.app/tembici-challenge";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Movs.app/Movs";
 			};
 			name = Release;
 		};

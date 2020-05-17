@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BB7697EA246DC70C007C08B5"
-               BuildableName = "tembici-challenge.app"
+               BuildableName = "Movs.app"
                BlueprintName = "tembici-challenge"
                ReferencedContainer = "container:tembici-challenge.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB7697EA246DC70C007C08B5"
-            BuildableName = "tembici-challenge.app"
+            BuildableName = "Movs.app"
             BlueprintName = "tembici-challenge"
             ReferencedContainer = "container:tembici-challenge.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB7697EA246DC70C007C08B5"
-            BuildableName = "tembici-challenge.app"
+            BuildableName = "Movs.app"
             BlueprintName = "tembici-challenge"
             ReferencedContainer = "container:tembici-challenge.xcodeproj">
          </BuildableReference>

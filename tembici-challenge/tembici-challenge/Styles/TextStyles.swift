@@ -16,7 +16,7 @@ struct TitleCellStyle: ViewModifier {
             .padding(.leading, 10)
             .padding(.top, 10)
             .padding(.bottom, 0)
-            .font(.custom(Constants.Design.Font.Thonburi, size: 13))
+            .font(.custom(Constants.Design.Font.Title, size: 13))
             .fixedSize(horizontal: false, vertical: true)
     }
 }
@@ -25,7 +25,7 @@ struct BigTextStyle: ViewModifier {
         content
             .foregroundColor(.white)
             .multilineTextAlignment(.center)
-            .font(.custom(Constants.Design.Font.Thonburi, size: 25))
+            .font(.custom(Constants.Design.Font.Title, size: 25))
             .fixedSize(horizontal: false, vertical: true)
     }
 }
@@ -43,9 +43,10 @@ struct DateCellStyle: ViewModifier {
 struct SubTitleStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .lineSpacing(8)
-            .font(.custom(Constants.Design.Font.Thonburi, size: 14))
-            .foregroundColor(.primary)
+            .lineLimit(nil)
+            .font(.custom(Constants.Design.Font.Title, size: 16))
+            .foregroundColor(Color.white)
+            .fixedSize(horizontal: false, vertical: true)
         
     }
 }
@@ -56,8 +57,20 @@ struct ContentStyle: ViewModifier {
             .fixedSize(horizontal: false, vertical: true)
             .lineSpacing(4)
             .foregroundColor(.secondary)
-            .font(.custom(Constants.Design.Font.Thonburi, size: 14))
             .lineLimit(nil)
+            .padding()
+        
+        
+    }
+}
+
+struct DescripitionCellStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .fixedSize(horizontal: false, vertical: true)
+            .lineSpacing(4)
+            .foregroundColor(.secondary)
+            .lineLimit(3)
             .padding()
         
         

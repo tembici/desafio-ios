@@ -15,11 +15,11 @@ struct RootView: View {
         UINavigationBar.appearance().largeTitleTextAttributes = [
             .foregroundColor: UIColor(named:Constants.Design.Color.Gold)!
             ,
-            .font : UIFont(name:Constants.Design.Font.Thonburi, size: 40)!]
+            .font : UIFont(name:Constants.Design.Font.Title, size: 40)!]
         
         UINavigationBar.appearance().titleTextAttributes = [
             .foregroundColor:UIColor(named:Constants.Design.Color.Gold)!,
-            .font : UIFont(name: Constants.Design.Font.HelveticaNeueThin, size: 20)!]
+            .font : UIFont(name: Constants.Design.Font.Title, size: 20)!]
     }
     
     var body: some View {
@@ -36,10 +36,11 @@ struct RootView: View {
                         Image(systemName: "star.fill")
                         Text("Favorites")
                 }
-            }.navigationBarTitle(Text("Popular Movies"))
+            }.navigationBarTitle(Text("Movs"))
                 .accentColor(Color(Constants.Design.Color.Gold))
         }.environmentObject(globalState)
-       
+        .accentColor(Color(Constants.Design.Color.Gold))
+
     }
 }
 

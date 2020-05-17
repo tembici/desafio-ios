@@ -26,10 +26,7 @@ struct MovieDetailView: View {
                         VStack(alignment: .center, spacing: 8) {
                             Text(movieDetailVM.title)
                                 .fontWeight(.heavy)
-                                .lineLimit(nil)
-                                .font(.custom(Constants.Design.Font.Thonburi, size: 16))
-                                .foregroundColor(Color.white)
-                                .fixedSize(horizontal: false, vertical: true)
+                                .textStyle(SubTitleStyle())
                         }
                         Spacer()
                         Button(action: {
@@ -49,20 +46,21 @@ struct MovieDetailView: View {
                         .padding()
                     
                     ScrollView(.horizontal, showsIndicators: false){
-                                       
-                                       HStack(spacing: 10){
-                                        ForEach(movieDetailVM.genresList, id: \.self) { genere in
-                                               
-                                               Text(genere)
-                                                   .padding([.horizontal, .vertical], 8)
-                                                   .overlay(
-                                                       RoundedRectangle(cornerRadius: 5    )
-                                                           .stroke(Color.gray, lineWidth: 0.7))
-                                               
-                                           }
-                                           
-                                       }
-                                   }.padding()
+                        
+                        HStack(spacing: 10){
+                            ForEach(movieDetailVM.genresList, id: \.self) { genere in
+                                
+                                Text(genere)
+                                .foregroundColor(Color(Constants.Design.Color.Gold))
+                                    .padding([.horizontal, .vertical], 8)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 5    )
+                                            .stroke(Color(Constants.Design.Color.Gold), lineWidth: 0.9))
+                                
+                            }
+                            
+                        }
+                    }.padding()
                     
                     Text(movieDetailVM.overview).textStyle(ContentStyle())
                 }
@@ -75,11 +73,3 @@ struct MovieDetailView: View {
         }
     }
 }
-
-//struct MovieDetailView_Previews: PreviewProvider {
-//    @State static var movie = DataContants.sharedInstance.movieModelPreview
-//
-//    static var previews: some View {
-//        MovieDetailView(movie:movie)
-//    }
-//}

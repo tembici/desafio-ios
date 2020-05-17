@@ -28,7 +28,7 @@ struct Constants {
         struct Font {
             static let HelveticaNeueThin = "HelveticaNeue-Thin"
             static let Farah = "Farah"
-            static let Thonburi = "Thonburi"
+            static let Title = "LEMONMILK-Regular"
         }
         
     }

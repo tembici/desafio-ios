@@ -49,7 +49,8 @@ struct FavoritesListCellView: View {
                             Text(favoritesCellVM.date)
                             Spacer()
                         }
-                        Text(favoritesCellVM.overView).font(.body).lineLimit(3)
+                        Text(favoritesCellVM.overView)
+                        .textStyle(DescripitionCellStyle())
                         Spacer()
                         
                     }

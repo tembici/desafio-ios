@@ -55,6 +55,7 @@
 		BBD5F453246E3061009888C0 /* getGenreUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F452246E3061009888C0 /* getGenreUseCase.swift */; };
 		BBDE8BAC2470D28800C94D6A /* NotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE8BAB2470D28800C94D6A /* NotFoundView.swift */; };
 		BBDE8BAE2470D80800C94D6A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE8BAD2470D80800C94D6A /* ErrorView.swift */; };
+		BBDE8BB72470E0A200C94D6A /* LEMONMILK-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBDE8BB62470E09900C94D6A /* LEMONMILK-Regular.otf */; };
 		CA1E9FE3A5733BEAB8BA123F /* Pods_tembici_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA2FBD253CF56748C7A1676 /* Pods_tembici_challengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,7 +92,7 @@
 		BB08B4152470582000AA9B94 /* PopularityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityIndicator.swift; sourceTree = "<group>"; };
 		BB5E54A02470B1DF00D11BAB /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		BB5E54A22470B59300D11BAB /* UIApplication+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Keyboard.swift"; sourceTree = "<group>"; };
-		BB7697EB246DC70C007C08B5 /* tembici-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tembici-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB7697EB246DC70C007C08B5 /* Movs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7697EE246DC70C007C08B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB7697F0246DC70C007C08B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BB7697F4246DC70E007C08B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -136,6 +137,7 @@
 		BBD5F452246E3061009888C0 /* getGenreUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getGenreUseCase.swift; sourceTree = "<group>"; };
 		BBDE8BAB2470D28800C94D6A /* NotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundView.swift; sourceTree = "<group>"; };
 		BBDE8BAD2470D80800C94D6A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		BBDE8BB62470E09900C94D6A /* LEMONMILK-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LEMONMILK-Regular.otf"; sourceTree = "<group>"; };
 		EDB855FB3050BCBFB4C687B1 /* Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-tembici-challenge-tembici-challengeUITests/Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,7 +194,7 @@
 		BB7697EC246DC70C007C08B5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB7697EB246DC70C007C08B5 /* tembici-challenge.app */,
+				BB7697EB246DC70C007C08B5 /* Movs.app */,
 				BB769801246DC70E007C08B5 /* tembici-challengeTests.xctest */,
 				BB76980C246DC70E007C08B5 /* tembici-challengeUITests.xctest */,
 			);
@@ -202,6 +204,7 @@
 		BB7697ED246DC70C007C08B5 /* tembici-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				BBDE8BB42470E07400C94D6A /* Resources */,
 				BBD5F44F246E2FBC009888C0 /* GlobalState */,
 				BB769847246DEAFF007C08B5 /* ViewModels */,
 				BB76982E246DCF32007C08B5 /* Views */,
@@ -381,6 +384,22 @@
 			path = GlobalState;
 			sourceTree = "<group>";
 		};
+		BBDE8BB42470E07400C94D6A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BBDE8BB52470E08B00C94D6A /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BBDE8BB52470E08B00C94D6A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BBDE8BB62470E09900C94D6A /* LEMONMILK-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		FD2B3E90FF8D30BF2B9395D5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,7 +432,7 @@
 			);
 			name = "tembici-challenge";
 			productName = "tembici-challenge";
-			productReference = BB7697EB246DC70C007C08B5 /* tembici-challenge.app */;
+			productReference = BB7697EB246DC70C007C08B5 /* Movs.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BB769800246DC70E007C08B5 /* tembici-challengeTests */ = {
@@ -503,6 +522,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBDE8BB72470E0A200C94D6A /* LEMONMILK-Regular.otf in Resources */,
 				BB7697FB246DC70E007C08B5 /* LaunchScreen.storyboard in Resources */,
 				BB769836246DD128007C08B5 /* Colors.xcassets in Resources */,
 				BB7697F8246DC70E007C08B5 /* Preview Assets.xcassets in Resources */,
@@ -848,7 +868,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.tembici.tembici-challenge";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Movs;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -868,7 +888,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.tembici.tembici-challenge";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Movs;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

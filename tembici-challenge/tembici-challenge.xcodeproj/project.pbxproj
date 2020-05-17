@@ -15,6 +15,7 @@
 		BB08B4142470520100AA9B94 /* FavoritesListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB08B4132470520100AA9B94 /* FavoritesListCellViewModel.swift */; };
 		BB08B4162470582000AA9B94 /* PopularityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB08B4152470582000AA9B94 /* PopularityIndicator.swift */; };
 		BB5E54A12470B1DF00D11BAB /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5E54A02470B1DF00D11BAB /* SearchBar.swift */; };
+		BB5E54A32470B59300D11BAB /* UIApplication+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5E54A22470B59300D11BAB /* UIApplication+Keyboard.swift */; };
 		BB7697EF246DC70C007C08B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7697EE246DC70C007C08B5 /* AppDelegate.swift */; };
 		BB7697F1246DC70C007C08B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7697F0246DC70C007C08B5 /* SceneDelegate.swift */; };
 		BB7697F5246DC70E007C08B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7697F4246DC70E007C08B5 /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		BB08B4132470520100AA9B94 /* FavoritesListCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesListCellViewModel.swift; sourceTree = "<group>"; };
 		BB08B4152470582000AA9B94 /* PopularityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityIndicator.swift; sourceTree = "<group>"; };
 		BB5E54A02470B1DF00D11BAB /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		BB5E54A22470B59300D11BAB /* UIApplication+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Keyboard.swift"; sourceTree = "<group>"; };
 		BB7697EB246DC70C007C08B5 /* tembici-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tembici-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7697EE246DC70C007C08B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB7697F0246DC70C007C08B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			children = (
 				BB769845246DEA4E007C08B5 /* Array+Chunk.swift */,
 				BBD5F443246E1E0E009888C0 /* CornerRadius+View.swift */,
+				BB5E54A22470B59300D11BAB /* UIApplication+Keyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB769828246DCCDC007C08B5 /* getPopularMoviesUseCase.swift in Sources */,
+				BB5E54A32470B59300D11BAB /* UIApplication+Keyboard.swift in Sources */,
 				BB769825246DCC23007C08B5 /* NetworkManager.swift in Sources */,
 				BB76982D246DCE48007C08B5 /* Connectivity.swift in Sources */,
 				BB769849246DEB41007C08B5 /* MoviesListViewModel.swift in Sources */,

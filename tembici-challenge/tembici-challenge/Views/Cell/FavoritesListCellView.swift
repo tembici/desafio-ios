@@ -30,6 +30,7 @@ struct FavoritesListCellView: View {
                 .hidden()
             
             Button(action:{
+                UIApplication.shared.endEditing(true)
                 self.selectionTAG = self.favoritesCellVM.id
             }) {
                 

@@ -21,11 +21,12 @@ struct FavoritesListView: View {
         return
             ZStack{
                 List{
-                    ForEach(favoritesVM.favoriteList, id: \.self) { movie in
-                        
-                        FavoritesListCellView(movie: movie)
-                    }                       .onDelete(perform:favoritesVM.deleteFavorite(at:))
-                    
+                    Section(header:  SearchBar(text: $favoritesVM.searchText, placeholder: "search").listRowInsets(EdgeInsets())) {
+                        ForEach(favoritesVM.favoriteList, id: \.self) { movie in
+                            
+                            FavoritesListCellView(movie: movie)
+                        }                       .onDelete(perform:favoritesVM.deleteFavorite(at:))
+                    }
                     
                 }
             }.onAppear(){

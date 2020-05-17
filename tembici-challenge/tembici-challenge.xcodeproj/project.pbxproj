@@ -53,6 +53,7 @@
 		BBD5F44C246E2E40009888C0 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F44B246E2E40009888C0 /* Genre.swift */; };
 		BBD5F451246E2FD7009888C0 /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F450246E2FD7009888C0 /* GlobalState.swift */; };
 		BBD5F453246E3061009888C0 /* getGenreUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F452246E3061009888C0 /* getGenreUseCase.swift */; };
+		BBDE8BAC2470D28800C94D6A /* NotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE8BAB2470D28800C94D6A /* NotFoundView.swift */; };
 		CA1E9FE3A5733BEAB8BA123F /* Pods_tembici_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA2FBD253CF56748C7A1676 /* Pods_tembici_challengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,7 @@
 		BBD5F44B246E2E40009888C0 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		BBD5F450246E2FD7009888C0 /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
 		BBD5F452246E3061009888C0 /* getGenreUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getGenreUseCase.swift; sourceTree = "<group>"; };
+		BBDE8BAB2470D28800C94D6A /* NotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundView.swift; sourceTree = "<group>"; };
 		EDB855FB3050BCBFB4C687B1 /* Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-tembici-challenge-tembici-challengeUITests/Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -301,6 +303,7 @@
 				BB76984C246DED7F007C08B5 /* ActivityIndicator.swift */,
 				BB08B4152470582000AA9B94 /* PopularityIndicator.swift */,
 				BB5E54A02470B1DF00D11BAB /* SearchBar.swift */,
+				BBDE8BAB2470D28800C94D6A /* NotFoundView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 			files = (
 				BB769828246DCCDC007C08B5 /* getPopularMoviesUseCase.swift in Sources */,
 				BB5E54A32470B59300D11BAB /* UIApplication+Keyboard.swift in Sources */,
+				BBDE8BAC2470D28800C94D6A /* NotFoundView.swift in Sources */,
 				BB769825246DCC23007C08B5 /* NetworkManager.swift in Sources */,
 				BB76982D246DCE48007C08B5 /* Connectivity.swift in Sources */,
 				BB769849246DEB41007C08B5 /* MoviesListViewModel.swift in Sources */,

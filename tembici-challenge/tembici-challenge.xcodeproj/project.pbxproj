@@ -54,6 +54,7 @@
 		BBD5F451246E2FD7009888C0 /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F450246E2FD7009888C0 /* GlobalState.swift */; };
 		BBD5F453246E3061009888C0 /* getGenreUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5F452246E3061009888C0 /* getGenreUseCase.swift */; };
 		BBDE8BAC2470D28800C94D6A /* NotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE8BAB2470D28800C94D6A /* NotFoundView.swift */; };
+		BBDE8BAE2470D80800C94D6A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE8BAD2470D80800C94D6A /* ErrorView.swift */; };
 		CA1E9FE3A5733BEAB8BA123F /* Pods_tembici_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA2FBD253CF56748C7A1676 /* Pods_tembici_challengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +135,7 @@
 		BBD5F450246E2FD7009888C0 /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
 		BBD5F452246E3061009888C0 /* getGenreUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getGenreUseCase.swift; sourceTree = "<group>"; };
 		BBDE8BAB2470D28800C94D6A /* NotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundView.swift; sourceTree = "<group>"; };
+		BBDE8BAD2470D80800C94D6A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		EDB855FB3050BCBFB4C687B1 /* Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-tembici-challenge-tembici-challengeUITests/Pods-tembici-challenge-tembici-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -304,6 +306,7 @@
 				BB08B4152470582000AA9B94 /* PopularityIndicator.swift */,
 				BB5E54A02470B1DF00D11BAB /* SearchBar.swift */,
 				BBDE8BAB2470D28800C94D6A /* NotFoundView.swift */,
+				BBDE8BAD2470D80800C94D6A /* ErrorView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				BB8DDBF524706C88000F92AE /* FavoritesListViewModel.swift in Sources */,
 				BBD5F444246E1E0E009888C0 /* CornerRadius+View.swift in Sources */,
 				BB769850246E187B007C08B5 /* ButtonAnimatedStyle.swift in Sources */,
+				BBDE8BAE2470D80800C94D6A /* ErrorView.swift in Sources */,
 				BB769830246DCF45007C08B5 /* RootView.swift in Sources */,
 				BB5E54A12470B1DF00D11BAB /* SearchBar.swift in Sources */,
 				BB08B4162470582000AA9B94 /* PopularityIndicator.swift in Sources */,

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct NotFoundView: View {
     var show: Bool
-    
+    var searchText: String
     
     var body: some View {
         
@@ -22,7 +22,7 @@ struct NotFoundView: View {
                 Image(systemName: "magnifyingglass")
                     .font(.system(size: 100))
                 
-                Text("No movies with this name were found.").textStyle(BigTextStyle())
+                Text("No movies with \(searchText.uppercased()) were found.").textStyle(BigTextStyle())
                     .padding(10)
                 
             }

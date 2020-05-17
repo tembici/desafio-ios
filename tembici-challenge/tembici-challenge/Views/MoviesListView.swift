@@ -48,9 +48,8 @@ struct MoviesListView: View {
                         }
                     }              
             })
-            NotFoundView(show: moviesListVM.searchNotFound)
-
-//            ErrorView(show: moviesListVM.showMsgError, tapView: self.fetchMovies)
+            NotFoundView(show: moviesListVM.searchNotFound && !moviesListVM.showMsgError, searchText: moviesListVM.searchText)
+            ErrorView(show: moviesListVM.showMsgError, tapView: self.fetchMovies)
         }.gesture(DragGesture().onChanged { _ in UIApplication.shared.endEditing(true) })
 
     }

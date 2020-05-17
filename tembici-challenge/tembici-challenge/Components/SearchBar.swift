@@ -40,8 +40,7 @@ struct SearchBar: UIViewRepresentable {
         searchBar.placeholder = placeholder
         searchBar.searchBarStyle = .prominent
         searchBar.autocapitalizationType = .none
-//        searchBar.backgroundColor = UIColor.blue;
-//        searchBar.barTintColor = UIColor.black;
+        searchBar.barTintColor = UIColor.black;
         searchBar.barStyle = .black
         return searchBar
     }

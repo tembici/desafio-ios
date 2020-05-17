@@ -31,11 +31,13 @@ struct MovieDetailView: View {
                         Spacer()
                         Button(action: {
                             self.movieDetailVM.favorite()
-                        }) {
+                            }) {
                             Image(systemName: self.globalState.favorites.contains(movieDetailVM.movie) ? "star.fill" : "star")
+                                .accessibility(identifier: "favoriteStatus")
                                 .foregroundColor(Color.yellow).padding(5)
                                 .font(.system(size: 30))
-                        }       .padding(.trailing, 10)
+                            }.accessibility(identifier: "favorite")
+                        .padding(.trailing, 10)
                         
                     }.padding(10)
                         .padding(.leading, 10)

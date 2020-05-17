@@ -12,7 +12,6 @@ struct MoviesListView: View {
     
     @ObservedObject var moviesListVM = MoviesListViewModel()
  
-    
     init() {
         UITableView.appearance().tableFooterView = UIView()
         UITableView.appearance().separatorStyle = .none

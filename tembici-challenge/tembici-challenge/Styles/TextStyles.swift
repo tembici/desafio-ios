@@ -43,6 +43,7 @@ struct DateCellStyle: ViewModifier {
 struct SubTitleStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
+        .accessibility(identifier: "titleDetail")
             .lineLimit(nil)
             .font(.custom(Constants.Design.Font.Title, size: 16))
             .foregroundColor(Color.white)

@@ -22,7 +22,9 @@ struct MoviesListCellView: View {
     var body: some View {
         
         ZStack(alignment: .center){
-            NavigationLink(destination: MovieDetailView(movie: movieListCellVM.movie, globalState:globalState ), tag: movieListCellVM.id, selection: self.$selectionTAG, label: {
+            NavigationLink(destination: MovieDetailView(movie: movieListCellVM.movie, globalState:globalState)
+                .environmentObject(globalState)
+                , tag: movieListCellVM.id, selection: self.$selectionTAG, label: {
                 EmptyView()
             })
                 .buttonStyle(PlainButtonStyle())
@@ -45,6 +47,7 @@ struct MoviesListCellView: View {
                         Text(movieListCellVM.title)
                             .fontWeight(.heavy)
                             .textStyle(TitleCellStyle())
+                            .accessibility(identifier: "movieTitle")
                         
                         Spacer()
                         HStack{
@@ -54,6 +57,7 @@ struct MoviesListCellView: View {
                             Image(systemName:self.globalState.favorites.contains(movie) ? "star.fill": "star")
                                 .font(.system(size: 12))
                                 .foregroundColor(Color(Constants.Design.Color.Gold)).padding(5)
+                                .accessibility(identifier: "favoriteStatus")
                         }
                         .padding(.bottom, 10)
                         .padding(.top, 0)
@@ -65,8 +69,6 @@ struct MoviesListCellView: View {
                 
             }).buttonStyle(ButtonAnimatedStyless())
             
-        }.onDisappear{
-            self.selectionTAG = nil
         }
     }
 }

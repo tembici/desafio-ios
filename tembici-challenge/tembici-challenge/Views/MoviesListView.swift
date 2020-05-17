@@ -26,7 +26,6 @@ struct MoviesListView: View {
     var body: some View {
         ZStack{
             LoadingView(isShowing: moviesListVM.isLoading && !moviesListVM.loadingMore , content: {
-                VStack{
                     List{
                         Section(header:  SearchBar(text: self.$moviesListVM.searchText, placeholder: "search").listRowInsets(EdgeInsets())) {
 
@@ -43,14 +42,17 @@ struct MoviesListView: View {
                         HStack(){
                             Spacer()
                             ActivityIndicator(isAnimating: true, style: .medium)
+                                .opacity(self.moviesListVM.loadingMore ? 1.0 : 0.0)
+
                             Spacer()
                         }
-                    }.onTapGesture {return}
-                }.padding(.top, 8)
-                
+                    }              
             })
+            NotFoundView(show: moviesListVM.searchNotFound)
+
 //            ErrorView(show: moviesListVM.showMsgError, tapView: self.fetchMovies)
-        }
+        }.gesture(DragGesture().onChanged { _ in UIApplication.shared.endEditing(true) })
+
     }
 }
 

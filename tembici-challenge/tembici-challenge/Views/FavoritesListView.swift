@@ -29,9 +29,11 @@ struct FavoritesListView: View {
                     }
                     
                 }
+                NotFoundView(show: favoritesVM.searchNotFound)
+
             }.onAppear(){
                 self.favoritesVM.favoriteList = self.globalState.favorites
-        }
+            }
     }
 }
 

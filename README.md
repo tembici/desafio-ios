@@ -5,6 +5,8 @@
 -   [3. Design](#3-design)
 -   [4. Testes](#4-testes)
     -   [4.1. Unitários](#41-unitários)
+    -   [4.2. Interface](#41-interface)
+
 -   [5. Dependências](#5-dependências)
     -   [5.1. CocoaPods](#51-cocoapods)
         -   [5.1.1. Moya](#511-moya)

@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'tembici-challenge' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for tembici-challenge
+    pod 'Moya', '~> 13.0'
+    pod 'Kingfisher/SwiftUI'
+    pod 'RealmSwift'
+  target 'tembici-challengeTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'tembici-challengeUITests' do
+    # Pods for testing
+  end
+
+end

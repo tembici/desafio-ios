@@ -1,0 +1,416 @@
+{
+  "page": 1,
+  "total_results": 10000,
+  "total_pages": 500,
+  "results": [
+    {
+      "popularity": 508.484,
+      "vote_count": 3343,
+      "video": false,
+      "poster_path": "/wigZBAmNrIhxp2FNGOROUAeHvdh.jpg",
+      "id": 419704,
+      "adult": false,
+      "backdrop_path": "/5BwqwxMEjeFtdknRV792Svo0K1v.jpg",
+      "original_language": "en",
+      "original_title": "Ad Astra",
+      "genre_ids": [
+        18,
+        878
+      ],
+      "title": "Ad Astra - Rumo às Estrelas",
+      "vote_average": 6,
+      "overview": "Roy McBride é um engenheiro espacial, portador de um leve grau de autismo, que decide empreender a maior jornada de sua vida: viajar para o espaço, cruzar a galáxia e tentar descobrir o que aconteceu com seu pai, um astronauta que se perdeu há vinte anos atrás no caminho para Netuno.",
+      "release_date": "2019-09-17"
+    },
+    {
+      "popularity": 230.909,
+      "vote_count": 4306,
+      "video": false,
+      "poster_path": "/g6n7TdQSgozArIM0okXTjjCM9Np.jpg",
+      "id": 330457,
+      "adult": false,
+      "backdrop_path": "/xJWPZIYOEFIjZpBL7SVBGnzRYXp.jpg",
+      "original_language": "en",
+      "original_title": "Frozen II",
+      "genre_ids": [
+        12,
+        16,
+        10751
+      ],
+      "title": "Frozen II",
+      "vote_average": 7.2,
+      "overview": "De volta à infância de Elsa e Anna, as duas garotas descobrem uma história do pai, quando ainda era príncipe de Arendelle. Ele conta às meninas a história de uma visita à floresta dos elementos, onde um acontecimento inesperado teria provocado a separação dos habitantes da cidade com os quatro elementos fundamentais: ar, fogo, terra e água. Esta revelação ajudará Elsa a compreender a origem de seus poderes.",
+      "release_date": "2019-11-20"
+    },
+    {
+      "popularity": 194.739,
+      "vote_count": 2186,
+      "video": false,
+      "poster_path": "/5Z7AJiQhocA20MkI5JXZ6OjTxEW.jpg",
+      "id": 338762,
+      "adult": false,
+      "backdrop_path": "/ocUrMYbdjknu2TwzMHKT9PBBQRw.jpg",
+      "original_language": "en",
+      "original_title": "Bloodshot",
+      "genre_ids": [
+        28,
+        18,
+        878
+      ],
+      "title": "Bloodshot",
+      "vote_average": 7.1,
+      "overview": "Bloodshot é um ex-soldado com poderes especiais: o de regeneração e a capacidade de se metamorfosear. Assassinado ao lado da esposa, ele é ressuscitado e aprimorado com nanotecnologia, desenvolvendo tais habilidades. Ao apagarem sua memória várias vezes, ele finalmente descobre quem realmente é e parte em um busca de vingança daqueles que mataram sua família.",
+      "release_date": "2020-03-05"
+    },
+    {
+      "popularity": 193.991,
+      "id": 545609,
+      "video": false,
+      "vote_count": 1817,
+      "vote_average": 7.5,
+      "title": "Resgate",
+      "release_date": "2020-04-24",
+      "original_language": "en",
+      "original_title": "Extraction",
+      "genre_ids": [
+        18,
+        28,
+        53
+      ],
+      "backdrop_path": "/1R6cvRtZgsYCkh8UFuWFN33xBP4.jpg",
+      "adult": false,
+      "overview": "Tyler Rake, um destemido mercenário do mercado negro, embarca na extração mais mortal de sua carreira quando se alistou para resgatar o filho sequestrado de um lorde do crime internacional preso.",
+      "poster_path": "/5DS1Xh1dxfrR1H0sqATPxkwWFzi.jpg"
+    },
+    {
+      "popularity": 162.224,
+      "vote_count": 3808,
+      "video": false,
+      "poster_path": "/sJRcxUYDZb7LtV8AID19hxcqvaq.jpg",
+      "id": 454626,
+      "adult": false,
+      "backdrop_path": "/stmYfCUGd8Iy6kAMBr6AmWqx8Bq.jpg",
+      "original_language": "en",
+      "original_title": "Sonic the Hedgehog",
+      "genre_ids": [
+        28,
+        35,
+        878,
+        10751
+      ],
+      "title": "Sonic: O Filme",
+      "vote_average": 7.6,
+      "overview": "Sonic, o porco-espinho azul mais famoso do mundo, se junta com os seus amigos para derrotar o terrível Doutor Eggman, um cientista louco que planeja dominar o mundo, e o Doutor Robotnik, responsável por aprisionar animais inocentes em robôs.",
+      "release_date": "2020-02-12"
+    },
+    {
+      "popularity": 154.036,
+      "id": 481848,
+      "video": false,
+      "vote_count": 975,
+      "vote_average": 7.3,
+      "title": "O Chamado da Floresta",
+      "release_date": "2020-02-19",
+      "original_language": "en",
+      "original_title": "The Call of the Wild",
+      "genre_ids": [
+        18,
+        12,
+        10751
+      ],
+      "backdrop_path": "/9sXHqZTet3Zg5tgcc0hCDo8Tn35.jpg",
+      "adult": false,
+      "overview": "Depois de anos vivendo como um cachorro de estimação na casa de uma família na Califórnia, Buck precisa entrar em contato com os seus instintos mais selvagens para conseguir sobreviver em um ambiente hostil como o Alaska. Com o tempo, seu lado feroz se desenvolve e ele se torna o grande líder de sua matilha. Baseado no livro homônimo de Jack London, lançado em 1903.",
+      "poster_path": "/1SIlV2p8355FAuKTGje9ZgtXujN.jpg"
+    },
+    {
+      "popularity": 144.418,
+      "vote_count": 3749,
+      "video": false,
+      "poster_path": "/A50Ngq9lh9aCTGHC6kttrppHNoF.jpg",
+      "id": 495764,
+      "adult": false,
+      "backdrop_path": "/uozb2VeD87YmhoUP1RrGWfzuCrr.jpg",
+      "original_language": "en",
+      "original_title": "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+      "genre_ids": [
+        28,
+        35,
+        80
+      ],
+      "title": "Aves de Rapina: Arlequina e sua Emancipação Fantabulosa",
+      "vote_average": 7.2,
+      "overview": "Arlequina, Canário Negro, Caçadora, Cassandra Cain e a policial Renée Montoya formam um grupo inusitado de heroínas. Quando um perigoso criminoso começa a causar destruição em Gotham, as cinco mulheres precisam se unir para defender a cidade.",
+      "release_date": "2020-02-05"
+    },
+    {
+      "popularity": 142.899,
+      "vote_count": 7,
+      "video": false,
+      "poster_path": "/oiFxdnsQyGs3DBLzHzW92GrDR6w.jpg",
+      "id": 682071,
+      "adult": false,
+      "backdrop_path": "/6I6ZhQrX4L4KIxSzlgg8zc1BSLr.jpg",
+      "original_language": "en",
+      "original_title": "To the Beat! Back 2 School",
+      "genre_ids": [
+        35,
+        18,
+        10751
+      ],
+      "title": "To the Beat! Back 2 School",
+      "vote_average": 3.6,
+      "overview": "",
+      "release_date": "2020-03-10"
+    },
+    {
+      "popularity": 132.19,
+      "id": 618344,
+      "video": false,
+      "vote_count": 303,
+      "vote_average": 8.8,
+      "title": "Liga da Justiça Sombria: Guerra de Apokolips",
+      "release_date": "2020-05-05",
+      "original_language": "en",
+      "original_title": "Justice League Dark: Apokolips War",
+      "genre_ids": [
+        16,
+        28,
+        14,
+        878,
+        12
+      ],
+      "backdrop_path": "/sQkRiQo3nLrQYMXZodDjNUJKHZV.jpg",
+      "adult": false,
+      "overview": "O filme-animado é uma sequência de Liga da Justiça Sombria, animação de 2017 com classificação para maiores. Na trama, Batman reunia um grupo de heróis mágicos para lidar com ameaças sobrenaturais.  Entre a galeria de heróis da Liga da Justiça Sombria, temos Constantine, Monstro do Pântano, Zatanna, Etrigan, entre outros. É aguardado a aparição de alguns personagens como Darkseid, as Fúrias e até mesmo o Pai Celestial.",
+      "poster_path": "/c01Y4suApJ1Wic2xLmaq1QYcfoZ.jpg"
+    },
+    {
+      "popularity": 124.112,
+      "id": 181812,
+      "video": false,
+      "vote_count": 4515,
+      "vote_average": 6.5,
+      "title": "Star Wars: A Ascensão Skywalker",
+      "release_date": "2019-12-18",
+      "original_language": "en",
+      "original_title": "Star Wars: The Rise of Skywalker",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "backdrop_path": "/jOzrELAzFxtMx2I4uDGHOotdfsS.jpg",
+      "adult": false,
+      "overview": "Com o retorno do Imperador Palpatine, todos voltam a temer seu poder e, com isso, a Resistência toma a frente da batalha que ditará os rumos da galáxia. Treinando para ser uma completa Jedi, Rey (Daisy Ridley) ainda se encontra em conflito com seu passado e futuro, mas teme pelas respostas que pode conseguir a partir de sua complexa ligação com Kylo Ren (Adam Driver), que também se encontra em conflito pela Força.",
+      "poster_path": "/lFx2i2pg1BoaD7grcpGDyHM1eML.jpg"
+    },
+    {
+      "popularity": 116.648,
+      "id": 530915,
+      "video": false,
+      "vote_count": 4794,
+      "vote_average": 8,
+      "title": "1917",
+      "release_date": "2019-12-25",
+      "original_language": "en",
+      "original_title": "1917",
+      "genre_ids": [
+        10752,
+        18,
+        28,
+        53,
+        36
+      ],
+      "backdrop_path": "/2lBOQK06tltt8SQaswgb8d657Mv.jpg",
+      "adult": false,
+      "overview": "Os cabos Schofield (George MacKay) e Blake (Dean-Charles Chapman) são jovens soldados britânicos durante a Primeira Guerra Mundial. Quando eles são encarregados de uma missão aparentemente impossível, os dois precisam atravessar território inimigo, lutando contra o tempo, para entregar uma mensagem que pode salvar cerca de 1600 colegas de batalhão.",
+      "poster_path": "/8KkyXE7Hd9MPOOkORxkMM6SUXAB.jpg"
+    },
+    {
+      "popularity": 106.082,
+      "vote_count": 7213,
+      "video": false,
+      "poster_path": "/igw938inb6Fy0YVcwIyxQ7Lu5FO.jpg",
+      "id": 496243,
+      "adult": false,
+      "backdrop_path": "/ApiBzeaa95TNYliSbQ8pJv4Fje7.jpg",
+      "original_language": "ko",
+      "original_title": "기생충",
+      "genre_ids": [
+        35,
+        18,
+        53
+      ],
+      "title": "Parasita",
+      "vote_average": 8.5,
+      "overview": "Toda a família de Ki-taek está desempregada, vivendo num porão sujo e apertado. Uma obra do acaso faz com que o filho adolescente da família comece a dar aulas de inglês à garota de uma família rica. Fascinados com a vida luxuosa destas pessoas, pai, mãe, filho e filha bolam um plano para se infiltrarem também na família burguesa, um a um. No entanto, os segredos e mentiras necessários à ascensão social custarão caro a todos.",
+      "release_date": "2019-05-30"
+    },
+    {
+      "popularity": 104.21,
+      "vote_count": 3831,
+      "video": false,
+      "poster_path": "/sTKl7J5OWnsZSTRiKPIvPx4ngBG.jpg",
+      "id": 38700,
+      "adult": false,
+      "backdrop_path": "/upUy2QhMZEmtypPW3PdieKLAHxh.jpg",
+      "original_language": "en",
+      "original_title": "Bad Boys for Life",
+      "genre_ids": [
+        28,
+        80,
+        53
+      ],
+      "title": "Bad Boys Para Sempre",
+      "vote_average": 7.2,
+      "overview": "Armando é um assassino de sangue frio com uma natureza cruel e provocadora. Ele está comprometido com o trabalho do cartel e é enviado por sua mãe para matar Mike (Smith). Nuñez assumirá o papel de Rita, psicóloga criminal durona e engraçada que é recém-nomeada chefe da AMMO e é ex-namorada de Mike.",
+      "release_date": "2020-01-15"
+    },
+    {
+      "popularity": 98.821,
+      "vote_count": 9294,
+      "video": false,
+      "poster_path": "/2nM2NRV8wt3n3ffoHQ3KdMkY3vR.jpg",
+      "id": 920,
+      "adult": false,
+      "backdrop_path": "/sd4xN5xi8tKRPrJOWwNiZEile7f.jpg",
+      "original_language": "en",
+      "original_title": "Cars",
+      "genre_ids": [
+        12,
+        16,
+        35,
+        10751
+      ],
+      "title": "Carros",
+      "vote_average": 6.8,
+      "overview": "Ao viajar para a Califórnia, o famoso carro de corridas Relâmpago McQueen se perde e vai parar em Radiator Springs, uma cidadezinha na Rota 66. Ele conhece novos amigos e aprende lições que mudam sua forma de encarar a vida.",
+      "release_date": "2006-06-08"
+    },
+    {
+      "popularity": 96.759,
+      "id": 508439,
+      "video": false,
+      "vote_count": 1689,
+      "vote_average": 7.9,
+      "title": "Dois Irmãos: Uma Jornada Fantástica",
+      "release_date": "2020-02-29",
+      "original_language": "en",
+      "original_title": "Onward",
+      "genre_ids": [
+        16,
+        10751,
+        12,
+        35,
+        14
+      ],
+      "backdrop_path": "/xFxk4vnirOtUxpOEWgA1MCRfy6J.jpg",
+      "adult": false,
+      "overview": "Em um mundo transformado, no qual as criaturas não dependiam mais da magia para viver, dois irmãos elfos recebem um cajado de bruxo de seu falecido pai, capaz de trazê-lo de volta à vida. Inexperientes com qualquer tipo de magia, Ian e Barley não conseguem executar o feitiço e acabam gerando uma criatura sem cabeça. Para passar mais um dia com seu pai, eles embarcam em uma jornada fantástica. Ao perceber a ausência dos filhos, sua mãe se une à uma lendária manticora para encontrá-los.",
+      "poster_path": "/jsi2UM64Mhr6NmY1LKeeCuZOaCo.jpg"
+    },
+    {
+      "popularity": 95.798,
+      "vote_count": 12332,
+      "video": false,
+      "poster_path": "/rOYDI5EqtKrnr0IX271V7daRdaH.jpg",
+      "id": 475557,
+      "adult": false,
+      "backdrop_path": "/f5F4cRhQdUbyVbB5lTNCwUzD6BP.jpg",
+      "original_language": "en",
+      "original_title": "Joker",
+      "genre_ids": [
+        80,
+        18,
+        53
+      ],
+      "title": "Coringa",
+      "vote_average": 8.2,
+      "overview": "Arthur Fleck trabalha como palhaço para uma agência de talentos e, toda semana, precisa comparecer a uma agente social, devido aos seus conhecidos problemas mentais. Após ser demitido, Fleck reage mal à gozação de três homens em pleno metrô e os mata. Os assassinatos iniciam um movimento popular contra a elite de Gotham City, da qual Thomas Wayne é seu maior representante.",
+      "release_date": "2019-10-02"
+    },
+    {
+      "popularity": 94.228,
+      "vote_count": 1070,
+      "video": false,
+      "poster_path": "/kSC2Uk3LUeJEaIgDBsF73gPOjjr.jpg",
+      "id": 443791,
+      "adult": false,
+      "backdrop_path": "/ww7eC3BqSbFsyE5H5qMde8WkxJ2.jpg",
+      "original_language": "en",
+      "original_title": "Underwater",
+      "genre_ids": [
+        28,
+        27,
+        878,
+        53
+      ],
+      "title": "Ameaça Profunda",
+      "vote_average": 6.4,
+      "overview": "Um grupo de pesquisadores se encontra em um laboratório subaquático a 11 mil metros de profundidade, quando um terremoto causa a destruição do veículo e expõe a equipe ao risco de morte. Eles são obrigados a caminhar nas profundezas marítimas, com quantidade insuficiente de oxigênio, para tentarem sobreviver.",
+      "release_date": "2020-01-08"
+    },
+    {
+      "popularity": 85.272,
+      "id": 11,
+      "video": false,
+      "vote_count": 13561,
+      "vote_average": 8.2,
+      "title": "Guerra nas Estrelas",
+      "release_date": "1977-05-25",
+      "original_language": "en",
+      "original_title": "Star Wars",
+      "genre_ids": [
+        12,
+        28,
+        878
+      ],
+      "backdrop_path": "/pPj1yM2PXiC56GkUYmoT3qR9zka.jpg",
+      "adult": false,
+      "overview": "Luke Skywalker (Mark Hammil) sonha ir para a Academia como seus amigos, mas se vê envolvido em uma guerra intergalática quando seu tio compra dois robôs e com eles encontra uma mensagem da princesa Leia Organa (Carrie Fisher) para o jedi Obi-Wan Kenobi (Alec Guiness) sobre os planos da construção da Estrela da Morte, uma gigantesca estação espacial com capacidade para destruir um planeta. Luke então se junta ao cavaleiro jedi e a Han Solo (Harrison Ford), um mercenário, para tentar destruir esta terrível ameaça ao lado dos membros da resistência.",
+      "poster_path": "/iSNdwFauC1QODm1ntk07wqJV1pf.jpg"
+    },
+    {
+      "popularity": 77.221,
+      "vote_count": 3503,
+      "video": false,
+      "poster_path": "/vC7gB8h8KFTsraAoKsj0haHAljR.jpg",
+      "id": 515001,
+      "adult": false,
+      "backdrop_path": "/lTyikzfGgRX5ZqIfVeT26APYfRL.jpg",
+      "original_language": "en",
+      "original_title": "Jojo Rabbit",
+      "genre_ids": [
+        35,
+        18,
+        10752
+      ],
+      "title": "Jojo Rabbit",
+      "vote_average": 8.2,
+      "overview": "Alemanha, durante a Segunda Guerra Mundial. Jojo (Roman Griffin Davis) é um jovem nazista de 10 anos, que trata Adolf Hitler (Taika Waititi) como um amigo próximo, em sua imaginação. Seu maior sonho é participar da Juventude Hitlerista, um grupo pró-nazista composto por outras pessoas que concordam com os seus ideais. Um dia, Jojo descobre que sua mãe (Scarlett Johansson) está escondendo uma judia (Thomasin McKenzie) no sótão de casa. Depois de várias tentativas frustradas para expulsá-la, o jovem rebelde começa a desenvolver empatia pela nova hóspede.",
+      "release_date": "2019-10-18"
+    },
+    {
+      "popularity": 76.294,
+      "vote_count": 18047,
+      "video": false,
+      "poster_path": "/89QTZmn34iwXYeCpVxhC9UrT8sX.jpg",
+      "id": 299536,
+      "adult": false,
+      "backdrop_path": "/lmZFxXgJE3vgrciwuDib0N8CfQo.jpg",
+      "original_language": "en",
+      "original_title": "Avengers: Infinity War",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "title": "Vingadores: Guerra Infinita",
+      "vote_average": 8.3,
+      "overview": "Homem de Ferro, Thor, Hulk e os Vingadores se unem para combater seu inimigo mais poderoso, o maligno Thanos. Em uma missão para coletar todas as seis pedras infinitas, Thanos planeja usá-las para infligir sua vontade maléfica sobre a realidade.",
+      "release_date": "2018-04-25"
+    }
+  ]
+}
+

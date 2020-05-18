@@ -1,96 +1,63 @@
-## Bem vindo
----
-Obrigado por participar do desafio iOS da Tembici! Estamos muito contentes pelo seu primeiro passo para fazer parte de um time excepcional.
+## 1. Conteúdo
+
+-   [1. Conteúdo](#1-conteúdo)
+-   [2. O Projeto](#2-o-projeto)
+-   [3. Design](#3-design)
+-   [4. Testes](#4-testes)
+    -   [4.1. Unitários](#41-unitários)
+    -   [4.2. Interface](#41-interface)
+
+-   [5. Dependências](#5-dependências)
+    -   [5.1. CocoaPods](#51-cocoapods)
+        -   [5.1.1. Moya](#511-moya)
+        -   [5.1.2. Kingfisher](#512-kingfisher)
+        -   [5.1.3. Realm](#513-Realm)
 
 
-## Afinal, o que é esse desafio?
----
-Você deverá criar uma app sobre filmes, usando a  [API](https://developers.themoviedb.org/3/getting-started/introduction) do [TheMovieDB](https://www.themoviedb.org/?language=en). Legal, certo? Para dar uma padronizada e ter um layout minimamente definido anexamos alguns assets que vão te ajudar a desenvolver esse app:
+## 2. O Projeto
 
--  [Ícones do app](assets/appIcons)
--  [ScreenShots](assets/screenshots)
--  [Ícones](assets/icons)
+Arquitetura: **MVVM**
 
-Pense no desafio como uma oportunidade de mostrar todo o seu conhecimento. E faça com calma, você tem uma semana para entregar!
-Vamos avaliar como você lida com casos de:
+O Projeto foi desenvolvido utilizando o framework SwiftUI que possibilita o desenvolvimento de interfaces de maneira declarativa além de oferecer suporte a visualização do layot em tempo real. O SwiftUI ofeece suporte nativo para implementação do paradigma da programação reativa.
 
+A arquitetura adotada foi o MVVM pois proporciona um baixo acoplamento e favorece a execução de testes. Sua caracteristica principal é a separação de toda regra de negócio da camada de exibição.
 
-- Consumo de APIs
-- Persistência de dados (Favoritos)
-- Lógicas de filtros e buscas.
-- Estruturação de layout e fluxo de aplicação.
+## 3. Design
 
+O desing do applicativo representa uma versão atualizada do design proosto pela Tembici. Foi utilziada a palheta de cores proposta no desafio aplicada em cima do tema dark do iOS.
 
-O único pré-requisito é que o código seja feito em Swift, de preferência na versão mais atual. Sinta-se a vontade para:
-- Usar ou não usar bibliotecas
-- Estruturar seu layout com storyboards, xibs ou ViewCode
-- Adotar a arquitetura que você quiser.
+A aplicação tem um design atual com animações fluidas. Foi desenvolvido um componente para exibição da avaliação que os usuários deram aos filmes
 
+<p align="center">
+    <img src="screen/home.png" width="150" height="350" alt="screen" />
+    <img src="screen/favorites.png" width="150" height="350" alt="screen" />
+    <img src="screen/details.png" width="150" height="350" alt="screen" />
 
-Somos especialmente preocupados com qualidade e acreditamos bastante em testes automatizados. Entretanto, sabemos que não é um tópico dominado por todos, por isso aceitamos desafios com todos os perfis e diferentes momentos de experiência e conhecimento técnico.
-Para posições mais Seniors, porém, damos muito importância para a qualidade do código.
+</p>
 
+## 4. Testes
 
-# Features ..
----
-### Precisa ter:
+### 4.1. Unitários
 
-- Tela de Splash;
-- Layout em abas, contendo na primeira aba a tela de grid de filmes e na segunda aba a tela de lista de filmes favoritados no app;
-- Tela de grid de filmes trazendo a lista de filmes populares da [API](https://developers.themoviedb.org/3/movies/get-popular-movies).
-- Tratamento de erros e apresentação dos fluxos de exceção: Busca vazia, Error generico, loading;
-- Ao clicar em um filme do grid deve navegar para a tela de detalhe do filme;
-- Tela de Detalhe do filme deve conter ação para favoritar o filme;
-- Tela de Detalhe do filme deve conter gênero do filme por extenso (ex: Action, Horror, etc); Use esse [request](https://developers.themoviedb.org/3/genres/get-movie-list) da API para trazer a lista.
-- Tela de lista de favoritos persistido no app entre sessões;
-- Tela de favoritos deve permitir desfavoritar um filme.
+Foram implementados testes unitários em todas as requisições de rede 
 
+### 4.2. Interface
 
+Foram implementados testes de interface que possibilitam adicionar e/ou remover os favoritos na tela de detalhe e na listagem de favoritos além de chegar o carregamento corretos dos dados de detalhe do vídeo. 
 
+## 5. Dependências
 
-### Ganha mais pontos se tiver:
+### 5.1. CocoaPods
 
-- Tela de grid com busca local;
-- Scroll Infinito para fazer paginação da API de filmes populares;
-- Célula do Grid de filmes com informação se o filme foi favoritado no app ou não;
-- Tela de filtro com seleção de data de lançamento e gênero. A tela de filtro só é acessível a partir da tela de favoritos;
-- Ao Aplicar o filtro, retornar a tela de favoritos e fazer um filtro local usando as informações selecionadas referentes a data de lançamento e gênero;
-- Testes unitários no projeto;
-- Testes funcionais.
-- Pipeline Automatizado
+#### 5.1.1. [Moya](https://github.com/Moya/Moya)
 
+As requisiçoes foram implemtadas utilizando o Moya pois o mesmo oferece uma grande abstração das requisições, inspirada no conceito de encapsular solicitações de rede de maneira segura, tipicamente usando enumerações, que fornece confiança ao trabalhar com a camada de rede. o Moya tem como um grande benefício a facilidade de executar testes nas requisições.
 
+#### 5.1.2. [Kingfisher](https://github.com/onevcat/Kingfisher)
 
-# Exemplos e sugestões
----
+Ferramanta que auxilia o carregamento imagens de maneira assíncrona e implementa recursos de cache.
 
-Abaixo podemos ver algumas telas de exemplo de alguns desses fluxos. São apenas sugestões, fique à vontade para modificar como você quiser.
-Para facilitar o processo, existem assets, app icons, ícones e paleta de cores no repositório. Mas se o seu lado designer falar mais alto, pode nos surpreender!
+#### 5.1.3. [Realm](https://github.com/realm/realm-cocoa)
 
+Foi implementado o banco de dados Realm para a persistencia dos dados na aplicação.
 
-### Fluxo de grid de filmes
-![Image](assets/flow/lista.png)
-
-### Fluxo com Splash, Tela de Detalhes e tela de lista da favoritos
-![Image](assets/flow/splash_detalhes.png)
-
-### Fluxo Opcional de filtro
-![Image](assets/flow/filtro.png)
-
-
-## **Processo de submissão** ###
----
-
-Depois de implementar a solução, envie um pull request para este repositório.
-O processo de Pull Request funciona da seguinte maneira:
-
-1. Faça um fork deste repositório (não clonar direto!);
-2. Faça seu projeto neste fork;
-3. Commit e suba as alterações para o __SEU__ fork;
-4. Pela interface do Bitbucket, envie um Pull Request.
-
-Deixe o fork público para facilitar a inspeção do código.
-
-### **ATENÇÃO** ###
-
-Não tente fazer o PUSH diretamente para ESTE repositório!

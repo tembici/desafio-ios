@@ -24,6 +24,8 @@ A arquitetura adotada foi o MVVM pois proporciona um baixo acoplamento e favorec
 
 O desing do applicativo representa uma versão atualizada do design proosto pela Tembici. Foi utilziada a palheta de cores proposta no desafio aplicada em cima do tema dark do iOS.
 
+A aplicação tem um design atual com animações fluidas. Foi desenvolvido um componente para exibição da avaliação que os usuários deram aos filmes
+
 <p align="center">
     <img src="screen/home.png" width="150" height="350" alt="screen" />
     <img src="screen/favorites.png" width="150" height="350" alt="screen" />
@@ -37,6 +39,10 @@ O desing do applicativo representa uma versão atualizada do design proosto pela
 
 Foram implementados testes unitários em todas as requisições de rede 
 
+### 4.2. Interface
+
+Foram implementados testes de interface que possibilitam adicionar e/ou remover os favoritos na tela de detalhe e na listagem de favoritos além de chegar o carregamento corretos dos dados de detalhe do vídeo. 
+
 ## 5. Dependências
 
 ### 5.1. CocoaPods
@@ -47,7 +53,7 @@ As requisiçoes foram implemtadas utilizando o Moya pois o mesmo oferece uma gra
 
 #### 5.1.2. [Kingfisher](https://github.com/onevcat/Kingfisher)
 
-Ferramanta que auxilia o carregamentpo imagens de maneira assíncrona e implementa recussos de cache.
+Ferramanta que auxilia o carregamento imagens de maneira assíncrona e implementa recursos de cache.
 
 #### 5.1.3. [Realm](https://github.com/realm/realm-cocoa)
 
